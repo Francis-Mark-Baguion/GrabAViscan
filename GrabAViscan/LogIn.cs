@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,39 @@ namespace GrabAViscan
             SignUp sign = new SignUp();
             sign.Show();
             this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=rhulepisot";
+            MySqlConnection conConn = new MySqlConnection(con);
+            conConn.Open();
+
+            string username = usernameTxt.Text;
+            string password = passwordTxt.Text;
+
+            
+            string sql = "SELECT username, password FROM grab.accounts WHERE username=@username AND password=@password";
+            MySqlCommand cmd = new MySqlCommand(sql, conConn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                MessageBox.Show("Account exists");
+                Home hom = new Home();
+                hom.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+
+            reader.Close();
+            conConn.Close();
         }
     }
 }

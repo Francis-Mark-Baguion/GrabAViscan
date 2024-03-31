@@ -33,10 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.passwordTxt = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -89,26 +89,27 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.usernameTxt);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(856, 536);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 498);
             this.panel2.TabIndex = 0;
             // 
-            // textBox2
+            // passwordTxt
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(194, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(462, 51);
-            this.textBox2.TabIndex = 2;
+            this.passwordTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.passwordTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTxt.Location = new System.Drawing.Point(194, 205);
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.PasswordChar = '*';
+            this.passwordTxt.Size = new System.Drawing.Size(462, 51);
+            this.passwordTxt.TabIndex = 2;
             // 
             // linkLabel1
             // 
@@ -134,15 +135,15 @@
             this.label1.Text = "Not part of the community yet?";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // textBox1
+            // usernameTxt
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(194, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(462, 51);
-            this.textBox1.TabIndex = 1;
+            this.usernameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.usernameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usernameTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTxt.Location = new System.Drawing.Point(194, 96);
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(462, 51);
+            this.usernameTxt.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -164,6 +165,7 @@
             this.button1.Size = new System.Drawing.Size(520, 75);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // LogIn
             // 
@@ -192,8 +194,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox passwordTxt;
+        private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
     }
