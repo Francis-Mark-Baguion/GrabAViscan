@@ -10,28 +10,27 @@ using System.Windows.Forms;
 
 namespace GrabAViscan
 {
-    public partial class SignUp : Form
+    public partial class HomeFeed : UserControl
     {
-        public SignUp()
+        public HomeFeed(string name)
         {
             InitializeComponent();
+            this.Name_Link.Text = name;
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
+        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void gunaButton2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
-            LogIn log = new LogIn();
-            log.Show();
-            this.Hide();
+
         }
     }
 }
