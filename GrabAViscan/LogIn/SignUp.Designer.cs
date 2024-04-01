@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.passwordTxt = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.usernameTxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,27 +63,67 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.passwordTxt);
+            this.panel2.Controls.Add(this.emailTxt);
             this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.usernameTxt);
             this.panel2.Controls.Add(this.button1);
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(856, 536);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 498);
             this.panel2.TabIndex = 1;
             // 
+            // passwordTxt
+            // 
+            this.passwordTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.passwordTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.passwordTxt.BorderColor = System.Drawing.Color.Silver;
+            this.passwordTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.passwordTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.passwordTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.passwordTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.passwordTxt.Location = new System.Drawing.Point(170, 218);
+            this.passwordTxt.Name = "passwordTxt";
+            this.passwordTxt.PasswordChar = '*';
+            this.passwordTxt.Radius = 10;
+            this.passwordTxt.Size = new System.Drawing.Size(520, 53);
+            this.passwordTxt.TabIndex = 9;
+            this.passwordTxt.Text = "Password";
+            this.passwordTxt.Click += new System.EventHandler(this.passwordTxt_Click);
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.emailTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.emailTxt.BorderColor = System.Drawing.Color.Silver;
+            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.emailTxt.Location = new System.Drawing.Point(170, 108);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.PasswordChar = '\0';
+            this.emailTxt.Radius = 10;
+            this.emailTxt.Size = new System.Drawing.Size(520, 53);
+            this.emailTxt.TabIndex = 8;
+            this.emailTxt.Text = "Email";
+            this.emailTxt.Click += new System.EventHandler(this.emailTxt_Click);
+            // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
             this.linkLabel2.Location = new System.Drawing.Point(439, 302);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(217, 25);
+            this.linkLabel2.Size = new System.Drawing.Size(218, 28);
             this.linkLabel2.TabIndex = 7;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = " terms and conditions";
@@ -91,24 +131,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(253, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 25);
+            this.label2.Size = new System.Drawing.Size(164, 28);
             this.label2.TabIndex = 6;
             this.label2.Text = "Yes, I agree to the";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // passwordTxt
-            // 
-            this.passwordTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.passwordTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(194, 205);
-            this.passwordTxt.Name = "passwordTxt";
-            this.passwordTxt.PasswordChar = '*';
-            this.passwordTxt.Size = new System.Drawing.Size(462, 51);
-            this.passwordTxt.TabIndex = 2;
             // 
             // linkLabel1
             // 
@@ -135,22 +164,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(227, 452);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 25);
+            this.label1.Size = new System.Drawing.Size(234, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Already have an account?";
-            // 
-            // usernameTxt
-            // 
-            this.usernameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.usernameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(194, 96);
-            this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(462, 51);
-            this.usernameTxt.TabIndex = 1;
             // 
             // button1
             // 
@@ -187,13 +206,13 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private Guna.UI.WinForms.GunaTextBox emailTxt;
+        private Guna.UI.WinForms.GunaTextBox passwordTxt;
     }
 }

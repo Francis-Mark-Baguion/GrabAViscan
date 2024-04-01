@@ -107,33 +107,42 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Intro.cs">
+    <Compile Include="HomeFeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeFeed.Designer.cs">
+      <DependentUpon>HomeFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn\Intro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Intro.Designer.cs">
+    <Compile Include="LogIn\Intro.Designer.cs">
       <DependentUpon>Intro.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.cs">
+    <Compile Include="LogIn\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn.Designer.cs">
+    <Compile Include="LogIn\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUp.cs">
+    <Compile Include="LogIn\SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUp.Designer.cs">
+    <Compile Include="LogIn\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Intro.resx">
+    <EmbeddedResource Include="HomeFeed.resx">
+      <DependentUpon>HomeFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn\Intro.resx">
       <DependentUpon>Intro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="LogIn\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -146,7 +155,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SignUp.resx">
+    <EmbeddedResource Include="LogIn\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -170,5 +179,6 @@
     <Content Include="Resources\LogIn.png" />
     <Content Include="Resources\SignUp.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

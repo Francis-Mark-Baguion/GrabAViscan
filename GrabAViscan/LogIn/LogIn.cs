@@ -57,11 +57,11 @@ namespace GrabAViscan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=rhulepisot";
+            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
             MySqlConnection conConn = new MySqlConnection(con);
             conConn.Open();
-
-            string username = usernameTxt.Text;
+            
+            string username = emailTxt.Text;
             string password = passwordTxt.Text;
 
             
@@ -86,6 +86,18 @@ namespace GrabAViscan
 
             reader.Close();
             conConn.Close();
+        }
+
+        
+
+        private void gunaTextBox1_Click(object sender, EventArgs e)
+        {
+            emailTxt.Text = "";
+        }
+
+        private void passwordTxt_Click(object sender, EventArgs e)
+        {
+            passwordTxt.Text = "";
         }
     }
 }

@@ -33,11 +33,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.passwordTxt = new System.Windows.Forms.TextBox();
+            this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.usernameTxt = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -90,10 +90,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.passwordTxt);
+            this.panel2.Controls.Add(this.emailTxt);
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.usernameTxt);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(856, 536);
             this.panel2.Name = "panel2";
@@ -102,48 +102,55 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.passwordTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(194, 205);
+            this.passwordTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.passwordTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.passwordTxt.BorderColor = System.Drawing.Color.Silver;
+            this.passwordTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.passwordTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.passwordTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.passwordTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.passwordTxt.Location = new System.Drawing.Point(170, 219);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
-            this.passwordTxt.Size = new System.Drawing.Size(462, 51);
-            this.passwordTxt.TabIndex = 2;
+            this.passwordTxt.Radius = 10;
+            this.passwordTxt.Size = new System.Drawing.Size(520, 53);
+            this.passwordTxt.TabIndex = 7;
+            this.passwordTxt.Text = "Password";
+            this.passwordTxt.Click += new System.EventHandler(this.passwordTxt_Click);
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.emailTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.emailTxt.BorderColor = System.Drawing.Color.Silver;
+            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxt.Location = new System.Drawing.Point(170, 109);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.PasswordChar = '\0';
+            this.emailTxt.Radius = 10;
+            this.emailTxt.Size = new System.Drawing.Size(520, 53);
+            this.emailTxt.TabIndex = 6;
+            this.emailTxt.Text = "Email";
+            this.emailTxt.Click += new System.EventHandler(this.gunaTextBox1_Click);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
             this.linkLabel1.Location = new System.Drawing.Point(531, 408);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 25);
+            this.linkLabel1.Size = new System.Drawing.Size(83, 28);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Sign up";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(227, 408);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Not part of the community yet?";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // usernameTxt
-            // 
-            this.usernameTxt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.usernameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usernameTxt.Font = new System.Drawing.Font("Arial Narrow", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(194, 96);
-            this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(462, 51);
-            this.usernameTxt.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -153,6 +160,17 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(159, 58);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(227, 408);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 28);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Not part of the community yet?";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
@@ -194,9 +212,9 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox passwordTxt;
-        private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI.WinForms.GunaTextBox passwordTxt;
+        private Guna.UI.WinForms.GunaTextBox emailTxt;
     }
 }

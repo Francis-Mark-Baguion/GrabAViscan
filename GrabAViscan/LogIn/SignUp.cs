@@ -40,10 +40,10 @@ namespace GrabAViscan
         private void button1_Click(object sender, EventArgs e)
         {
             
-            string user = usernameTxt.Text;
+            string user = emailTxt.Text;
             string pass = passwordTxt.Text;
 
-            usernameTxt.Text = "";
+            emailTxt.Text = "";
             passwordTxt.Text = "";
             string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
             MySqlConnection conConn = new MySqlConnection(con);
@@ -64,6 +64,16 @@ namespace GrabAViscan
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void emailTxt_Click(object sender, EventArgs e)
+        {
+            emailTxt.Text = "";
+        }
+
+        private void passwordTxt_Click(object sender, EventArgs e)
+        {
+            passwordTxt.Text = "";
         }
     }
 }
