@@ -16,7 +16,7 @@ namespace GrabAViscan
         public Home()
         {
             InitializeComponent();
-            
+            feed();
             
             
         }
@@ -31,23 +31,9 @@ namespace GrabAViscan
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void feed()
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
+            flow1.Controls.Clear();
             string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
             MySqlConnection conConn = new MySqlConnection(con);
             conConn.Open();
@@ -59,12 +45,18 @@ namespace GrabAViscan
 
                 int ctr = 0;
                 string name = (string)reader["username"];
-                
+
                 HomeFeed home = new HomeFeed(name);
                 flow1.Controls.Add(home);
 
 
             }
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            flow1.Controls.Clear();
+            feed();
 
         }
 
@@ -81,6 +73,21 @@ namespace GrabAViscan
         private void gunaTextBox1_Click(object sender, EventArgs e)
         {
             SearchBar.Text = "";
+        }
+
+        private void gunaButton10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
