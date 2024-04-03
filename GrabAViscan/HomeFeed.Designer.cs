@@ -33,15 +33,15 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.Name_Link = new Guna.UI.WinForms.GunaButton();
             this.DateTime = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -80,6 +80,17 @@
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1584, 1094);
             this.gunaElipsePanel1.TabIndex = 4;
             this.gunaElipsePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel1_Paint);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(218, 212);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(942, 703);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 3;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // gunaCirclePictureBox2
             // 
@@ -126,7 +137,7 @@
             this.Name_Link.BaseColor = System.Drawing.Color.Transparent;
             this.Name_Link.BorderColor = System.Drawing.Color.Black;
             this.Name_Link.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_Link.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Name_Link.ForeColor = System.Drawing.Color.White;
             this.Name_Link.Image = null;
             this.Name_Link.ImageSize = new System.Drawing.Size(20, 20);
             this.Name_Link.Location = new System.Drawing.Point(218, 120);
@@ -144,22 +155,12 @@
             // 
             this.DateTime.AutoSize = true;
             this.DateTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateTime.ForeColor = System.Drawing.Color.White;
             this.DateTime.Location = new System.Drawing.Point(245, 165);
             this.DateTime.Name = "DateTime";
             this.DateTime.Size = new System.Drawing.Size(96, 25);
             this.DateTime.TabIndex = 2;
             this.DateTime.Text = "03/2/2004";
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(218, 212);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(942, 703);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 3;
-            this.gunaPictureBox1.TabStop = false;
             // 
             // HomeFeed
             // 
@@ -171,8 +172,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

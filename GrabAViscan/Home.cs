@@ -72,10 +72,7 @@ namespace GrabAViscan
 
         }
 
-        private void gunaTextBox1_Click(object sender, EventArgs e)
-        {
-            SearchBar.Text = "";
-        }
+        
 
         private void gunaButton10_Click(object sender, EventArgs e)
         {
@@ -100,6 +97,16 @@ namespace GrabAViscan
         private void gunaLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaButton7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gunaButton8_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
