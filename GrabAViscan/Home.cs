@@ -16,6 +16,8 @@ namespace GrabAViscan
         public Home()
         {
             InitializeComponent();
+            rightWing right = new rightWing();
+            //flowLayoutPanel1.Controls.Add(right);
             feed();
             
             
@@ -86,6 +88,16 @@ namespace GrabAViscan
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
         {
 
         }
