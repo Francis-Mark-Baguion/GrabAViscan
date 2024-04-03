@@ -32,5 +32,15 @@ namespace GrabAViscan
         {
 
         }
+
+        private void gunaPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -133,6 +133,12 @@
     <Compile Include="LogIn\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="rightWing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rightWing.Designer.cs">
+      <DependentUpon>rightWing.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="LogIn\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rightWing.resx">
+      <DependentUpon>rightWing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
