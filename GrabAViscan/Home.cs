@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,16 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Feed;
 
 namespace GrabAViscan
 {
     public partial class Home : Form
     {
+        rightWing right;
         public Home()
         {
             InitializeComponent();
-            rightWing right = new rightWing();
-            //flowLayoutPanel1.Controls.Add(right);
+            right = new rightWing();
+            RightWing.Controls.Add(right);
             feed();
             
             
@@ -49,7 +52,9 @@ namespace GrabAViscan
                 string name = (string)reader["username"];
 
                 HomeFeed home = new HomeFeed(name);
+                Buffers buff = new Buffers();
                 flow1.Controls.Add(home);
+                flow1.Controls.Add(buff);
 
 
             }
@@ -57,6 +62,15 @@ namespace GrabAViscan
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 25;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 53;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            this.RightWing.Controls.Add(right);
             flow1.Controls.Clear();
             feed();
 
@@ -107,6 +121,61 @@ namespace GrabAViscan
         private void gunaButton8_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void My_Request(object sender, EventArgs e)
+        {
+            MyRequest myRequest = new MyRequest();
+            flow1.Controls.Clear();
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(myRequest);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void To_deliver(object sender, EventArgs e)
+        {
+            ToDeliver deliver = new ToDeliver();  
+            flow1.Controls.Clear();
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(deliver);
+        }
+
+        private void History(object sender, EventArgs e)
+        {
+            History history = new History();  
+            flow1.Controls.Clear();
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(history);
+        }
+
+        private void gunaButton9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

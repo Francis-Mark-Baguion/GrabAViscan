@@ -101,16 +101,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feed\Buffers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Buffers.Designer.cs">
+      <DependentUpon>Buffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeFeed.cs">
+    <Compile Include="Feed\HomeFeed.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomeFeed.Designer.cs">
+    <Compile Include="Feed\HomeFeed.Designer.cs">
       <DependentUpon>HomeFeed.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn\Intro.cs">
@@ -124,6 +136,12 @@
     </Compile>
     <Compile Include="LogIn\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyRequest.Designer.cs">
+      <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,10 +157,22 @@
     <Compile Include="rightWing.Designer.cs">
       <DependentUpon>rightWing.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToDeliver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToDeliver.Designer.cs">
+      <DependentUpon>ToDeliver.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Feed\Buffers.resx">
+      <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeFeed.resx">
+    <EmbeddedResource Include="Feed\HomeFeed.resx">
       <DependentUpon>HomeFeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn\Intro.resx">
@@ -150,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyRequest.resx">
+      <DependentUpon>MyRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rightWing.resx">
       <DependentUpon>rightWing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToDeliver.resx">
+      <DependentUpon>ToDeliver.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

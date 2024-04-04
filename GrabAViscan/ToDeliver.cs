@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GrabAViscan
 {
-    public partial class rightWing : UserControl
+    public partial class ToDeliver : UserControl
     {
-        public rightWing()
+        public ToDeliver()
         {
             InitializeComponent();
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

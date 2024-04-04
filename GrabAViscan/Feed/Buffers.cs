@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrabAViscan
+namespace GrabAViscan.Feed
 {
-    public partial class rightWing : UserControl
+    public partial class Buffers : UserControl
     {
-        public rightWing()
+        public Buffers()
         {
             InitializeComponent();
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
