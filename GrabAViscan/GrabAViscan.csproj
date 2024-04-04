@@ -101,16 +101,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Feed\Buffers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Buffers.Designer.cs">
+      <DependentUpon>Buffers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeFeed.cs">
+    <Compile Include="Feed\HomeFeed.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomeFeed.Designer.cs">
+    <Compile Include="Feed\HomeFeed.Designer.cs">
       <DependentUpon>HomeFeed.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn\Intro.cs">
@@ -145,10 +151,19 @@
     <Compile Include="rightWing.Designer.cs">
       <DependentUpon>rightWing.cs</DependentUpon>
     </Compile>
+    <Compile Include="To Deliver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="To Deliver.Designer.cs">
+      <DependentUpon>To Deliver.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Feed\Buffers.resx">
+      <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeFeed.resx">
+    <EmbeddedResource Include="Feed\HomeFeed.resx">
       <DependentUpon>HomeFeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn\Intro.resx">
@@ -175,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rightWing.resx">
       <DependentUpon>rightWing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To Deliver.resx">
+      <DependentUpon>To Deliver.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

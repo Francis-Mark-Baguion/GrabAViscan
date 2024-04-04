@@ -9,16 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Feed;
 
 namespace GrabAViscan
 {
     public partial class Home : Form
     {
+        rightWing right;
         public Home()
         {
             InitializeComponent();
-            rightWing right = new rightWing();
-            gunaPanel2.Controls.Add(right);
+            right = new rightWing();
+            RightWing.Controls.Add(right);
             feed();
             
             
@@ -50,7 +52,9 @@ namespace GrabAViscan
                 string name = (string)reader["username"];
 
                 HomeFeed home = new HomeFeed(name);
+                Buffers buff = new Buffers();
                 flow1.Controls.Add(home);
+                flow1.Controls.Add(buff);
 
 
             }
@@ -58,6 +62,15 @@ namespace GrabAViscan
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 25;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 53;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            this.RightWing.Controls.Add(right);
             flow1.Controls.Clear();
             feed();
 
@@ -110,12 +123,37 @@ namespace GrabAViscan
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void gunaButton3_Click_1(object sender, EventArgs e)
+        private void My_Request(object sender, EventArgs e)
+        {
+            MyRequest myRequest = new MyRequest();
+            flow1.Controls.Clear();
+
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(myRequest);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void gunaButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaButton9_Click(object sender, EventArgs e)
         {
 
         }

@@ -16,6 +16,7 @@ namespace GrabAViscan
         {
             InitializeComponent();
             this.Name_Link.Text = name;
+            
         }
 
         private void gunaPanel1_Paint(object sender, PaintEventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace GrabAViscan
 {
-    partial class MyRequest
+    partial class To_Deliver
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 
-            // gunaLabel1
+            // gunaLabel2
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(42, 40);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(218, 48);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "My Request";
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(42, 40);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(189, 48);
+            this.gunaLabel2.TabIndex = 2;
+            this.gunaLabel2.Text = "To Deliver";
             // 
-            // MyRequest
+            // To_Deliver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gunaLabel1);
-            this.Name = "MyRequest";
+            this.Controls.Add(this.gunaLabel2);
+            this.Name = "To_Deliver";
             this.Size = new System.Drawing.Size(1980, 1495);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
     }
 }

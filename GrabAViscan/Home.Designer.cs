@@ -45,7 +45,7 @@
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.RightWing = new Guna.UI.WinForms.GunaPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,13 +56,13 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.50592F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.86169F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.6324F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LeftWing, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flow1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.gunaPanel2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.RightWing, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -74,7 +74,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.gunaTextBox1);
             this.panel1.Controls.Add(this.gunaLabel1);
@@ -189,7 +189,7 @@
             // 
             // LeftWing
             // 
-            this.LeftWing.BackColor = System.Drawing.Color.White;
+            this.LeftWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.LeftWing.Controls.Add(this.gunaPanel1);
             this.LeftWing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftWing.Location = new System.Drawing.Point(0, 96);
@@ -214,7 +214,7 @@
             // 
             this.gunaButton9.AnimationHoverSpeed = 0.07F;
             this.gunaButton9.AnimationSpeed = 0.03F;
-            this.gunaButton9.BaseColor = System.Drawing.Color.White;
+            this.gunaButton9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaButton9.BorderColor = System.Drawing.Color.Black;
             this.gunaButton9.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton9.ForeColor = System.Drawing.Color.Black;
@@ -233,12 +233,13 @@
             this.gunaButton9.TabIndex = 5;
             this.gunaButton9.Text = "Settings";
             this.gunaButton9.TextOffsetX = 30;
+            this.gunaButton9.Click += new System.EventHandler(this.gunaButton9_Click);
             // 
             // gunaButton5
             // 
             this.gunaButton5.AnimationHoverSpeed = 0.07F;
             this.gunaButton5.AnimationSpeed = 0.03F;
-            this.gunaButton5.BaseColor = System.Drawing.Color.White;
+            this.gunaButton5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaButton5.BorderColor = System.Drawing.Color.Black;
             this.gunaButton5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton5.ForeColor = System.Drawing.Color.Black;
@@ -257,12 +258,13 @@
             this.gunaButton5.TabIndex = 4;
             this.gunaButton5.Text = "History";
             this.gunaButton5.TextOffsetX = 30;
+            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
             // 
             // gunaButton4
             // 
             this.gunaButton4.AnimationHoverSpeed = 0.07F;
             this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.White;
+            this.gunaButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaButton4.BorderColor = System.Drawing.Color.Black;
             this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton4.ForeColor = System.Drawing.Color.Black;
@@ -281,12 +283,13 @@
             this.gunaButton4.TabIndex = 3;
             this.gunaButton4.Text = "To Deliver";
             this.gunaButton4.TextOffsetX = 30;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
             // gunaButton3
             // 
             this.gunaButton3.AnimationHoverSpeed = 0.07F;
             this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.White;
+            this.gunaButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaButton3.BorderColor = System.Drawing.Color.Black;
             this.gunaButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton3.ForeColor = System.Drawing.Color.Black;
@@ -305,13 +308,13 @@
             this.gunaButton3.TabIndex = 2;
             this.gunaButton3.Text = "My Request";
             this.gunaButton3.TextOffsetX = 30;
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click_1);
+            this.gunaButton3.Click += new System.EventHandler(this.My_Request);
             // 
             // gunaButton2
             // 
             this.gunaButton2.AnimationHoverSpeed = 0.07F;
             this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BaseColor = System.Drawing.Color.White;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaButton2.BorderColor = System.Drawing.Color.Black;
             this.gunaButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton2.ForeColor = System.Drawing.Color.Black;
@@ -336,20 +339,21 @@
             // 
             this.flow1.AutoScroll = true;
             this.flow1.AutoSize = true;
-            this.flow1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow1.Location = new System.Drawing.Point(527, 99);
             this.flow1.Name = "flow1";
             this.flow1.Size = new System.Drawing.Size(1372, 1498);
             this.flow1.TabIndex = 2;
             // 
-            // gunaPanel2
+            // RightWing
             // 
-            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel2.Location = new System.Drawing.Point(1905, 99);
-            this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(652, 1498);
-            this.gunaPanel2.TabIndex = 3;
+            this.RightWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.RightWing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightWing.Location = new System.Drawing.Point(1905, 99);
+            this.RightWing.Name = "RightWing";
+            this.RightWing.Size = new System.Drawing.Size(652, 1498);
+            this.RightWing.TabIndex = 3;
             // 
             // contextMenuStrip1
             // 
@@ -385,7 +389,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private System.Windows.Forms.FlowLayoutPanel flow1;
-        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI.WinForms.GunaPanel RightWing;
         private System.Windows.Forms.Panel LeftWing;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaButton gunaButton2;
