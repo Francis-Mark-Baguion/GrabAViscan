@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrabAViscan
 {
-    public partial class To_Deliver : UserControl
+    public partial class History : UserControl
     {
-        public To_Deliver()
+        public History()
         {
             InitializeComponent();
         }

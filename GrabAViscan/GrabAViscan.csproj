@@ -107,6 +107,12 @@
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,14 +157,17 @@
     <Compile Include="rightWing.Designer.cs">
       <DependentUpon>rightWing.cs</DependentUpon>
     </Compile>
-    <Compile Include="To Deliver.cs">
+    <Compile Include="ToDeliver.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="To Deliver.Designer.cs">
-      <DependentUpon>To Deliver.cs</DependentUpon>
+    <Compile Include="ToDeliver.Designer.cs">
+      <DependentUpon>ToDeliver.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -191,8 +200,8 @@
     <EmbeddedResource Include="rightWing.resx">
       <DependentUpon>rightWing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="To Deliver.resx">
-      <DependentUpon>To Deliver.cs</DependentUpon>
+    <EmbeddedResource Include="ToDeliver.resx">
+      <DependentUpon>ToDeliver.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

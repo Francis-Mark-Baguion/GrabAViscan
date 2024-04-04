@@ -258,7 +258,7 @@
             this.gunaButton5.TabIndex = 4;
             this.gunaButton5.Text = "History";
             this.gunaButton5.TextOffsetX = 30;
-            this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
+            this.gunaButton5.Click += new System.EventHandler(this.History);
             // 
             // gunaButton4
             // 
@@ -283,7 +283,7 @@
             this.gunaButton4.TabIndex = 3;
             this.gunaButton4.Text = "To Deliver";
             this.gunaButton4.TextOffsetX = 30;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            this.gunaButton4.Click += new System.EventHandler(this.To_deliver);
             // 
             // gunaButton3
             // 

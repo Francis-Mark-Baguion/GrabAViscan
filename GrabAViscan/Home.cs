@@ -143,14 +143,34 @@ namespace GrabAViscan
 
         }
 
-        private void gunaButton4_Click(object sender, EventArgs e)
+        private void To_deliver(object sender, EventArgs e)
         {
+            ToDeliver deliver = new ToDeliver();  
+            flow1.Controls.Clear();
 
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(deliver);
         }
 
-        private void gunaButton5_Click(object sender, EventArgs e)
+        private void History(object sender, EventArgs e)
         {
+            History history = new History();  
+            flow1.Controls.Clear();
 
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(history);
         }
 
         private void gunaButton9_Click(object sender, EventArgs e)
