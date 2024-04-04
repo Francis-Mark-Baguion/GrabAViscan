@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Guna.UI.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace GrabAViscan
         {
             InitializeComponent();
             rightWing right = new rightWing();
-            //flowLayoutPanel1.Controls.Add(right);
+            gunaPanel2.Controls.Add(right);
             feed();
             
             
@@ -107,6 +108,16 @@ namespace GrabAViscan
         private void gunaButton8_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void gunaButton3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

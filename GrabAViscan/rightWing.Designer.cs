@@ -44,14 +44,14 @@
             this.gunaPanel3.Controls.Add(this.label1);
             this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(533, 408);
+            this.gunaPanel3.Size = new System.Drawing.Size(652, 235);
             this.gunaPanel3.TabIndex = 3;
             // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(436, 11);
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(560, 22);
             this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
             this.gunaCirclePictureBox1.Size = new System.Drawing.Size(76, 76);
             this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -69,7 +69,7 @@
             this.gunaButton10.ForeColor = System.Drawing.Color.Black;
             this.gunaButton10.Image = null;
             this.gunaButton10.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton10.Location = new System.Drawing.Point(50, 22);
+            this.gunaButton10.Location = new System.Drawing.Point(173, 32);
             this.gunaButton10.Name = "gunaButton10";
             this.gunaButton10.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.gunaButton10.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -80,6 +80,7 @@
             this.gunaButton10.Size = new System.Drawing.Size(371, 55);
             this.gunaButton10.TabIndex = 1;
             this.gunaButton10.Text = "Francis Mark Baguion";
+            this.gunaButton10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -87,11 +88,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.label1.Location = new System.Drawing.Point(12, 69);
+            this.label1.Location = new System.Drawing.Point(21, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(515, 34);
+            this.label1.Size = new System.Drawing.Size(615, 34);
             this.label1.TabIndex = 9;
-            this.label1.Text = "_________________________";
+            this.label1.Text = "______________________________";
             // 
             // rightWing
             // 
@@ -100,7 +101,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gunaPanel3);
             this.Name = "rightWing";
-            this.Size = new System.Drawing.Size(532, 1504);
+            this.Size = new System.Drawing.Size(652, 1498);
             this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
