@@ -195,7 +195,7 @@
             this.LeftWing.Location = new System.Drawing.Point(0, 96);
             this.LeftWing.Margin = new System.Windows.Forms.Padding(0);
             this.LeftWing.Name = "LeftWing";
-            this.LeftWing.Size = new System.Drawing.Size(524, 1504);
+            this.LeftWing.Size = new System.Drawing.Size(563, 1504);
             this.LeftWing.TabIndex = 1;
             // 
             // gunaPanel1
@@ -207,7 +207,7 @@
             this.gunaPanel1.Controls.Add(this.gunaButton2);
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(521, 608);
+            this.gunaPanel1.Size = new System.Drawing.Size(563, 608);
             this.gunaPanel1.TabIndex = 2;
             // 
             // gunaButton9
@@ -341,18 +341,18 @@
             this.flow1.AutoSize = true;
             this.flow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow1.Location = new System.Drawing.Point(527, 99);
+            this.flow1.Location = new System.Drawing.Point(566, 99);
             this.flow1.Name = "flow1";
-            this.flow1.Size = new System.Drawing.Size(1372, 1498);
+            this.flow1.Size = new System.Drawing.Size(1350, 1498);
             this.flow1.TabIndex = 2;
             // 
             // RightWing
             // 
             this.RightWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.RightWing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightWing.Location = new System.Drawing.Point(1905, 99);
+            this.RightWing.Location = new System.Drawing.Point(1922, 99);
             this.RightWing.Name = "RightWing";
-            this.RightWing.Size = new System.Drawing.Size(652, 1498);
+            this.RightWing.Size = new System.Drawing.Size(635, 1498);
             this.RightWing.TabIndex = 3;
             // 
             // contextMenuStrip1

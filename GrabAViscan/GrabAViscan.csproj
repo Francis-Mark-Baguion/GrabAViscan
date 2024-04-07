@@ -101,6 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\LogIn.cs" />
+    <Compile Include="Classes\Request.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Feed\Buffers.cs">
       <SubType>UserControl</SubType>
     </Compile>

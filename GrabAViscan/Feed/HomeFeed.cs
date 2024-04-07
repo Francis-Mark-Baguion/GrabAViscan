@@ -24,11 +24,6 @@ namespace GrabAViscan
 
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -40,6 +35,16 @@ namespace GrabAViscan
         }
 
         private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaLineTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaLabel2_Click(object sender, EventArgs e)
         {
 
         }

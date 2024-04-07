@@ -49,7 +49,7 @@ namespace GrabAViscan
             {
 
                 int ctr = 0;
-                string name = (string)reader["username"];
+                string name = (string)reader["email"];
 
                 HomeFeed home = new HomeFeed(name);
                 Buffers buff = new Buffers();

@@ -21,5 +21,10 @@ namespace GrabAViscan
         {
 
         }
+
+        private void rightWing_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
