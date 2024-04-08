@@ -49,11 +49,13 @@ namespace GrabAViscan
             string pass = passwordTxt.Text;
 
             signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt,this);
-            
-            
-           
-            
-            
+            signUpInformation.Sign_in_method();
+
+
+
+
+
+
 
         }
 

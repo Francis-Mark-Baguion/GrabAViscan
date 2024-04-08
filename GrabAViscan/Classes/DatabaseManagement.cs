@@ -14,7 +14,7 @@ namespace GrabAViscan.Classes
     public class DatabaseManagement
     {
 
-
+        public User Cur_user = new User();
 
         public MySqlConnection connect()
         {

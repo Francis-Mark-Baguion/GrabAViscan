@@ -10,9 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Classes;
 
 namespace GrabAViscan.LogIntro
 {
+    
     public partial class SignUpInformation : Form
     {
 
@@ -21,9 +23,12 @@ namespace GrabAViscan.LogIntro
         GunaTextBox mail;
         GunaTextBox passwordTxt;
         SignUp signUp;
+
+        DatabaseManagement db;
         public SignUpInformation()
         {
             InitializeComponent();
+            db = new DatabaseManagement();
             
         }
 
@@ -46,24 +51,6 @@ namespace GrabAViscan.LogIntro
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            mail.Text = "";
-            passwordTxt.Text = "";
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
-            MySqlConnection conConn = new MySqlConnection(con);
-            conConn.Open();
-
-            string insertSql = "INSERT INTO grab.accounts (email, password) VALUES (?, ?)";
-            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
-
-
-            insertCmd.Parameters.AddWithValue("@email", email);
-            insertCmd.Parameters.AddWithValue("@password", pass);
-
-            insertCmd.ExecuteNonQuery();
-
-            conConn.Close();
-
-
             signUp.Hide();
             this.Hide();
             LogIn log = new LogIn();
@@ -71,6 +58,34 @@ namespace GrabAViscan.LogIntro
             this.Hide();
 
             MessageBox.Show("Success");
+
+            
+        }
+
+        public void Sign_in_method()
+        {
+            mail.Text = "";
+            passwordTxt.Text = "";
+
+            MySqlConnection conConn = db.connect();
+
+
+            string insertSql = "INSERT INTO grab.accounts (email, password) VALUES (?, ?)";
+            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
+
+
+            insertCmd.Parameters.AddWithValue("@email", email);
+            insertCmd.Parameters.AddWithValue("@password", pass);
+            try
+            {
+                insertCmd.ExecuteNonQuery();
+                conConn.Close();
+            }
+            catch (Exception ex)
+            {
+                this.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
