@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using GrabAViscan.LogIntro;
 using MySql.Data.MySqlClient;
 
 namespace GrabAViscan
@@ -39,26 +40,21 @@ namespace GrabAViscan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SignUpInformation signUpInformation = new SignUpInformation();
+            signUpInformation.Show();
+            signUpInformation.BringToFront();
             
-            string user = emailTxt.Text;
+
+            string email = emailTxt.Text;
             string pass = passwordTxt.Text;
 
-            emailTxt.Text = "";
-            passwordTxt.Text = "";
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
-            MySqlConnection conConn = new MySqlConnection(con);
-            conConn.Open();
-
-            string insertSql = "INSERT INTO grab.accounts (username, password) VALUES (?, ?)";
-            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
-
+            signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt,this);
             
-            insertCmd.Parameters.AddWithValue("@username", user);
-            insertCmd.Parameters.AddWithValue("@password", pass);
+            
+           
+            
+            
 
-            insertCmd.ExecuteNonQuery();
-
-            conConn.Close();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

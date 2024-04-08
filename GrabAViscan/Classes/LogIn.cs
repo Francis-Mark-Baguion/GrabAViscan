@@ -8,5 +8,8 @@ namespace GrabAViscan.Classes
 {
     internal class LogIn
     {
+
     }
+
+     
 }

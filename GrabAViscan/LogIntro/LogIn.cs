@@ -8,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Classes;
 
 namespace GrabAViscan
 {
     public partial class LogIn : Form
     {
+        DatabaseManagement databaseManagement;
         public LogIn()
         {
             InitializeComponent();
+            databaseManagement = new DatabaseManagement();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,17 +60,17 @@ namespace GrabAViscan
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
-            MySqlConnection conConn = new MySqlConnection(con);
-            conConn.Open();
             
-            string username = emailTxt.Text;
+
+
+            MySqlConnection conConn = databaseManagement.connect();
+            string email = emailTxt.Text;
             string password = passwordTxt.Text;
 
             
-            string sql = "SELECT username, password FROM grab.accounts WHERE username=@username AND password=@password";
+            string sql = "SELECT email, password FROM grab.accounts WHERE email=@email AND password=@password";
             MySqlCommand cmd = new MySqlCommand(sql, conConn);
-            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@password", password);
 
             MySqlDataReader reader = cmd.ExecuteReader();
