@@ -24,16 +24,6 @@ namespace GrabAViscan
             InitializeComponent();
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LogIn log = new LogIn();
@@ -41,10 +31,18 @@ namespace GrabAViscan
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void emailTxt_Click(object sender, EventArgs e)
         {
-            
-            
+            emailTxt.Text = "";
+        }
+
+        private void passwordTxt_Click(object sender, EventArgs e)
+        {
+            passwordTxt.Text = "";
+        }
+
+        private void signUp_btn_Click(object sender, EventArgs e)
+        {
 
             string email = emailTxt.Text;
             string pass = passwordTxt.Text;
@@ -58,23 +56,21 @@ namespace GrabAViscan
                 signUpInformation.Sign_in_method();
 
             }
-
-
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void emailTxt_Click(object sender, EventArgs e)
+        private void Close_btn_Click(object sender, EventArgs e)
         {
-            emailTxt.Text = "";
+            this.Close();
         }
 
-        private void passwordTxt_Click(object sender, EventArgs e)
+        private void Minimize_btn_Click(object sender, EventArgs e)
         {
-            passwordTxt.Text = "";
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

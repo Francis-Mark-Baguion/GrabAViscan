@@ -26,7 +26,6 @@ namespace GrabAViscan
         {
             user = db.InitializeUser(email);
             this.email = email;
-            MessageBox.Show(user.User_id + user.Email + user.Username + user.School_id + user.DOB + user.Address);
             this.nameHolder.Text = user.Username;
         }
         private void gunaButton2_Click(object sender, EventArgs e)

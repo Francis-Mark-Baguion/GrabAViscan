@@ -45,7 +45,7 @@ namespace GrabAViscan.Classes
 
             using (MySqlConnection connection = Connect())
             {
-                MessageBox.Show(email);
+                
                 try
                 {
                     using (MySqlCommand command = new MySqlCommand("SELECT * FROM grab.user_information WHERE email = @email", connection))

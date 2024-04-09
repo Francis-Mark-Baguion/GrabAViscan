@@ -37,18 +37,7 @@ namespace GrabAViscan
         {
             user = db.InitializeUser(email);
             this.email = email;
-            MessageBox.Show(user.User_id + user.Email + user.Username + user.School_id + user.DOB + user.Address);
             right.setter(email);
-        }
-
-            private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void feed()
@@ -91,53 +80,6 @@ namespace GrabAViscan
 
         }
 
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-            flow1.Controls.Clear();
-        }
-
-        private void emailTxt_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void gunaButton10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton11_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void gunaLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gunaButton7_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void gunaButton8_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void My_Request(object sender, EventArgs e)
         {
             MyRequest myRequest = new MyRequest();
@@ -153,11 +95,7 @@ namespace GrabAViscan
             flow1.Controls.Add(myRequest);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+      
         private void To_deliver(object sender, EventArgs e)
         {
             ToDeliver deliver = new ToDeliver();  
@@ -191,6 +129,18 @@ namespace GrabAViscan
         private void gunaButton9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
