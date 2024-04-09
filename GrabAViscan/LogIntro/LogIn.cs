@@ -8,15 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Classes;
+using System.Xml.Linq;
 
 namespace GrabAViscan
 {
     public partial class LogIn : Form
     {
+        public DatabaseManagement databaseManagement;
         public LogIn()
         {
             InitializeComponent();
+            databaseManagement = new DatabaseManagement();
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,26 +62,46 @@ namespace GrabAViscan
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
-            MySqlConnection conConn = new MySqlConnection(con);
-            conConn.Open();
-            
-            string username = emailTxt.Text;
-            string password = passwordTxt.Text;
+        { 
 
             
-            string sql = "SELECT username, password FROM grab.accounts WHERE username=@username AND password=@password";
+            
+        }
+
+        
+
+        private void gunaTextBox1_Click(object sender, EventArgs e)
+        {
+            //emailTxt.Text = "";
+        }
+
+        private void passwordTxt_Click(object sender, EventArgs e)
+        {
+            //passwordTxt.Text = "";
+        }
+
+        private void Log_in_Click(object sender, EventArgs e)
+        {
+            string email = emailTxt.Text;
+            string password = passwordTxt.Text;
+
+            MySqlConnection conConn = databaseManagement.Connect();
+
+
+            string sql = "SELECT email, password FROM grab.accounts WHERE email=@email AND password=@password";
             MySqlCommand cmd = new MySqlCommand(sql, conConn);
-            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@password", password);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
+                conConn.Close();
                 MessageBox.Show("Account exists");
                 Home hom = new Home();
+                User user = databaseManagement.InitializeUser(email);
+                hom.setter(email);
                 hom.Show();
                 this.Hide();
             }
@@ -86,18 +112,6 @@ namespace GrabAViscan
 
             reader.Close();
             conConn.Close();
-        }
-
-        
-
-        private void gunaTextBox1_Click(object sender, EventArgs e)
-        {
-            emailTxt.Text = "";
-        }
-
-        private void passwordTxt_Click(object sender, EventArgs e)
-        {
-            passwordTxt.Text = "";
         }
     }
 }

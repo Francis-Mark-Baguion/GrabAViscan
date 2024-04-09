@@ -36,9 +36,9 @@
             this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
             this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.log_in_label = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,12 +89,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Log_in_btn);
             this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.emailTxt);
             this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Controls.Add(this.log_in_label);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(856, 536);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 498);
@@ -152,14 +152,14 @@
             this.linkLabel1.Text = "Sign up";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
-            // flowLayoutPanel1
+            // log_in_label
             // 
-            this.flowLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flowLayoutPanel1.BackgroundImage")));
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(159, 58);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.log_in_label.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("log_in_label.BackgroundImage")));
+            this.log_in_label.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.log_in_label.Location = new System.Drawing.Point(170, 3);
+            this.log_in_label.Name = "log_in_label";
+            this.log_in_label.Size = new System.Drawing.Size(159, 58);
+            this.log_in_label.TabIndex = 0;
             // 
             // label1
             // 
@@ -172,18 +172,28 @@
             this.label1.Text = "Not part of the community yet?";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // button1
+            // Log_in_btn
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(170, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(520, 75);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Log_in_btn.AnimationHoverSpeed = 0.07F;
+            this.Log_in_btn.AnimationSpeed = 0.03F;
+            this.Log_in_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Log_in_btn.BackgroundImage")));
+            this.Log_in_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Log_in_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.BorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Log_in_btn.ForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.Image = null;
+            this.Log_in_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.Log_in_btn.Location = new System.Drawing.Point(170, 330);
+            this.Log_in_btn.Name = "Log_in_btn";
+            this.Log_in_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.OnHoverImage = null;
+            this.Log_in_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Size = new System.Drawing.Size(520, 75);
+            this.Log_in_btn.TabIndex = 8;
+            this.Log_in_btn.Click += new System.EventHandler(this.Log_in_Click);
             // 
             // LogIn
             // 
@@ -211,10 +221,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel log_in_label;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI.WinForms.GunaTextBox passwordTxt;
         private Guna.UI.WinForms.GunaTextBox emailTxt;
+        private Guna.UI.WinForms.GunaButton Log_in_btn;
     }
 }
