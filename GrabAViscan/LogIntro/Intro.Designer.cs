@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Intro));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.signUp_btn = new Guna.UI.WinForms.GunaButton();
+            this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LogIn = new System.Windows.Forms.Button();
-            this.SignUp = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.LOGO = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,15 +64,60 @@
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.LogIn);
-            this.panel1.Controls.Add(this.SignUp);
+            this.panel1.Controls.Add(this.signUp_btn);
+            this.panel1.Controls.Add(this.Log_in_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(853, 533);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 533);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // signUp_btn
+            // 
+            this.signUp_btn.AnimationHoverSpeed = 0.07F;
+            this.signUp_btn.AnimationSpeed = 0.03F;
+            this.signUp_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("signUp_btn.BackgroundImage")));
+            this.signUp_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.signUp_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.signUp_btn.BorderColor = System.Drawing.Color.Black;
+            this.signUp_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.signUp_btn.ForeColor = System.Drawing.Color.White;
+            this.signUp_btn.Image = null;
+            this.signUp_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.signUp_btn.Location = new System.Drawing.Point(181, 296);
+            this.signUp_btn.Name = "signUp_btn";
+            this.signUp_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.signUp_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.signUp_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.signUp_btn.OnHoverImage = null;
+            this.signUp_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.signUp_btn.Size = new System.Drawing.Size(520, 75);
+            this.signUp_btn.TabIndex = 3;
+            this.signUp_btn.Click += new System.EventHandler(this.Sign_up_Click);
+            // 
+            // Log_in_btn
+            // 
+            this.Log_in_btn.AnimationHoverSpeed = 0.07F;
+            this.Log_in_btn.AnimationSpeed = 0.03F;
+            this.Log_in_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Log_in_btn.BackgroundImage")));
+            this.Log_in_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Log_in_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.BorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Log_in_btn.ForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.Image = null;
+            this.Log_in_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.Log_in_btn.Location = new System.Drawing.Point(181, 201);
+            this.Log_in_btn.Name = "Log_in_btn";
+            this.Log_in_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.OnHoverImage = null;
+            this.Log_in_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Size = new System.Drawing.Size(520, 75);
+            this.Log_in_btn.TabIndex = 2;
+            this.Log_in_btn.Click += new System.EventHandler(this.Log_in_Click);
             // 
             // panel2
             // 
@@ -81,53 +126,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 3);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.LOGO);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2561, 533);
             this.panel2.TabIndex = 1;
             // 
-            // LogIn
+            // LOGO
             // 
-            this.LogIn.BackColor = System.Drawing.Color.Transparent;
-            this.LogIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn.BackgroundImage")));
-            this.LogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LogIn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LogIn.FlatAppearance.BorderSize = 0;
-            this.LogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogIn.ForeColor = System.Drawing.Color.White;
-            this.LogIn.Location = new System.Drawing.Point(181, 201);
-            this.LogIn.Name = "LogIn";
-            this.LogIn.Size = new System.Drawing.Size(520, 75);
-            this.LogIn.TabIndex = 0;
-            this.LogIn.UseVisualStyleBackColor = false;
-            this.LogIn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // SignUp
-            // 
-            this.SignUp.BackColor = System.Drawing.Color.Transparent;
-            this.SignUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SignUp.BackgroundImage")));
-            this.SignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SignUp.Cursor = System.Windows.Forms.Cursors.Default;
-            this.SignUp.FlatAppearance.BorderSize = 0;
-            this.SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignUp.ForeColor = System.Drawing.Color.White;
-            this.SignUp.Location = new System.Drawing.Point(181, 301);
-            this.SignUp.Name = "SignUp";
-            this.SignUp.Size = new System.Drawing.Size(520, 75);
-            this.SignUp.TabIndex = 1;
-            this.SignUp.UseVisualStyleBackColor = false;
-            this.SignUp.Click += new System.EventHandler(this.SignUp_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::GrabAViscan.Properties.Resources.GrabAViscan;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(853, 222);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(846, 100);
-            this.panel3.TabIndex = 0;
+            this.LOGO.BackgroundImage = global::GrabAViscan.Properties.Resources.GrabAViscan;
+            this.LOGO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LOGO.Location = new System.Drawing.Point(853, 222);
+            this.LOGO.Name = "LOGO";
+            this.LOGO.Size = new System.Drawing.Size(846, 100);
+            this.LOGO.TabIndex = 0;
             // 
             // Intro
             // 
@@ -151,10 +164,10 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel LOGO;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button LogIn;
-        private System.Windows.Forms.Button SignUp;
+        private Guna.UI.WinForms.GunaButton Log_in_btn;
+        private Guna.UI.WinForms.GunaButton signUp_btn;
     }
 }
 

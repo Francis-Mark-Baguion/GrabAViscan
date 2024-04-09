@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using GrabAViscan.Classes;
 using GrabAViscan.LogIntro;
 using MySql.Data.MySqlClient;
 
@@ -16,6 +17,8 @@ namespace GrabAViscan
 {
     public partial class SignUp : Form
     {
+
+        DatabaseManagement db = new DatabaseManagement();
         public SignUp()
         {
             InitializeComponent();
@@ -40,21 +43,21 @@ namespace GrabAViscan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SignUpInformation signUpInformation = new SignUpInformation();
-            signUpInformation.Show();
-            signUpInformation.BringToFront();
+            
             
 
             string email = emailTxt.Text;
             string pass = passwordTxt.Text;
 
-            signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt,this);
-            signUpInformation.Sign_in_method();
+            if (db.ValidateCredentials(email, pass))
+            {
+                SignUpInformation signUpInformation = new SignUpInformation();
+                signUpInformation.Show();
+                signUpInformation.BringToFront();
+                signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
+                signUpInformation.Sign_in_method();
 
-
-
-
-
+            }
 
 
         }

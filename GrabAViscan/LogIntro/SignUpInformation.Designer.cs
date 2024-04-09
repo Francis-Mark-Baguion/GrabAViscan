@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpInformation));
-            this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.userName = new Guna.UI.WinForms.GunaTextBox();
+            this.school_id = new Guna.UI.WinForms.GunaTextBox();
+            this.Address = new Guna.UI.WinForms.GunaTextBox();
+            this.DOB = new System.Windows.Forms.DateTimePicker();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -41,70 +41,67 @@
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
-            // emailTxt
+            // userName
             // 
-            this.emailTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.emailTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.BorderColor = System.Drawing.Color.Silver;
-            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.emailTxt.Location = new System.Drawing.Point(164, 213);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(0);
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.PasswordChar = '\0';
-            this.emailTxt.Radius = 10;
-            this.emailTxt.Size = new System.Drawing.Size(520, 53);
-            this.emailTxt.TabIndex = 9;
-            this.emailTxt.Text = "Email";
+            this.userName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.userName.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.userName.BorderColor = System.Drawing.Color.Silver;
+            this.userName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.userName.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.userName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.userName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.userName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userName.Location = new System.Drawing.Point(164, 213);
+            this.userName.Margin = new System.Windows.Forms.Padding(0);
+            this.userName.Name = "userName";
+            this.userName.PasswordChar = '\0';
+            this.userName.Radius = 10;
+            this.userName.Size = new System.Drawing.Size(520, 53);
+            this.userName.TabIndex = 9;
             // 
-            // gunaTextBox1
+            // school_id
             // 
-            this.gunaTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(164, 329);
-            this.gunaTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 10;
-            this.gunaTextBox1.Size = new System.Drawing.Size(520, 53);
-            this.gunaTextBox1.TabIndex = 10;
-            this.gunaTextBox1.Text = "Email";
+            this.school_id.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.school_id.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.school_id.BorderColor = System.Drawing.Color.Silver;
+            this.school_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.school_id.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.school_id.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.school_id.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.school_id.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.school_id.Location = new System.Drawing.Point(164, 329);
+            this.school_id.Margin = new System.Windows.Forms.Padding(0);
+            this.school_id.Name = "school_id";
+            this.school_id.PasswordChar = '\0';
+            this.school_id.Radius = 10;
+            this.school_id.Size = new System.Drawing.Size(520, 53);
+            this.school_id.TabIndex = 10;
             // 
-            // gunaTextBox2
+            // Address
             // 
-            this.gunaTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(164, 453);
-            this.gunaTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.Radius = 10;
-            this.gunaTextBox2.Size = new System.Drawing.Size(520, 53);
-            this.gunaTextBox2.TabIndex = 11;
-            this.gunaTextBox2.Text = "Email";
+            this.Address.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Address.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.Address.BorderColor = System.Drawing.Color.Silver;
+            this.Address.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Address.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.Address.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.Address.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.Address.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Address.Location = new System.Drawing.Point(164, 453);
+            this.Address.Margin = new System.Windows.Forms.Padding(0);
+            this.Address.Name = "Address";
+            this.Address.PasswordChar = '\0';
+            this.Address.Radius = 10;
+            this.Address.Size = new System.Drawing.Size(520, 53);
+            this.Address.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // DOB
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 571);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(262, 26);
-            this.dateTimePicker1.TabIndex = 12;
+            this.DOB.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOB.Location = new System.Drawing.Point(164, 571);
+            this.DOB.Name = "DOB";
+            this.DOB.Size = new System.Drawing.Size(262, 26);
+            this.DOB.TabIndex = 12;
             // 
             // gunaLabel1
             // 
@@ -193,10 +190,10 @@
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.gunaTextBox2);
-            this.Controls.Add(this.gunaTextBox1);
-            this.Controls.Add(this.emailTxt);
+            this.Controls.Add(this.DOB);
+            this.Controls.Add(this.Address);
+            this.Controls.Add(this.school_id);
+            this.Controls.Add(this.userName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SignUpInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -209,10 +206,10 @@
 
         #endregion
 
-        private Guna.UI.WinForms.GunaTextBox emailTxt;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Guna.UI.WinForms.GunaTextBox userName;
+        private Guna.UI.WinForms.GunaTextBox school_id;
+        private Guna.UI.WinForms.GunaTextBox Address;
+        private System.Windows.Forms.DateTimePicker DOB;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;

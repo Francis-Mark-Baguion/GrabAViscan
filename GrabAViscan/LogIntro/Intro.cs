@@ -15,34 +15,21 @@ namespace GrabAViscan
         public Intro()
         {
             InitializeComponent();
-            LogIn.FlatStyle = FlatStyle.Flat;
-            LogIn.FlatAppearance.BorderSize = 0;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            LogIn log = new LogIn();
-            log.Show();
-            this.Hide();
            
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Log_in_Click(object sender, EventArgs e)
         {
-
+            LogIn log = new LogIn();
+            log.Show();
+            this.Hide();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SignUp_Click(object sender, EventArgs e)
+        private void Sign_up_Click(object sender, EventArgs e)
         {
             SignUp sign = new SignUp();
             sign.Show();
-            this.Hide();   
+            this.Hide();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rightWing));
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton10 = new Guna.UI.WinForms.GunaButton();
+            this.nameHolder = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -42,7 +42,7 @@
             // 
             // gunaPanel3
             // 
-            this.gunaPanel3.Controls.Add(this.gunaButton10);
+            this.gunaPanel3.Controls.Add(this.nameHolder);
             this.gunaPanel3.Controls.Add(this.gunaButton2);
             this.gunaPanel3.Controls.Add(this.gunaButton1);
             this.gunaPanel3.Controls.Add(this.gunaCirclePictureBox1);
@@ -52,28 +52,29 @@
             this.gunaPanel3.Size = new System.Drawing.Size(652, 235);
             this.gunaPanel3.TabIndex = 3;
             // 
-            // gunaButton10
+            // nameHolder
             // 
-            this.gunaButton10.AnimationHoverSpeed = 0.07F;
-            this.gunaButton10.AnimationSpeed = 0.03F;
-            this.gunaButton10.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.gunaButton10.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton10.ForeColor = System.Drawing.Color.Black;
-            this.gunaButton10.Image = null;
-            this.gunaButton10.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton10.Location = new System.Drawing.Point(218, 32);
-            this.gunaButton10.Name = "gunaButton10";
-            this.gunaButton10.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton10.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton10.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton10.OnHoverImage = null;
-            this.gunaButton10.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton10.Radius = 10;
-            this.gunaButton10.Size = new System.Drawing.Size(308, 55);
-            this.gunaButton10.TabIndex = 1;
-            this.gunaButton10.Text = "Francis Mark Baguion";
-            this.gunaButton10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nameHolder.AnimationHoverSpeed = 0.07F;
+            this.nameHolder.AnimationSpeed = 0.03F;
+            this.nameHolder.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.nameHolder.BorderColor = System.Drawing.Color.Black;
+            this.nameHolder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameHolder.ForeColor = System.Drawing.Color.Black;
+            this.nameHolder.Image = null;
+            this.nameHolder.ImageSize = new System.Drawing.Size(20, 20);
+            this.nameHolder.Location = new System.Drawing.Point(218, 32);
+            this.nameHolder.Name = "nameHolder";
+            this.nameHolder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.nameHolder.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.nameHolder.OnHoverForeColor = System.Drawing.Color.White;
+            this.nameHolder.OnHoverImage = null;
+            this.nameHolder.OnPressedColor = System.Drawing.Color.Black;
+            this.nameHolder.Radius = 10;
+            this.nameHolder.Size = new System.Drawing.Size(308, 55);
+            this.nameHolder.TabIndex = 1;
+            this.nameHolder.Text = "Francis Mark Baguion";
+            this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nameHolder.Click += new System.EventHandler(this.gunaButton10_Click);
             // 
             // gunaButton2
             // 
@@ -173,7 +174,7 @@
 
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
-        private Guna.UI.WinForms.GunaButton gunaButton10;
+        private Guna.UI.WinForms.GunaButton nameHolder;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;

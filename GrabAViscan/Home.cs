@@ -10,23 +10,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Feed;
+using GrabAViscan.Classes;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GrabAViscan
 {
     public partial class Home : Form
     {
+        DatabaseManagement db = new DatabaseManagement();
+        public User user;
         rightWing right;
+        private string email;
         public Home()
         {
             InitializeComponent();
             right = new rightWing();
+            
             RightWing.Controls.Add(right);
             feed();
-            
-            
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        
+        public void setter(string email)
+        {
+            user = db.InitializeUser(email);
+            this.email = email;
+            MessageBox.Show(user.User_id + user.Email + user.Username + user.School_id + user.DOB + user.Address);
+            right.setter(email);
+        }
+
+            private void Home_Load(object sender, EventArgs e)
         {
 
         }
