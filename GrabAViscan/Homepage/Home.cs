@@ -38,6 +38,7 @@ namespace GrabAViscan
             user = db.InitializeUser(email);
             this.email = email;
             right.setter(email);
+
         }
 
         private void feed()

@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\Credentials.cs" />
     <Compile Include="Classes\DatabaseManagement.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
@@ -156,6 +157,12 @@
     </Compile>
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ErrorMessage.Designer.cs">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Popup\Notification.cs">
       <SubType>Form</SubType>
@@ -218,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ErrorMessage.resx">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\Notification.resx">
       <DependentUpon>Notification.cs</DependentUpon>

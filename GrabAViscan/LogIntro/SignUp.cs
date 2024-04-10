@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using GrabAViscan.Classes;
 using GrabAViscan.LogIntro;
+using GrabAViscan.Popup;
 using MySql.Data.MySqlClient;
 
 namespace GrabAViscan
@@ -46,8 +47,11 @@ namespace GrabAViscan
 
             string email = emailTxt.Text;
             string pass = passwordTxt.Text;
+            Credentials credentials = new Credentials();
+            credentials.email = email;
+            credentials.password = pass;
 
-            if (db.ValidateCredentials(email, pass))
+            if (credentials.IsValid()&& db.ValidateCredentials(email, pass))
             {
                 SignUpInformation signUpInformation = new SignUpInformation();
                 signUpInformation.Show();
@@ -55,6 +59,10 @@ namespace GrabAViscan
                 signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
                 signUpInformation.Sign_in_method();
 
+            }
+            else
+            {
+                ErrorMessage error = new ErrorMessage("Invalid Credentials");
             }
         }
 

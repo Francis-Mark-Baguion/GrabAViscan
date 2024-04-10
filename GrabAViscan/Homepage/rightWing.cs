@@ -32,6 +32,7 @@ namespace GrabAViscan
         public void setter(string email)
         {
             user = db.InitializeUser(email);
+            post.setter(email);
             this.email = email;
             this.nameHolder.Text = user.Username;
         }

@@ -16,21 +16,20 @@ namespace GrabAViscan.Classes
         public int User_id { get; set; }
 
         public string Requested {  get; set; }
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
         public int Fee { get; set; }
         public string Description { get; set; }
         public DateTime Date_posted  { get; set;}
         public DateTime Deadline { get;}
-        public Category Category { get; set; }
-        public Byte[] image { get; set; }
+        public string Category { get; set; }
+        public byte[] image { get; set; }
         public string Pick_up { get; set; }
-        public Location Near_pickUp { get; set; }
+        public string Near_pickUp { get; set; }
         public string Delivery_location { get; set; }
-        public Location Near_deliveryLocation { get; set; }
-        
+        public string Near_deliveryLocation { get; set; }
         public int Available { get; set; }
-        public Posting(int Post_id, int User_id, string Requested,int Quantity, int Fee,string Description, DateTime Date_posted, DateTime Deadline, Category category,
-            Byte[] image, string Pick_up, Location Near_puckUp, string Delivery_location, Location Near_deliveryLocation, int Available)
+        public Posting(int Post_id, int User_id, string Requested,string Quantity, int Fee,string Description, DateTime Date_posted, DateTime Deadline, string category,
+            byte[] image, string Pick_up, string Near_pickUp, string Delivery_location, string Near_deliveryLocation, int Available)
 
         {
             this.Post_id = Post_id;
@@ -49,6 +48,8 @@ namespace GrabAViscan.Classes
             this.Near_deliveryLocation = Near_deliveryLocation;
             this.Available = Available;
         }
+
+        public Posting() { }
 
 
         
