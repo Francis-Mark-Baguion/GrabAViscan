@@ -31,26 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rightWing));
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.nameHolder = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.Notif_btn = new Guna.UI.WinForms.GunaButton();
+            this.EditPost_btn = new Guna.UI.WinForms.GunaButton();
+            this.ProfilePic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.gunaPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel3
             // 
             this.gunaPanel3.Controls.Add(this.nameHolder);
-            this.gunaPanel3.Controls.Add(this.gunaButton2);
-            this.gunaPanel3.Controls.Add(this.gunaButton1);
-            this.gunaPanel3.Controls.Add(this.gunaCirclePictureBox1);
+            this.gunaPanel3.Controls.Add(this.Notif_btn);
+            this.gunaPanel3.Controls.Add(this.EditPost_btn);
+            this.gunaPanel3.Controls.Add(this.ProfilePic);
             this.gunaPanel3.Controls.Add(this.label1);
             this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(652, 235);
             this.gunaPanel3.TabIndex = 3;
+            
             // 
             // nameHolder
             // 
@@ -74,66 +75,68 @@
             this.nameHolder.TabIndex = 1;
             this.nameHolder.Text = "Francis Mark Baguion";
             this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nameHolder.Click += new System.EventHandler(this.gunaButton10_Click);
+            
             // 
-            // gunaButton2
+            // Notif_btn
             // 
-            this.gunaButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaButton2.AnimationSpeed = 0.03F;
-            this.gunaButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gunaButton2.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
-            this.gunaButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaButton2.Location = new System.Drawing.Point(139, 27);
-            this.gunaButton2.Name = "gunaButton2";
-            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton2.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton2.OnHoverImage")));
-            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton2.Radius = 10;
-            this.gunaButton2.Size = new System.Drawing.Size(73, 71);
-            this.gunaButton2.TabIndex = 15;
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            this.Notif_btn.AnimationHoverSpeed = 0.07F;
+            this.Notif_btn.AnimationSpeed = 0.03F;
+            this.Notif_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Notif_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Notif_btn.BorderColor = System.Drawing.Color.Black;
+            this.Notif_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Notif_btn.ForeColor = System.Drawing.Color.White;
+            this.Notif_btn.Image = ((System.Drawing.Image)(resources.GetObject("Notif_btn.Image")));
+            this.Notif_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Notif_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.Notif_btn.Location = new System.Drawing.Point(139, 27);
+            this.Notif_btn.Name = "Notif_btn";
+            this.Notif_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.Notif_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Notif_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Notif_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Notif_btn.OnHoverImage")));
+            this.Notif_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Notif_btn.Radius = 10;
+            this.Notif_btn.Size = new System.Drawing.Size(73, 71);
+            this.Notif_btn.TabIndex = 15;
+            this.Notif_btn.Click += new System.EventHandler(this.Notification_click);
             // 
-            // gunaButton1
+            // EditPost_btn
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaButton1.Location = new System.Drawing.Point(51, 27);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.OnHoverImage")));
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 10;
-            this.gunaButton1.Size = new System.Drawing.Size(73, 71);
-            this.gunaButton1.TabIndex = 14;
+            this.EditPost_btn.AnimationHoverSpeed = 0.07F;
+            this.EditPost_btn.AnimationSpeed = 0.03F;
+            this.EditPost_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.EditPost_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.EditPost_btn.BorderColor = System.Drawing.Color.Black;
+            this.EditPost_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditPost_btn.ForeColor = System.Drawing.Color.White;
+            this.EditPost_btn.Image = ((System.Drawing.Image)(resources.GetObject("EditPost_btn.Image")));
+            this.EditPost_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.EditPost_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.EditPost_btn.Location = new System.Drawing.Point(51, 27);
+            this.EditPost_btn.Name = "EditPost_btn";
+            this.EditPost_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.EditPost_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.EditPost_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.EditPost_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("EditPost_btn.OnHoverImage")));
+            this.EditPost_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.EditPost_btn.Radius = 10;
+            this.EditPost_btn.Size = new System.Drawing.Size(73, 71);
+            this.EditPost_btn.TabIndex = 14;
+            this.EditPost_btn.Click += new System.EventHandler(this.EditPost_btn_Click);
             // 
-            // gunaCirclePictureBox1
+            // ProfilePic
             // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(542, 22);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(76, 76);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 8;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            this.ProfilePic.BaseColor = System.Drawing.Color.White;
+            this.ProfilePic.Image = ((System.Drawing.Image)(resources.GetObject("ProfilePic.Image")));
+            this.ProfilePic.Location = new System.Drawing.Point(542, 22);
+            this.ProfilePic.Name = "ProfilePic";
+            this.ProfilePic.Size = new System.Drawing.Size(76, 76);
+            this.ProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProfilePic.TabIndex = 8;
+            this.ProfilePic.TabStop = false;
+            this.ProfilePic.UseTransfarantBackground = false;
+            
             // 
             // label1
             // 
@@ -146,6 +149,7 @@
             this.label1.Size = new System.Drawing.Size(615, 34);
             this.label1.TabIndex = 9;
             this.label1.Text = "______________________________";
+            
             // 
             // mySqlCommand1
             // 
@@ -162,10 +166,11 @@
             this.Controls.Add(this.gunaPanel3);
             this.Name = "rightWing";
             this.Size = new System.Drawing.Size(640, 1498);
-            this.Load += new System.EventHandler(this.rightWing_Load);
+            
+            
             this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,11 +178,11 @@
         #endregion
 
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
+        private Guna.UI.WinForms.GunaCirclePictureBox ProfilePic;
         private Guna.UI.WinForms.GunaButton nameHolder;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaButton gunaButton2;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton Notif_btn;
+        private Guna.UI.WinForms.GunaButton EditPost_btn;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

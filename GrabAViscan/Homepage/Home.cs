@@ -135,6 +135,8 @@ namespace GrabAViscan
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
+            right.post.Close();
+            right.notif.Close();
             this.Close();
         }
 

@@ -101,8 +101,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\DatabaseManagement.cs" />
+    <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
+    <Compile Include="Classes\Posting.cs" />
     <Compile Include="Classes\Request.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserContext.cs" />
@@ -154,6 +157,24 @@
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Notifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Popup\Notifications.Designer.cs">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogIntro\SignUp.cs">
@@ -197,6 +218,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Notifications.resx">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

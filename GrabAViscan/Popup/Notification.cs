@@ -8,16 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrabAViscan
+namespace GrabAViscan.Popup
 {
-    public partial class HomeFeed : UserControl
+    public partial class Notification : Form
     {
-        public HomeFeed(string name)
+        public Notification()
         {
             InitializeComponent();
-            this.Name_Link.Text = name;
-            
         }
-
     }
 }
