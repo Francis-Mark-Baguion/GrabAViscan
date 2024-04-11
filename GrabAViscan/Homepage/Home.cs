@@ -33,7 +33,7 @@ namespace GrabAViscan
             feed();
         }
 
-        
+         
         public void setter(string email)
         {
             user = db.InitializeUser(email);

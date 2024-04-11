@@ -65,7 +65,7 @@ namespace GrabAViscan.Classes
                             User user = null;
                             while (reader.Read())
                             {
-                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"] , (byte[])reader["Profile_pic"], (string)reader["Phone_num"], (string)reader["Bio"]);
+                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"] , (byte[])reader["Profile_pic"], (string)reader["PhoneNum"], (string)reader["Bio"]);
                             }
 
 
@@ -458,11 +458,53 @@ namespace GrabAViscan.Classes
         }
 
 
-        public User getUserById(int id) 
-        {
-            return null;
-        }
 
+
+        public User getUserById(int id)
+        {
+            using (MySqlConnection conConn = Connect()) // Use a using block for connection
+            {
+                try
+                {
+                    string sql = "SELECT * FROM grab.user_information WHERE user_id = @id";
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                    // Add parameter to prevent SQL injection
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            byte[] profilePic = reader["Profile_pic"] != DBNull.Value ? (byte[])reader["Profile_pic"] : null;
+
+                            // Create a User object with data from the database row
+                            return new User(
+                                (int)reader["user_id"],
+                                (string)reader["email"],
+                                (string)reader["Username"],
+                                (int)reader["School_id"],
+                                (DateTime)reader["DateOfBirth"],
+                                (string)reader["Address"],
+                                profilePic,
+                                (string)reader["PhoneNum"],
+                                (string)reader["Bio"]
+                            );
+                        }
+                        else
+                        {
+                            // User not found, consider throwing a custom exception
+                            return null; // Or throw new UserNotFoundException("User with ID " + id + " not found");
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("An error occurred (getUserById): " + ex.Message);
+                    return null; // Or handle the error differently
+                }
+            }
+        }
 
     }
 
