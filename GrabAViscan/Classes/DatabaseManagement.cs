@@ -65,7 +65,7 @@ namespace GrabAViscan.Classes
                             User user = null;
                             while (reader.Read())
                             {
-                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"]);
+                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"] , (byte[])reader["Profile_pic"], (string)reader["Phone_num"], (string)reader["Bio"]);
                             }
 
 
@@ -159,7 +159,7 @@ namespace GrabAViscan.Classes
         {
             using (MySqlConnection conConn = this.Connect())
             {
-                string sql = "SELECT account_id FROM grab.accounts WHERE email=@email AND password=@password";
+                string sql = "SELECT * FROM grab.accounts WHERE email=@email AND password=@password";
                 MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
                 cmd.Parameters.AddWithValue("@email", email);
@@ -181,37 +181,45 @@ namespace GrabAViscan.Classes
         }
 
 
-        public void Information_upload(string email, string pass, string username, int school_id, DateTime dob, string address)
+        public void Information_upload(User user)
         {
-            MySqlConnection conConn = Connect();
-            int user_id = get_id(email, pass);
-
-            string insertSql = "INSERT INTO grab.user_information (user_id,Username,School_id,DateOfBirth,Address,email) VALUES (?,?,?,?,?,?)";
-            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
-
-
-
-            insertCmd.Parameters.AddWithValue("@user_id", user_id);
-            insertCmd.Parameters.AddWithValue("@Username", username);
-            insertCmd.Parameters.AddWithValue("@School_id", school_id);
-            insertCmd.Parameters.AddWithValue("@DateOfBirth", dob);
-            insertCmd.Parameters.AddWithValue("@Address", address);
-            insertCmd.Parameters.AddWithValue("@email", email);
-
-            try
+            using (MySqlConnection conConn = Connect()) // Use a using block for connection
             {
-                insertCmd.ExecuteNonQuery();
+                try
+                {
+                    string insertSql = "INSERT INTO grab.user_information (user_id,Username, School_id, DateOfBirth, Address, email, Profile_pic, PhoneNum, Bio) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+                    MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
 
-                conConn.Close();
+                    // Use parameters to prevent SQL injection vulnerabilities
+                    insertCmd.Parameters.AddWithValue("@user_id", user.User_id);
+                    insertCmd.Parameters.AddWithValue("@Username", user.Username);
+                    insertCmd.Parameters.AddWithValue("@School_id", user.School_id);
+                    insertCmd.Parameters.AddWithValue("@DateOfBirth", user.DOB);
+                    insertCmd.Parameters.AddWithValue("@Address", user.Address);
+                    insertCmd.Parameters.AddWithValue("@email", user.Email); // Assuming your User class has an Email property
+                    if (user.Profile_pic != null && user.Profile_pic.Length > 0)
+                    {
+                        insertCmd.Parameters.AddWithValue("@Profile_pic", user.Profile_pic);
+                    }
+                    else
+                    {
+                        insertCmd.Parameters.AddWithValue("@Profile_pic", DBNull.Value); // Set to null if no image
+                    }
+                    
 
-            }
-            catch (Exception ex)
-            {
+                    insertCmd.Parameters.AddWithValue("@PhoneNum", user.PhoneNumber); // Assuming your User class has a Phone property
+                    insertCmd.Parameters.AddWithValue("@Bio", user.Bio); // Assuming your User class has a Bio 
+                    
+                    MessageBox.Show("Here at info upload");
+                    insertCmd.ExecuteNonQuery();
 
-                MessageBox.Show(ex.Message);
-                conConn.Close();
-
-
+                }
+                catch (MySqlException ex)
+                {
+                    // Handle database-related exceptions (e.g., connection errors, duplicate entries)
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    // Consider showing a more user-friendly error message
+                }
             }
         }
 
