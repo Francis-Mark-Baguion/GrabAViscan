@@ -282,7 +282,7 @@ namespace GrabAViscan.Classes
                     conConn.Open();
 
                     // Assuming LocationName uniquely identifies a location in your table
-                    string sql = "SELECT Location_id FROM grab.location WHERE LocationName = @LocationName";
+                    string sql = "SELECT * FROM grab.location WHERE LocationName = @LocationName";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
                     cmd.Parameters.AddWithValue("@LocationName", location);
@@ -291,7 +291,7 @@ namespace GrabAViscan.Classes
                     {
                         if (reader.Read())
                         {
-                            return reader.GetInt32("Location_id");
+                            return reader.GetInt32("idLocation");
                         }
                         else
                         {
@@ -390,6 +390,70 @@ namespace GrabAViscan.Classes
         }
 
 
+
+
+
+
+
+
+        public List<Posting> GetAvailablePosts()
+        {
+            List<Posting> posts = new List<Posting>();
+
+            using (MySqlConnection conConn = new MySqlConnection("server=127.0.0.1;uid=root;pwd=Testing123;database=grab"))
+            {
+                try
+                {
+                    conConn.Open();
+
+                    // Get only posts where isAvailable = 0
+                    string sql = "SELECT * FROM grab.post WHERE isAvailable = 0";
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.HasRows && reader.Read())
+                        {
+                            Posting post = new Posting(
+                                Convert.ToInt32(reader["Post_id"]),
+                                Convert.ToInt32(reader["User_id"]),
+                                reader["Requested"].ToString(),
+                                reader["Quantity"].ToString(),
+                                Convert.ToInt32(reader["Fee"]),
+                                reader["Description"].ToString(),
+                                Convert.ToDateTime(reader["Date_posted"]),
+                                Convert.ToDateTime(reader["Deadline"]),
+                                reader["Category"].ToString(), // Assuming Category is stored as a string
+
+                                // Handle potential null value for Image
+                                reader["Image"] != DBNull.Value ? (byte[])reader["Image"] : null,
+
+                                reader["Pick_location"].ToString(), // Assuming Pick_location is a string property
+                                reader["Near_pickUp_id"].ToString(),
+                                reader["Delivery_location"].ToString(),
+                                reader["Near_delivery_id"].ToString(),
+                                Convert.ToInt32(reader["isAvailable"])
+                            );
+
+                            posts.Add(post);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    // Handle database-related exceptions
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+            }
+
+            return posts;
+        }
+
+
+        public User getUserById(int id) 
+        {
+            return null;
+        }
 
 
     }

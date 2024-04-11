@@ -14,6 +14,7 @@ using GrabAViscan.Classes;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan
 {
@@ -44,24 +45,22 @@ namespace GrabAViscan
         private void feed()
         {
             flow1.Controls.Clear();
-            string con = "server=127.0.0.1;uid=root;pwd=Testing123;database=grab";
-            MySqlConnection conConn = new MySqlConnection(con);
-            conConn.Open();
-            string sql = "SELECT * FROM grab.accounts;";
-            MySqlCommand cmd = new MySqlCommand(sql, conConn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+
+            // Get available posts from the database
+            List<Posting> posts = db.GetAvailablePosts();
+
+            // Loop through each post
+            foreach (Posting post in posts)
             {
+                // Create a HomeFeed object with the current post
+                HomeFeed home = new HomeFeed(post);
 
-                int ctr = 0;
-                string name = (string)reader["email"];
-
-                HomeFeed home = new HomeFeed(name);
-                Buffers buff = new Buffers();
+                // Add the HomeFeed object to the flowLayout panel
                 flow1.Controls.Add(home);
+
+                // Optionally, add a buffer (spacer) between posts
+                Buffers buff = new Buffers();
                 flow1.Controls.Add(buff);
-
-
             }
         }
 

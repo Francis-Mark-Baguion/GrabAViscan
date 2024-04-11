@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Classes;
 
 namespace GrabAViscan
 {
     public partial class HomeFeed : UserControl
     {
-        public HomeFeed(string name)
+        Posting post;
+        public HomeFeed(Posting post)
         {
             InitializeComponent();
-            this.Name_Link.Text = name;
-            
+            this.post = post; 
+
         }
+
 
     }
 }

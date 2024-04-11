@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
 using System.Xml.Linq;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan
 {
@@ -58,12 +59,13 @@ namespace GrabAViscan
             if (reader.Read())
             {
                 conConn.Close();
-                MessageBox.Show("Account exists");
+                
                 Home hom = new Home();
                 User user = databaseManagement.InitializeUser(email);
                 hom.setter(email);
                 hom.Show();
                 this.Hide();
+                ErrorMessage error = new ErrorMessage("Log In Successful");
             }
             else
             {

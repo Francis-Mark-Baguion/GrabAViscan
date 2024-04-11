@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan.LogIntro
 {
@@ -67,7 +68,8 @@ namespace GrabAViscan.LogIntro
                 LogIn log = new LogIn();
                 log.Show();
                 this.Hide();
-                MessageBox.Show("success");
+                ErrorMessage error = new ErrorMessage("Account Created");
+                
             }
             
 

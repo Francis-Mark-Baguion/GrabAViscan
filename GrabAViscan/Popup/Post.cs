@@ -30,11 +30,11 @@ namespace GrabAViscan.Popup
             categoryCombo.DisplayMember = "Name";
 
             pickNearCombo.DataSource = db.locations;
-            pickNearCombo.ValueMember = "Location_id";
+            pickNearCombo.ValueMember = "LocationName";
             pickNearCombo.DisplayMember = "LocationName";
             
             deliverNearCombo.DataSource = db.CopyLocationData(db.locations);
-            deliverNearCombo.ValueMember = "Location_id";
+            deliverNearCombo.ValueMember = "LocationName";
             deliverNearCombo.DisplayMember = "LocationName";
 
 
