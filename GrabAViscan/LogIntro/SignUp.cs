@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using GrabAViscan.Classes;
 using GrabAViscan.LogIntro;
+using GrabAViscan.Popup;
 using MySql.Data.MySqlClient;
 
 namespace GrabAViscan
@@ -24,47 +25,11 @@ namespace GrabAViscan
             InitializeComponent();
         }
 
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LogIn log = new LogIn();
             log.Show();
             this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            
-
-            string email = emailTxt.Text;
-            string pass = passwordTxt.Text;
-
-            if (db.ValidateCredentials(email, pass))
-            {
-                SignUpInformation signUpInformation = new SignUpInformation();
-                signUpInformation.Show();
-                signUpInformation.BringToFront();
-                signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
-                signUpInformation.Sign_in_method();
-
-            }
-
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void emailTxt_Click(object sender, EventArgs e)
@@ -75,6 +40,45 @@ namespace GrabAViscan
         private void passwordTxt_Click(object sender, EventArgs e)
         {
             passwordTxt.Text = "";
+        }
+
+        private void signUp_btn_Click(object sender, EventArgs e)
+        {
+
+            string email = emailTxt.Text;
+            string pass = passwordTxt.Text;
+            Credentials credentials = new Credentials();
+            credentials.email = email;
+            credentials.password = pass;
+
+            if (credentials.IsValid()&& db.ValidateCredentials(email, pass))
+            {
+                SignUpInformation signUpInformation = new SignUpInformation();
+                signUpInformation.Show();
+                signUpInformation.BringToFront();
+                signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
+                signUpInformation.Sign_in_method();
+
+            }
+            else
+            {
+                ErrorMessage error = new ErrorMessage("Invalid Credentials");
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

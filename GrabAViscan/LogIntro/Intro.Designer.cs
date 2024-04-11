@@ -35,9 +35,13 @@
             this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LOGO = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
+            this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -126,6 +130,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 3);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.LOGO);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -142,6 +147,61 @@
             this.LOGO.Size = new System.Drawing.Size(846, 100);
             this.LOGO.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Minimize_btn);
+            this.panel3.Controls.Add(this.Close_btn);
+            this.panel3.Location = new System.Drawing.Point(2358, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 99);
+            this.panel3.TabIndex = 1;
+            // 
+            // Minimize_btn
+            // 
+            this.Minimize_btn.AnimationHoverSpeed = 0.07F;
+            this.Minimize_btn.AnimationSpeed = 0.03F;
+            this.Minimize_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Minimize_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Minimize_btn.BorderColor = System.Drawing.Color.Black;
+            this.Minimize_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Minimize_btn.ForeColor = System.Drawing.Color.White;
+            this.Minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.Image")));
+            this.Minimize_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Minimize_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Minimize_btn.Location = new System.Drawing.Point(13, 15);
+            this.Minimize_btn.Name = "Minimize_btn";
+            this.Minimize_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Minimize_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Minimize_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Minimize_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.OnHoverImage")));
+            this.Minimize_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Minimize_btn.Size = new System.Drawing.Size(73, 71);
+            this.Minimize_btn.TabIndex = 16;
+            this.Minimize_btn.Click += new System.EventHandler(this.Minimize_btn_Click);
+            // 
+            // Close_btn
+            // 
+            this.Close_btn.AnimationHoverSpeed = 0.07F;
+            this.Close_btn.AnimationSpeed = 0.03F;
+            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Close_btn.BorderColor = System.Drawing.Color.Black;
+            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Close_btn.ForeColor = System.Drawing.Color.White;
+            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
+            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Close_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Close_btn.Location = new System.Drawing.Point(114, 15);
+            this.Close_btn.Name = "Close_btn";
+            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
+            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Close_btn.Size = new System.Drawing.Size(73, 71);
+            this.Close_btn.TabIndex = 15;
+            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            // 
             // Intro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -156,6 +216,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +229,9 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton Log_in_btn;
         private Guna.UI.WinForms.GunaButton signUp_btn;
+        private System.Windows.Forms.Panel panel3;
+        private Guna.UI.WinForms.GunaButton Minimize_btn;
+        private Guna.UI.WinForms.GunaButton Close_btn;
     }
 }
 

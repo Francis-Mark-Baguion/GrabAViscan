@@ -33,15 +33,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
             this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.log_in_label = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
+            this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -68,7 +74,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2560, 1600);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -77,6 +82,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -99,6 +105,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 498);
             this.panel2.TabIndex = 0;
+            // 
+            // Log_in_btn
+            // 
+            this.Log_in_btn.AnimationHoverSpeed = 0.07F;
+            this.Log_in_btn.AnimationSpeed = 0.03F;
+            this.Log_in_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Log_in_btn.BackgroundImage")));
+            this.Log_in_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Log_in_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.BorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Log_in_btn.ForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.Image = null;
+            this.Log_in_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.Log_in_btn.Location = new System.Drawing.Point(170, 330);
+            this.Log_in_btn.Name = "Log_in_btn";
+            this.Log_in_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.Log_in_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Log_in_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Log_in_btn.OnHoverImage = null;
+            this.Log_in_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Log_in_btn.Size = new System.Drawing.Size(520, 75);
+            this.Log_in_btn.TabIndex = 8;
+            this.Log_in_btn.Click += new System.EventHandler(this.Log_in_Click);
             // 
             // passwordTxt
             // 
@@ -170,30 +199,69 @@
             this.label1.Size = new System.Drawing.Size(288, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Not part of the community yet?";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // Log_in_btn
+            // panel3
             // 
-            this.Log_in_btn.AnimationHoverSpeed = 0.07F;
-            this.Log_in_btn.AnimationSpeed = 0.03F;
-            this.Log_in_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Log_in_btn.BackgroundImage")));
-            this.Log_in_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Log_in_btn.BaseColor = System.Drawing.Color.Transparent;
-            this.Log_in_btn.BorderColor = System.Drawing.Color.Black;
-            this.Log_in_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Log_in_btn.ForeColor = System.Drawing.Color.White;
-            this.Log_in_btn.Image = null;
-            this.Log_in_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.Log_in_btn.Location = new System.Drawing.Point(170, 330);
-            this.Log_in_btn.Name = "Log_in_btn";
-            this.Log_in_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.Log_in_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Log_in_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Log_in_btn.OnHoverImage = null;
-            this.Log_in_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Log_in_btn.Size = new System.Drawing.Size(520, 75);
-            this.Log_in_btn.TabIndex = 8;
-            this.Log_in_btn.Click += new System.EventHandler(this.Log_in_Click);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(1709, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(848, 527);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Minimize_btn);
+            this.panel4.Controls.Add(this.Close_btn);
+            this.panel4.Location = new System.Drawing.Point(648, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 99);
+            this.panel4.TabIndex = 2;
+            // 
+            // Minimize_btn
+            // 
+            this.Minimize_btn.AnimationHoverSpeed = 0.07F;
+            this.Minimize_btn.AnimationSpeed = 0.03F;
+            this.Minimize_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Minimize_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Minimize_btn.BorderColor = System.Drawing.Color.Black;
+            this.Minimize_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Minimize_btn.ForeColor = System.Drawing.Color.White;
+            this.Minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.Image")));
+            this.Minimize_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Minimize_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Minimize_btn.Location = new System.Drawing.Point(13, 15);
+            this.Minimize_btn.Name = "Minimize_btn";
+            this.Minimize_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Minimize_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Minimize_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Minimize_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.OnHoverImage")));
+            this.Minimize_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Minimize_btn.Size = new System.Drawing.Size(73, 71);
+            this.Minimize_btn.TabIndex = 16;
+            this.Minimize_btn.Click += new System.EventHandler(this.Minimize_btn_Click);
+            // 
+            // Close_btn
+            // 
+            this.Close_btn.AnimationHoverSpeed = 0.07F;
+            this.Close_btn.AnimationSpeed = 0.03F;
+            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Close_btn.BorderColor = System.Drawing.Color.Black;
+            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Close_btn.ForeColor = System.Drawing.Color.White;
+            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
+            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Close_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Close_btn.Location = new System.Drawing.Point(114, 15);
+            this.Close_btn.Name = "Close_btn";
+            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
+            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Close_btn.Size = new System.Drawing.Size(73, 71);
+            this.Close_btn.TabIndex = 15;
+            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
             // LogIn
             // 
@@ -210,6 +278,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,5 +296,9 @@
         private Guna.UI.WinForms.GunaTextBox passwordTxt;
         private Guna.UI.WinForms.GunaTextBox emailTxt;
         private Guna.UI.WinForms.GunaButton Log_in_btn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI.WinForms.GunaButton Minimize_btn;
+        private Guna.UI.WinForms.GunaButton Close_btn;
     }
 }

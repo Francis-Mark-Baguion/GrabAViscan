@@ -101,8 +101,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Category.cs" />
+    <Compile Include="Classes\Credentials.cs" />
     <Compile Include="Classes\DatabaseManagement.cs" />
+    <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
+    <Compile Include="Classes\Posting.cs" />
     <Compile Include="Classes\Request.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserContext.cs" />
@@ -112,16 +116,16 @@
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
     </Compile>
-    <Compile Include="History.cs">
+    <Compile Include="Homepage\History.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="History.Designer.cs">
+    <Compile Include="Homepage\History.Designer.cs">
       <DependentUpon>History.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Homepage\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="Homepage\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Feed\HomeFeed.cs">
@@ -148,11 +152,35 @@
     <Compile Include="LogIntro\SignUpInformation.Designer.cs">
       <DependentUpon>SignUpInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyRequest.cs">
+    <Compile Include="Homepage\MyRequest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyRequest.Designer.cs">
+    <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ErrorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ErrorMessage.Designer.cs">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Notifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Popup\Notifications.Designer.cs">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -162,25 +190,25 @@
     <Compile Include="LogIntro\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="rightWing.cs">
+    <Compile Include="Homepage\rightWing.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="rightWing.Designer.cs">
+    <Compile Include="Homepage\rightWing.Designer.cs">
       <DependentUpon>rightWing.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToDeliver.cs">
+    <Compile Include="Homepage\ToDeliver.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ToDeliver.Designer.cs">
+    <Compile Include="Homepage\ToDeliver.Designer.cs">
       <DependentUpon>ToDeliver.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="History.resx">
+    <EmbeddedResource Include="Homepage\History.resx">
       <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="Homepage\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\HomeFeed.resx">
@@ -195,8 +223,20 @@
     <EmbeddedResource Include="LogIntro\SignUpInformation.resx">
       <DependentUpon>SignUpInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyRequest.resx">
+    <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ErrorMessage.resx">
+      <DependentUpon>ErrorMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Notifications.resx">
+      <DependentUpon>Notifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,10 +251,10 @@
     <EmbeddedResource Include="LogIntro\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rightWing.resx">
+    <EmbeddedResource Include="Homepage\rightWing.resx">
       <DependentUpon>rightWing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToDeliver.resx">
+    <EmbeddedResource Include="Homepage\ToDeliver.resx">
       <DependentUpon>ToDeliver.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

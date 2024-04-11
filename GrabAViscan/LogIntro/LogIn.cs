@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
 using System.Xml.Linq;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan
 {
@@ -22,38 +23,6 @@ namespace GrabAViscan
             databaseManagement = new DatabaseManagement();
         }
 
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SignUp sign = new SignUp();
@@ -61,23 +30,15 @@ namespace GrabAViscan
             this.Hide();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        { 
-
-            
-            
-        }
-
-        
 
         private void gunaTextBox1_Click(object sender, EventArgs e)
         {
-            //emailTxt.Text = "";
+            emailTxt.Text = "";
         }
 
         private void passwordTxt_Click(object sender, EventArgs e)
         {
-            //passwordTxt.Text = "";
+            passwordTxt.Text = "";
         }
 
         private void Log_in_Click(object sender, EventArgs e)
@@ -98,12 +59,13 @@ namespace GrabAViscan
             if (reader.Read())
             {
                 conConn.Close();
-                MessageBox.Show("Account exists");
+                
                 Home hom = new Home();
                 User user = databaseManagement.InitializeUser(email);
                 hom.setter(email);
                 hom.Show();
                 this.Hide();
+                ErrorMessage error = new ErrorMessage("Log In Successful");
             }
             else
             {
@@ -112,6 +74,16 @@ namespace GrabAViscan
 
             reader.Close();
             conConn.Close();
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -31,5 +31,15 @@ namespace GrabAViscan
             sign.Show();
             this.Hide();
         }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
