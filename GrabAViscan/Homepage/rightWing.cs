@@ -24,24 +24,24 @@ namespace GrabAViscan
         private string email;
         bool flagnotif = false;
         bool flagpost = false;
-        //Home form = new Home();
+        Home form;
 
-        public rightWing()
+        public rightWing( )
         {
             InitializeComponent();
-            //this.form = form;
+            
             
             
         }
 
-        public void setter(string email)
+        public void setter(string email,Home form)
         {
             user = db.InitializeUser(email);
             post.setter(email);
             this.email = email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             SetImageFromByteArrayProfile(this.ProfilePic, user.Profile_pic);
-           
+           this.form = form;
 
         }
 
@@ -105,12 +105,9 @@ namespace GrabAViscan
 
         private void ProfilePic_Click(object sender, EventArgs e)
         {
+
+            form.gunaButton9_Click(sender, e);
             
-            //Home hom = new Home();
-            //hom.setter(this.email);
-           // hom.Show();
-           // form.gunaButton9_Click(sender, e);
-          //  form.Close();
         }
     }
 }
