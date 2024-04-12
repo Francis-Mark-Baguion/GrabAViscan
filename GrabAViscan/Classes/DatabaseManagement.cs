@@ -271,7 +271,7 @@ namespace GrabAViscan.Classes
                     cmd.Parameters.AddWithValue("@isAvailable", post.Available);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("it went here");
+                    ErrorMessage error = new ErrorMessage("Post Successful");
                 }
                 catch (MySqlException ex)
                 {

@@ -28,55 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorMessage));
             this.Message = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.SuspendLayout();
             // 
             // Message
             // 
             this.Message.AutoSize = true;
-            this.Message.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Message.Location = new System.Drawing.Point(295, 141);
+            this.Message.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Message.Location = new System.Drawing.Point(12, 27);
             this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(50, 25);
+            this.Message.Size = new System.Drawing.Size(61, 30);
             this.Message.TabIndex = 0;
             this.Message.Text = "Error";
             this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gunaButton1
+            // gunaPanel2
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(606, -1);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(58, 37);
-            this.gunaButton1.TabIndex = 1;
-            this.gunaButton1.Text = "gunaButton1";
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaPanel2.Location = new System.Drawing.Point(0, 88);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(573, 10);
+            this.gunaPanel2.TabIndex = 2;
             // 
             // ErrorMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 354);
-            this.Controls.Add(this.gunaButton1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(573, 98);
+            this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.Message);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(0, 1000);
             this.Name = "ErrorMessage";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ErrorMessage";
+            this.Load += new System.EventHandler(this.ErrorMessage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,6 +74,6 @@
         #endregion
 
         private Guna.UI.WinForms.GunaLabel Message;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
     }
 }

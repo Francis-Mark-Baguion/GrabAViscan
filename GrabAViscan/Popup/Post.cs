@@ -102,7 +102,7 @@ namespace GrabAViscan.Popup
 
         private void upload_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello");
+            
             Image originalImage = picture.Image;
 
             int Post_id = 0;
@@ -129,6 +129,7 @@ namespace GrabAViscan.Popup
             Posting post = null;
             post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
             db.Post_upload(post);
+            this.Close();
         }
 
 
@@ -147,6 +148,11 @@ namespace GrabAViscan.Popup
         private void requestTxt_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void discard_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

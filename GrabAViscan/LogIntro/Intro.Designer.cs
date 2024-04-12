@@ -34,14 +34,15 @@
             this.signUp_btn = new Guna.UI.WinForms.GunaButton();
             this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LOGO = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -89,7 +90,7 @@
             this.signUp_btn.ForeColor = System.Drawing.Color.White;
             this.signUp_btn.Image = null;
             this.signUp_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.signUp_btn.Location = new System.Drawing.Point(181, 296);
+            this.signUp_btn.Location = new System.Drawing.Point(181, 243);
             this.signUp_btn.Name = "signUp_btn";
             this.signUp_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.signUp_btn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -112,7 +113,7 @@
             this.Log_in_btn.ForeColor = System.Drawing.Color.White;
             this.Log_in_btn.Image = null;
             this.Log_in_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.Log_in_btn.Location = new System.Drawing.Point(181, 201);
+            this.Log_in_btn.Location = new System.Drawing.Point(181, 103);
             this.Log_in_btn.Name = "Log_in_btn";
             this.Log_in_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
             this.Log_in_btn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -130,22 +131,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.SetColumnSpan(this.panel2, 3);
+            this.panel2.Controls.Add(this.gunaPictureBox1);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.LOGO);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2561, 533);
             this.panel2.TabIndex = 1;
-            // 
-            // LOGO
-            // 
-            this.LOGO.BackgroundImage = global::GrabAViscan.Properties.Resources.GrabAViscan;
-            this.LOGO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LOGO.Location = new System.Drawing.Point(853, 222);
-            this.LOGO.Name = "LOGO";
-            this.LOGO.Size = new System.Drawing.Size(846, 100);
-            this.LOGO.TabIndex = 0;
             // 
             // panel3
             // 
@@ -168,14 +160,14 @@
             this.Minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.Image")));
             this.Minimize_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Minimize_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.Minimize_btn.Location = new System.Drawing.Point(13, 15);
+            this.Minimize_btn.Location = new System.Drawing.Point(34, 15);
             this.Minimize_btn.Name = "Minimize_btn";
             this.Minimize_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.Minimize_btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Minimize_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Minimize_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.OnHoverImage")));
             this.Minimize_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Minimize_btn.Size = new System.Drawing.Size(73, 71);
+            this.Minimize_btn.Size = new System.Drawing.Size(50, 50);
             this.Minimize_btn.TabIndex = 16;
             this.Minimize_btn.Click += new System.EventHandler(this.Minimize_btn_Click);
             // 
@@ -190,7 +182,7 @@
             this.Close_btn.ForeColor = System.Drawing.Color.White;
             this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
             this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
             this.Close_btn.Location = new System.Drawing.Point(114, 15);
             this.Close_btn.Name = "Close_btn";
             this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
@@ -198,9 +190,20 @@
             this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
             this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(73, 71);
+            this.Close_btn.Size = new System.Drawing.Size(50, 50);
             this.Close_btn.TabIndex = 15;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(535, 86);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(1455, 576);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 2;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // Intro
             // 
@@ -217,6 +220,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,13 +229,13 @@
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel LOGO;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaButton Log_in_btn;
         private Guna.UI.WinForms.GunaButton signUp_btn;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI.WinForms.GunaButton Minimize_btn;
         private Guna.UI.WinForms.GunaButton Close_btn;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }
 

@@ -127,8 +127,9 @@
             this.discard_btn.Radius = 10;
             this.discard_btn.Size = new System.Drawing.Size(160, 42);
             this.discard_btn.TabIndex = 30;
-            this.discard_btn.Text = "DISCARD";
+            this.discard_btn.Text = "Cancel";
             this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
             // 
             // gunaLabel12
             // 

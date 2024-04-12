@@ -66,6 +66,8 @@ namespace GrabAViscan
                 hom.Show();
                 this.Hide();
                 ErrorMessage error = new ErrorMessage("Log In Successful");
+                
+
             }
             else
             {
