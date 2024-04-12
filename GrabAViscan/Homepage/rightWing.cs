@@ -24,12 +24,12 @@ namespace GrabAViscan
         private string email;
         bool flagnotif = false;
         bool flagpost = false;
-        Home form = new Home();
+        //Home form = new Home();
 
-        public rightWing(Home form)
+        public rightWing()
         {
             InitializeComponent();
-            this.form = form;
+            //this.form = form;
             
             
         }
@@ -106,9 +106,11 @@ namespace GrabAViscan
         private void ProfilePic_Click(object sender, EventArgs e)
         {
             
-                      
-            form.gunaButton9_Click(sender, e);
-            
+            //Home hom = new Home();
+            //hom.setter(this.email);
+           // hom.Show();
+           // form.gunaButton9_Click(sender, e);
+          //  form.Close();
         }
     }
 }

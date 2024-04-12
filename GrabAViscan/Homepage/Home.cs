@@ -29,7 +29,7 @@ namespace GrabAViscan
         public Home()
         {
             InitializeComponent();
-            right = new rightWing(this);
+            right = new rightWing();
             
             RightWing.Controls.Add(right);
             feed();
