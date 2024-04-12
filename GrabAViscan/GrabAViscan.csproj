@@ -170,6 +170,12 @@
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\ErrorMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\ErrorMessage.resx">
       <DependentUpon>ErrorMessage.cs</DependentUpon>

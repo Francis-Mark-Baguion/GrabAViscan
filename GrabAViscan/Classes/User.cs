@@ -57,10 +57,10 @@ namespace GrabAViscan.Classes
 
 
         public override string ToString()
-        {
+        { 
             return $"User ID: {User_id}\nUsername: {Username}\nEmail: {Email}\nSchool ID: {School_id}\n" +
                    $"Date of Birth: {DOB:yyyy-MM-dd}\nAddress: {Address}\nPhone Number: {PhoneNumber}\n" +
-                   $"Bio: {Bio}\nFirst Name: {FirstName}\nLast Name: {LastName}\nStatus: {Status}";
+                   $"Bio: {Bio}\nFirst Name: {FirstName}\nLast Name: {LastName}\nStatus: {Status} \nProfile: {Profile_pic}";
         }
 
     }

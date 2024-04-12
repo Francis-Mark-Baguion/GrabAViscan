@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -107,16 +108,18 @@ namespace GrabAViscan.Classes
             if (reader.Read())
             {
                 ErrorMessage error = new ErrorMessage("Email account already exist");
+                reader.Close();
+                conConn.Close();
                 return false;
             }
             else
             {
-
+                reader.Close();
+                conConn.Close();
                 return true;
             }
 
-            reader.Close();
-            conConn.Close();
+            
         }
 
 
@@ -209,8 +212,8 @@ namespace GrabAViscan.Classes
                     insertCmd.Parameters.AddWithValue("@LastName", user.LastName);
                     insertCmd.Parameters.AddWithValue("@Status", user.Status);
 
-
-                    ErrorMessage error = new ErrorMessage("Account Created!");
+                    MessageBox.Show(user.ToString());
+                    ErrorMessage error = new ErrorMessage("Account Created!" );
                     insertCmd.ExecuteNonQuery();
 
                 }
@@ -599,6 +602,83 @@ namespace GrabAViscan.Classes
                 {
                     Console.WriteLine("An error occurred (updateUserInformation): " + ex.Message);
                     return false; // Or handle the error differently
+                }
+            }
+        }
+
+        public bool changePass(string email,string oldPass,string newPass)
+        {
+
+            string oldPassVerify = getPass(email);
+            MySqlConnection conConn = Connect();
+            if(oldPass != oldPassVerify)
+            {
+
+                MessageBox.Show("old password did not match");
+                return false;
+            }
+               
+
+            string insertSql = "UPDATE grab.accounts SET password = @newPass WHERE email = @email AND password=@password;";
+            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
+            
+            if(newPass == "")
+            {
+                MessageBox.Show("Password Should not be Empty");
+                return false;
+            }
+            else if (newPass == oldPassVerify)
+            {
+                MessageBox.Show("New Password Shoul be Different from old Password");
+                return false;
+            }
+
+            insertCmd.Parameters.AddWithValue("@email", email);
+            insertCmd.Parameters.AddWithValue("@password", oldPass);
+            insertCmd.Parameters.AddWithValue("@newPass", newPass);
+            
+            try
+            {
+
+                
+                insertCmd.ExecuteNonQuery();
+                MessageBox.Show("Password Changed");
+                conConn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                conConn.Close();
+                return false;
+
+            }
+        }
+
+
+        public string getPass(string email) 
+        
+        {
+            using (MySqlConnection conConn = this.Connect())
+            {
+                string sql = "SELECT * FROM grab.accounts WHERE email=@email";
+                MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                cmd.Parameters.AddWithValue("@email", email);
+               
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return reader.GetString(2);
+                    }
+                    else
+                    {
+
+                        return "";
+                    }
                 }
             }
         }

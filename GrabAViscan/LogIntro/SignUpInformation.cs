@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GrabAViscan.Classes;
+
 using GrabAViscan.Popup;
 using System.IO;
 
@@ -58,7 +58,6 @@ namespace GrabAViscan.LogIntro
 
             string bio = "";
             string username = "";
-            mail.Text = "";
             byte[] photo = null;
             passwordTxt.Text = "";
             if(db.SignUp(email,pass))

@@ -147,6 +147,8 @@
             this.passwordTxt.TabIndex = 7;
             this.passwordTxt.Text = "Password";
             this.passwordTxt.Click += new System.EventHandler(this.passwordTxt_Click);
+            //this.passwordTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LogInEnter);
+            //this.passwordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Entery);
             // 
             // emailTxt
             // 

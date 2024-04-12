@@ -64,11 +64,11 @@
             this.nameHolder.ImageSize = new System.Drawing.Size(20, 20);
             this.nameHolder.Location = new System.Drawing.Point(218, 32);
             this.nameHolder.Name = "nameHolder";
-            this.nameHolder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.nameHolder.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.nameHolder.OnHoverForeColor = System.Drawing.Color.White;
+            this.nameHolder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.nameHolder.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.nameHolder.OnHoverForeColor = System.Drawing.Color.Black;
             this.nameHolder.OnHoverImage = null;
-            this.nameHolder.OnPressedColor = System.Drawing.Color.Black;
+            this.nameHolder.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.nameHolder.Radius = 10;
             this.nameHolder.Size = new System.Drawing.Size(308, 55);
             this.nameHolder.TabIndex = 1;

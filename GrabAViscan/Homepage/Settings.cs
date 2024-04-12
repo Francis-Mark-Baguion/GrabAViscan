@@ -2,24 +2,20 @@
 using GrabAViscan.Popup;
 using Guna.UI.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GrabAViscan.Homepage
 {
     public partial class Settings : UserControl
     {
         DatabaseManagement db = new DatabaseManagement();
+        ChangePass changePass;
         User user;
         string email;
+        private bool flag = false;
+        private bool flag1 = false;
 
         public Settings(String email)
         {
@@ -37,6 +33,8 @@ namespace GrabAViscan.Homepage
             this.statusTxt.Text = user.Status;
             this.DescriptionTxt.Text = user.Bio;
             SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+            changePass = new ChangePass(this.email);
+            changePass.Hide();
 
         }
 
@@ -82,7 +80,19 @@ namespace GrabAViscan.Homepage
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            changePass_panel.Visible = true;
+            if(flag1)
+            {
+                changePass.Hide();
+                flag1 = false;
+            }
+            else
+            {
+                changePass.Show();
+                flag1 = true;
+            }
+            
+
+           
         }
 
         
@@ -99,7 +109,7 @@ namespace GrabAViscan.Homepage
             User use = new User(user.User_id, email,username , int.Parse(schoolTxt.Text), user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
             db.updateUserInformation(use);
             user = db.InitializeUser(email);
-            this.email = email;
+            //this.emailTxt.Text = this.email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             this.statusHolder.Text = user.Status;
             this.firstNameTxt.Text = user.FirstName;
@@ -116,7 +126,7 @@ namespace GrabAViscan.Homepage
         private void discard_btn_Click(object sender, EventArgs e)
         {
             user = db.InitializeUser(email);
-            this.email = email;
+            //this.emailTxt.Text = this.email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             this.statusHolder.Text = user.Status;
             this.firstNameTxt.Text = user.FirstName;
@@ -133,13 +143,52 @@ namespace GrabAViscan.Homepage
         
         private void gunaButton3_Click(object sender, EventArgs e)
         {
+
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png;*.gif)|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Select Profile Picture";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    
+                    byte[] imageData;
+                    using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        imageData = new byte[fs.Length];
+                        fs.Read(imageData, 0, (int)fs.Length);
+                    }
+
+                   
+
+                    
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image image = Image.FromStream(ms);
+
+                        
+                        profile_pic.Image = image;
+                    }
+
+                    
+                    db.changeUserProfile(imageData, user.User_id);
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("An error occurred (ChangeUserProfile): " + ex.Message);
+                    MessageBox.Show("An unexpected error occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
+            }
+
             
-
-
-
         }
 
-
-        
+        private void ClickAll(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -85,5 +85,18 @@ namespace GrabAViscan
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        
+
+        private void LogInEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Enter");
+                Log_in_Click(sender, e);
+            }
+        }
+
+        
     }
 }

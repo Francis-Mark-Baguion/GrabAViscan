@@ -24,7 +24,7 @@ namespace GrabAViscan
             if(post != null && db.getUserById(post.User_id)!=null) 
             {
                 SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
-                this.Name_label.Text = db.getUserById(post.User_id).Username;
+                this.Name_label.Text = db.getUserById(post.User_id).FirstName +""+ db.getUserById(post.User_id).LastName;
                 this.TimeTxt.Text = "" + post.Date_posted;
                 this.Category_label.Text = post.Category;
                 this.descriptionTxt.Text = post.Description;

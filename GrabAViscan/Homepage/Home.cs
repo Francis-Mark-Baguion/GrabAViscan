@@ -17,6 +17,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using GrabAViscan.Popup;
 using GrabAViscan.Homepage;
 
+
 namespace GrabAViscan
 {
     public partial class Home : Form
@@ -28,7 +29,7 @@ namespace GrabAViscan
         public Home()
         {
             InitializeComponent();
-            right = new rightWing();
+            right = new rightWing(this);
             
             RightWing.Controls.Add(right);
             feed();
@@ -137,7 +138,7 @@ namespace GrabAViscan
             flow1.Controls.Add(history);
         }
 
-        private void gunaButton9_Click(object sender, EventArgs e)
+        public void gunaButton9_Click(object sender, EventArgs e)
         {
             Settings settings = new Settings(user.Email);
             
