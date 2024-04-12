@@ -79,5 +79,10 @@ namespace GrabAViscan
         {
 
         }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

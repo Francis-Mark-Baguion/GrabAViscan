@@ -34,7 +34,7 @@ namespace GrabAViscan
             user = db.InitializeUser(email);
             post.setter(email);
             this.email = email;
-            this.nameHolder.Text = user.Username;
+            this.nameHolder.Text = user.FirstName + " " + user.LastName;
         }
         private void Notification_click(object sender, EventArgs e)
         {
@@ -79,5 +79,14 @@ namespace GrabAViscan
             }
         }
 
+        private void nameHolder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProfilePic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -423,6 +423,7 @@
             this.requestTxt.Radius = 10;
             this.requestTxt.Size = new System.Drawing.Size(520, 53);
             this.requestTxt.TabIndex = 7;
+            this.requestTxt.Click += new System.EventHandler(this.requestTxt_Click);
             // 
             // gunaLabel1
             // 

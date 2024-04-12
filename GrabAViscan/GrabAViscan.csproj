@@ -140,6 +140,12 @@
     <Compile Include="Feed\HomeFeed.Designer.cs">
       <DependentUpon>HomeFeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Homepage\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Homepage\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIntro\Intro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\HomeFeed.resx">
       <DependentUpon>HomeFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIntro\Intro.resx">
       <DependentUpon>Intro.cs</DependentUpon>

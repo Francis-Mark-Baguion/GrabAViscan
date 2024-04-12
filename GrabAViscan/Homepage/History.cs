@@ -16,5 +16,40 @@ namespace GrabAViscan
         {
             InitializeComponent();
         }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

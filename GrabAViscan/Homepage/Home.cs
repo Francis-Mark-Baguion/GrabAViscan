@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using GrabAViscan.Popup;
+using GrabAViscan.Homepage;
 
 namespace GrabAViscan
 {
@@ -75,7 +76,8 @@ namespace GrabAViscan
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-
+            user = db.InitializeUser(email);
+            right.setter(email);
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[2].Width = 25;
             tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
@@ -137,7 +139,18 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
+            Settings settings = new Settings(user.Email);
+            
+            flow1.Controls.Clear();
 
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(settings);
         }
 
         

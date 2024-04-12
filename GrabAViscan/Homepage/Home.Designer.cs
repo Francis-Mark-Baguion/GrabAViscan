@@ -206,7 +206,7 @@
             this.gunaPanel1.Controls.Add(this.gunaButton2);
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(563, 608);
+            this.gunaPanel1.Size = new System.Drawing.Size(563, 487);
             this.gunaPanel1.TabIndex = 2;
             // 
             // gunaButton9

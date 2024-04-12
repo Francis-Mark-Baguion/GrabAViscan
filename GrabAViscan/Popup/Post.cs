@@ -143,5 +143,10 @@ namespace GrabAViscan.Popup
 
             return stream.GetBuffer();
         }
+
+        private void requestTxt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

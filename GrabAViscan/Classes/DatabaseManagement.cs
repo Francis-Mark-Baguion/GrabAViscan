@@ -1,7 +1,8 @@
-﻿using GrabAViscan.Feed;
+﻿ using GrabAViscan.Feed;
 using GrabAViscan.Popup;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
@@ -65,7 +67,8 @@ namespace GrabAViscan.Classes
                             User user = null;
                             while (reader.Read())
                             {
-                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"] , (byte[])reader["Profile_pic"], (string)reader["PhoneNum"], (string)reader["Bio"]);
+                                byte[] profilePic = reader["Profile_pic"] != DBNull.Value ? (byte[])reader["Profile_pic"] : null;
+                                user = new User((int)reader["user_id"], (string)reader["email"], (string)reader["Username"], (int)reader["School_id"], (DateTime)reader["DateOfBirth"], (string)reader["Address"] , profilePic, (string)reader["PhoneNum"], (string)reader["Bio"], (string)reader["FirstName"], (string)reader["LastName"], (string)reader["Status"]);
                             }
 
 
@@ -85,13 +88,6 @@ namespace GrabAViscan.Classes
             return null;
 
         }
-
-
-
-
-
-
-
 
 
 
@@ -165,16 +161,16 @@ namespace GrabAViscan.Classes
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@password", pass);
 
-                using (MySqlDataReader reader = cmd.ExecuteReader()) // Use a using block for reader
+                using (MySqlDataReader reader = cmd.ExecuteReader()) 
                 {
                     if (reader.Read())
                     {
-                        return reader.GetInt32(0); // Return account ID if found
+                        return reader.GetInt32(0); 
                     }
                     else
                     {
-                        // Handle case where no user found (return -1 or throw an exception?)
-                        return -1; // Consider returning a specific value or throwing an exception
+                        
+                        return -1; 
                     }
                 }
             }
@@ -183,42 +179,46 @@ namespace GrabAViscan.Classes
 
         public void Information_upload(User user)
         {
-            using (MySqlConnection conConn = Connect()) // Use a using block for connection
+            using (MySqlConnection conConn = Connect()) 
             {
                 try
                 {
-                    string insertSql = "INSERT INTO grab.user_information (user_id,Username, School_id, DateOfBirth, Address, email, Profile_pic, PhoneNum, Bio) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+                    string insertSql = "INSERT INTO grab.user_information (user_id,Username, School_id, DateOfBirth, Address, email, Profile_pic, PhoneNum, Bio,FirstName,LastName,Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?,?)";
                     MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
 
-                    // Use parameters to prevent SQL injection vulnerabilities
+                    
                     insertCmd.Parameters.AddWithValue("@user_id", user.User_id);
                     insertCmd.Parameters.AddWithValue("@Username", user.Username);
                     insertCmd.Parameters.AddWithValue("@School_id", user.School_id);
                     insertCmd.Parameters.AddWithValue("@DateOfBirth", user.DOB);
                     insertCmd.Parameters.AddWithValue("@Address", user.Address);
-                    insertCmd.Parameters.AddWithValue("@email", user.Email); // Assuming your User class has an Email property
+                    insertCmd.Parameters.AddWithValue("@email", user.Email); 
                     if (user.Profile_pic != null && user.Profile_pic.Length > 0)
                     {
                         insertCmd.Parameters.AddWithValue("@Profile_pic", user.Profile_pic);
                     }
                     else
                     {
-                        insertCmd.Parameters.AddWithValue("@Profile_pic", DBNull.Value); // Set to null if no image
+                        insertCmd.Parameters.AddWithValue("@Profile_pic", DBNull.Value); 
                     }
                     
 
-                    insertCmd.Parameters.AddWithValue("@PhoneNum", user.PhoneNumber); // Assuming your User class has a Phone property
-                    insertCmd.Parameters.AddWithValue("@Bio", user.Bio); // Assuming your User class has a Bio 
-                    
-                    MessageBox.Show("Here at info upload");
+                    insertCmd.Parameters.AddWithValue("@PhoneNum", user.PhoneNumber); 
+                    insertCmd.Parameters.AddWithValue("@Bio", user.Bio);
+                    insertCmd.Parameters.AddWithValue("@FirstName", user.FirstName);
+                    insertCmd.Parameters.AddWithValue("@LastName", user.LastName);
+                    insertCmd.Parameters.AddWithValue("@Status", user.Status);
+
+
+                    ErrorMessage error = new ErrorMessage("Account Created!");
                     insertCmd.ExecuteNonQuery();
 
                 }
                 catch (MySqlException ex)
                 {
-                    // Handle database-related exceptions (e.g., connection errors, duplicate entries)
+                    
                     Console.WriteLine("An error occurred: " + ex.Message);
-                    // Consider showing a more user-friendly error message
+                    
                 }
             }
         }
@@ -233,7 +233,7 @@ namespace GrabAViscan.Classes
                 {
                     conConn.Open();
 
-                    // Assuming Category ID (category_id) and Location IDs (pickUp_id, etc.) exist
+                    
                     string sql = "INSERT INTO grab.post (User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, Image, Pick_location,Near_pickUp_id,Delivery_location,Near_delivery_id,isAvailable) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
@@ -247,20 +247,20 @@ namespace GrabAViscan.Classes
                     cmd.Parameters.AddWithValue("@Date_posted", post.Date_posted);
                     cmd.Parameters.AddWithValue("@Deadline", post.Deadline);
 
-                    // Assuming you have a method to get the category ID based on the Category object
+                    
                     cmd.Parameters.AddWithValue("@Category", post.Category);
 
-                    // Handle image data (consider validation and potential pre-processing)
+                    
                     if (post.image != null && post.image.Length > 0)
                     {
                         cmd.Parameters.AddWithValue("@Image", post.image);
                     }
                     else
                     {
-                        cmd.Parameters.AddWithValue("@Image", DBNull.Value); // Set to null if no image
+                        cmd.Parameters.AddWithValue("@Image", DBNull.Value); 
                     }
 
-                    // Assuming you have methods to get Location IDs based on Location objects
+                    
                     cmd.Parameters.AddWithValue("@Pick_location", post.Pick_up);
                     cmd.Parameters.AddWithValue("@Near_pickUp_id", GetLocationID(post.Near_pickUp));
                     cmd.Parameters.AddWithValue("@Delivery_location", post.Delivery_location);
@@ -272,7 +272,7 @@ namespace GrabAViscan.Classes
                 }
                 catch (MySqlException ex)
                 {
-                    // Handle database-related exceptions (e.g., connection errors, query issues)
+                    
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
@@ -289,7 +289,7 @@ namespace GrabAViscan.Classes
                 {
                     conConn.Open();
 
-                    // Assuming LocationName uniquely identifies a location in your table
+                    
                     string sql = "SELECT * FROM grab.location WHERE LocationName = @LocationName";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
@@ -303,17 +303,17 @@ namespace GrabAViscan.Classes
                         }
                         else
                         {
-                            // Handle case where location not found (e.g., insert a new location or return -1)
+                            
                             Console.WriteLine("Location not found: " + location);
-                            return -1; // Or insert a new location and return its ID
+                            return -1; 
                         }
                     }
                 }
                 catch (MySqlException ex)
                 {
-                    // Handle database-related exceptions
+                    
                     Console.WriteLine("An error occurred (getLocationId): " + ex.Message);
-                    return -1; // Or handle the error differently
+                    return -1; 
                 }
             }
         }
@@ -339,7 +339,7 @@ namespace GrabAViscan.Classes
                             int categoryId = reader.GetInt32("categoryId");
                             string categoryName = reader.GetString("name");
 
-                            // Assuming you have a Category class with Id and Name properties
+                            
                             Category category = new Category(categoryId, categoryName);
                             categories.Add(category);
                         }
@@ -348,7 +348,7 @@ namespace GrabAViscan.Classes
                 catch (MySqlException ex)
                 {
                     Console.WriteLine("An error occurred: " + ex.Message);
-                    // Handle database exceptions appropriately
+                    
                 }
             }
 
@@ -376,7 +376,7 @@ namespace GrabAViscan.Classes
                             int LocationId = reader.GetInt32("idLocation");
                             string LocationName = reader.GetString("locationName");
 
-                            // Assuming you have a Category class with Id and Name properties
+                            
                             Location location = new Location(LocationId, LocationName);
                             locations.Add(location);
                         }
@@ -385,7 +385,7 @@ namespace GrabAViscan.Classes
                 catch (MySqlException ex)
                 {
                     Console.WriteLine("An error occurred: " + ex.Message);
-                    // Handle database exceptions appropriately
+                    
                 }
             }
 
@@ -399,11 +399,6 @@ namespace GrabAViscan.Classes
 
 
 
-
-
-
-
-
         public List<Posting> GetAvailablePosts()
         {
             List<Posting> posts = new List<Posting>();
@@ -414,7 +409,7 @@ namespace GrabAViscan.Classes
                 {
                     conConn.Open();
 
-                    // Get only posts where isAvailable = 0
+                    
                     string sql = "SELECT * FROM grab.post WHERE isAvailable = 0";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
@@ -431,12 +426,12 @@ namespace GrabAViscan.Classes
                                 reader["Description"].ToString(),
                                 Convert.ToDateTime(reader["Date_posted"]),
                                 Convert.ToDateTime(reader["Deadline"]),
-                                reader["Category"].ToString(), // Assuming Category is stored as a string
+                                reader["Category"].ToString(), 
 
-                                // Handle potential null value for Image
+                                
                                 reader["Image"] != DBNull.Value ? (byte[])reader["Image"] : null,
 
-                                reader["Pick_location"].ToString(), // Assuming Pick_location is a string property
+                                reader["Pick_location"].ToString(),
                                 reader["Near_pickUp_id"].ToString(),
                                 reader["Delivery_location"].ToString(),
                                 reader["Near_delivery_id"].ToString(),
@@ -449,7 +444,7 @@ namespace GrabAViscan.Classes
                 }
                 catch (MySqlException ex)
                 {
-                    // Handle database-related exceptions
+                    
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
@@ -462,14 +457,14 @@ namespace GrabAViscan.Classes
 
         public User getUserById(int id)
         {
-            using (MySqlConnection conConn = Connect()) // Use a using block for connection
+            using (MySqlConnection conConn = Connect())
             {
                 try
                 {
                     string sql = "SELECT * FROM grab.user_information WHERE user_id = @id";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
-                    // Add parameter to prevent SQL injection
+                    
                     cmd.Parameters.AddWithValue("@id", id);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -478,7 +473,7 @@ namespace GrabAViscan.Classes
                         {
                             byte[] profilePic = reader["Profile_pic"] != DBNull.Value ? (byte[])reader["Profile_pic"] : null;
 
-                            // Create a User object with data from the database row
+                            
                             return new User(
                                 (int)reader["user_id"],
                                 (string)reader["email"],
@@ -488,23 +483,126 @@ namespace GrabAViscan.Classes
                                 (string)reader["Address"],
                                 profilePic,
                                 (string)reader["PhoneNum"],
-                                (string)reader["Bio"]
+                                (string)reader["Bio"],
+                                (string)reader["FirstName"],
+                                (string)reader["LastName"],
+                                (string)reader["Status"]
+
                             );
                         }
                         else
                         {
-                            // User not found, consider throwing a custom exception
-                            return null; // Or throw new UserNotFoundException("User with ID " + id + " not found");
+                            
+                            return null; 
                         }
                     }
                 }
                 catch (MySqlException ex)
                 {
                     Console.WriteLine("An error occurred (getUserById): " + ex.Message);
-                    return null; // Or handle the error differently
+                    return null; 
                 }
             }
         }
+
+
+        public bool updateUserInformation(User user)
+        {
+            using (MySqlConnection conConn = Connect()) // Use a using block for connection
+            {
+                try
+                {
+                    // Build the UPDATE query with parameters to prevent SQL injection
+                    string sql = "UPDATE grab.user_information SET Username = @Username, School_id = @School_id, DateOfBirth = @DateOfBirth, Address = @Address,email = @Email ,Profile_pic = @ProfilePic, PhoneNum = @PhoneNum, Bio = @Bio, FirstName = @FirstName, LastName = @LastName, Status = @Status WHERE user_id = @user_id;";
+
+
+
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                    // Add user data as parameters
+                    cmd.Parameters.AddWithValue("@user_id", user.User_id);
+                    cmd.Parameters.AddWithValue("@Username", user.Username);
+                    cmd.Parameters.AddWithValue("@School_id", user.School_id);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", user.DOB);
+                    cmd.Parameters.AddWithValue("@Address", user.Address);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+
+
+                    // Handle profile picture (null for no update)
+                    if (user.Profile_pic != null)
+                    {
+                        cmd.Parameters.AddWithValue("@ProfilePic", user.Profile_pic);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ProfilePic", DBNull.Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@PhoneNum", user.PhoneNumber);
+                    cmd.Parameters.AddWithValue("@Bio", user.Bio);
+                    cmd.Parameters.AddWithValue("@FirstName", user.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", user.LastName);
+                    cmd.Parameters.AddWithValue("@Status", user.Status);
+                    MessageBox.Show(user.ToString());
+                    // Execute the update query
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Return true if at least one row was affected (update successful)
+                    return rowsAffected > 0;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("An error occurred (updateUserInformation): " + ex.Message);
+                    return false; // Or handle the error differently
+                }
+            }
+        }
+
+        public bool changeUserProfile(Byte[] image, int user_id)
+        
+        {
+            using (MySqlConnection conConn = Connect()) // Use a using block for connection
+            {
+                try
+                {
+                    // Build the UPDATE query with parameters to prevent SQL injection
+                    string sql = "UPDATE grab.user_information SET Profile_pic = @ProfilePic WHERE user_id = @user_id;";
+
+
+
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                    // Add user data as parameters
+                    cmd.Parameters.AddWithValue("@user_id",user_id);
+                    
+
+
+                    // Handle profile picture (null for no update)
+                    if (image != null)
+                    {
+                        cmd.Parameters.AddWithValue("@ProfilePic", image);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ProfilePic", DBNull.Value);
+                    }
+
+                   
+                    MessageBox.Show("Profile Picture Updated");
+                    // Execute the update query
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // Return true if at least one row was affected (update successful)
+                    return rowsAffected > 0;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("An error occurred (updateUserInformation): " + ex.Message);
+                    return false; // Or handle the error differently
+                }
+            }
+        }
+
 
     }
 
