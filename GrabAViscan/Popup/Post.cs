@@ -114,7 +114,12 @@ namespace GrabAViscan.Popup
             DateTime Date_posted = DateTime.Now;
             DateTime Deadline = TimePicker.Value;
             string Category = categoryCombo.Text;
-            byte[] image = this.getPhoto(); ;
+            byte[] image = this.getPhoto();
+            if (this.getPhoto() != null)
+            {
+                image = this.getPhoto();
+            }
+            
             string Pick_up = pickUpTxt.Text;
             string Near_pickUp = pickNearCombo.Text;
             string Delivery_location = deliveryTxt.Text;
@@ -122,7 +127,6 @@ namespace GrabAViscan.Popup
             int Available = 0;
 
             Posting post = null;
-            MessageBox.Show("" + Post_id+ Category+ Delivery_location + image);
             post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
             db.Post_upload(post);
         }
@@ -132,7 +136,11 @@ namespace GrabAViscan.Popup
         private byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            picture.Image.Save(stream, picture.Image.RawFormat);
+            if (picture.Image != null) // Check if picture.Image exists
+            {
+                picture.Image.Save(stream, picture.Image.RawFormat);
+            }
+
             return stream.GetBuffer();
         }
     }

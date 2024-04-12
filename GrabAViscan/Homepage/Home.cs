@@ -46,19 +46,28 @@ namespace GrabAViscan
         {
             flow1.Controls.Clear();
 
-            // Get available posts from the database
+            
             List<Posting> posts = db.GetAvailablePosts();
 
-            // Loop through each post
+            
             foreach (Posting post in posts)
             {
-                // Create a HomeFeed object with the current post
-                HomeFeed home = new HomeFeed(post);
+                if(post.image != null)
+                {
+                    HomeFeed home = new HomeFeed(post);
 
-                // Add the HomeFeed object to the flowLayout panel
-                flow1.Controls.Add(home);
 
-                // Optionally, add a buffer (spacer) between posts
+                    flow1.Controls.Add(home);
+                }
+                else
+                {
+                    FeedNoImage feedNoImage = new FeedNoImage(post);
+                    flow1.Controls.Add(feedNoImage);
+
+                }
+                
+
+                
                 Buffers buff = new Buffers();
                 flow1.Controls.Add(buff);
             }
