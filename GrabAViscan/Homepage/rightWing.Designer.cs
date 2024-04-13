@@ -51,7 +51,6 @@
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(652, 235);
             this.gunaPanel3.TabIndex = 3;
-            
             // 
             // nameHolder
             // 
@@ -65,17 +64,17 @@
             this.nameHolder.ImageSize = new System.Drawing.Size(20, 20);
             this.nameHolder.Location = new System.Drawing.Point(218, 32);
             this.nameHolder.Name = "nameHolder";
-            this.nameHolder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.nameHolder.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.nameHolder.OnHoverForeColor = System.Drawing.Color.White;
+            this.nameHolder.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.nameHolder.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.nameHolder.OnHoverForeColor = System.Drawing.Color.Black;
             this.nameHolder.OnHoverImage = null;
-            this.nameHolder.OnPressedColor = System.Drawing.Color.Black;
+            this.nameHolder.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.nameHolder.Radius = 10;
             this.nameHolder.Size = new System.Drawing.Size(308, 55);
             this.nameHolder.TabIndex = 1;
             this.nameHolder.Text = "Francis Mark Baguion";
             this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            
+            this.nameHolder.Click += new System.EventHandler(this.nameHolder_Click);
             // 
             // Notif_btn
             // 
@@ -136,7 +135,7 @@
             this.ProfilePic.TabIndex = 8;
             this.ProfilePic.TabStop = false;
             this.ProfilePic.UseTransfarantBackground = false;
-            
+            this.ProfilePic.Click += new System.EventHandler(this.ProfilePic_Click);
             // 
             // label1
             // 
@@ -149,7 +148,6 @@
             this.label1.Size = new System.Drawing.Size(615, 34);
             this.label1.TabIndex = 9;
             this.label1.Text = "______________________________";
-            
             // 
             // mySqlCommand1
             // 
@@ -166,8 +164,6 @@
             this.Controls.Add(this.gunaPanel3);
             this.Name = "rightWing";
             this.Size = new System.Drawing.Size(640, 1498);
-            
-            
             this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).EndInit();

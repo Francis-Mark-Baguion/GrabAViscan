@@ -5,18 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms;
+
 
 namespace GrabAViscan.Popup
 {
-    public partial class ErrorMessage : Form
+
+    public partial class SucMessage : Form
     {
-
-
         private System.Windows.Forms.Timer closeTimer;
-        public ErrorMessage(string message)
+        public SucMessage(string message)
         {
             InitializeComponent();
             Message.Text = message;
@@ -37,16 +37,6 @@ namespace GrabAViscan.Popup
 
             // Close the form
             this.Close();
-        }
-
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ErrorMessage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

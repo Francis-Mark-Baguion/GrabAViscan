@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrabAViscan.Popup;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace GrabAViscan.Classes
         public int Fee { get; set; }
         public string Description { get; set; }
         public DateTime Date_posted  { get; set;}
-        public DateTime Deadline { get;}
+        public DateTime Deadline { get; set; }
         public string Category { get; set; }
         public byte[] image { get; set; }
         public string Pick_up { get; set; }
@@ -49,9 +50,29 @@ namespace GrabAViscan.Classes
             this.Available = Available;
         }
 
-        public Posting() { }
 
 
-        
+
+        public Posting(Posting other)
+        {
+            this.Post_id = other.Post_id;
+            this.User_id = other.User_id;
+            this.Requested = other.Requested;
+            this.Quantity = other.Quantity;
+            this.Fee = other.Fee;
+            this.Description = other.Description;
+            this.Date_posted = other.Date_posted;
+            this.Deadline = other.Deadline;
+            this.Category = other.Category;
+            this.image = other.image;
+            this.Pick_up = other.Pick_up;
+            this.Near_pickUp = other.Near_pickUp;
+            this.Delivery_location = other.Delivery_location;
+            this.Near_deliveryLocation = other.Near_deliveryLocation;
+            this.Available = other.Available;
+        }
+
+
+
     }
 }

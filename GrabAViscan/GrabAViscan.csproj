@@ -116,6 +116,36 @@
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feed\FeedNoImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\FeedNoImage.Designer.cs">
+      <DependentUpon>FeedNoImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\HistroyLogCan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\HistroyLogCan.Designer.cs">
+      <DependentUpon>HistroyLogCan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\HistroyLogDel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\HistroyLogDel.Designer.cs">
+      <DependentUpon>HistroyLogDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\HistroyLogRec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\HistroyLogRec.Designer.cs">
+      <DependentUpon>HistroyLogRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\Requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Homepage\History.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +163,12 @@
     </Compile>
     <Compile Include="Feed\HomeFeed.Designer.cs">
       <DependentUpon>HomeFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Homepage\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIntro\Intro.cs">
       <SubType>Form</SubType>
@@ -158,6 +194,12 @@
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\ErrorMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +224,12 @@
     <Compile Include="Popup\Post.Designer.cs">
       <DependentUpon>Post.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\SucMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SucMessage.Designer.cs">
+      <DependentUpon>SucMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogIntro\SignUp.cs">
@@ -205,6 +253,21 @@
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Feed\FeedNoImage.resx">
+      <DependentUpon>FeedNoImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\HistroyLogCan.resx">
+      <DependentUpon>HistroyLogCan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\HistroyLogDel.resx">
+      <DependentUpon>HistroyLogDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\HistroyLogRec.resx">
+      <DependentUpon>HistroyLogRec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homepage\History.resx">
       <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\HomeFeed.resx">
       <DependentUpon>HomeFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIntro\Intro.resx">
       <DependentUpon>Intro.cs</DependentUpon>
@@ -226,6 +292,9 @@
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup\ErrorMessage.resx">
       <DependentUpon>ErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SucMessage.resx">
+      <DependentUpon>SucMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

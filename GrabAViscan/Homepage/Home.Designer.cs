@@ -92,9 +92,9 @@
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(-22, -19);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(238, 63);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(238, 145);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 17;
             this.gunaPictureBox1.TabStop = false;
@@ -114,7 +114,7 @@
             this.gunaTextBox1.Radius = 15;
             this.gunaTextBox1.Size = new System.Drawing.Size(419, 59);
             this.gunaTextBox1.TabIndex = 16;
-            this.gunaTextBox1.Text = "Search";
+            this.gunaTextBox1.Text = "Search Filter";
             // 
             // Minimize_btn
             // 
@@ -128,14 +128,14 @@
             this.Minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.Image")));
             this.Minimize_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Minimize_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.Minimize_btn.Location = new System.Drawing.Point(2363, 12);
+            this.Minimize_btn.Location = new System.Drawing.Point(2420, 12);
             this.Minimize_btn.Name = "Minimize_btn";
             this.Minimize_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.Minimize_btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Minimize_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Minimize_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.OnHoverImage")));
             this.Minimize_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Minimize_btn.Size = new System.Drawing.Size(73, 71);
+            this.Minimize_btn.Size = new System.Drawing.Size(50, 50);
             this.Minimize_btn.TabIndex = 14;
             this.Minimize_btn.Click += new System.EventHandler(this.Minimize_btn_Click);
             // 
@@ -150,15 +150,15 @@
             this.Close_btn.ForeColor = System.Drawing.Color.White;
             this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
             this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.Close_btn.Location = new System.Drawing.Point(2464, 12);
+            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.Close_btn.Location = new System.Drawing.Point(2494, 12);
             this.Close_btn.Name = "Close_btn";
             this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
             this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(73, 71);
+            this.Close_btn.Size = new System.Drawing.Size(50, 50);
             this.Close_btn.TabIndex = 13;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
@@ -206,7 +206,7 @@
             this.gunaPanel1.Controls.Add(this.gunaButton2);
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(563, 608);
+            this.gunaPanel1.Size = new System.Drawing.Size(563, 487);
             this.gunaPanel1.TabIndex = 2;
             // 
             // gunaButton9
@@ -344,6 +344,7 @@
             this.flow1.Name = "flow1";
             this.flow1.Size = new System.Drawing.Size(1350, 1498);
             this.flow1.TabIndex = 2;
+            this.flow1.Paint += new System.Windows.Forms.PaintEventHandler(this.flow1_Paint);
             // 
             // RightWing
             // 

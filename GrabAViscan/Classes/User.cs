@@ -26,6 +26,12 @@ namespace GrabAViscan.Classes
 
         public string Bio {  get; set; }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Status { get; set; }
+
 
         DatabaseManagement db = new DatabaseManagement();
         private User()
@@ -33,7 +39,7 @@ namespace GrabAViscan.Classes
 
         }
 
-        public User(int user_id, string email, string username, int school_id, DateTime dOB, string address, byte[] profile_pic, string phoneNumber, string bio)
+        public User(int user_id, string email, string username, int school_id, DateTime dOB, string address, byte[] profile_pic, string phoneNumber, string bio, string FirstName, string LastName, string Status )
         {
             this.User_id = user_id;
             this.Email = email;
@@ -44,10 +50,40 @@ namespace GrabAViscan.Classes
             this.PhoneNumber = phoneNumber;
             this.Profile_pic = profile_pic;
             this.Bio = bio;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Status = Status;
         }
 
 
 
+        public User(User other)
+        {
+            this.User_id = other.User_id;
+            this.Email = other.Email;
+            this.Username = other.Username;
+            this.School_id = other.School_id;
+            this.DOB = other.DOB;
+            this.Address = other.Address;
+            this.PhoneNumber = other.PhoneNumber;
+            this.Profile_pic = other.Profile_pic;
+            this.Bio = other.Bio;
+            this.FirstName = other.FirstName;
+            this.LastName = other.LastName;
+            this.Status = other.Status;
+        }
+
+
+
+
+
+
+        public override string ToString()
+        { 
+            return $"User ID: {User_id}\nUsername: {Username}\nEmail: {Email}\nSchool ID: {School_id}\n" +
+                   $"Date of Birth: {DOB:yyyy-MM-dd}\nAddress: {Address}\nPhone Number: {PhoneNumber}\n" +
+                   $"Bio: {Bio}\nFirst Name: {FirstName}\nLast Name: {LastName}\nStatus: {Status} \nProfile: {Profile_pic}";
+        }
 
     }
 }

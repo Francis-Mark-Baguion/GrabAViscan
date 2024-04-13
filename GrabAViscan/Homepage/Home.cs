@@ -15,6 +15,8 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using GrabAViscan.Popup;
+using GrabAViscan.Homepage;
+
 
 namespace GrabAViscan
 {
@@ -38,7 +40,7 @@ namespace GrabAViscan
         {
             user = db.InitializeUser(email);
             this.email = email;
-            right.setter(email);
+            right.setter(email,this);
 
         }
 
@@ -46,19 +48,28 @@ namespace GrabAViscan
         {
             flow1.Controls.Clear();
 
-            // Get available posts from the database
+            
             List<Posting> posts = db.GetAvailablePosts();
 
-            // Loop through each post
+            
             foreach (Posting post in posts)
             {
-                // Create a HomeFeed object with the current post
-                HomeFeed home = new HomeFeed(post);
+                if(post.image != null)
+                {
+                    HomeFeed home = new HomeFeed(post);
 
-                // Add the HomeFeed object to the flowLayout panel
-                flow1.Controls.Add(home);
 
-                // Optionally, add a buffer (spacer) between posts
+                    flow1.Controls.Add(home);
+                }
+                else
+                {
+                    FeedNoImage feedNoImage = new FeedNoImage(post);
+                    flow1.Controls.Add(feedNoImage);
+
+                }
+                
+
+                
                 Buffers buff = new Buffers();
                 flow1.Controls.Add(buff);
             }
@@ -66,7 +77,8 @@ namespace GrabAViscan
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-
+            user = db.InitializeUser(email);
+            right.setter(email,this);
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[2].Width = 25;
             tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
@@ -126,9 +138,20 @@ namespace GrabAViscan
             flow1.Controls.Add(history);
         }
 
-        private void gunaButton9_Click(object sender, EventArgs e)
+        public void gunaButton9_Click(object sender, EventArgs e)
         {
+            Settings settings = new Settings(user.Email);
+            
+            flow1.Controls.Clear();
 
+            tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[2].Width = 0;
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 78;
+            tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+            flow1.Controls.Add(settings);
         }
 
         
@@ -143,6 +166,11 @@ namespace GrabAViscan
         private void Minimize_btn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void flow1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

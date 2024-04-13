@@ -229,14 +229,14 @@
             this.Minimize_btn.Image = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.Image")));
             this.Minimize_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Minimize_btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.Minimize_btn.Location = new System.Drawing.Point(13, 15);
+            this.Minimize_btn.Location = new System.Drawing.Point(34, 15);
             this.Minimize_btn.Name = "Minimize_btn";
             this.Minimize_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.Minimize_btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Minimize_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Minimize_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Minimize_btn.OnHoverImage")));
             this.Minimize_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Minimize_btn.Size = new System.Drawing.Size(73, 71);
+            this.Minimize_btn.Size = new System.Drawing.Size(50, 50);
             this.Minimize_btn.TabIndex = 16;
             this.Minimize_btn.Click += new System.EventHandler(this.Minimize_btn_Click);
             // 
@@ -251,7 +251,7 @@
             this.Close_btn.ForeColor = System.Drawing.Color.White;
             this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
             this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
             this.Close_btn.Location = new System.Drawing.Point(114, 15);
             this.Close_btn.Name = "Close_btn";
             this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
@@ -259,7 +259,7 @@
             this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
             this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(73, 71);
+            this.Close_btn.Size = new System.Drawing.Size(50, 50);
             this.Close_btn.TabIndex = 15;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
