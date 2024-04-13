@@ -1,6 +1,6 @@
 ﻿namespace GrabAViscan.Feed
 {
-    partial class HistroyLogDel
+    partial class HistroyLogRec
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogDel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogRec));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Fee = new Guna.UI.WinForms.GunaButton();
             this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
+            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.Fee = new Guna.UI.WinForms.GunaButton();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel1.SuspendLayout();
-            this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            this.gunaElipsePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
@@ -56,7 +56,31 @@
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1970, 100);
-            this.gunaElipsePanel1.TabIndex = 1;
+            this.gunaElipsePanel1.TabIndex = 2;
+            // 
+            // Fee
+            // 
+            this.Fee.AnimationHoverSpeed = 0.07F;
+            this.Fee.AnimationSpeed = 0.03F;
+            this.Fee.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.Fee.BorderColor = System.Drawing.Color.Silver;
+            this.Fee.BorderSize = 3;
+            this.Fee.Enabled = false;
+            this.Fee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fee.ForeColor = System.Drawing.Color.Black;
+            this.Fee.Image = ((System.Drawing.Image)(resources.GetObject("Fee.Image")));
+            this.Fee.ImageSize = new System.Drawing.Size(20, 20);
+            this.Fee.Location = new System.Drawing.Point(1703, 24);
+            this.Fee.Name = "Fee";
+            this.Fee.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.Fee.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.Fee.OnHoverForeColor = System.Drawing.Color.Black;
+            this.Fee.OnHoverImage = null;
+            this.Fee.OnPressedColor = System.Drawing.Color.Black;
+            this.Fee.Radius = 10;
+            this.Fee.Size = new System.Drawing.Size(247, 50);
+            this.Fee.TabIndex = 40;
+            this.Fee.Text = "50";
             // 
             // dateCompleted
             // 
@@ -109,10 +133,22 @@
             this.nameHolder.Text = "First Name Last Name";
             this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.White;
+            this.profile.BaseColor = System.Drawing.Color.White;
+            this.profile.Location = new System.Drawing.Point(319, 10);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 1;
+            this.profile.TabStop = false;
+            this.profile.UseTransfarantBackground = false;
+            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.gunaElipsePanel2.Controls.Add(this.gunaLabel2);
             this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 0);
@@ -128,58 +164,22 @@
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
             this.gunaLabel2.Location = new System.Drawing.Point(46, 26);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(208, 48);
+            this.gunaLabel2.Size = new System.Drawing.Size(185, 48);
             this.gunaLabel2.TabIndex = 7;
-            this.gunaLabel2.Text = "DELIVERED";
+            this.gunaLabel2.Text = "RECEIVED";
             // 
-            // Fee
-            // 
-            this.Fee.AnimationHoverSpeed = 0.07F;
-            this.Fee.AnimationSpeed = 0.03F;
-            this.Fee.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.Fee.BorderColor = System.Drawing.Color.Silver;
-            this.Fee.BorderSize = 3;
-            this.Fee.Enabled = false;
-            this.Fee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fee.ForeColor = System.Drawing.Color.Black;
-            this.Fee.Image = ((System.Drawing.Image)(resources.GetObject("Fee.Image")));
-            this.Fee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Fee.Location = new System.Drawing.Point(1703, 24);
-            this.Fee.Name = "Fee";
-            this.Fee.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.Fee.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.Fee.OnHoverForeColor = System.Drawing.Color.Black;
-            this.Fee.OnHoverImage = null;
-            this.Fee.OnPressedColor = System.Drawing.Color.Black;
-            this.Fee.Radius = 10;
-            this.Fee.Size = new System.Drawing.Size(247, 50);
-            this.Fee.TabIndex = 40;
-            this.Fee.Text = "50";
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.White;
-            this.profile.BaseColor = System.Drawing.Color.White;
-            this.profile.Location = new System.Drawing.Point(319, 10);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(80, 80);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 1;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
-            // 
-            // HistroyLogDel
+            // HistroyLogRec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
-            this.Name = "HistroyLogDel";
+            this.Name = "HistroyLogRec";
             this.Size = new System.Drawing.Size(1970, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.ResumeLayout(false);
 
         }

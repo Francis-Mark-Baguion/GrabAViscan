@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace GrabAViscan.Feed
 {
-    public partial class HistroyLogDel : UserControl
+    public partial class HistroyLogCan : UserControl
     {
         DatabaseManagement db = new DatabaseManagement();
-        public HistroyLogDel(Posting post)
+        public HistroyLogCan(Posting post)
         {
             InitializeComponent();
 

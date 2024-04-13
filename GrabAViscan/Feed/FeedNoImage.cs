@@ -74,5 +74,10 @@ namespace GrabAViscan.Feed
         {
             db.updateAvailability(db.getPostById(this.id).Post_id, 1);
         }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

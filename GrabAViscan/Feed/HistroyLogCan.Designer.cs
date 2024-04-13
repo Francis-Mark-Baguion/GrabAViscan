@@ -1,6 +1,6 @@
 ﻿namespace GrabAViscan.Feed
 {
-    partial class HistroyLogDel
+    partial class HistroyLogCan
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogDel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogCan));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
@@ -56,7 +56,7 @@
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1970, 100);
-            this.gunaElipsePanel1.TabIndex = 1;
+            this.gunaElipsePanel1.TabIndex = 3;
             // 
             // dateCompleted
             // 
@@ -112,7 +112,7 @@
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.Firebrick;
             this.gunaElipsePanel2.Controls.Add(this.gunaLabel2);
             this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 0);
@@ -128,9 +128,9 @@
             this.gunaLabel2.ForeColor = System.Drawing.Color.White;
             this.gunaLabel2.Location = new System.Drawing.Point(46, 26);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(208, 48);
+            this.gunaLabel2.Size = new System.Drawing.Size(218, 48);
             this.gunaLabel2.TabIndex = 7;
-            this.gunaLabel2.Text = "DELIVERED";
+            this.gunaLabel2.Text = "CANCELLED";
             // 
             // Fee
             // 
@@ -168,12 +168,12 @@
             this.profile.TabStop = false;
             this.profile.UseTransfarantBackground = false;
             // 
-            // HistroyLogDel
+            // HistroyLogCan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
-            this.Name = "HistroyLogDel";
+            this.Name = "HistroyLogCan";
             this.Size = new System.Drawing.Size(1970, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();

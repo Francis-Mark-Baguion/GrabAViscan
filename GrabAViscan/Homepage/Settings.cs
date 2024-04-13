@@ -3,6 +3,7 @@ using GrabAViscan.Popup;
 using Guna.UI.WinForms;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -16,11 +17,12 @@ namespace GrabAViscan.Homepage
         string email;
         private bool flag = false;
         private bool flag1 = false;
-
+        private int id;
         public Settings(String email)
         {
             InitializeComponent();
             user = db.InitializeUser(email);
+            this.id = user.User_id;
             this.email = email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             this.statusHolder.Text = user.Status;
@@ -109,7 +111,7 @@ namespace GrabAViscan.Homepage
             User use = new User(user.User_id, email,username , int.Parse(schoolTxt.Text), user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
             db.updateUserInformation(use);
             user = db.InitializeUser(email);
-            //this.emailTxt.Text = this.email;
+           
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             this.statusHolder.Text = user.Status;
             this.firstNameTxt.Text = user.FirstName;
@@ -126,7 +128,7 @@ namespace GrabAViscan.Homepage
         private void discard_btn_Click(object sender, EventArgs e)
         {
             user = db.InitializeUser(email);
-            //this.emailTxt.Text = this.email;
+            
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             this.statusHolder.Text = user.Status;
             this.firstNameTxt.Text = user.FirstName;
@@ -144,7 +146,6 @@ namespace GrabAViscan.Homepage
         private void gunaButton3_Click(object sender, EventArgs e)
         {
 
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg;*.png;*.gif)|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
             openFileDialog.Title = "Select Profile Picture";
@@ -153,7 +154,7 @@ namespace GrabAViscan.Homepage
             {
                 try
                 {
-                    
+
                     byte[] imageData;
                     using (FileStream fs = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                     {
@@ -161,29 +162,68 @@ namespace GrabAViscan.Homepage
                         fs.Read(imageData, 0, (int)fs.Length);
                     }
 
-                   
 
-                    
+
+
                     using (MemoryStream ms = new MemoryStream(imageData))
                     {
                         Image image = Image.FromStream(ms);
 
-                        
+
                         profile_pic.Image = image;
                     }
 
-                    
+
                     db.changeUserProfile(imageData, user.User_id);
+                    user = db.getUserById(id);
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     Console.WriteLine("An error occurred (ChangeUserProfile): " + ex.Message);
                     MessageBox.Show("An unexpected error occurred. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                 }
             }
 
-            
+
+
+
+        }
+
+
+        private byte[] getPhoto()
+        {
+            try
+            {
+                if (profile_pic.Image != null)
+                {
+                    
+                    string fileName = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName() + ".jpg");
+
+                    
+                    profile_pic.Image.Save(fileName, ImageFormat.Jpeg); 
+
+                   
+                    byte[] imageData;
+                    using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+                    {
+                        imageData = new byte[fs.Length];
+                        fs.Read(imageData, 0, (int)fs.Length);
+                    }
+
+                   
+                    File.Delete(fileName);
+
+                    return imageData;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine("Error getting photo: " + ex.Message);
+            }
+
+            return null;
         }
 
         private void ClickAll(object sender, EventArgs e)

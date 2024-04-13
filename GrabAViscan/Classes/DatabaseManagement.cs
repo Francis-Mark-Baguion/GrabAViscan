@@ -803,7 +803,7 @@ namespace GrabAViscan.Classes
                     cmd.Parameters.AddWithValue("@Deadline", posting.Deadline);
                     cmd.Parameters.AddWithValue("@Category", posting.Category);
 
-                    // Handle image update (consider parameterization for security)
+                   
                     if (posting.image != null)
                     {
                         cmd.Parameters.AddWithValue("@image", posting.image);
@@ -828,6 +828,7 @@ namespace GrabAViscan.Classes
                 }
                 catch (MySqlException ex)
                 {
+
                     ErrorMessage error = new ErrorMessage("An error occurred(updatePostingInformation): " + ex.Message);
 
                     return false;
@@ -854,7 +855,7 @@ namespace GrabAViscan.Classes
                     {
                         if (reader.HasRows)
                         {
-                            reader.Read(); // Assuming only one row for the given ID
+                            reader.Read(); 
                             return new Posting(
                                 Convert.ToInt32(reader["Post_id"]),
                                 Convert.ToInt32(reader["User_id"]),
@@ -876,15 +877,16 @@ namespace GrabAViscan.Classes
                         }
                         else
                         {
-                            // No post found with the given ID, handle it appropriately
-                            return null; // Or throw an exception
+                            
+                            return null; 
                         }
                     }
                 }
                 catch (MySqlException ex)
                 {
-                    // Handle database errors more gracefully than just logging
-                    throw new Exception("An error occurred while getting post by ID: " + ex.Message);
+
+                    ErrorMessage mess = new ErrorMessage("An error occurred while getting post by ID: " + ex.Message);
+                   
                 }
             }
 

@@ -122,11 +122,29 @@
     <Compile Include="Feed\FeedNoImage.Designer.cs">
       <DependentUpon>FeedNoImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feed\HistroyLogCan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\HistroyLogCan.Designer.cs">
+      <DependentUpon>HistroyLogCan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feed\HistroyLogDel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Feed\HistroyLogDel.Designer.cs">
       <DependentUpon>HistroyLogDel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\HistroyLogRec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\HistroyLogRec.Designer.cs">
+      <DependentUpon>HistroyLogRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\Requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
     </Compile>
     <Compile Include="Homepage\History.cs">
       <SubType>UserControl</SubType>
@@ -238,8 +256,17 @@
     <EmbeddedResource Include="Feed\FeedNoImage.resx">
       <DependentUpon>FeedNoImage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Feed\HistroyLogCan.resx">
+      <DependentUpon>HistroyLogCan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Feed\HistroyLogDel.resx">
       <DependentUpon>HistroyLogDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\HistroyLogRec.resx">
+      <DependentUpon>HistroyLogRec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage\History.resx">
       <DependentUpon>History.cs</DependentUpon>

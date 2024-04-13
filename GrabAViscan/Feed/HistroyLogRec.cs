@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace GrabAViscan.Feed
 {
-    public partial class HistroyLogDel : UserControl
+    public partial class HistroyLogRec : UserControl
     {
         DatabaseManagement db = new DatabaseManagement();
-        public HistroyLogDel(Posting post)
+        public HistroyLogRec(Posting post)
         {
             InitializeComponent();
 
-            this.nameHolder.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
+            this.nameHolder.Text = db.getUserById(post.User_id).FirstName +" "+ db.getUserById(post.User_id).LastName;
             SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.requestTxt.Text = post.Requested;
