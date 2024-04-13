@@ -24,7 +24,7 @@ namespace GrabAViscan
     {
         DatabaseManagement db = new DatabaseManagement();
         public User user;
-        rightWing right;
+        rightWing right = new rightWing();
         private string email;
         public Home()
         {
@@ -77,7 +77,10 @@ namespace GrabAViscan
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+            
             user = db.InitializeUser(email);
+            
+            
             right.setter(email,this);
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[2].Width = 25;
