@@ -9,20 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
+using GrabAViscan.Popup;
 using Guna.UI.WinForms;
 
 namespace GrabAViscan
 {
     public partial class HomeFeed : UserControl
     {
-        Posting post;
-        DatabaseManagement db = new DatabaseManagement();
+        private Posting post;
+        private DatabaseManagement db = new DatabaseManagement();
+        private int id;
         public HomeFeed(Posting post)
         {
             InitializeComponent();
-            this.post = post;
+            new Posting(post);
             if(post != null && db.getUserById(post.User_id)!=null) 
             {
+                id = post.Post_id;
                 SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
                 this.Name_label.Text = db.getUserById(post.User_id).FirstName +""+ db.getUserById(post.User_id).LastName;
                 this.TimeTxt.Text = "" + post.Date_posted;
@@ -77,6 +80,8 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
+            
+            db.updateAvailability(db.getPostById(this.id).Post_id, 1);
 
         }
 

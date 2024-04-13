@@ -344,6 +344,7 @@
             this.flow1.Name = "flow1";
             this.flow1.Size = new System.Drawing.Size(1350, 1498);
             this.flow1.TabIndex = 2;
+            this.flow1.Paint += new System.Windows.Forms.PaintEventHandler(this.flow1_Paint);
             // 
             // RightWing
             // 

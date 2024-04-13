@@ -113,7 +113,7 @@
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1985, 65);
+            this.gunaPanel1.Size = new System.Drawing.Size(1980, 65);
             this.gunaPanel1.TabIndex = 8;
             this.gunaPanel1.Click += new System.EventHandler(this.ClickAll);
             // 
@@ -680,7 +680,7 @@
             this.Controls.Add(this.gunaGradiantButton1);
             this.Controls.Add(this.gunaPanel1);
             this.Name = "Settings";
-            this.Size = new System.Drawing.Size(1985, 1495);
+            this.Size = new System.Drawing.Size(1980, 1495);
             this.Load += new System.EventHandler(this.Settings_Load);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();

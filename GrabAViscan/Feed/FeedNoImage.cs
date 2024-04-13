@@ -18,8 +18,11 @@ namespace GrabAViscan.Feed
 
         Posting post;
         DatabaseManagement db = new DatabaseManagement();
+        private int id;
         public FeedNoImage(Posting post)
         {
+
+            this.id = post.Post_id;
             InitializeComponent();
             this.post = post;
             if (post != null && db.getUserById(post.User_id) != null)
@@ -69,7 +72,7 @@ namespace GrabAViscan.Feed
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-
+            db.updateAvailability(db.getPostById(this.id).Post_id, 1);
         }
     }
 }

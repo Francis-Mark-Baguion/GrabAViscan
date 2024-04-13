@@ -56,6 +56,28 @@ namespace GrabAViscan.Classes
         }
 
 
+
+        public User(User other)
+        {
+            this.User_id = other.User_id;
+            this.Email = other.Email;
+            this.Username = other.Username;
+            this.School_id = other.School_id;
+            this.DOB = other.DOB;
+            this.Address = other.Address;
+            this.PhoneNumber = other.PhoneNumber;
+            this.Profile_pic = other.Profile_pic;
+            this.Bio = other.Bio;
+            this.FirstName = other.FirstName;
+            this.LastName = other.LastName;
+            this.Status = other.Status;
+        }
+
+
+
+
+
+
         public override string ToString()
         { 
             return $"User ID: {User_id}\nUsername: {Username}\nEmail: {Email}\nSchool ID: {School_id}\n" +

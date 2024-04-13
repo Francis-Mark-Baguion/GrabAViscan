@@ -167,5 +167,10 @@ namespace GrabAViscan
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void flow1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

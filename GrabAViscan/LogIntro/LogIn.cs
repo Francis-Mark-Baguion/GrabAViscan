@@ -59,19 +59,18 @@ namespace GrabAViscan
             if (reader.Read())
             {
                 conConn.Close();
-                
                 Home hom = new Home();
                 User user = databaseManagement.InitializeUser(email);
                 hom.setter(email);
                 hom.Show();
                 this.Hide();
-                ErrorMessage error = new ErrorMessage("Log In Successful");
+                SucMessage error = new SucMessage("Log In Successful");
                 
 
             }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                ErrorMessage error1 = new ErrorMessage("Invalid Email or Password");
             }
 
             reader.Close();
