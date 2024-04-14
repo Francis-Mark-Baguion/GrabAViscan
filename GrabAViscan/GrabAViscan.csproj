@@ -104,6 +104,7 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\Credentials.cs" />
     <Compile Include="Classes\DatabaseManagement.cs" />
+    <Compile Include="Classes\Deliver.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
     <Compile Include="Classes\Posting.cs" />

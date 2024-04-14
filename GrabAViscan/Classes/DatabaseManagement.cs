@@ -5,6 +5,7 @@ using Mysqlx.Crud;
 using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -25,11 +26,13 @@ namespace GrabAViscan.Classes
     {
         public List<Category> categories;
         public List<Location>  locations;
+        public List<Deliver> Deliveries;
 
         public DatabaseManagement() 
         {
             GetCategories();
             GetLocations();
+            GetDeliveries();
         }
 
         
@@ -1005,6 +1008,43 @@ namespace GrabAViscan.Classes
 
             }
         }
+
+
+        private void GetDeliveries()
+        {
+            Deliveries  = new List<Deliver>();
+            using (MySqlConnection conConn = this.Connect())
+            {
+
+                try
+                {
+                    // Build the SELECT query to retrieve delivery data
+                    string selectSql = "SELECT * FROM grab.delivery"; // Replace with specific columns if needed
+                    MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
+
+                    // Execute the query and read results
+                    using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int postId = reader.GetInt32("Post_id");
+                            int userId = reader.GetInt32("User_id");
+
+
+                            Deliver delivery = new Deliver(postId, userId);
+                            Deliveries.Add(delivery);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while retrieving deliveries: " + ex.Message); // Or use a logging mechanism
+                }
+            }
+
+           
+        }
+
     }
 
 

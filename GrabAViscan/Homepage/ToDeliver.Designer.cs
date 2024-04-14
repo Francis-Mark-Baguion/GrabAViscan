@@ -29,33 +29,58 @@
         private void InitializeComponent()
         {
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(42, 40);
+            this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel2.Location = new System.Drawing.Point(51, 6);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(189, 48);
-            this.gunaLabel2.TabIndex = 3;
-            this.gunaLabel2.Text = "To Deliver";
+            this.gunaLabel2.Size = new System.Drawing.Size(234, 48);
+            this.gunaLabel2.TabIndex = 5;
+            this.gunaLabel2.Text = "My Requests";
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.White;
+            this.gunaPanel1.Controls.Add(this.gunaLabel2);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1980, 65);
+            this.gunaPanel1.TabIndex = 17;
+            // 
+            // flow1
+            // 
+            this.flow1.AutoScroll = true;
+            this.flow1.Location = new System.Drawing.Point(0, 67);
+            this.flow1.Name = "flow1";
+            this.flow1.Size = new System.Drawing.Size(1980, 1428);
+            this.flow1.TabIndex = 16;
             // 
             // ToDeliver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.gunaPanel1);
+            this.Controls.Add(this.flow1);
             this.Name = "ToDeliver";
             this.Size = new System.Drawing.Size(1980, 1495);
+            this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flow1;
     }
 }

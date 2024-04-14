@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GrabAViscan.Classes;
+using GrabAViscan.Feed;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,53 @@ namespace GrabAViscan
 {
     public partial class ToDeliver : UserControl
     {
-        public ToDeliver()
+        DatabaseManagement db = new DatabaseManagement();
+        private int User_id;
+        Home home;
+        public ToDeliver(int User_id)
         {
             InitializeComponent();
+
+            this.User_id = User_id;
+        }
+
+
+
+
+
+
+
+        public void feed(Home home)
+        {
+            flow1.Controls.Clear();
+
+            bool flag = false;
+            List<Posting> posts = db.getAllPost();
+            List<Deliver> deliveries = db.Deliveries;
+
+            foreach (Posting post in posts)
+            {
+                if ( post.Available == 1)
+                {
+                    foreach(Deliver delivery in deliveries)
+                    {
+                        if(post.Post_id == delivery.Post_Id && delivery.User_Id == User_id)
+                        {
+                            Requests req = new Requests(post);
+                            req.setter(home);
+
+                            flow1.Controls.Add(req);
+                        }
+                    }
+                    
+
+
+                }
+
+
+                //Buffers buff = new Buffers();
+                //flow1.Controls.Add(buff);
+            }
         }
     }
 }

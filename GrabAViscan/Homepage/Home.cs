@@ -122,7 +122,8 @@ namespace GrabAViscan
       
         private void To_deliver(object sender, EventArgs e)
         {
-            ToDeliver deliver = new ToDeliver();  
+            ToDeliver todeliver = new ToDeliver(this.User_id);
+            todeliver.feed(this);
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
@@ -132,7 +133,7 @@ namespace GrabAViscan
             tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[0].Width = 22;
 
-            flow1.Controls.Add(deliver);
+            flow1.Controls.Add(todeliver);
         }
 
         private void History(object sender, EventArgs e)
@@ -183,6 +184,13 @@ namespace GrabAViscan
         private void flow1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show();
+            this.Close();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace GrabAViscan.Feed
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
     
 
-            requestTxt.Text = post.Requested;
+            statusTxt.Text = post.Requested;
             quantityTxt.Text = post.Quantity;
             
             pickNearbyTxt.Text = pick;
@@ -52,7 +52,17 @@ namespace GrabAViscan.Feed
             
                cat = db.GetCategoryByName(post.Category);
                SetImageFromByteArrayProfile(this.profile, cat.categoryImage);
-            
+
+            if (post.Available == 0)
+            {
+                statusTxt.Text = "Waiting";
+                statusTxt.BorderColor = Color.FromArgb(224, 207, 115);
+            }
+            else if (post.Available == 1)
+            {
+                statusTxt.Text = "in Progress";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
 
         }
 
