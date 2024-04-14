@@ -40,12 +40,12 @@
             this.Category_label = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.discard_btn = new Guna.UI.WinForms.GunaButton();
             this.upload_btn = new Guna.UI.WinForms.GunaButton();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.profile = new Guna.UI.WinForms.GunaPictureBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             this.requestTxt.OnHoverForeColor = System.Drawing.Color.White;
             this.requestTxt.OnHoverImage = null;
             this.requestTxt.OnPressedColor = System.Drawing.Color.Black;
-            this.requestTxt.Size = new System.Drawing.Size(268, 58);
+            this.requestTxt.Size = new System.Drawing.Size(263, 58);
             this.requestTxt.TabIndex = 44;
             this.requestTxt.Text = "Item";
             // 
@@ -193,7 +193,7 @@
             this.Category_label.AutoSize = true;
             this.Category_label.BackColor = System.Drawing.Color.White;
             this.Category_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Category_label.Location = new System.Drawing.Point(141, 114);
+            this.Category_label.Location = new System.Drawing.Point(127, 114);
             this.Category_label.Name = "Category_label";
             this.Category_label.Size = new System.Drawing.Size(110, 32);
             this.Category_label.TabIndex = 20;
@@ -205,16 +205,17 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(9, 269);
+            this.label1.Location = new System.Drawing.Point(9, 272);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(375, 34);
+            this.label1.Size = new System.Drawing.Size(355, 34);
             this.label1.TabIndex = 47;
-            this.label1.Text = "__________________";
+            this.label1.Text = "_________________";
             // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.MainPanel.BaseColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.profile);
             this.MainPanel.Controls.Add(this.label2);
             this.MainPanel.Controls.Add(this.gunaButton4);
             this.MainPanel.Controls.Add(this.discard_btn);
@@ -229,14 +230,25 @@
             this.MainPanel.Controls.Add(this.gunaLabel3);
             this.MainPanel.Controls.Add(this.gunaLabel2);
             this.MainPanel.Controls.Add(this.Category_label);
-            this.MainPanel.Controls.Add(this.profile);
             this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Radius = 30;
-            this.MainPanel.Size = new System.Drawing.Size(400, 800);
+            this.MainPanel.Size = new System.Drawing.Size(380, 800);
             this.MainPanel.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(9, 478);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(355, 34);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "_________________";
             // 
             // gunaButton4
             // 
@@ -256,10 +268,11 @@
             this.gunaButton4.OnHoverImage = null;
             this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton4.Radius = 10;
-            this.gunaButton4.Size = new System.Drawing.Size(394, 52);
+            this.gunaButton4.Size = new System.Drawing.Size(374, 52);
             this.gunaButton4.TabIndex = 54;
             this.gunaButton4.Text = "CANCEL";
             this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
             // discard_btn
             // 
@@ -279,7 +292,7 @@
             this.discard_btn.OnHoverImage = null;
             this.discard_btn.OnPressedColor = System.Drawing.Color.Black;
             this.discard_btn.Radius = 10;
-            this.discard_btn.Size = new System.Drawing.Size(394, 52);
+            this.discard_btn.Size = new System.Drawing.Size(374, 52);
             this.discard_btn.TabIndex = 53;
             this.discard_btn.Text = "UPDATE";
             this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -302,25 +315,10 @@
             this.upload_btn.OnHoverImage = null;
             this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
             this.upload_btn.Radius = 10;
-            this.upload_btn.Size = new System.Drawing.Size(394, 52);
+            this.upload_btn.Size = new System.Drawing.Size(374, 52);
             this.upload_btn.TabIndex = 52;
             this.upload_btn.Text = "VIEW";
             this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.White;
-            this.profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.profile.BaseColor = System.Drawing.Color.White;
-            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
-            this.profile.InitialImage = ((System.Drawing.Image)(resources.GetObject("profile.InitialImage")));
-            this.profile.Location = new System.Drawing.Point(155, 24);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(82, 77);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 0;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
             // 
             // gunaLabel2
             // 
@@ -333,17 +331,16 @@
             this.gunaLabel2.TabIndex = 32;
             this.gunaLabel2.Text = "Pick Up";
             // 
-            // label2
+            // profile
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 478);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(375, 34);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "__________________";
+            this.profile.BackColor = System.Drawing.Color.Transparent;
+            this.profile.BaseColor = System.Drawing.Color.Transparent;
+            this.profile.Location = new System.Drawing.Point(140, 18);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 56;
+            this.profile.TabStop = false;
             // 
             // Requests
             // 
@@ -351,7 +348,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MainPanel);
             this.Name = "Requests";
-            this.Size = new System.Drawing.Size(400, 800);
+            this.Size = new System.Drawing.Size(380, 800);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
@@ -375,7 +372,7 @@
         private Guna.UI.WinForms.GunaButton discard_btn;
         private Guna.UI.WinForms.GunaButton upload_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaCirclePictureBox profile;
         private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaPictureBox profile;
     }
 }

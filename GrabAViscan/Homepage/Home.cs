@@ -26,6 +26,7 @@ namespace GrabAViscan
         public User user;
         rightWing right = new rightWing();
         private string email;
+        private int User_id;
         public Home()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace GrabAViscan
         public void setter(string email)
         {
             user = db.InitializeUser(email);
+            this.User_id = user.User_id;
             this.email = email;
             right.setter(email,this);
 
@@ -95,9 +97,10 @@ namespace GrabAViscan
 
         }
 
-        private void My_Request(object sender, EventArgs e)
+        public void My_Request(object sender, EventArgs e)
         {
-            MyRequest myRequest = new MyRequest();
+            MyRequest myRequest = new MyRequest(this.User_id);
+            myRequest.feed(this);
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;

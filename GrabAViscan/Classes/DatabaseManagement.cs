@@ -342,11 +342,10 @@ namespace GrabAViscan.Classes
                     {
                         while (reader.Read())
                         {
-                            int categoryId = reader.GetInt32("categoryId");
-                            string categoryName = reader.GetString("name");
+                            
 
                             
-                            Category category = new Category(categoryId, categoryName);
+                            Category category = new Category(reader.GetInt32("categoryId"), reader.GetString("name"), reader["categoryImage"] != DBNull.Value ? (byte[])reader["categoryImage"] : null);
                             categories.Add(category);
                         }
                     }
@@ -893,6 +892,87 @@ namespace GrabAViscan.Classes
             return null;
         }
 
+
+
+        public Category GetCategoryByName(string categoryString)
+        {
+            Category foundCategory = null;
+
+            using (MySqlConnection conConn = Connect())
+            {
+                try
+                {
+                    
+
+                    // Build the SQL query with parameter for category
+                    string sql = "SELECT * FROM grab.category WHERE name = @category";
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+
+                    // Add parameter for category
+                    cmd.Parameters.AddWithValue("@category", categoryString);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            foundCategory = new Category(reader.GetInt32("categoryId"), reader.GetString("name"),
+                                                          reader["categoryImage"] != DBNull.Value ? (byte[])reader["categoryImage"] : null);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+            }
+
+            return foundCategory;
+        }
+
+
+        public Location GetLocationById(int locationId)
+        {
+            Location foundLocation = null;
+
+            using (MySqlConnection conConn = Connect())  // Assuming Connect() establishes the connection
+            {
+                try
+                {
+                    string sql = "SELECT * FROM grab.location WHERE idLocation = @locationId;";
+                    MySqlCommand cmd = new MySqlCommand(sql, conConn);
+                    cmd.Parameters.AddWithValue("@locationId", locationId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Directly return the new Location object
+                            return new Location(reader.GetInt32("idLocation"), reader.GetString("locationName"));
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+            }
+
+            return foundLocation; // Still return null if no location is found
+        }
+
+
+        public Location GetLocationByMatchingId(List<Location> locations, int locationId)
+        {
+            foreach (Location location in locations)
+            {
+                if (location.Location_id == locationId)
+                {
+                    return location;
+                }
+            }
+
+            return null; // If no match is found
+        }
     }
 
 
