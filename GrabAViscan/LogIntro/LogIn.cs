@@ -59,7 +59,7 @@ namespace GrabAViscan
             if (reader.Read())
             {
                 conConn.Close();
-                Home hom = new Home();
+                Home hom = new Home(databaseManagement.get_id(email,password));
                 User user = databaseManagement.InitializeUser(email);
                 hom.setter(email);
                 hom.Show();

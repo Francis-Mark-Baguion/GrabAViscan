@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
@@ -815,7 +816,7 @@ namespace GrabAViscan.Classes
                     cmd.Parameters.AddWithValue("@Pick_up", posting.Pick_up);
                     cmd.Parameters.AddWithValue("@Near_pickUp", GetLocationID(posting.Near_pickUp));
                     cmd.Parameters.AddWithValue("@Delivery_location", posting.Delivery_location);
-                    cmd.Parameters.AddWithValue("@Near_deliveryLocation", GetLocationID(posting.Near_pickUp));
+                    cmd.Parameters.AddWithValue("@Near_deliveryLocation", GetLocationID(posting.Near_deliveryLocation));
                     cmd.Parameters.AddWithValue("@Available", posting.Available);
 
                     SucMessage erro = new SucMessage("Changes has been saved");
@@ -972,6 +973,37 @@ namespace GrabAViscan.Classes
             }
 
             return null; // If no match is found
+        }
+
+
+        public void AssignDeliver(int Post_id, int User_id)
+        {
+            MySqlConnection conConn = Connect();
+
+
+            string insertSql = "INSERT INTO grab.delivery (Post_id, User_id) VALUES (?, ?)";
+            MySqlCommand insertCmd = new MySqlCommand(insertSql, conConn);
+
+
+            insertCmd.Parameters.AddWithValue("@Post_id", Post_id);
+            insertCmd.Parameters.AddWithValue("@User_id", User_id);
+            try
+            {
+                insertCmd.ExecuteNonQuery();
+
+                conConn.Close();
+
+                SucMessage mess = new SucMessage("Order Added");
+                
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage error = new ErrorMessage(ex.Message );
+
+                conConn.Close();
+                
+
+            }
         }
     }
 

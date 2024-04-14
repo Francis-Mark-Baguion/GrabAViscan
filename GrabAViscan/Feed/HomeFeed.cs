@@ -19,8 +19,11 @@ namespace GrabAViscan
         private Posting post;
         private DatabaseManagement db = new DatabaseManagement();
         private int id;
-        public HomeFeed(Posting post)
+        private int uid;
+        public HomeFeed(Posting post,int uid)
         {
+
+            this.uid = db.getUserById(uid).User_id;
             InitializeComponent();
             new Posting(post);
             if(post != null && db.getUserById(post.User_id)!=null) 
@@ -82,6 +85,7 @@ namespace GrabAViscan
         {
             
             db.updateAvailability(db.getPostById(this.id).Post_id, 1);
+            db.AssignDeliver(db.getPostById(this.id).Post_id , uid);
 
         }
 

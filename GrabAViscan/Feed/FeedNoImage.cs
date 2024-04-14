@@ -19,9 +19,11 @@ namespace GrabAViscan.Feed
         Posting post;
         DatabaseManagement db = new DatabaseManagement();
         private int id;
-        public FeedNoImage(Posting post)
+        private int uid;
+        public FeedNoImage(Posting post, int uid)
         {
 
+            this.uid = db.getUserById(uid).User_id;
             this.id = post.Post_id;
             InitializeComponent();
             this.post = post;
@@ -53,11 +55,15 @@ namespace GrabAViscan.Feed
 
         public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
         {
-            using (MemoryStream ms = new MemoryStream(byteArray))
+            if (byteArray != null)
             {
-                Image image = Image.FromStream(ms);
-                profile.Image = image;
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    profile.Image = image;
+                }
             }
+            
         }
 
 
@@ -73,6 +79,7 @@ namespace GrabAViscan.Feed
         private void gunaButton9_Click(object sender, EventArgs e)
         {
             db.updateAvailability(db.getPostById(this.id).Post_id, 1);
+            db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)

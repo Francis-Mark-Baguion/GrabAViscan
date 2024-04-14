@@ -41,7 +41,7 @@ namespace GrabAViscan
 
             foreach (Posting post in posts)
             {
-                if (post.Available ==  1 || post.Available == 2 && post.User_id == this.User_id && post.Available<3)
+                if (post.Available == 0 || post.Available ==  1 || post.Available == 2 && post.User_id == this.User_id && post.Available<3)
                 {
 
                     Requests req = new Requests(post);

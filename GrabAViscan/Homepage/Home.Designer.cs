@@ -332,7 +332,7 @@
             this.gunaButton2.TabIndex = 1;
             this.gunaButton2.Text = "Home";
             this.gunaButton2.TextOffsetX = 30;
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            this.gunaButton2.Click += new System.EventHandler(this.homeclick);
             // 
             // flow1
             // 

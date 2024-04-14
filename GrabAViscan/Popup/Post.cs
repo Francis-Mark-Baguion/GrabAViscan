@@ -9,6 +9,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
@@ -22,6 +23,7 @@ namespace GrabAViscan.Popup
         DatabaseManagement db = new DatabaseManagement();
         public User user;
         public string email;
+        Home home;
         public Post()
         {
             InitializeComponent();
@@ -40,11 +42,11 @@ namespace GrabAViscan.Popup
 
         }
 
-        public void setter(string email)
+        public void setter(string email,Home home)
         {
             user = db.InitializeUser(email);
             this.email = email;
-            
+            this.home = home;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,7 +111,30 @@ namespace GrabAViscan.Popup
             int User_id = user.User_id;
             string Requested = requestTxt.Text;
             string Quantity = quantityTxt.Text;
-            int Fee = Convert.ToInt32(feeTxt.Text);
+            int Fee = 0;
+
+            try
+            {
+
+                if (!Regex.IsMatch(feeTxt.Text, @"^-?\d+(\.\d*)?$"))
+                {
+                    ErrorMessage err = new ErrorMessage("Invalid fee format. Please enter a valid number.");
+                    this.Close();
+                }
+                Fee = Convert.ToInt32(feeTxt.Text);
+
+            }
+            catch (FormatException ex)
+            {
+                ErrorMessage err = new ErrorMessage("Invalid fee format. Please enter a valid number." + ex);
+
+            }
+            catch (OverflowException ex)
+            {
+                ErrorMessage mess = new ErrorMessage("The entered fee value is too large or too small for an integer. Please enter a value within the valid range.");
+
+            }
+
             string Description = CommentTxt.Text;
             DateTime Date_posted = DateTime.Now;
             DateTime Deadline = TimePicker.Value;
@@ -130,6 +155,7 @@ namespace GrabAViscan.Popup
             post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
             db.Post_upload(post);
             this.Hide();
+           
         }
 
 

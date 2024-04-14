@@ -27,14 +27,17 @@ namespace GrabAViscan
         rightWing right = new rightWing();
         private string email;
         private int User_id;
-        public Home()
+        public Home(int uid)
         {
+            this.User_id = uid;
             InitializeComponent();
             right = new rightWing();
             
             RightWing.Controls.Add(right);
             feed();
         }
+
+        
 
          
         public void setter(string email)
@@ -56,28 +59,31 @@ namespace GrabAViscan
             
             foreach (Posting post in posts)
             {
-                if(post.image != null)
+                if(post.User_id != User_id)
                 {
-                    HomeFeed home = new HomeFeed(post);
+                    if (post.image != null)
+                    {
+                        HomeFeed home = new HomeFeed(post,User_id);
 
 
-                    flow1.Controls.Add(home);
-                }
-                else
-                {
-                    FeedNoImage feedNoImage = new FeedNoImage(post);
-                    flow1.Controls.Add(feedNoImage);
+                        flow1.Controls.Add(home);
+                    }
+                    else
+                    {
+                        FeedNoImage feedNoImage = new FeedNoImage(post,User_id);
+                        flow1.Controls.Add(feedNoImage);
 
+                    }
+                    Buffers buff = new Buffers();
+                    flow1.Controls.Add(buff);
                 }
                 
-
                 
-                Buffers buff = new Buffers();
-                flow1.Controls.Add(buff);
+               
             }
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
+        public void homeclick(object sender, EventArgs e)
         {
             
             user = db.InitializeUser(email);

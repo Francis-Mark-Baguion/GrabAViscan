@@ -46,7 +46,7 @@ namespace GrabAViscan
         public void setter(string email,Home form)
         {
             user = db.InitializeUser(email);
-            post.setter(email);
+            post.setter(email,form);
             this.email = email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             SetImageFromByteArrayProfile(this.ProfilePic, user.Profile_pic);
