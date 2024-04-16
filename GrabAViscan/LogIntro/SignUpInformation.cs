@@ -70,7 +70,7 @@ namespace GrabAViscan.LogIntro
                 LogIn log = new LogIn();
                 log.Show();
                 this.Hide();
-                ErrorMessage error = new ErrorMessage("Account Created");
+                SucMessage error = new SucMessage("Account Created");
                 
             }
             

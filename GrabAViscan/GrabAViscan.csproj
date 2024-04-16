@@ -117,6 +117,12 @@
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feed\Deliveries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Deliveries.Designer.cs">
+      <DependentUpon>Deliveries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feed\FeedNoImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\Deliveries.resx">
+      <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\FeedNoImage.resx">
       <DependentUpon>FeedNoImage.cs</DependentUpon>

@@ -120,7 +120,7 @@ namespace GrabAViscan
         }
 
       
-        private void To_deliver(object sender, EventArgs e)
+        public void To_deliver(object sender, EventArgs e)
         {
             ToDeliver todeliver = new ToDeliver(this.User_id);
             todeliver.feed(this);
@@ -138,7 +138,7 @@ namespace GrabAViscan
 
         private void History(object sender, EventArgs e)
         {
-            History history = new History();  
+            History history = new History(this.User_id);  
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;

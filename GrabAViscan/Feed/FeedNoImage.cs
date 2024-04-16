@@ -20,6 +20,9 @@ namespace GrabAViscan.Feed
         DatabaseManagement db = new DatabaseManagement();
         private int id;
         private int uid;
+        private int post_id;
+        private int locId;
+        private int locId2;
         public FeedNoImage(Posting post, int uid)
         {
 
@@ -29,6 +32,15 @@ namespace GrabAViscan.Feed
             this.post = post;
             if (post != null && db.getUserById(post.User_id) != null)
             {
+
+                this.post_id = post.Post_id;
+                string loc = post.Near_pickUp;
+                this.locId = (int)double.Parse(loc);
+                string loc2 = post.Near_deliveryLocation;
+                this.locId2 = (int)double.Parse(loc2);
+
+                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
                 SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
                 this.Name_label.Text = db.getUserById(post.User_id).FirstName +""+ db.getUserById(post.User_id).LastName;
                 this.TimeTxt.Text = "" + post.Date_posted;
@@ -40,9 +52,9 @@ namespace GrabAViscan.Feed
                 this.requestTxt.Text = post.Requested;
                 this.quantityTxt.Text = post.Quantity;
                 this.pickUpTxt.Text = post.Pick_up;
-                this.pickNearbyTxt.Text = post.Near_pickUp;
+                this.pickNearbyTxt.Text = pick;
                 this.deliveryTxt.Text = post.Delivery_location;
-                this.deliveryNearTxt.Text = post.Delivery_location;
+                this.deliveryNearTxt.Text = deliver;
 
                 this.Fee.Text = "" + post.Fee;
                 this.deadline.Text = "" + post.Deadline;
@@ -80,6 +92,7 @@ namespace GrabAViscan.Feed
         {
             db.updateAvailability(db.getPostById(this.id).Post_id, 1);
             db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
+            this.Hide();
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)

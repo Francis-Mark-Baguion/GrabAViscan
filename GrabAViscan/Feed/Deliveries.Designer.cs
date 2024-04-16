@@ -1,6 +1,6 @@
 ﻿namespace GrabAViscan.Feed
 {
-    partial class Requests
+    partial class Deliveries
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Requests));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deliveries));
+            this.NameLabel = new Guna.UI.WinForms.GunaTextBox();
+            this.stat = new Guna.UI.WinForms.GunaLabel();
+            this.profile = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.discard_btn = new Guna.UI.WinForms.GunaButton();
+            this.upload_btn = new Guna.UI.WinForms.GunaButton();
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
             this.Quantity_label = new Guna.UI.WinForms.GunaLabel();
             this.Request_label = new Guna.UI.WinForms.GunaLabel();
@@ -36,20 +42,128 @@
             this.deliveryNearTxt = new Guna.UI.WinForms.GunaButton();
             this.pickNearbyTxt = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.stat = new Guna.UI.WinForms.GunaLabel();
-            this.profile = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.discard_btn = new Guna.UI.WinForms.GunaButton();
-            this.upload_btn = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.NameLabel = new Guna.UI.WinForms.GunaTextBox();
-            this.MainPanel.SuspendLayout();
+            this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NameLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NameLabel.BaseColor = System.Drawing.Color.Transparent;
+            this.NameLabel.BorderColor = System.Drawing.Color.Transparent;
+            this.NameLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NameLabel.Enabled = false;
+            this.NameLabel.FocusedBaseColor = System.Drawing.Color.Transparent;
+            this.NameLabel.FocusedBorderColor = System.Drawing.Color.Transparent;
+            this.NameLabel.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(35, 117);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.PasswordChar = '\0';
+            this.NameLabel.Radius = 10;
+            this.NameLabel.Size = new System.Drawing.Size(294, 50);
+            this.NameLabel.TabIndex = 59;
+            this.NameLabel.Text = "First Name Last Name";
+            this.NameLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // stat
+            // 
+            this.stat.AutoSize = true;
+            this.stat.BackColor = System.Drawing.Color.White;
+            this.stat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stat.Location = new System.Drawing.Point(29, 541);
+            this.stat.Name = "stat";
+            this.stat.Size = new System.Drawing.Size(78, 32);
+            this.stat.TabIndex = 57;
+            this.stat.Text = "Status";
+            // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.Transparent;
+            this.profile.BaseColor = System.Drawing.Color.Transparent;
+            this.profile.Location = new System.Drawing.Point(140, 18);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 56;
+            this.profile.TabStop = false;
+            // 
+            // gunaButton4
+            // 
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BaseColor = System.Drawing.Color.Firebrick;
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.Color.White;
+            this.gunaButton4.Image = null;
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(3, 611);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.Firebrick;
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Radius = 10;
+            this.gunaButton4.Size = new System.Drawing.Size(374, 52);
+            this.gunaButton4.TabIndex = 54;
+            this.gunaButton4.Text = "CANCEL";
+            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click_1);
+            // 
+            // discard_btn
+            // 
+            this.discard_btn.AnimationHoverSpeed = 0.07F;
+            this.discard_btn.AnimationSpeed = 0.03F;
+            this.discard_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.discard_btn.BorderColor = System.Drawing.Color.Black;
+            this.discard_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discard_btn.ForeColor = System.Drawing.Color.White;
+            this.discard_btn.Image = null;
+            this.discard_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.discard_btn.Location = new System.Drawing.Point(3, 674);
+            this.discard_btn.Name = "discard_btn";
+            this.discard_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.discard_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.discard_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.discard_btn.OnHoverImage = null;
+            this.discard_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.discard_btn.Radius = 10;
+            this.discard_btn.Size = new System.Drawing.Size(374, 52);
+            this.discard_btn.TabIndex = 53;
+            this.discard_btn.Text = "UPDATE";
+            this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // upload_btn
+            // 
+            this.upload_btn.AnimationHoverSpeed = 0.07F;
+            this.upload_btn.AnimationSpeed = 0.03F;
+            this.upload_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.upload_btn.BorderColor = System.Drawing.Color.Black;
+            this.upload_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upload_btn.ForeColor = System.Drawing.Color.White;
+            this.upload_btn.Image = null;
+            this.upload_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.upload_btn.Location = new System.Drawing.Point(3, 739);
+            this.upload_btn.Name = "upload_btn";
+            this.upload_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.upload_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.upload_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.upload_btn.OnHoverImage = null;
+            this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.upload_btn.Radius = 10;
+            this.upload_btn.Size = new System.Drawing.Size(374, 52);
+            this.upload_btn.TabIndex = 52;
+            this.upload_btn.Text = "VIEW";
+            this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // quantityTxt
             // 
@@ -168,6 +282,17 @@
             this.gunaLabel3.TabIndex = 34;
             this.gunaLabel3.Text = "Deliver To";
             // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.White;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(20, 315);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(68, 21);
+            this.gunaLabel2.TabIndex = 32;
+            this.gunaLabel2.Text = "Pick Up";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -206,7 +331,19 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Radius = 30;
             this.MainPanel.Size = new System.Drawing.Size(380, 800);
-            this.MainPanel.TabIndex = 6;
+            this.MainPanel.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(9, 478);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(355, 34);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "_________________";
             // 
             // statusTxt
             // 
@@ -227,158 +364,28 @@
             this.statusTxt.Size = new System.Drawing.Size(195, 50);
             this.statusTxt.TabIndex = 58;
             // 
-            // stat
-            // 
-            this.stat.AutoSize = true;
-            this.stat.BackColor = System.Drawing.Color.White;
-            this.stat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stat.Location = new System.Drawing.Point(29, 541);
-            this.stat.Name = "stat";
-            this.stat.Size = new System.Drawing.Size(78, 32);
-            this.stat.TabIndex = 57;
-            this.stat.Text = "Status";
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.Transparent;
-            this.profile.BaseColor = System.Drawing.Color.Transparent;
-            this.profile.Location = new System.Drawing.Point(140, 18);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(80, 80);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 56;
-            this.profile.TabStop = false;
-            // 
-            // gunaButton4
-            // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(3, 611);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 10;
-            this.gunaButton4.Size = new System.Drawing.Size(374, 52);
-            this.gunaButton4.TabIndex = 54;
-            this.gunaButton4.Text = "CANCEL";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
-            // 
-            // discard_btn
-            // 
-            this.discard_btn.AnimationHoverSpeed = 0.07F;
-            this.discard_btn.AnimationSpeed = 0.03F;
-            this.discard_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.BorderColor = System.Drawing.Color.Black;
-            this.discard_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discard_btn.ForeColor = System.Drawing.Color.White;
-            this.discard_btn.Image = null;
-            this.discard_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.discard_btn.Location = new System.Drawing.Point(3, 674);
-            this.discard_btn.Name = "discard_btn";
-            this.discard_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.discard_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.discard_btn.OnHoverImage = null;
-            this.discard_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.discard_btn.Radius = 10;
-            this.discard_btn.Size = new System.Drawing.Size(374, 52);
-            this.discard_btn.TabIndex = 53;
-            this.discard_btn.Text = "UPDATE";
-            this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // upload_btn
-            // 
-            this.upload_btn.AnimationHoverSpeed = 0.07F;
-            this.upload_btn.AnimationSpeed = 0.03F;
-            this.upload_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.BorderColor = System.Drawing.Color.Black;
-            this.upload_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upload_btn.ForeColor = System.Drawing.Color.White;
-            this.upload_btn.Image = null;
-            this.upload_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload_btn.Location = new System.Drawing.Point(3, 739);
-            this.upload_btn.Name = "upload_btn";
-            this.upload_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.upload_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.upload_btn.OnHoverImage = null;
-            this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.upload_btn.Radius = 10;
-            this.upload_btn.Size = new System.Drawing.Size(374, 52);
-            this.upload_btn.TabIndex = 52;
-            this.upload_btn.Text = "VIEW";
-            this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.White;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(20, 315);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(68, 21);
-            this.gunaLabel2.TabIndex = 32;
-            this.gunaLabel2.Text = "Pick Up";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 478);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(355, 34);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "_________________";
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.NameLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NameLabel.BaseColor = System.Drawing.Color.Transparent;
-            this.NameLabel.BorderColor = System.Drawing.Color.Transparent;
-            this.NameLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NameLabel.Enabled = false;
-            this.NameLabel.FocusedBaseColor = System.Drawing.Color.Transparent;
-            this.NameLabel.FocusedBorderColor = System.Drawing.Color.Transparent;
-            this.NameLabel.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(35, 117);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.PasswordChar = '\0';
-            this.NameLabel.Radius = 10;
-            this.NameLabel.Size = new System.Drawing.Size(294, 50);
-            this.NameLabel.TabIndex = 59;
-            this.NameLabel.Text = "Category";
-            this.NameLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Requests
+            // Deliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MainPanel);
-            this.Name = "Requests";
+            this.Name = "Deliveries";
             this.Size = new System.Drawing.Size(380, 800);
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Guna.UI.WinForms.GunaTextBox NameLabel;
+        private Guna.UI.WinForms.GunaLabel stat;
+        private Guna.UI.WinForms.GunaPictureBox profile;
+        private Guna.UI.WinForms.GunaButton gunaButton4;
+        private Guna.UI.WinForms.GunaButton discard_btn;
+        private Guna.UI.WinForms.GunaButton upload_btn;
         private Guna.UI.WinForms.GunaButton quantityTxt;
         private Guna.UI.WinForms.GunaLabel Quantity_label;
         private Guna.UI.WinForms.GunaLabel Request_label;
@@ -386,16 +393,10 @@
         private Guna.UI.WinForms.GunaButton deliveryNearTxt;
         private Guna.UI.WinForms.GunaButton pickNearbyTxt;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaElipsePanel MainPanel;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton discard_btn;
-        private Guna.UI.WinForms.GunaButton upload_btn;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaPictureBox profile;
-        private Guna.UI.WinForms.GunaLabel stat;
         private Guna.UI.WinForms.GunaTextBox statusTxt;
-        private Guna.UI.WinForms.GunaTextBox NameLabel;
     }
 }

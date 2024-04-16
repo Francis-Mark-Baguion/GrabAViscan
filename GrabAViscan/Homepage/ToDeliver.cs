@@ -46,7 +46,7 @@ namespace GrabAViscan
                     {
                         if(post.Post_id == delivery.Post_Id && delivery.User_Id == User_id)
                         {
-                            Requests req = new Requests(post);
+                            Deliveries req = new Deliveries(post);
                             req.setter(home);
 
                             flow1.Controls.Add(req);
