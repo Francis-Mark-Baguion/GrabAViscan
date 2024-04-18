@@ -231,11 +231,23 @@
     <Compile Include="Popup\Post.Designer.cs">
       <DependentUpon>Post.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\SucMessage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popup\SucMessage.Designer.cs">
       <DependentUpon>SucMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\EditRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\EditRequest.Designer.cs">
+      <DependentUpon>EditRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,8 +329,14 @@
     <EmbeddedResource Include="Popup\Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup\SucMessage.resx">
       <DependentUpon>SucMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\EditRequest.resx">
+      <DependentUpon>EditRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -24,6 +24,7 @@ namespace GrabAViscan
         private int post_id;
         private int locId;
         private int locId2;
+        Profile profile_pic;
         public HomeFeed(Posting post,int uid)
         {
 
@@ -54,14 +55,16 @@ namespace GrabAViscan
 
                 this.requestTxt.Text = post.Requested;
                 this.quantityTxt.Text = post.Quantity;
-                this.pickUpTxt.Text = post.Pick_up;
-                this.pickNearbyTxt.Text = pick;
-                this.deliveryTxt.Text = post.Delivery_location;
-                this.deliveryNearTxt.Text = deliver;
+                this.pickUpTxt.Text = pick + ": " + post.Pick_up;
+
+                this.pickUpTxt.Text = deliver + ": " + post.Delivery_location;
 
                 this.Fee.Text ="" +  post.Fee;
                 this.deadline.Text = "" + post.Deadline;
 
+
+                profile_pic = new Profile(db.getPostById(post_id));
+                profile_pic.Hide();
 
             }
             
@@ -109,9 +112,16 @@ namespace GrabAViscan
 
         }
 
-        private void profile_Click(object sender, EventArgs e)
+        private void viewProfile(object sender, EventArgs e)
         {
-
+            if (profile_pic.Visible == false)
+            {
+                profile_pic.Show();
+            }
+            else
+            {
+                profile_pic.Hide();
+            }
         }
     }
 }

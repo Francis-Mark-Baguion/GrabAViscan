@@ -43,13 +43,9 @@
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
             this.Fee = new Guna.UI.WinForms.GunaButton();
-            this.deliveryNearTxt = new Guna.UI.WinForms.GunaButton();
             this.deliveryTxt = new Guna.UI.WinForms.GunaButton();
-            this.pickNearbyTxt = new Guna.UI.WinForms.GunaButton();
             this.pickUpTxt = new Guna.UI.WinForms.GunaButton();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.descriptionTxt = new System.Windows.Forms.RichTextBox();
             this.Category_label = new Guna.UI.WinForms.GunaLabel();
             this.Image_cont = new Guna.UI.WinForms.GunaPictureBox();
@@ -98,13 +94,9 @@
             this.MainPanel.Controls.Add(this.gunaButton9);
             this.MainPanel.Controls.Add(this.gunaButton8);
             this.MainPanel.Controls.Add(this.Fee);
-            this.MainPanel.Controls.Add(this.deliveryNearTxt);
             this.MainPanel.Controls.Add(this.deliveryTxt);
-            this.MainPanel.Controls.Add(this.pickNearbyTxt);
             this.MainPanel.Controls.Add(this.pickUpTxt);
-            this.MainPanel.Controls.Add(this.gunaLabel3);
             this.MainPanel.Controls.Add(this.gunaLabel4);
-            this.MainPanel.Controls.Add(this.gunaLabel2);
             this.MainPanel.Controls.Add(this.descriptionTxt);
             this.MainPanel.Controls.Add(this.Category_label);
             this.MainPanel.Controls.Add(this.Image_cont);
@@ -150,7 +142,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.BackColor = System.Drawing.Color.White;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(57, 1149);
+            this.gunaLabel1.Location = new System.Drawing.Point(57, 1195);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(98, 30);
             this.gunaLabel1.TabIndex = 48;
@@ -187,7 +179,7 @@
             this.quantityTxt.ForeColor = System.Drawing.Color.Black;
             this.quantityTxt.Image = null;
             this.quantityTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.quantityTxt.Location = new System.Drawing.Point(916, 1052);
+            this.quantityTxt.Location = new System.Drawing.Point(220, 1117);
             this.quantityTxt.Name = "quantityTxt";
             this.quantityTxt.OnHoverBaseColor = System.Drawing.Color.White;
             this.quantityTxt.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -208,7 +200,7 @@
             this.requestTxt.ForeColor = System.Drawing.Color.Black;
             this.requestTxt.Image = null;
             this.requestTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.requestTxt.Location = new System.Drawing.Point(167, 1052);
+            this.requestTxt.Location = new System.Drawing.Point(220, 1049);
             this.requestTxt.Name = "requestTxt";
             this.requestTxt.OnHoverBaseColor = System.Drawing.Color.White;
             this.requestTxt.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -224,7 +216,7 @@
             this.Quantity_label.AutoSize = true;
             this.Quantity_label.BackColor = System.Drawing.Color.White;
             this.Quantity_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quantity_label.Location = new System.Drawing.Point(786, 1067);
+            this.Quantity_label.Location = new System.Drawing.Point(57, 1131);
             this.Quantity_label.Name = "Quantity_label";
             this.Quantity_label.Size = new System.Drawing.Size(124, 30);
             this.Quantity_label.TabIndex = 43;
@@ -308,27 +300,6 @@
             this.Fee.TabIndex = 39;
             this.Fee.Text = "50";
             // 
-            // deliveryNearTxt
-            // 
-            this.deliveryNearTxt.AnimationHoverSpeed = 0.07F;
-            this.deliveryNearTxt.AnimationSpeed = 0.03F;
-            this.deliveryNearTxt.BaseColor = System.Drawing.Color.White;
-            this.deliveryNearTxt.BorderColor = System.Drawing.Color.Black;
-            this.deliveryNearTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.deliveryNearTxt.ForeColor = System.Drawing.Color.Black;
-            this.deliveryNearTxt.Image = null;
-            this.deliveryNearTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.deliveryNearTxt.Location = new System.Drawing.Point(327, 1320);
-            this.deliveryNearTxt.Name = "deliveryNearTxt";
-            this.deliveryNearTxt.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.deliveryNearTxt.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.deliveryNearTxt.OnHoverForeColor = System.Drawing.Color.White;
-            this.deliveryNearTxt.OnHoverImage = null;
-            this.deliveryNearTxt.OnPressedColor = System.Drawing.Color.Black;
-            this.deliveryNearTxt.Size = new System.Drawing.Size(583, 25);
-            this.deliveryNearTxt.TabIndex = 38;
-            this.deliveryNearTxt.Text = "Location2";
-            // 
             // deliveryTxt
             // 
             this.deliveryTxt.AnimationHoverSpeed = 0.07F;
@@ -350,27 +321,6 @@
             this.deliveryTxt.TabIndex = 37;
             this.deliveryTxt.Text = "Location2";
             // 
-            // pickNearbyTxt
-            // 
-            this.pickNearbyTxt.AnimationHoverSpeed = 0.07F;
-            this.pickNearbyTxt.AnimationSpeed = 0.03F;
-            this.pickNearbyTxt.BaseColor = System.Drawing.Color.White;
-            this.pickNearbyTxt.BorderColor = System.Drawing.Color.Black;
-            this.pickNearbyTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pickNearbyTxt.ForeColor = System.Drawing.Color.Black;
-            this.pickNearbyTxt.Image = null;
-            this.pickNearbyTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.pickNearbyTxt.Location = new System.Drawing.Point(307, 1190);
-            this.pickNearbyTxt.Name = "pickNearbyTxt";
-            this.pickNearbyTxt.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.pickNearbyTxt.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.pickNearbyTxt.OnHoverForeColor = System.Drawing.Color.White;
-            this.pickNearbyTxt.OnHoverImage = null;
-            this.pickNearbyTxt.OnPressedColor = System.Drawing.Color.Black;
-            this.pickNearbyTxt.Size = new System.Drawing.Size(549, 35);
-            this.pickNearbyTxt.TabIndex = 36;
-            this.pickNearbyTxt.Text = "Location1";
-            // 
             // pickUpTxt
             // 
             this.pickUpTxt.AnimationHoverSpeed = 0.07F;
@@ -381,7 +331,7 @@
             this.pickUpTxt.ForeColor = System.Drawing.Color.Black;
             this.pickUpTxt.Image = null;
             this.pickUpTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.pickUpTxt.Location = new System.Drawing.Point(167, 1130);
+            this.pickUpTxt.Location = new System.Drawing.Point(220, 1184);
             this.pickUpTxt.Name = "pickUpTxt";
             this.pickUpTxt.OnHoverBaseColor = System.Drawing.Color.White;
             this.pickUpTxt.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -391,17 +341,6 @@
             this.pickUpTxt.Size = new System.Drawing.Size(581, 62);
             this.pickUpTxt.TabIndex = 35;
             this.pickUpTxt.Text = "Location1";
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.BackColor = System.Drawing.Color.White;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.Location = new System.Drawing.Point(245, 1317);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(66, 21);
-            this.gunaLabel3.TabIndex = 34;
-            this.gunaLabel3.Text = "Nearby";
             // 
             // gunaLabel4
             // 
@@ -414,17 +353,6 @@
             this.gunaLabel4.TabIndex = 33;
             this.gunaLabel4.Text = "DESTINATION";
             this.gunaLabel4.Click += new System.EventHandler(this.gunaLabel4_Click);
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.White;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(240, 1195);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(66, 21);
-            this.gunaLabel2.TabIndex = 32;
-            this.gunaLabel2.Text = "Nearby";
             // 
             // descriptionTxt
             // 
@@ -524,7 +452,7 @@
             this.profile.TabIndex = 0;
             this.profile.TabStop = false;
             this.profile.UseTransfarantBackground = false;
-            this.profile.Click += new System.EventHandler(this.profile_Click);
+            this.profile.Click += new System.EventHandler(this.viewProfile);
             // 
             // Name_label
             // 
@@ -547,6 +475,7 @@
             this.Name_label.Size = new System.Drawing.Size(322, 42);
             this.Name_label.TabIndex = 1;
             this.Name_label.Text = "First Name Last Name";
+            this.Name_label.Click += new System.EventHandler(this.viewProfile);
             // 
             // TimeTxt
             // 
@@ -602,12 +531,8 @@
         private Guna.UI.WinForms.GunaLabel Category_label;
         private System.Windows.Forms.RichTextBox descriptionTxt;
         private Guna.UI.WinForms.GunaButton pickUpTxt;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaButton deliveryNearTxt;
         private Guna.UI.WinForms.GunaButton deliveryTxt;
-        private Guna.UI.WinForms.GunaButton pickNearbyTxt;
         private Guna.UI.WinForms.GunaButton gunaButton8;
         private Guna.UI.WinForms.GunaButton Fee;
         private Guna.UI.WinForms.GunaButton gunaButton9;

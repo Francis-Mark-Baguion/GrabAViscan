@@ -49,7 +49,7 @@ namespace GrabAViscan
 
         }
 
-        private void feed()
+        public void feed()
         {
             flow1.Controls.Clear();
 
@@ -64,6 +64,7 @@ namespace GrabAViscan
                     if (post.image != null)
                     {
                         HomeFeed home = new HomeFeed(post,User_id);
+
 
 
                         flow1.Controls.Add(home);

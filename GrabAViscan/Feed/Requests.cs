@@ -38,7 +38,8 @@ namespace GrabAViscan.Feed
            
             string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-    
+
+            RequestTxt.Text = post.Requested;
 
             statusTxt.Text = post.Requested;
             quantityTxt.Text = post.Quantity;
@@ -101,6 +102,12 @@ namespace GrabAViscan.Feed
             temp.Available = 5;
             db.updatePostingInformation(temp);
             home.My_Request(sender,e);
+        }
+
+        private void discard_btn_Click(object sender, EventArgs e)
+        {
+            EditRequest edit = new EditRequest(home,db.getPostById(post_id));
+            edit.Show();
         }
     }
 }

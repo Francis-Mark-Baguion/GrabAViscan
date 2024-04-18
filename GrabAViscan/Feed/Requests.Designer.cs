@@ -32,21 +32,22 @@
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
             this.Quantity_label = new Guna.UI.WinForms.GunaLabel();
             this.Request_label = new Guna.UI.WinForms.GunaLabel();
-            this.Fee = new Guna.UI.WinForms.GunaButton();
             this.deliveryNearTxt = new Guna.UI.WinForms.GunaButton();
             this.pickNearbyTxt = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.NameLabel = new Guna.UI.WinForms.GunaTextBox();
             this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
             this.stat = new Guna.UI.WinForms.GunaLabel();
-            this.profile = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.discard_btn = new Guna.UI.WinForms.GunaButton();
             this.upload_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.NameLabel = new Guna.UI.WinForms.GunaTextBox();
+            this.profile = new Guna.UI.WinForms.GunaPictureBox();
+            this.Fee = new Guna.UI.WinForms.GunaButton();
+            this.RequestTxt = new Guna.UI.WinForms.GunaButton();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.SuspendLayout();
@@ -93,27 +94,6 @@
             this.Request_label.Size = new System.Drawing.Size(109, 30);
             this.Request_label.TabIndex = 42;
             this.Request_label.Text = "REQUEST";
-            // 
-            // Fee
-            // 
-            this.Fee.AnimationHoverSpeed = 0.07F;
-            this.Fee.AnimationSpeed = 0.03F;
-            this.Fee.BaseColor = System.Drawing.Color.White;
-            this.Fee.BorderColor = System.Drawing.Color.Black;
-            this.Fee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fee.ForeColor = System.Drawing.Color.Black;
-            this.Fee.Image = ((System.Drawing.Image)(resources.GetObject("Fee.Image")));
-            this.Fee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Fee.Location = new System.Drawing.Point(15, 451);
-            this.Fee.Name = "Fee";
-            this.Fee.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.Fee.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Fee.OnHoverForeColor = System.Drawing.Color.White;
-            this.Fee.OnHoverImage = null;
-            this.Fee.OnPressedColor = System.Drawing.Color.Black;
-            this.Fee.Size = new System.Drawing.Size(150, 48);
-            this.Fee.TabIndex = 39;
-            this.Fee.Text = "50";
             // 
             // deliveryNearTxt
             // 
@@ -184,6 +164,7 @@
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.MainPanel.BaseColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.RequestTxt);
             this.MainPanel.Controls.Add(this.NameLabel);
             this.MainPanel.Controls.Add(this.statusTxt);
             this.MainPanel.Controls.Add(this.stat);
@@ -207,6 +188,28 @@
             this.MainPanel.Radius = 30;
             this.MainPanel.Size = new System.Drawing.Size(380, 800);
             this.MainPanel.TabIndex = 6;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NameLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NameLabel.BaseColor = System.Drawing.Color.Transparent;
+            this.NameLabel.BorderColor = System.Drawing.Color.Transparent;
+            this.NameLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NameLabel.Enabled = false;
+            this.NameLabel.FocusedBaseColor = System.Drawing.Color.Transparent;
+            this.NameLabel.FocusedBorderColor = System.Drawing.Color.Transparent;
+            this.NameLabel.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(35, 117);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.PasswordChar = '\0';
+            this.NameLabel.Radius = 10;
+            this.NameLabel.Size = new System.Drawing.Size(294, 50);
+            this.NameLabel.TabIndex = 59;
+            this.NameLabel.Text = "Category";
+            this.NameLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // statusTxt
             // 
@@ -237,17 +240,6 @@
             this.stat.Size = new System.Drawing.Size(78, 32);
             this.stat.TabIndex = 57;
             this.stat.Text = "Status";
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.Transparent;
-            this.profile.BaseColor = System.Drawing.Color.Transparent;
-            this.profile.Location = new System.Drawing.Point(140, 18);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(80, 80);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 56;
-            this.profile.TabStop = false;
             // 
             // gunaButton4
             // 
@@ -293,8 +285,9 @@
             this.discard_btn.Radius = 10;
             this.discard_btn.Size = new System.Drawing.Size(374, 52);
             this.discard_btn.TabIndex = 53;
-            this.discard_btn.Text = "UPDATE";
+            this.discard_btn.Text = "EDIT";
             this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
             // 
             // upload_btn
             // 
@@ -342,27 +335,58 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "_________________";
             // 
-            // NameLabel
+            // profile
             // 
-            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.NameLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.NameLabel.BaseColor = System.Drawing.Color.Transparent;
-            this.NameLabel.BorderColor = System.Drawing.Color.Transparent;
-            this.NameLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NameLabel.Enabled = false;
-            this.NameLabel.FocusedBaseColor = System.Drawing.Color.Transparent;
-            this.NameLabel.FocusedBorderColor = System.Drawing.Color.Transparent;
-            this.NameLabel.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(35, 117);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.PasswordChar = '\0';
-            this.NameLabel.Radius = 10;
-            this.NameLabel.Size = new System.Drawing.Size(294, 50);
-            this.NameLabel.TabIndex = 59;
-            this.NameLabel.Text = "Category";
-            this.NameLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.profile.BackColor = System.Drawing.Color.Transparent;
+            this.profile.BaseColor = System.Drawing.Color.Transparent;
+            this.profile.Location = new System.Drawing.Point(140, 18);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 56;
+            this.profile.TabStop = false;
+            // 
+            // Fee
+            // 
+            this.Fee.AnimationHoverSpeed = 0.07F;
+            this.Fee.AnimationSpeed = 0.03F;
+            this.Fee.BaseColor = System.Drawing.Color.White;
+            this.Fee.BorderColor = System.Drawing.Color.Black;
+            this.Fee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fee.ForeColor = System.Drawing.Color.Black;
+            this.Fee.Image = ((System.Drawing.Image)(resources.GetObject("Fee.Image")));
+            this.Fee.ImageSize = new System.Drawing.Size(20, 20);
+            this.Fee.Location = new System.Drawing.Point(15, 451);
+            this.Fee.Name = "Fee";
+            this.Fee.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.Fee.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Fee.OnHoverForeColor = System.Drawing.Color.White;
+            this.Fee.OnHoverImage = null;
+            this.Fee.OnPressedColor = System.Drawing.Color.Black;
+            this.Fee.Size = new System.Drawing.Size(150, 48);
+            this.Fee.TabIndex = 39;
+            this.Fee.Text = "50";
+            // 
+            // RequestTxt
+            // 
+            this.RequestTxt.AnimationHoverSpeed = 0.07F;
+            this.RequestTxt.AnimationSpeed = 0.03F;
+            this.RequestTxt.BaseColor = System.Drawing.Color.White;
+            this.RequestTxt.BorderColor = System.Drawing.Color.Black;
+            this.RequestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequestTxt.ForeColor = System.Drawing.Color.Black;
+            this.RequestTxt.Image = null;
+            this.RequestTxt.ImageSize = new System.Drawing.Size(20, 20);
+            this.RequestTxt.Location = new System.Drawing.Point(130, 186);
+            this.RequestTxt.Name = "RequestTxt";
+            this.RequestTxt.OnHoverBaseColor = System.Drawing.Color.White;
+            this.RequestTxt.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.RequestTxt.OnHoverForeColor = System.Drawing.Color.White;
+            this.RequestTxt.OnHoverImage = null;
+            this.RequestTxt.OnPressedColor = System.Drawing.Color.Black;
+            this.RequestTxt.Size = new System.Drawing.Size(160, 47);
+            this.RequestTxt.TabIndex = 60;
+            this.RequestTxt.Text = "Request";
             // 
             // Requests
             // 
@@ -397,5 +421,6 @@
         private Guna.UI.WinForms.GunaLabel stat;
         private Guna.UI.WinForms.GunaTextBox statusTxt;
         private Guna.UI.WinForms.GunaTextBox NameLabel;
+        private Guna.UI.WinForms.GunaButton RequestTxt;
     }
 }
