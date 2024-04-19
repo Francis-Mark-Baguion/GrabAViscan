@@ -38,5 +38,10 @@ namespace GrabAViscan.Popup
             // Close the form
             this.Close();
         }
+
+        private void Message_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

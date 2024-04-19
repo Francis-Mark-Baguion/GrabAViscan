@@ -1,24 +1,19 @@
-﻿using System;
+﻿using GrabAViscan.Classes;
+using Guna.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GrabAViscan.Classes;
-using System.Drawing;
-using Guna.UI.WinForms;
-using System.IO;
-using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
-using GrabAViscan.Popup;
 
 namespace GrabAViscan.Feed
 {
-    public partial class Requests : UserControl
+    public partial class Deliveries : UserControl
     {
         private DatabaseManagement db = new DatabaseManagement();
         private Category cat;
@@ -26,33 +21,32 @@ namespace GrabAViscan.Feed
         private int locId2;
         private int post_id;
         private Home home;
-        public Requests(Posting post)
+        public Deliveries(Posting post)
         {
             InitializeComponent();
-            
+
             this.post_id = post.Post_id;
             string loc = post.Near_pickUp;
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
-           
+
             string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
 
-            RequestTxt.Text = post.Requested;
 
             statusTxt.Text = post.Requested;
             quantityTxt.Text = post.Quantity;
-            
-            pickNearbyTxt.Text = pick;
-            
-            deliveryNearTxt.Text = deliver;
-            NameLabel.Text = post.Category;
 
-            
-            
-               cat = db.GetCategoryByName(post.Category);
-               SetImageFromByteArrayProfile(this.profile, cat.categoryImage);
+            pickNearbyTxt.Text = pick;
+
+            deliveryNearTxt.Text = deliver;
+            NameLabel.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
+
+
+
+            cat = db.GetCategoryByName(post.Category);
+            SetImageFromByteArrayProfile(this.profile, cat.categoryImage);
 
             if (post.Available == 0)
             {
@@ -67,9 +61,9 @@ namespace GrabAViscan.Feed
 
         }
 
-        public void setter( Home form)
+        public void setter(Home form)
         {
-            
+
             this.home = form;
 
         }
@@ -86,35 +80,32 @@ namespace GrabAViscan.Feed
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void gunaButton4_Click_1(object sender, EventArgs e)
+        {
             Posting temp = db.getPostById(this.post_id);
 
-            try
-            {
-                string loc = temp.Near_pickUp;
-                this.locId = (int)double.Parse(loc);
-                string loc2 = temp.Near_deliveryLocation;
-                this.locId2 = (int)double.Parse(loc2);
 
-                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
-                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-                MessageBox.Show(pick + " " + deliver);
-                temp.Near_pickUp = pick;
-                temp.Near_deliveryLocation = deliver;
-                temp.Available = 5;
-                db.updatePostingInformation(temp);
-                home.My_Request(sender, e);
-            }
-            catch (Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
-            
+            string loc = temp.Near_pickUp;
+            this.locId = (int)double.Parse(loc);
+            string loc2 = temp.Near_deliveryLocation;
+            this.locId2 = (int)double.Parse(loc2);
+
+            string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+            string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+            MessageBox.Show(pick + " " + deliver);
+            temp.Near_pickUp = pick;
+            temp.Near_deliveryLocation = deliver;
+            temp.Available = 5;
+            db.updatePostingInformation(temp);
+            home.To_deliver(sender, e);
         }
 
         private void discard_btn_Click(object sender, EventArgs e)
         {
-            EditRequest edit = new EditRequest(home,db.getPostById(post_id));
-            edit.Show();
+
         }
     }
 }

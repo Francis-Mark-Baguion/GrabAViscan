@@ -45,6 +45,7 @@
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.statusCombo = new Guna.UI.WinForms.GunaComboBox();
+            this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // school_id
@@ -276,11 +277,35 @@
             this.statusCombo.Size = new System.Drawing.Size(121, 35);
             this.statusCombo.TabIndex = 30;
             // 
+            // Close_btn
+            // 
+            this.Close_btn.AnimationHoverSpeed = 0.07F;
+            this.Close_btn.AnimationSpeed = 0.03F;
+            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Close_btn.BorderColor = System.Drawing.Color.Black;
+            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Close_btn.ForeColor = System.Drawing.Color.White;
+            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
+            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.Close_btn.Location = new System.Drawing.Point(785, 12);
+            this.Close_btn.Name = "Close_btn";
+            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
+            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Close_btn.Size = new System.Drawing.Size(50, 50);
+            this.Close_btn.TabIndex = 31;
+            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            // 
             // SignUpInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 805);
+            this.Controls.Add(this.Close_btn);
             this.Controls.Add(this.statusCombo);
             this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaLabel6);
@@ -324,5 +349,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaComboBox statusCombo;
+        private Guna.UI.WinForms.GunaButton Close_btn;
     }
 }

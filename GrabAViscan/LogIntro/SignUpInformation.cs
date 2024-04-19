@@ -60,19 +60,33 @@ namespace GrabAViscan.LogIntro
             string username = "";
             byte[] photo = null;
             passwordTxt.Text = "";
-            if(db.SignUp(email,pass))
-            {
 
-                User user = new User(db.get_id(email,pass), email, username, int.Parse(school_id.Text), DOB.Value, Address.Text, photo, phoneTxt.Text, bio,firstNameTxt.Text, lastNameTxt.Text, statusCombo.Text);
-                db.Information_upload(user);
-                signUp.Hide();
-                this.Hide();
-                LogIn log = new LogIn();
-                log.Show();
-                this.Hide();
-                ErrorMessage error = new ErrorMessage("Account Created");
-                
+            try
+            {
+                if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && statusCombo.Text != "")
+                {
+
+                    User user = new User(db.get_id(email, pass), email, username, int.Parse(school_id.Text), DOB.Value, Address.Text, photo, phoneTxt.Text, bio, firstNameTxt.Text, lastNameTxt.Text, statusCombo.Text);
+                    db.SignUp(email, pass);
+                    db.Information_upload(user);
+                    signUp.Hide();
+                    this.Hide();
+                    LogIn log = new LogIn();
+                    log.Show();
+                    this.Hide();
+                    SucMessage error = new SucMessage("Account Created");
+
+                }
+                else
+                {
+                    ErrorMessage arr = new ErrorMessage("Invalid or Incorrect Information format");
+                }
             }
+            catch (Exception ex) 
+            {
+                ErrorMessage arr = new ErrorMessage(ex.Message);
+            }
+               
             
 
             
@@ -83,9 +97,9 @@ namespace GrabAViscan.LogIntro
             
         }
 
-
-
-
-        
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

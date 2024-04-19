@@ -16,7 +16,7 @@ namespace GrabAViscan
 {
     public partial class LogIn : Form
     {
-        public DatabaseManagement databaseManagement;
+        private DatabaseManagement databaseManagement;
         public LogIn()
         {
             InitializeComponent();
@@ -45,36 +45,45 @@ namespace GrabAViscan
         {
             string email = emailTxt.Text;
             string password = passwordTxt.Text;
-
-            MySqlConnection conConn = databaseManagement.Connect();
-
-
-            string sql = "SELECT email, password FROM grab.accounts WHERE email=@email AND password=@password";
-            MySqlCommand cmd = new MySqlCommand(sql, conConn);
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@password", password);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
+                MySqlConnection conConn = databaseManagement.Connect();
+
+
+                string sql = "SELECT email, password FROM grab.accounts WHERE email=@email AND password=@password";
+                MySqlCommand cmd = new MySqlCommand(sql, conConn);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@password", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    conConn.Close();
+                    Home hom = new Home(databaseManagement.get_id(email, password));
+                    User user = databaseManagement.InitializeUser(email);
+                    hom.setter(email);
+                    hom.Show();
+                    this.Hide();
+                    SucMessage error = new SucMessage("Log In Successful");
+
+
+                }
+                else
+                {
+                    ErrorMessage error1 = new ErrorMessage("Invalid Email or Password");
+                }
+                reader.Close();
                 conConn.Close();
-                Home hom = new Home();
-                User user = databaseManagement.InitializeUser(email);
-                hom.setter(email);
-                hom.Show();
-                this.Hide();
-                SucMessage error = new SucMessage("Log In Successful");
-                
 
             }
-            else
+            catch (Exception ex) 
             {
-                ErrorMessage error1 = new ErrorMessage("Invalid Email or Password");
+                ErrorMessage error1 = new ErrorMessage(ex.Message);
             }
+            
 
-            reader.Close();
-            conConn.Close();
+           
         }
 
         private void Close_btn_Click(object sender, EventArgs e)

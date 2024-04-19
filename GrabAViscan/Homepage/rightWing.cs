@@ -17,14 +17,14 @@ namespace GrabAViscan
 {
     public partial class rightWing : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public Notification notif = new Notification();
         public Post post = new Post();
-        public User user;
+        private User user;
         private string email;
-        bool flagnotif = false;
-        bool flagpost = false;
-        Home form;
+        private bool flagnotif = false;
+        private bool flagpost = false;
+        private Home form;
 
         public rightWing( )
         {
@@ -34,10 +34,19 @@ namespace GrabAViscan
             
         }
 
+        public void Refresh()
+        {
+            post.Close();
+            notif.Close();
+            flagnotif = false;
+            flagpost = false;
+            
+        }
+
         public void setter(string email,Home form)
         {
             user = db.InitializeUser(email);
-            post.setter(email);
+            post.setter(email,form);
             this.email = email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             SetImageFromByteArrayProfile(this.ProfilePic, user.Profile_pic);
@@ -57,45 +66,40 @@ namespace GrabAViscan
         }
         private void Notification_click(object sender, EventArgs e)
         {
-            if(flagpost)
-            {
-                post.Hide();
-                flagpost = false;
-            }
-
-            if(flagnotif)
+            if (notif.Visible)
             {
                 notif.Hide();
-                flagnotif = false;
             }
-            else
+            else if (notif.Visible == false)
             {
-               
                 notif.Show();
-                flagnotif = true;
+
+                if (post.Visible)
+                {
+                    post.Hide();
+                }
             }
-              
+
         }
 
         private void EditPost_btn_Click(object sender, EventArgs e)
         {
            
-            if(flagnotif) 
-            {
-                notif.Hide();
-                flagnotif = false;
-            }
-            
-            if(flagpost) 
+           if(post.Visible)
             {
                 post.Hide();
-                flagpost = false;
             }
-            else
+           else if(post.Visible == false)  
             {
                 post.Show();
-                flagpost = true;  
+
+                if (notif.Visible)
+                {
+                    notif.Hide();
+                }
             }
+
+          
         }
 
         private void nameHolder_Click(object sender, EventArgs e)

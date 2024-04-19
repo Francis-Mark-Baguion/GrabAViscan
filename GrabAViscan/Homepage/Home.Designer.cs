@@ -38,6 +38,7 @@
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.Filter_btn = new Guna.UI.WinForms.GunaButton();
             this.LeftWing = new System.Windows.Forms.Panel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
@@ -189,6 +190,7 @@
             // LeftWing
             // 
             this.LeftWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.LeftWing.Controls.Add(this.gunaButton1);
             this.LeftWing.Controls.Add(this.gunaPanel1);
             this.LeftWing.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LeftWing.Location = new System.Drawing.Point(0, 96);
@@ -196,6 +198,31 @@
             this.LeftWing.Name = "LeftWing";
             this.LeftWing.Size = new System.Drawing.Size(563, 1504);
             this.LeftWing.TabIndex = 1;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.Black;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageOffsetX = 20;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaButton1.Location = new System.Drawing.Point(12, 1353);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.OnHoverImage")));
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 15;
+            this.gunaButton1.Size = new System.Drawing.Size(524, 70);
+            this.gunaButton1.TabIndex = 6;
+            this.gunaButton1.Text = "Log out";
+            this.gunaButton1.TextOffsetX = 30;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaPanel1
             // 
@@ -332,7 +359,7 @@
             this.gunaButton2.TabIndex = 1;
             this.gunaButton2.Text = "Home";
             this.gunaButton2.TextOffsetX = 30;
-            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            this.gunaButton2.Click += new System.EventHandler(this.homeclick);
             // 
             // flow1
             // 
@@ -400,5 +427,6 @@
         private Guna.UI.WinForms.GunaButton gunaButton9;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

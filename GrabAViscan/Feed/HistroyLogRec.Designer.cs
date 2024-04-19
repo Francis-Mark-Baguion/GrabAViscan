@@ -137,6 +137,7 @@
             // 
             this.profile.BackColor = System.Drawing.Color.White;
             this.profile.BaseColor = System.Drawing.Color.White;
+            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
             this.profile.Location = new System.Drawing.Point(319, 10);
             this.profile.Name = "profile";
             this.profile.Size = new System.Drawing.Size(80, 80);

@@ -2,6 +2,7 @@
 using GrabAViscan.Popup;
 using Guna.UI.WinForms;
 using System;
+using System.Configuration;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -11,9 +12,9 @@ namespace GrabAViscan.Homepage
 {
     public partial class Settings : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
-        ChangePass changePass;
-        User user;
+        private DatabaseManagement db = new DatabaseManagement();
+        private ChangePass changePass;
+        private User user;
         string email;
         private bool flag = false;
         private bool flag1 = false;
@@ -106,40 +107,55 @@ namespace GrabAViscan.Homepage
 
         private void upload_btn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string username = "";
+                User use = new User(user.User_id, email, username, int.Parse(schoolTxt.Text), user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
+                db.updateUserInformation(use);
+                user = db.InitializeUser(email);
 
-            string username = "";
-            User use = new User(user.User_id, email,username , int.Parse(schoolTxt.Text), user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
-            db.updateUserInformation(use);
-            user = db.InitializeUser(email);
-           
-            this.nameHolder.Text = user.FirstName + " " + user.LastName;
-            this.statusHolder.Text = user.Status;
-            this.firstNameTxt.Text = user.FirstName;
-            this.lastNameTxt.Text = user.LastName;
-            this.addressTxt.Text = user.Address;
-            this.phoneTxt.Text = user.PhoneNumber;
-            this.schoolTxt.Text = user.School_id + "";
-            this.emailTxt.Text = user.Email;
-            this.statusTxt.Text = user.Status;
-            this.DescriptionTxt.Text = user.Bio;
-            SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+                this.nameHolder.Text = user.FirstName + " " + user.LastName;
+                this.statusHolder.Text = user.Status;
+                this.firstNameTxt.Text = user.FirstName;
+                this.lastNameTxt.Text = user.LastName;
+                this.addressTxt.Text = user.Address;
+                this.phoneTxt.Text = user.PhoneNumber;
+                this.schoolTxt.Text = user.School_id + "";
+                this.emailTxt.Text = user.Email;
+                this.statusTxt.Text = user.Status;
+                this.DescriptionTxt.Text = user.Bio;
+                SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+            
         }
 
         private void discard_btn_Click(object sender, EventArgs e)
         {
-            user = db.InitializeUser(email);
-            
-            this.nameHolder.Text = user.FirstName + " " + user.LastName;
-            this.statusHolder.Text = user.Status;
-            this.firstNameTxt.Text = user.FirstName;
-            this.lastNameTxt.Text = user.LastName;
-            this.addressTxt.Text = user.Address;
-            this.phoneTxt.Text = user.PhoneNumber;
-            this.schoolTxt.Text = user.School_id + "";
-            this.emailTxt.Text = user.Email;
-            this.statusTxt.Text = user.Status;
-            this.DescriptionTxt.Text = user.Bio;
-            SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+            try
+            {
+                user = db.InitializeUser(email);
+
+                this.nameHolder.Text = user.FirstName + " " + user.LastName;
+                this.statusHolder.Text = user.Status;
+                this.firstNameTxt.Text = user.FirstName;
+                this.lastNameTxt.Text = user.LastName;
+                this.addressTxt.Text = user.Address;
+                this.phoneTxt.Text = user.PhoneNumber;
+                this.schoolTxt.Text = user.School_id + "";
+                this.emailTxt.Text = user.Email;
+                this.statusTxt.Text = user.Status;
+                this.DescriptionTxt.Text = user.Bio;
+                SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+            }
+            catch (Exception ex) 
+            {
+                ErrorMessage errorMessage = new ErrorMessage(ex.Message);
+            }
+           
         }
         
         

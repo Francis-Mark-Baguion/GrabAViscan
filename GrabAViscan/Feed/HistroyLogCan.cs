@@ -15,7 +15,7 @@ namespace GrabAViscan.Feed
 {
     public partial class HistroyLogCan : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public HistroyLogCan(Posting post)
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace GrabAViscan.Feed
             this.Fee.Text = post.Fee.ToString();
 
         }
+
 
         public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
         {

@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flow1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 67);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1980, 1039);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flow1.AutoScroll = true;
+            this.flow1.Location = new System.Drawing.Point(0, 67);
+            this.flow1.Name = "flow1";
+            this.flow1.Size = new System.Drawing.Size(1980, 1428);
+            this.flow1.TabIndex = 1;
             // 
             // gunaPanel1
             // 
@@ -68,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.gunaPanel1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flow1);
             this.Name = "MyRequest";
             this.Size = new System.Drawing.Size(1980, 1495);
             this.gunaPanel1.ResumeLayout(false);
@@ -78,7 +79,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flow1;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
     }

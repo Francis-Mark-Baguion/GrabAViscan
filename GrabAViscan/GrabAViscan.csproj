@@ -104,6 +104,7 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\Credentials.cs" />
     <Compile Include="Classes\DatabaseManagement.cs" />
+    <Compile Include="Classes\Deliver.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
     <Compile Include="Classes\Posting.cs" />
@@ -115,6 +116,12 @@
     </Compile>
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\Deliveries.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Deliveries.Designer.cs">
+      <DependentUpon>Deliveries.cs</DependentUpon>
     </Compile>
     <Compile Include="Feed\FeedNoImage.cs">
       <SubType>UserControl</SubType>
@@ -194,41 +201,59 @@
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\ChangePass.cs">
+    <Compile Include="Popup Messages\ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup\ChangePass.Designer.cs">
+    <Compile Include="Popup Messages\ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\ErrorMessage.cs">
+    <Compile Include="Popup Messages\ErrorMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup\ErrorMessage.Designer.cs">
+    <Compile Include="Popup Messages\ErrorMessage.Designer.cs">
       <DependentUpon>ErrorMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\Notification.cs">
+    <Compile Include="Popup Messages\logNotif.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup\Notification.Designer.cs">
+    <Compile Include="Popup Messages\logNotif.Designer.cs">
+      <DependentUpon>logNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Forms\Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Forms\Notification.Designer.cs">
       <DependentUpon>Notification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\Notifications.cs">
+    <Compile Include="Popup Forms\Notifications.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Popup\Notifications.Designer.cs">
+    <Compile Include="Popup Forms\Notifications.Designer.cs">
       <DependentUpon>Notifications.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\Post.cs">
+    <Compile Include="Popup Forms\Post.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup\Post.Designer.cs">
+    <Compile Include="Popup Forms\Post.Designer.cs">
       <DependentUpon>Post.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popup\SucMessage.cs">
+    <Compile Include="Popup Forms\Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popup\SucMessage.Designer.cs">
+    <Compile Include="Popup Forms\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Messages\SucMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Messages\SucMessage.Designer.cs">
       <DependentUpon>SucMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Forms\EditRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Forms\EditRequest.Designer.cs">
+      <DependentUpon>EditRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,6 +277,9 @@
     </Compile>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\Deliveries.resx">
+      <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\FeedNoImage.resx">
       <DependentUpon>FeedNoImage.cs</DependentUpon>
@@ -292,23 +320,32 @@
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\ChangePass.resx">
+    <EmbeddedResource Include="Popup Messages\ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\ErrorMessage.resx">
+    <EmbeddedResource Include="Popup Messages\ErrorMessage.resx">
       <DependentUpon>ErrorMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\Notification.resx">
+    <EmbeddedResource Include="Popup Messages\logNotif.resx">
+      <DependentUpon>logNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Forms\Notification.resx">
       <DependentUpon>Notification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\Notifications.resx">
+    <EmbeddedResource Include="Popup Forms\Notifications.resx">
       <DependentUpon>Notifications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\Post.resx">
+    <EmbeddedResource Include="Popup Forms\Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popup\SucMessage.resx">
+    <EmbeddedResource Include="Popup Forms\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Messages\SucMessage.resx">
       <DependentUpon>SucMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Forms\EditRequest.resx">
+      <DependentUpon>EditRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

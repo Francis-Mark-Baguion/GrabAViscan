@@ -12,10 +12,13 @@ namespace GrabAViscan.Classes
         public int Id { get; set; } 
         public string Name { get; set; }
 
-        public Category(int Id,string name) 
+        public byte[] categoryImage { get; set; }
+
+        public Category(int Id,string name , byte[] categoryImage)  
         {
         this.Id = Id;
         this.Name = name;
+        this.categoryImage = categoryImage;
         }
     }
 }

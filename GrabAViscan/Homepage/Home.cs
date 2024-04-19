@@ -22,12 +22,14 @@ namespace GrabAViscan
 {
     public partial class Home : Form
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public User user;
-        rightWing right;
+        private rightWing right = new rightWing();
         private string email;
-        public Home()
+        private int User_id;
+        public Home(int uid)
         {
+            this.User_id = uid;
             InitializeComponent();
             right = new rightWing();
             
@@ -35,16 +37,19 @@ namespace GrabAViscan
             feed();
         }
 
+        
+
          
         public void setter(string email)
         {
             user = db.InitializeUser(email);
+            this.User_id = user.User_id;
             this.email = email;
             right.setter(email,this);
 
         }
 
-        private void feed()
+        public void feed()
         {
             flow1.Controls.Clear();
 
@@ -54,30 +59,37 @@ namespace GrabAViscan
             
             foreach (Posting post in posts)
             {
-                if(post.image != null)
+                if(post.User_id != User_id)
                 {
-                    HomeFeed home = new HomeFeed(post);
+                    if (post.image != null)
+                    {
+                        HomeFeed home = new HomeFeed(post,User_id);
 
 
-                    flow1.Controls.Add(home);
-                }
-                else
-                {
-                    FeedNoImage feedNoImage = new FeedNoImage(post);
-                    flow1.Controls.Add(feedNoImage);
 
+                        flow1.Controls.Add(home);
+                    }
+                    else
+                    {
+                        FeedNoImage feedNoImage = new FeedNoImage(post,User_id);
+                        flow1.Controls.Add(feedNoImage);
+
+                    }
+                    Buffers buff = new Buffers();
+                    flow1.Controls.Add(buff);
                 }
                 
-
                 
-                Buffers buff = new Buffers();
-                flow1.Controls.Add(buff);
+               
             }
         }
 
-        private void gunaButton2_Click(object sender, EventArgs e)
+        public void homeclick(object sender, EventArgs e)
         {
+            
             user = db.InitializeUser(email);
+            
+            
             right.setter(email,this);
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[2].Width = 25;
@@ -92,9 +104,10 @@ namespace GrabAViscan
 
         }
 
-        private void My_Request(object sender, EventArgs e)
+        public void My_Request(object sender, EventArgs e)
         {
-            MyRequest myRequest = new MyRequest();
+            MyRequest myRequest = new MyRequest(this.User_id);
+            myRequest.feed(this);
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
@@ -108,9 +121,10 @@ namespace GrabAViscan
         }
 
       
-        private void To_deliver(object sender, EventArgs e)
+        public void To_deliver(object sender, EventArgs e)
         {
-            ToDeliver deliver = new ToDeliver();  
+            ToDeliver todeliver = new ToDeliver(this.User_id);
+            todeliver.feed(this);
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
@@ -120,12 +134,12 @@ namespace GrabAViscan
             tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
             tableLayoutPanel1.ColumnStyles[0].Width = 22;
 
-            flow1.Controls.Add(deliver);
+            flow1.Controls.Add(todeliver);
         }
 
         private void History(object sender, EventArgs e)
         {
-            History history = new History();  
+            History history = new History(this.User_id);  
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
@@ -171,6 +185,12 @@ namespace GrabAViscan
         private void flow1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            logNotif logout = new logNotif(this);
+            logout.Show();
         }
     }
 }
