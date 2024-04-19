@@ -19,7 +19,7 @@ namespace GrabAViscan
     public partial class SignUp : Form
     {
 
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public SignUp()
         {
             InitializeComponent();
@@ -50,20 +50,28 @@ namespace GrabAViscan
             Credentials credentials = new Credentials();
             credentials.email = email;
             credentials.password = pass;
-
-            if (credentials.IsValid()&& db.ValidateCredentials(email, pass))
+            try
             {
-                SignUpInformation signUpInformation = new SignUpInformation();
-                signUpInformation.Show();
-                signUpInformation.BringToFront();
-                signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
-                signUpInformation.Sign_in_method();
+                if (credentials.IsValid() && db.ValidateCredentials(email, pass))
+                {
+                    SignUpInformation signUpInformation = new SignUpInformation();
+                    signUpInformation.Show();
+                    signUpInformation.BringToFront();
+                    signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
+                    signUpInformation.Sign_in_method();
 
+                }
+                else
+                {
+                    ErrorMessage error = new ErrorMessage("Invalid Credentials");
+                }
             }
-            else
+            catch (Exception ex) 
+            
             {
-                ErrorMessage error = new ErrorMessage("Invalid Credentials");
+                ErrorMessage err = new ErrorMessage(ex.Message);  
             }
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

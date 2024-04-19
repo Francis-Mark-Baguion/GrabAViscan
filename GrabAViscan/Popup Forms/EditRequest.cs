@@ -1,4 +1,5 @@
 ﻿using GrabAViscan.Classes;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,12 +48,24 @@ namespace GrabAViscan.Popup
             this.deliverNearCombo.Text = post.Near_deliveryLocation;
             this.feeTxt.Text = post.Fee + "";
             this.CommentTxt.Text = post.Description;
-            
+            SetImageFromByteArray1(picture, post.image);
+
+
         }
 
 
+        public void SetImageFromByteArray1(GunaPictureBox Image_cont, byte[] byteArray)
+        {
+            if (byteArray != null)
+            {
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    Image_cont.Image = image;
+                }
+            }
+        }
 
-        
 
         private void upload_btn_Click(object sender, EventArgs e)
         {

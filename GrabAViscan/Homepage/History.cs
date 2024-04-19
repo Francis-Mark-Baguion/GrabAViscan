@@ -15,7 +15,7 @@ namespace GrabAViscan
 {
     public partial class History : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
         public History(int User_id)
         {

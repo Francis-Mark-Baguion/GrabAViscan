@@ -45,8 +45,8 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +141,7 @@
             this.discard_btn.TabIndex = 53;
             this.discard_btn.Text = "UPDATE";
             this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
             // 
             // upload_btn
             // 
@@ -333,18 +334,6 @@
             this.MainPanel.Size = new System.Drawing.Size(380, 800);
             this.MainPanel.TabIndex = 7;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(9, 478);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(355, 34);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "_________________";
-            // 
             // statusTxt
             // 
             this.statusTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -363,6 +352,18 @@
             this.statusTxt.Radius = 10;
             this.statusTxt.Size = new System.Drawing.Size(195, 50);
             this.statusTxt.TabIndex = 58;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(9, 478);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(355, 34);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "_________________";
             // 
             // Deliveries
             // 

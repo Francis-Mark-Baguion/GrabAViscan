@@ -15,9 +15,9 @@ namespace GrabAViscan
 {
     public partial class MyRequest : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        Home home;
+        private Home home;
         public MyRequest(int User_id)
         {
             InitializeComponent();

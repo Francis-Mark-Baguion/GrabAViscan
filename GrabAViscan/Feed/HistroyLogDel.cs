@@ -15,7 +15,7 @@ namespace GrabAViscan.Feed
 {
     public partial class HistroyLogDel : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public HistroyLogDel(Posting post)
         {
             InitializeComponent();

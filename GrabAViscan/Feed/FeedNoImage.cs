@@ -17,15 +17,15 @@ namespace GrabAViscan.Feed
     public partial class FeedNoImage : UserControl
     {
 
-        Posting post;
-        DatabaseManagement db = new DatabaseManagement();
-
+        
+        private DatabaseManagement db = new DatabaseManagement();
+        private Posting post;
         private int id;
         private int uid;
         private int post_id;
         private int locId;
         private int locId2;
-        Profile profile_pic;
+        private Profile profile_pic;
 
         public FeedNoImage(Posting post, int uid)
         {
@@ -97,9 +97,18 @@ namespace GrabAViscan.Feed
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-            db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-            db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
-            this.Hide();
+
+            try
+            {
+                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
+                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
+                this.Hide();
+            }
+            catch(Exception ex) 
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+            
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)

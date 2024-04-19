@@ -17,14 +17,14 @@ namespace GrabAViscan
 {
     public partial class rightWing : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public Notification notif = new Notification();
         public Post post = new Post();
-        public User user;
+        private User user;
         private string email;
-        bool flagnotif = false;
-        bool flagpost = false;
-        Home form;
+        private bool flagnotif = false;
+        private bool flagpost = false;
+        private Home form;
 
         public rightWing( )
         {

@@ -14,7 +14,7 @@ namespace GrabAViscan
 {
     public partial class ToDeliver : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
         Home home;
         public ToDeliver(int User_id)

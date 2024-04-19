@@ -15,8 +15,8 @@ namespace GrabAViscan.Feed
 {
     public partial class Deliveries : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
-        Category cat;
+        private DatabaseManagement db = new DatabaseManagement();
+        private Category cat;
         private int locId;
         private int locId2;
         private int post_id;
@@ -101,6 +101,11 @@ namespace GrabAViscan.Feed
             temp.Available = 5;
             db.updatePostingInformation(temp);
             home.To_deliver(sender, e);
+        }
+
+        private void discard_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

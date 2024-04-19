@@ -17,14 +17,14 @@ namespace GrabAViscan
 {
     public partial class HomeFeed : UserControl
     {
-        private Posting post;
         private DatabaseManagement db = new DatabaseManagement();
+        private Posting post;
         private int id;
         private int uid;
         private int post_id;
         private int locId;
         private int locId2;
-        Profile profile_pic;
+        private Profile profile_pic;
         public HomeFeed(Posting post,int uid)
         {
 
@@ -50,7 +50,7 @@ namespace GrabAViscan
                 this.TimeTxt.Text = "" + post.Date_posted;
                 this.Category_label.Text = post.Category;
                 this.descriptionTxt.Text = post.Description;
-                SetImageFromByteArray(Image_cont, post.image);
+                SetImageFromByteArray1(Image_cont, post.image);
 
 
                 this.requestTxt.Text = post.Requested;
@@ -83,15 +83,19 @@ namespace GrabAViscan
             
         }
 
-
-        public void SetImageFromByteArray(GunaPictureBox Image_cont, byte[] byteArray)
+        public void SetImageFromByteArray1(GunaPictureBox Image_cont, byte[] byteArray)
         {
-            using (MemoryStream ms = new MemoryStream(byteArray))
+            if (byteArray != null)
             {
-                Image image = Image.FromStream(ms);
-                Image_cont.Image = image;
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    Image_cont.Image = image;
+                }
             }
         }
+
+        
 
         private void Image_cont_Click(object sender, EventArgs e)
         {
@@ -105,10 +109,18 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
+            try
+            {
+                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
+                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
+                this.Hide();
+            }
+            catch (Exception ex) 
             
-            db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-            db.AssignDeliver(db.getPostById(this.id).Post_id , uid);
-            this.Hide();
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+            
 
         }
 

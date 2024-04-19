@@ -35,9 +35,17 @@ namespace GrabAViscan.Popup
 
         private void gunaButton4_Click_1(object sender, EventArgs e)
         {
-            if (db.changePass(email, this.Curr.Text, this.newPass.Text))
+            try
             {
-                this.Hide();
+                if (db.changePass(email, this.Curr.Text, this.newPass.Text))
+                {
+                    this.Hide();
+                }
+
+            }
+            catch (Exception ex) 
+            {
+                ErrorMessage error = new ErrorMessage(ex.Message);
             }
         }
 

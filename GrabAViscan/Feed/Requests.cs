@@ -20,8 +20,8 @@ namespace GrabAViscan.Feed
 {
     public partial class Requests : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
-        Category cat;
+        private DatabaseManagement db = new DatabaseManagement();
+        private Category cat;
         private int locId;
         private int locId2;
         private int post_id;
@@ -88,20 +88,27 @@ namespace GrabAViscan.Feed
         {
             Posting temp = db.getPostById(this.post_id);
 
-            
-            string loc = temp.Near_pickUp;
-            this.locId = (int)double.Parse(loc);
-            string loc2 = temp.Near_deliveryLocation;
-            this.locId2 = (int)double.Parse(loc2);
+            try
+            {
+                string loc = temp.Near_pickUp;
+                this.locId = (int)double.Parse(loc);
+                string loc2 = temp.Near_deliveryLocation;
+                this.locId2 = (int)double.Parse(loc2);
 
-            string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
-            string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-            MessageBox.Show(pick + " " +deliver);
-            temp.Near_pickUp = pick;
-            temp.Near_deliveryLocation = deliver;
-            temp.Available = 5;
-            db.updatePostingInformation(temp);
-            home.My_Request(sender,e);
+                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+                MessageBox.Show(pick + " " + deliver);
+                temp.Near_pickUp = pick;
+                temp.Near_deliveryLocation = deliver;
+                temp.Available = 5;
+                db.updatePostingInformation(temp);
+                home.My_Request(sender, e);
+            }
+            catch (Exception ex) 
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+            
         }
 
         private void discard_btn_Click(object sender, EventArgs e)

@@ -22,9 +22,9 @@ namespace GrabAViscan
 {
     public partial class Home : Form
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public User user;
-        rightWing right = new rightWing();
+        private rightWing right = new rightWing();
         private string email;
         private int User_id;
         public Home(int uid)
@@ -189,9 +189,8 @@ namespace GrabAViscan
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            LogIn logIn = new LogIn();
-            logIn.Show();
-            this.Close();
+            logNotif logout = new logNotif(this);
+            logout.Show();
         }
     }
 }

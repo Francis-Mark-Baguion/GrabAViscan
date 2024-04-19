@@ -236,14 +236,15 @@
             // statusHolder
             // 
             this.statusHolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusHolder.BaseColor = System.Drawing.Color.White;
-            this.statusHolder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.statusHolder.BaseColor = System.Drawing.SystemColors.Control;
+            this.statusHolder.BorderColor = System.Drawing.Color.Transparent;
             this.statusHolder.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.statusHolder.Enabled = false;
             this.statusHolder.FocusedBaseColor = System.Drawing.Color.White;
             this.statusHolder.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.statusHolder.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.statusHolder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusHolder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusHolder.ForeColor = System.Drawing.Color.Black;
             this.statusHolder.Location = new System.Drawing.Point(201, 442);
             this.statusHolder.Margin = new System.Windows.Forms.Padding(0);
             this.statusHolder.Name = "statusHolder";
@@ -259,14 +260,15 @@
             // nameHolder
             // 
             this.nameHolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.nameHolder.BaseColor = System.Drawing.Color.White;
-            this.nameHolder.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.nameHolder.BaseColor = System.Drawing.SystemColors.Control;
+            this.nameHolder.BorderColor = System.Drawing.Color.Transparent;
             this.nameHolder.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nameHolder.Enabled = false;
             this.nameHolder.FocusedBaseColor = System.Drawing.Color.White;
             this.nameHolder.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.nameHolder.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.nameHolder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameHolder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameHolder.ForeColor = System.Drawing.Color.Black;
             this.nameHolder.Location = new System.Drawing.Point(132, 371);
             this.nameHolder.Margin = new System.Windows.Forms.Padding(0);
             this.nameHolder.Name = "nameHolder";
