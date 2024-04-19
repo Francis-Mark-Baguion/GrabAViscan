@@ -137,26 +137,44 @@ namespace GrabAViscan.Popup
 
             }
 
-            string Description = CommentTxt.Text;
-            DateTime Date_posted = DateTime.Now;
-            DateTime Deadline = TimePicker.Value;
-            string Category = categoryCombo.Text;
-            byte[] image = this.getPhoto();
-            if (this.getPhoto() != null)
+            try
             {
-                image = this.getPhoto();
+                string Description = CommentTxt.Text;
+                DateTime Date_posted = DateTime.Now;
+                DateTime Deadline = TimePicker.Value;
+                string Category = categoryCombo.Text;
+                byte[] image = this.getPhoto();
+                if (this.getPhoto() != null)
+                {
+                    image = this.getPhoto();
+                }
+
+                string Pick_up = pickUpTxt.Text;
+                string Near_pickUp = pickNearCombo.Text;
+                string Delivery_location = deliveryTxt.Text;
+                string Near_deliveryLocation = deliverNearCombo.Text;
+                int Available = 0;
+
+                Posting post = null;
+                if( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
+                {
+                    post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
+                    db.Post_upload(post);
+                }
+                else 
+                {
+                    this.Hide();
+                    ErrorMessage err = new ErrorMessage("Invalid Information");
+                }
+                
+                this.Hide();
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+                this.Hide();
             }
             
-            string Pick_up = pickUpTxt.Text;
-            string Near_pickUp = pickNearCombo.Text;
-            string Delivery_location = deliveryTxt.Text;
-            string Near_deliveryLocation = deliverNearCombo.Text;
-            int Available = 0;
-
-            Posting post = null;
-            post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
-            db.Post_upload(post);
-            this.Hide();
            
         }
 

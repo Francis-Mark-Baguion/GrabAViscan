@@ -23,7 +23,7 @@ namespace GrabAViscan.Popup
         public EditRequest(Home home,Posting post)
         {
             InitializeComponent();
-
+            
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -48,7 +48,16 @@ namespace GrabAViscan.Popup
             this.deliverNearCombo.Text = post.Near_deliveryLocation;
             this.feeTxt.Text = post.Fee + "";
             this.CommentTxt.Text = post.Description;
-            SetImageFromByteArray1(picture, post.image);
+            if(post.image != null)
+            {
+                SetImageFromByteArray1(picture, post.image);
+            }
+            else
+            {
+                picture.Image = null;
+                picture.Refresh();
+            }
+            
 
 
         }
@@ -64,14 +73,15 @@ namespace GrabAViscan.Popup
                     Image_cont.Image = image;
                 }
             }
+            else  Image_cont.Image = null;
         }
 
 
         private void upload_btn_Click(object sender, EventArgs e)
         {
-            Image originalImage = picture.Image;
-
             
+
+
             int User_id = user.User_id;
             string Requested = requestTxt.Text;
             string Quantity = quantityTxt.Text;
@@ -103,18 +113,20 @@ namespace GrabAViscan.Popup
             DateTime Date_posted = DateTime.Now;
             DateTime Deadline = TimePicker.Value;
             string Category = categoryCombo.Text;
-            byte[] image = this.getPhoto();
+            byte[] image = null;
+              
             if (this.getPhoto() != null)
             {
-                image = this.getPhoto();
+                image  = this.getPhoto();
             }
+               
 
             string Pick_up = pickUpTxt.Text;
             string Near_pickUp = pickNearCombo.Text;
             string Delivery_location = deliveryTxt.Text;
             string Near_deliveryLocation = deliverNearCombo.Text;
             int Available = 0;
-
+            
             Posting post = null;
             post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
             db.updatePostingInformation(post);
@@ -132,9 +144,10 @@ namespace GrabAViscan.Popup
             if (picture.Image != null) // Check if picture.Image exists
             {
                 picture.Image.Save(stream, picture.Image.RawFormat);
+                return stream.GetBuffer();
             }
-
-            return stream.GetBuffer();
+            return null;
+           
         }
 
         private void uploadImage_btn_Click(object sender, EventArgs e)

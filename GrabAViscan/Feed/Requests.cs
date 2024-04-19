@@ -15,6 +15,7 @@ using Guna.UI.WinForms;
 using System.IO;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 
 namespace GrabAViscan.Feed
 {
@@ -87,27 +88,33 @@ namespace GrabAViscan.Feed
         private void gunaButton4_Click(object sender, EventArgs e)
         {
             Posting temp = db.getPostById(this.post_id);
+           
+            
+                try
+                {
+                    string loc = temp.Near_pickUp;
+                    this.locId = (int)double.Parse(loc);
+                    string loc2 = temp.Near_deliveryLocation;
+                    this.locId2 = (int)double.Parse(loc2);
 
-            try
-            {
-                string loc = temp.Near_pickUp;
-                this.locId = (int)double.Parse(loc);
-                string loc2 = temp.Near_deliveryLocation;
-                this.locId2 = (int)double.Parse(loc2);
-
-                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
-                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-                MessageBox.Show(pick + " " + deliver);
-                temp.Near_pickUp = pick;
-                temp.Near_deliveryLocation = deliver;
-                temp.Available = 5;
-                db.updatePostingInformation(temp);
-                home.My_Request(sender, e);
-            }
-            catch (Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
+                    string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+                    string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+                    
+                    temp.Near_pickUp = pick;
+                    temp.Near_deliveryLocation = deliver;
+                    temp.Available = 5;
+                    CancelReq cancel = new CancelReq(temp,home);
+                    cancel.Show();
+                    
+                    //db.updatePostingInformation(temp);
+                    //home.My_Request(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
+            
+            
             
         }
 

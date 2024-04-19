@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Homepage;
+using System.Linq.Expressions;
 
 namespace GrabAViscan
 {
@@ -84,20 +85,32 @@ namespace GrabAViscan
 
         private void EditPost_btn_Click(object sender, EventArgs e)
         {
-           
-           if(post.Visible)
+            try
             {
-                post.Hide();
-            }
-           else if(post.Visible == false)  
-            {
-                post.Show();
-
-                if (notif.Visible)
+                if(post.IsDisposed)
                 {
-                    notif.Hide();
+                    post = post = new Post();
+                    post.setter(email, form);
+                }
+                if (post.Visible)
+                {
+                    post.Hide();
+                }
+                else if (post.Visible == false)
+                {
+                    post.Show();
+
+                    if (notif.Visible)
+                    {
+                        notif.Hide();
+                    }
                 }
             }
+            catch(Exception ex) 
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+           
 
           
         }
