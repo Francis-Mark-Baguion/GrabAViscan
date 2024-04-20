@@ -16,6 +16,7 @@ using System.IO;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using GrabAViscan.Popup;
 using GrabAViscan.Popup_Messages;
+using GrabAViscan.Popup_Forms;
 
 namespace GrabAViscan.Feed
 {
@@ -122,6 +123,12 @@ namespace GrabAViscan.Feed
         {
             EditRequest edit = new EditRequest(home,db.getPostById(post_id));
             edit.Show();
+        }
+
+        private void upload_btn_Click(object sender, EventArgs e)
+        {
+            ViewPost view = new ViewPost(db.getPostById(post_id));
+
         }
     }
 }
