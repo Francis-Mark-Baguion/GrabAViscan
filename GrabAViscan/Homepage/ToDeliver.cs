@@ -40,7 +40,7 @@ namespace GrabAViscan
 
             foreach (Posting post in posts)
             {
-                if ( post.Available == 1)
+                if ( post.Available == 1 || post.Available>5)
                 {
                     foreach(Deliver delivery in deliveries)
                     {

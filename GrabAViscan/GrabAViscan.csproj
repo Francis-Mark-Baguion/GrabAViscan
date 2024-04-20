@@ -117,6 +117,12 @@
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feed\CancelledRepost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\CancelledRepost.Designer.cs">
+      <DependentUpon>CancelledRepost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feed\Deliveries.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -267,6 +273,12 @@
     <Compile Include="Popup Forms\EditRequest.Designer.cs">
       <DependentUpon>EditRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup Messages\UpdateStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Messages\UpdateStatus.Designer.cs">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogIntro\SignUp.cs">
@@ -289,6 +301,9 @@
     </Compile>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\CancelledRepost.resx">
+      <DependentUpon>CancelledRepost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
@@ -364,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup Forms\EditRequest.resx">
       <DependentUpon>EditRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Messages\UpdateStatus.resx">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

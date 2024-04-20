@@ -1,4 +1,6 @@
 ﻿using GrabAViscan.Classes;
+using GrabAViscan.Popup_Forms;
+using GrabAViscan.Popup_Messages;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Popup_Messages;
 
 namespace GrabAViscan.Feed
 {
@@ -30,7 +33,7 @@ namespace GrabAViscan.Feed
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
-
+            this.RequestTxt.Text = post.Requested;
             string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
 
@@ -45,8 +48,8 @@ namespace GrabAViscan.Feed
 
 
 
-            cat = db.GetCategoryByName(post.Category);
-            SetImageFromByteArrayProfile(this.profile, cat.categoryImage);
+            
+            SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
 
             if (post.Available == 0)
             {
@@ -56,6 +59,21 @@ namespace GrabAViscan.Feed
             else if (post.Available == 1)
             {
                 statusTxt.Text = "in Progress";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 6)
+            {
+                statusTxt.Text = "PICK UP ITEM";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 7)
+            {
+                statusTxt.Text = "TRAVELLING";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 8)
+            {
+                statusTxt.Text = "ARRIVED";
                 statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
             }
 
@@ -68,7 +86,7 @@ namespace GrabAViscan.Feed
 
         }
 
-        public void SetImageFromByteArrayProfile(GunaPictureBox profile, byte[] byteArray)
+        public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
         {
             if (byteArray != null)
                 using (MemoryStream ms = new MemoryStream(byteArray))
@@ -95,17 +113,23 @@ namespace GrabAViscan.Feed
 
             string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-            MessageBox.Show(pick + " " + deliver);
+            
             temp.Near_pickUp = pick;
             temp.Near_deliveryLocation = deliver;
             temp.Available = 5;
-            db.updatePostingInformation(temp);
-            home.To_deliver(sender, e);
+            CancelReq cancel = new CancelReq(temp, home,1);
+            cancel.Show();
+            
         }
 
         private void discard_btn_Click(object sender, EventArgs e)
         {
+            Popup_Messages.UpdateStatus update = new Popup_Messages.UpdateStatus(this.post_id,this.home);
+        }
 
+        private void upload_btn_Click(object sender, EventArgs e)
+        {
+            ViewPost view = new ViewPost(db.getPostById(post_id));
         }
     }
 }

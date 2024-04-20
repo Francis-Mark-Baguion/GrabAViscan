@@ -17,13 +17,21 @@ namespace GrabAViscan.Popup_Messages
         private DatabaseManagement  db = new DatabaseManagement();
         private Posting post;
         private Home home;
+        private int flag = 0;
         public CancelReq(Posting post,Home home)
         {
             InitializeComponent();
             this.post = post;
             this.home = home;
         }
+        public CancelReq(Posting post, Home home, int flag)
 
+        {
+            InitializeComponent();
+            this.flag = flag;
+            this.post = post;
+            this.home = home;
+        }
         
         private void gunaLabel1_Click(object sender, EventArgs e)
         {
@@ -43,7 +51,9 @@ namespace GrabAViscan.Popup_Messages
         {
 
             db.updatePostingInformation(post);
-            home.My_Request(sender, e);
+            if(flag == 0) 
+            { home.My_Request(sender, e); }
+            else home.To_deliver(sender, e);
             this.Close();
         }
     }

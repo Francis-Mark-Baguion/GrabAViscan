@@ -66,6 +66,22 @@ namespace GrabAViscan.Feed
                 statusTxt.Text = "in Progress";
                 statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
             }
+            else if(post.Available == 6)
+            {
+                statusTxt.Text = "PICK UP ITEM";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 7)
+            {
+                statusTxt.Text = "TRAVELLING";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 8)
+            {
+                statusTxt.Text = "WAITING FOR CUSTOMER";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            
 
         }
 
@@ -128,6 +144,11 @@ namespace GrabAViscan.Feed
         private void upload_btn_Click(object sender, EventArgs e)
         {
             ViewPost view = new ViewPost(db.getPostById(post_id));
+
+        }
+
+        private void statusTxt_Click(object sender, EventArgs e)
+        {
 
         }
     }

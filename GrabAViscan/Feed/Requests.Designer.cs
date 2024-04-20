@@ -58,6 +58,7 @@
             this.quantityTxt.AnimationSpeed = 0.03F;
             this.quantityTxt.BaseColor = System.Drawing.Color.White;
             this.quantityTxt.BorderColor = System.Drawing.Color.Black;
+            this.quantityTxt.Enabled = false;
             this.quantityTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantityTxt.ForeColor = System.Drawing.Color.Black;
             this.quantityTxt.Image = null;
@@ -101,6 +102,7 @@
             this.deliveryNearTxt.AnimationSpeed = 0.03F;
             this.deliveryNearTxt.BaseColor = System.Drawing.Color.White;
             this.deliveryNearTxt.BorderColor = System.Drawing.Color.Black;
+            this.deliveryNearTxt.Enabled = false;
             this.deliveryNearTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.deliveryNearTxt.ForeColor = System.Drawing.Color.Black;
             this.deliveryNearTxt.Image = null;
@@ -122,6 +124,7 @@
             this.pickNearbyTxt.AnimationSpeed = 0.03F;
             this.pickNearbyTxt.BaseColor = System.Drawing.Color.White;
             this.pickNearbyTxt.BorderColor = System.Drawing.Color.Black;
+            this.pickNearbyTxt.Enabled = false;
             this.pickNearbyTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pickNearbyTxt.ForeColor = System.Drawing.Color.Black;
             this.pickNearbyTxt.Image = null;
@@ -195,6 +198,7 @@
             this.RequestTxt.AnimationSpeed = 0.03F;
             this.RequestTxt.BaseColor = System.Drawing.Color.White;
             this.RequestTxt.BorderColor = System.Drawing.Color.Black;
+            this.RequestTxt.Enabled = false;
             this.RequestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RequestTxt.ForeColor = System.Drawing.Color.Black;
             this.RequestTxt.Image = null;
@@ -250,6 +254,7 @@
             this.statusTxt.Radius = 10;
             this.statusTxt.Size = new System.Drawing.Size(195, 50);
             this.statusTxt.TabIndex = 58;
+            this.statusTxt.Click += new System.EventHandler(this.statusTxt_Click);
             // 
             // stat
             // 
@@ -351,6 +356,7 @@
             this.Fee.AnimationSpeed = 0.03F;
             this.Fee.BaseColor = System.Drawing.Color.White;
             this.Fee.BorderColor = System.Drawing.Color.Black;
+            this.Fee.Enabled = false;
             this.Fee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fee.ForeColor = System.Drawing.Color.Black;
             this.Fee.Image = ((System.Drawing.Image)(resources.GetObject("Fee.Image")));

@@ -59,7 +59,7 @@ namespace GrabAViscan
             
             foreach (Posting post in posts)
             {
-                if(post.User_id != User_id)
+                if(post.User_id != User_id && post.Deadline>=DateTime.Now)
                 {
                     if (post.image != null)
                     {

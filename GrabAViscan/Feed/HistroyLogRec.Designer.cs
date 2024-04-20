@@ -37,14 +37,17 @@
             this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.category);
             this.gunaElipsePanel1.Controls.Add(this.Fee);
             this.gunaElipsePanel1.Controls.Add(this.dateCompleted);
             this.gunaElipsePanel1.Controls.Add(this.requestTxt);
@@ -55,7 +58,7 @@
             this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1970, 100);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.TabIndex = 2;
             // 
             // Fee
@@ -104,7 +107,7 @@
             this.requestTxt.FocusedBorderColor = System.Drawing.Color.Silver;
             this.requestTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.requestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestTxt.Location = new System.Drawing.Point(1015, 22);
+            this.requestTxt.Location = new System.Drawing.Point(1043, 22);
             this.requestTxt.Margin = new System.Windows.Forms.Padding(0);
             this.requestTxt.Name = "requestTxt";
             this.requestTxt.PasswordChar = '\0';
@@ -169,18 +172,30 @@
             this.gunaLabel2.TabIndex = 7;
             this.gunaLabel2.Text = "RECEIVED";
             // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(940, 10);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(80, 80);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 57;
+            this.category.TabStop = false;
+            // 
             // HistroyLogRec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
             this.Name = "HistroyLogRec";
-            this.Size = new System.Drawing.Size(1970, 100);
+            this.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +210,6 @@
         private Guna.UI.WinForms.GunaCirclePictureBox profile;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaPictureBox category;
     }
 }

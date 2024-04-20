@@ -36,15 +36,18 @@
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
             this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.Label = new Guna.UI.WinForms.GunaLabel();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.category);
             this.gunaElipsePanel1.Controls.Add(this.Fee);
             this.gunaElipsePanel1.Controls.Add(this.dateCompleted);
             this.gunaElipsePanel1.Controls.Add(this.requestTxt);
@@ -55,7 +58,7 @@
             this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1970, 100);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.TabIndex = 3;
             // 
             // Fee
@@ -104,7 +107,7 @@
             this.requestTxt.FocusedBorderColor = System.Drawing.Color.Silver;
             this.requestTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.requestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestTxt.Location = new System.Drawing.Point(1015, 22);
+            this.requestTxt.Location = new System.Drawing.Point(1043, 22);
             this.requestTxt.Margin = new System.Windows.Forms.Padding(0);
             this.requestTxt.Name = "requestTxt";
             this.requestTxt.PasswordChar = '\0';
@@ -150,24 +153,35 @@
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.Firebrick;
-            this.gunaElipsePanel2.Controls.Add(this.gunaLabel2);
+            this.gunaElipsePanel2.Controls.Add(this.Label);
             this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Size = new System.Drawing.Size(300, 100);
             this.gunaElipsePanel2.TabIndex = 0;
             // 
-            // gunaLabel2
+            // Label
             // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(46, 26);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(218, 48);
-            this.gunaLabel2.TabIndex = 7;
-            this.gunaLabel2.Text = "CANCELLED";
+            this.Label.AutoSize = true;
+            this.Label.BackColor = System.Drawing.Color.Transparent;
+            this.Label.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.ForeColor = System.Drawing.Color.White;
+            this.Label.Location = new System.Drawing.Point(41, 24);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(218, 48);
+            this.Label.TabIndex = 7;
+            this.Label.Text = "CANCELLED";
+            // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(940, 10);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(80, 80);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 57;
+            this.category.TabStop = false;
             // 
             // HistroyLogCan
             // 
@@ -175,12 +189,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaElipsePanel1);
             this.Name = "HistroyLogCan";
-            this.Size = new System.Drawing.Size(1970, 100);
+            this.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -194,6 +209,7 @@
         private Guna.UI.WinForms.GunaTextBox nameHolder;
         private Guna.UI.WinForms.GunaCirclePictureBox profile;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel Label;
+        private Guna.UI.WinForms.GunaPictureBox category;
     }
 }
