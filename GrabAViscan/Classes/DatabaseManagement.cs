@@ -755,7 +755,7 @@ namespace GrabAViscan.Classes
         public bool updateAvailability(int Post_id, int value)
         {
 
-            
+
             using (MySqlConnection conConn = this.Connect())
             {
                 try

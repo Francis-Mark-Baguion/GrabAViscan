@@ -32,27 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LeftWing = new System.Windows.Forms.Panel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.RightWing = new Guna.UI.WinForms.GunaPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.filterBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.Filter_btn = new Guna.UI.WinForms.GunaButton();
-            this.LeftWing = new System.Windows.Forms.Panel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
-            this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.RightWing = new Guna.UI.WinForms.GunaPanel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.LeftWing.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,7 +79,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.gunaPictureBox1);
-            this.panel1.Controls.Add(this.gunaTextBox1);
+            this.panel1.Controls.Add(this.filterBox);
             this.panel1.Controls.Add(this.Minimize_btn);
             this.panel1.Controls.Add(this.Close_btn);
             this.panel1.Controls.Add(this.Filter_btn);
@@ -88,6 +88,75 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2560, 96);
             this.panel1.TabIndex = 0;
+            // 
+            // LeftWing
+            // 
+            this.LeftWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.LeftWing.Controls.Add(this.gunaButton1);
+            this.LeftWing.Controls.Add(this.gunaPanel1);
+            this.LeftWing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LeftWing.Location = new System.Drawing.Point(0, 96);
+            this.LeftWing.Margin = new System.Windows.Forms.Padding(0);
+            this.LeftWing.Name = "LeftWing";
+            this.LeftWing.Size = new System.Drawing.Size(563, 1504);
+            this.LeftWing.TabIndex = 1;
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.Controls.Add(this.gunaButton9);
+            this.gunaPanel1.Controls.Add(this.gunaButton5);
+            this.gunaPanel1.Controls.Add(this.gunaButton4);
+            this.gunaPanel1.Controls.Add(this.gunaButton3);
+            this.gunaPanel1.Controls.Add(this.gunaButton2);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(563, 487);
+            this.gunaPanel1.TabIndex = 2;
+            // 
+            // flow1
+            // 
+            this.flow1.AutoScroll = true;
+            this.flow1.AutoSize = true;
+            this.flow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow1.Location = new System.Drawing.Point(566, 99);
+            this.flow1.Name = "flow1";
+            this.flow1.Size = new System.Drawing.Size(1350, 1498);
+            this.flow1.TabIndex = 2;
+            this.flow1.Paint += new System.Windows.Forms.PaintEventHandler(this.flow1_Paint);
+            // 
+            // RightWing
+            // 
+            this.RightWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.RightWing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightWing.Location = new System.Drawing.Point(1922, 99);
+            this.RightWing.Name = "RightWing";
+            this.RightWing.Size = new System.Drawing.Size(635, 1498);
+            this.RightWing.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // filterBox
+            // 
+            this.filterBox.BaseColor = System.Drawing.Color.White;
+            this.filterBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.filterBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.filterBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.filterBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.filterBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.filterBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterBox.Location = new System.Drawing.Point(276, 20);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.PasswordChar = '\0';
+            this.filterBox.Radius = 15;
+            this.filterBox.Size = new System.Drawing.Size(420, 60);
+            this.filterBox.TabIndex = 16;
+            this.filterBox.Text = "Search Filter";
+            this.filterBox.Click += new System.EventHandler(this.gunaTextBox1_Click);
             // 
             // gunaPictureBox1
             // 
@@ -99,23 +168,6 @@
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 17;
             this.gunaPictureBox1.TabStop = false;
-            // 
-            // gunaTextBox1
-            // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(276, 20);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 15;
-            this.gunaTextBox1.Size = new System.Drawing.Size(419, 59);
-            this.gunaTextBox1.TabIndex = 16;
-            this.gunaTextBox1.Text = "Search Filter";
             // 
             // Minimize_btn
             // 
@@ -186,18 +238,7 @@
             this.Filter_btn.Size = new System.Drawing.Size(160, 59);
             this.Filter_btn.TabIndex = 12;
             this.Filter_btn.Text = "Filter";
-            // 
-            // LeftWing
-            // 
-            this.LeftWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.LeftWing.Controls.Add(this.gunaButton1);
-            this.LeftWing.Controls.Add(this.gunaPanel1);
-            this.LeftWing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeftWing.Location = new System.Drawing.Point(0, 96);
-            this.LeftWing.Margin = new System.Windows.Forms.Padding(0);
-            this.LeftWing.Name = "LeftWing";
-            this.LeftWing.Size = new System.Drawing.Size(563, 1504);
-            this.LeftWing.TabIndex = 1;
+            this.Filter_btn.Click += new System.EventHandler(this.Filter_btn_Click);
             // 
             // gunaButton1
             // 
@@ -223,18 +264,6 @@
             this.gunaButton1.Text = "Log out";
             this.gunaButton1.TextOffsetX = 30;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.Controls.Add(this.gunaButton9);
-            this.gunaPanel1.Controls.Add(this.gunaButton5);
-            this.gunaPanel1.Controls.Add(this.gunaButton4);
-            this.gunaPanel1.Controls.Add(this.gunaButton3);
-            this.gunaPanel1.Controls.Add(this.gunaButton2);
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(563, 487);
-            this.gunaPanel1.TabIndex = 2;
             // 
             // gunaButton9
             // 
@@ -361,33 +390,6 @@
             this.gunaButton2.TextOffsetX = 30;
             this.gunaButton2.Click += new System.EventHandler(this.homeclick);
             // 
-            // flow1
-            // 
-            this.flow1.AutoScroll = true;
-            this.flow1.AutoSize = true;
-            this.flow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow1.Location = new System.Drawing.Point(566, 99);
-            this.flow1.Name = "flow1";
-            this.flow1.Size = new System.Drawing.Size(1350, 1498);
-            this.flow1.TabIndex = 2;
-            this.flow1.Paint += new System.Windows.Forms.PaintEventHandler(this.flow1_Paint);
-            // 
-            // RightWing
-            // 
-            this.RightWing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.RightWing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightWing.Location = new System.Drawing.Point(1922, 99);
-            this.RightWing.Name = "RightWing";
-            this.RightWing.Size = new System.Drawing.Size(635, 1498);
-            this.RightWing.TabIndex = 3;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -401,9 +403,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.LeftWing.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,8 +427,8 @@
         private Guna.UI.WinForms.GunaButton gunaButton4;
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton gunaButton9;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        public Guna.UI.WinForms.GunaTextBox filterBox;
     }
 }

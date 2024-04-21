@@ -50,7 +50,7 @@ namespace GrabAViscan.Feed
             
             deliveryNearTxt.Text = deliver;
             NameLabel.Text = post.Category;
-
+            Fee.Text = post.Fee + "";
             
             
                cat = db.GetCategoryByName(post.Category);

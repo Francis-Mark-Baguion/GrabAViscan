@@ -16,6 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using GrabAViscan.Popup;
 using GrabAViscan.Homepage;
+using GrabAViscan.Popup_Forms;
 
 
 namespace GrabAViscan
@@ -23,6 +24,7 @@ namespace GrabAViscan
     public partial class Home : Form
     {
         private DatabaseManagement db = new DatabaseManagement();
+        private Filter filter;
         public User user;
         private rightWing right = new rightWing();
         private string email;
@@ -191,6 +193,17 @@ namespace GrabAViscan
         {
             logNotif logout = new logNotif(this);
             logout.Show();
+        }
+
+        private void gunaTextBox1_Click(object sender, EventArgs e)
+        {
+            filter = new Filter(this);
+        }
+
+        private void Filter_btn_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

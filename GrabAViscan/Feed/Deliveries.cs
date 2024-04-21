@@ -45,7 +45,7 @@ namespace GrabAViscan.Feed
 
             deliveryNearTxt.Text = deliver;
             NameLabel.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
-
+            Fee.Text = post.Fee + "";
 
 
             
