@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledRepost));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.repost_btn = new Guna.UI.WinForms.GunaButton();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
+            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.Label = new Guna.UI.WinForms.GunaLabel();
-            this.category = new Guna.UI.WinForms.GunaPictureBox();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.repost_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaElipsePanel1.SuspendLayout();
-            this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            this.gunaElipsePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
@@ -60,6 +60,41 @@
             this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.TabIndex = 4;
+            // 
+            // repost_btn
+            // 
+            this.repost_btn.AnimationHoverSpeed = 0.07F;
+            this.repost_btn.AnimationSpeed = 0.03F;
+            this.repost_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.repost_btn.BorderColor = System.Drawing.Color.Black;
+            this.repost_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repost_btn.ForeColor = System.Drawing.Color.White;
+            this.repost_btn.Image = null;
+            this.repost_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.repost_btn.Location = new System.Drawing.Point(1716, 20);
+            this.repost_btn.Name = "repost_btn";
+            this.repost_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.repost_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.repost_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.repost_btn.OnHoverImage = null;
+            this.repost_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.repost_btn.Radius = 10;
+            this.repost_btn.Size = new System.Drawing.Size(217, 52);
+            this.repost_btn.TabIndex = 58;
+            this.repost_btn.Text = "REPOST";
+            this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.repost_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(940, 10);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(80, 80);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 57;
+            this.category.TabStop = false;
             // 
             // dateCompleted
             // 
@@ -112,6 +147,19 @@
             this.nameHolder.Text = "First Name Last Name";
             this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.White;
+            this.profile.BaseColor = System.Drawing.Color.White;
+            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
+            this.profile.Location = new System.Drawing.Point(319, 10);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 1;
+            this.profile.TabStop = false;
+            this.profile.UseTransfarantBackground = false;
+            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
@@ -129,59 +177,11 @@
             this.Label.BackColor = System.Drawing.Color.Transparent;
             this.Label.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.ForeColor = System.Drawing.Color.White;
-            this.Label.Location = new System.Drawing.Point(41, 24);
+            this.Label.Location = new System.Drawing.Point(15, 24);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(218, 48);
             this.Label.TabIndex = 7;
             this.Label.Text = "CANCELLED";
-            // 
-            // category
-            // 
-            this.category.BackColor = System.Drawing.Color.Transparent;
-            this.category.BaseColor = System.Drawing.Color.Transparent;
-            this.category.Location = new System.Drawing.Point(940, 10);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(80, 80);
-            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.category.TabIndex = 57;
-            this.category.TabStop = false;
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.White;
-            this.profile.BaseColor = System.Drawing.Color.White;
-            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
-            this.profile.Location = new System.Drawing.Point(319, 10);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(80, 80);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 1;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
-            // 
-            // repost_btn
-            // 
-            this.repost_btn.AnimationHoverSpeed = 0.07F;
-            this.repost_btn.AnimationSpeed = 0.03F;
-            this.repost_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.repost_btn.BorderColor = System.Drawing.Color.Black;
-            this.repost_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repost_btn.ForeColor = System.Drawing.Color.White;
-            this.repost_btn.Image = null;
-            this.repost_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.repost_btn.Location = new System.Drawing.Point(1716, 20);
-            this.repost_btn.Name = "repost_btn";
-            this.repost_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.repost_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.repost_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.repost_btn.OnHoverImage = null;
-            this.repost_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.repost_btn.Radius = 10;
-            this.repost_btn.Size = new System.Drawing.Size(217, 52);
-            this.repost_btn.TabIndex = 58;
-            this.repost_btn.Text = "REPOST";
-            this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.repost_btn.Click += new System.EventHandler(this.upload_btn_Click);
             // 
             // CancelledRepost
             // 
@@ -192,10 +192,10 @@
             this.Size = new System.Drawing.Size(1960, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
-            this.gunaElipsePanel2.ResumeLayout(false);
-            this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
+            this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

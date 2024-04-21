@@ -13,13 +13,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Homepage;
 using System.Linq.Expressions;
+using GrabAViscan.Classes.notif;
+
+
 
 namespace GrabAViscan
 {
     public partial class rightWing : UserControl
     {
         private DatabaseManagement db = new DatabaseManagement();
-        public Notification notif = new Notification();
+        public Notify notif;
         public Post post = new Post();
         private User user;
         private string email;
@@ -31,8 +34,8 @@ namespace GrabAViscan
         {
             InitializeComponent();
             
-            
-            
+
+
         }
 
         public void Refresh()
@@ -52,6 +55,7 @@ namespace GrabAViscan
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             SetImageFromByteArrayProfile(this.ProfilePic, user.Profile_pic);
            this.form = form;
+            notif = new Notify(this.user.User_id);
 
         }
 
@@ -67,6 +71,7 @@ namespace GrabAViscan
         }
         private void Notification_click(object sender, EventArgs e)
         {
+            
             if (notif.Visible)
             {
                 notif.Hide();
@@ -80,7 +85,7 @@ namespace GrabAViscan
                     post.Hide();
                 }
             }
-
+            
         }
 
         private void EditPost_btn_Click(object sender, EventArgs e)
@@ -99,11 +104,12 @@ namespace GrabAViscan
                 else if (post.Visible == false)
                 {
                     post.Show();
-
+                    
                     if (notif.Visible)
                     {
                         notif.Hide();
                     }
+                    
                 }
             }
             catch(Exception ex) 

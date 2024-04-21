@@ -56,7 +56,7 @@ namespace GrabAViscan
                     }
                     else if (post.Available == 5 || post.Available==10)
                     {
-                        CancelledRepost Cancelled = new CancelledRepost(post);
+                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id);
 
                         flow1.Controls.Add(Cancelled);
                     }

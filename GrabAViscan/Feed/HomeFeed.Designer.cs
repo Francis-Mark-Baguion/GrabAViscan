@@ -33,6 +33,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.deadline = new Guna.UI.WinForms.GunaButton();
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
@@ -50,13 +52,11 @@
             this.Name_label = new Guna.UI.WinForms.GunaButton();
             this.TimeTxt = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.category = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.tableLayoutPanel2.SuspendLayout();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Image_cont)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -108,6 +108,29 @@
             this.MainPanel.Radius = 30;
             this.MainPanel.Size = new System.Drawing.Size(1309, 1492);
             this.MainPanel.TabIndex = 4;
+            // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(865, 1136);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(50, 50);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 51;
+            this.category.TabStop = false;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.White;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaLabel2.Location = new System.Drawing.Point(921, 1143);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(128, 38);
+            this.gunaLabel2.TabIndex = 50;
+            this.gunaLabel2.Text = "Category";
             // 
             // gunaLabel1
             // 
@@ -403,29 +426,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "___________________________________________________________";
             // 
-            // category
-            // 
-            this.category.BackColor = System.Drawing.Color.Transparent;
-            this.category.BaseColor = System.Drawing.Color.Transparent;
-            this.category.Location = new System.Drawing.Point(865, 1136);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(50, 50);
-            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.category.TabIndex = 51;
-            this.category.TabStop = false;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.White;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaLabel2.Location = new System.Drawing.Point(921, 1143);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(128, 38);
-            this.gunaLabel2.TabIndex = 50;
-            this.gunaLabel2.Text = "Category";
-            // 
             // HomeFeed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -437,9 +437,9 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Image_cont)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             this.ResumeLayout(false);
 
         }

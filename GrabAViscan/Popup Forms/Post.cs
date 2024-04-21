@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -141,6 +142,7 @@ namespace GrabAViscan.Popup
             {
                 string Description = CommentTxt.Text;
                 DateTime Date_posted = DateTime.Now;
+                
                 DateTime Deadline = TimePicker.Value;
                 string Category = categoryCombo.Text;
                 byte[] image = this.getPhoto();
@@ -154,12 +156,36 @@ namespace GrabAViscan.Popup
                 string Delivery_location = deliveryTxt.Text;
                 string Near_deliveryLocation = deliverNearCombo.Text;
                 int Available = 0;
-
+                
                 Posting post = null;
-                if( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
+
+
+                
+                string ded = Deadline.ToString("M");
+                string start = Date_posted.ToString("M");
+                if(ded==start)
+                {
+                    throw new Exception("The deadline must be a future date");
+                }
+
+
+                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
                 {
                     post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
                     db.Post_upload(post);
+                    requestTxt.Text = "";
+                    quantityTxt.Text = "";
+                    categoryCombo.Text = "";
+                    pickUpTxt.Text = "";
+                    pickNearCombo.Text = "";
+                    deliveryTxt.Text = "";
+                    deliverNearCombo.Text = "";
+                    picture.Image  = null;
+                    feeTxt.Text = "";
+                    CommentTxt.Text = "";
+                    TimePicker.Value = DateTime.Today;
+
+
                 }
                 else 
                 {

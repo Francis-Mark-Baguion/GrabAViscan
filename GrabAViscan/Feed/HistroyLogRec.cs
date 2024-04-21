@@ -20,8 +20,8 @@ namespace GrabAViscan.Feed
         {
             InitializeComponent();
 
-            this.nameHolder.Text = db.getUserById(post.User_id).FirstName +" "+ db.getUserById(post.User_id).LastName;
-            SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
+            //this.nameHolder.Text = db.getUserById(post.User_id).FirstName +" "+ db.getUserById(post.User_id).LastName;
+            //SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.requestTxt.Text = post.Requested;
             this.Fee.Text = post.Fee.ToString();

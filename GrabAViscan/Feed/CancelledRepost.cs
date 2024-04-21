@@ -20,13 +20,13 @@ namespace GrabAViscan.Feed
         private int Post_id;
         private int locId;
         private int locId2;
-        public CancelledRepost(Posting post)
+        public CancelledRepost(Posting post,int UID)
         {
             InitializeComponent();
             this.Post_id = post.Post_id;
-            Label.Text = "CANCELLED";
-            this.nameHolder.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
-            SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
+            Label.Text = "CANCELLED BY";
+            this.nameHolder.Text = db.getUserById(UID).FirstName + " " + db.getUserById(UID).LastName;
+            SetImageFromByteArrayProfile(this.profile, db.getUserById(UID).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.requestTxt.Text = post.Requested;
             

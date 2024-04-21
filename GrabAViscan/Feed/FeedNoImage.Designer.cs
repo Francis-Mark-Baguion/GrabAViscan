@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeedNoImage));
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.deadline = new Guna.UI.WinForms.GunaButton();
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
@@ -47,10 +48,9 @@
             this.Name_label = new Guna.UI.WinForms.GunaButton();
             this.TimeTxt = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -81,6 +81,17 @@
             this.MainPanel.Radius = 30;
             this.MainPanel.Size = new System.Drawing.Size(1315, 800);
             this.MainPanel.TabIndex = 5;
+            // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(805, 441);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(50, 50);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 49;
+            this.category.TabStop = false;
             // 
             // gunaLabel1
             // 
@@ -372,17 +383,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "___________________________________________________________";
             // 
-            // category
-            // 
-            this.category.BackColor = System.Drawing.Color.Transparent;
-            this.category.BaseColor = System.Drawing.Color.Transparent;
-            this.category.Location = new System.Drawing.Point(805, 441);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(50, 50);
-            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.category.TabIndex = 49;
-            this.category.TabStop = false;
-            // 
             // FeedNoImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -392,8 +392,8 @@
             this.Size = new System.Drawing.Size(1315, 800);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             this.ResumeLayout(false);
 
         }

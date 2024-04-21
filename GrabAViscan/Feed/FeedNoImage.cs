@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 
 namespace GrabAViscan.Feed
 {
@@ -99,18 +100,11 @@ namespace GrabAViscan.Feed
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
-                this.Hide();
-            }
-            catch(Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
             
+                
+            
+
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)

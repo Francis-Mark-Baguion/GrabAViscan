@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 using Guna.UI.WinForms;
 
 namespace GrabAViscan
@@ -120,17 +121,8 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-            try
-            {
-                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
-                this.Hide();
-            }
-            catch (Exception ex) 
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
             
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
             
 
         }
