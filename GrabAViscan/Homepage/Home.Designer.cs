@@ -48,6 +48,8 @@
             this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
             this.RightWing = new Guna.UI.WinForms.GunaPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deliverCtr = new Guna.UI.WinForms.GunaButton();
+            this.reqCtr = new Guna.UI.WinForms.GunaButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -200,6 +202,7 @@
             this.LeftWing.Name = "LeftWing";
             this.LeftWing.Size = new System.Drawing.Size(563, 1504);
             this.LeftWing.TabIndex = 1;
+            this.LeftWing.Paint += new System.Windows.Forms.PaintEventHandler(this.LeftWing_Paint);
             // 
             // gunaButton1
             // 
@@ -228,6 +231,8 @@
             // 
             // gunaPanel1
             // 
+            this.gunaPanel1.Controls.Add(this.deliverCtr);
+            this.gunaPanel1.Controls.Add(this.reqCtr);
             this.gunaPanel1.Controls.Add(this.gunaButton9);
             this.gunaPanel1.Controls.Add(this.gunaButton5);
             this.gunaPanel1.Controls.Add(this.gunaButton4);
@@ -312,6 +317,8 @@
             this.gunaButton4.Text = "To Deliver";
             this.gunaButton4.TextOffsetX = 30;
             this.gunaButton4.Click += new System.EventHandler(this.To_deliver);
+            this.gunaButton4.MouseLeave += new System.EventHandler(this.gunaButton4_MouseLeave);
+            this.gunaButton4.MouseHover += new System.EventHandler(this.gunaButton4_MouseHover);
             // 
             // gunaButton3
             // 
@@ -337,6 +344,8 @@
             this.gunaButton3.Text = "My Request";
             this.gunaButton3.TextOffsetX = 30;
             this.gunaButton3.Click += new System.EventHandler(this.My_Request);
+            this.gunaButton3.MouseLeave += new System.EventHandler(this.mouseleave);
+            this.gunaButton3.MouseHover += new System.EventHandler(this.hover);
             // 
             // gunaButton2
             // 
@@ -390,6 +399,56 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // deliverCtr
+            // 
+            this.deliverCtr.AnimationHoverSpeed = 0.07F;
+            this.deliverCtr.AnimationSpeed = 0.03F;
+            this.deliverCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.deliverCtr.BaseColor = System.Drawing.Color.Transparent;
+            this.deliverCtr.BorderColor = System.Drawing.Color.Black;
+            this.deliverCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliverCtr.ForeColor = System.Drawing.Color.Firebrick;
+            this.deliverCtr.Image = null;
+            this.deliverCtr.ImageSize = new System.Drawing.Size(20, 20);
+            this.deliverCtr.Location = new System.Drawing.Point(457, 256);
+            this.deliverCtr.Name = "deliverCtr";
+            this.deliverCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.deliverCtr.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.deliverCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
+            this.deliverCtr.OnHoverImage = null;
+            this.deliverCtr.OnPressedColor = System.Drawing.Color.Black;
+            this.deliverCtr.Radius = 10;
+            this.deliverCtr.Size = new System.Drawing.Size(30, 30);
+            this.deliverCtr.TabIndex = 9;
+            this.deliverCtr.Text = "0";
+            this.deliverCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.deliverCtr.Click += new System.EventHandler(this.deliverCtr_Click);
+            // 
+            // reqCtr
+            // 
+            this.reqCtr.AnimationHoverSpeed = 0.07F;
+            this.reqCtr.AnimationSpeed = 0.03F;
+            this.reqCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.reqCtr.BaseColor = System.Drawing.Color.Transparent;
+            this.reqCtr.BorderColor = System.Drawing.Color.Black;
+            this.reqCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqCtr.ForeColor = System.Drawing.Color.Firebrick;
+            this.reqCtr.Image = null;
+            this.reqCtr.ImageSize = new System.Drawing.Size(20, 20);
+            this.reqCtr.Location = new System.Drawing.Point(457, 171);
+            this.reqCtr.Name = "reqCtr";
+            this.reqCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.reqCtr.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.reqCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
+            this.reqCtr.OnHoverImage = null;
+            this.reqCtr.OnPressedColor = System.Drawing.Color.Black;
+            this.reqCtr.Radius = 10;
+            this.reqCtr.Size = new System.Drawing.Size(30, 30);
+            this.reqCtr.TabIndex = 8;
+            this.reqCtr.Text = "0";
+            this.reqCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reqCtr.Click += new System.EventHandler(this.reqCtr_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -430,5 +489,7 @@
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         public Guna.UI.WinForms.GunaTextBox filterBox;
+        private Guna.UI.WinForms.GunaButton deliverCtr;
+        private Guna.UI.WinForms.GunaButton reqCtr;
     }
 }

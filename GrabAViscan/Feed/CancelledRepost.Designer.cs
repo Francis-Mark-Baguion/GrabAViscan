@@ -123,7 +123,7 @@
             this.requestTxt.Name = "requestTxt";
             this.requestTxt.PasswordChar = '\0';
             this.requestTxt.Radius = 10;
-            this.requestTxt.Size = new System.Drawing.Size(638, 50);
+            this.requestTxt.Size = new System.Drawing.Size(292, 50);
             this.requestTxt.TabIndex = 34;
             // 
             // nameHolder

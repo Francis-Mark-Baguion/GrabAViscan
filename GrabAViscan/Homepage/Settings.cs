@@ -1,7 +1,10 @@
 ﻿using GrabAViscan.Classes;
+using GrabAViscan.Feed;
 using GrabAViscan.Popup;
 using Guna.UI.WinForms;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -38,7 +41,7 @@ namespace GrabAViscan.Homepage
             SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
             changePass = new ChangePass(this.email);
             changePass.Hide();
-
+            setctr();
         }
 
 
@@ -246,5 +249,64 @@ namespace GrabAViscan.Homepage
         {
             
         }
+
+        private int reqCtr()
+        {
+            List<Posting> posts = db.getAllPost();
+            int ctr = 0;
+
+            foreach (Posting post in posts )
+            {
+                if (post.User_id == this.id)
+                {
+
+                    ctr++;
+                    
+                }
+            }
+            
+            return ctr;
+        }
+
+        private int delCtr()
+        {
+            int ctr = 0;
+            List<Deliver> deliveries = db.GetDeliveriesById(this.id);
+
+
+            foreach (Deliver delivery in deliveries)
+            {
+                Posting post = db.getPostById(delivery.Post_Id);
+                if (post.Available == 4)
+                {
+
+                    ctr++;
+
+
+                }
+                else if (post.Available == 3)
+                {
+                    ctr++;
+                }
+                else if (post.Available == 5 || post.Available == 10)
+                {
+                    ctr++;
+                }
+
+                
+
+            }
+
+            return ctr;
+        }
+
+        public void setctr()
+        {
+            this.request.Text = reqCtr()+"";
+            this.deliveryCtr.Text = delCtr() + "";
+            int total = reqCtr() + delCtr();
+            this.completedCtr.Text = total +"";
+        }
+
     }
 }
