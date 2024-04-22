@@ -57,8 +57,8 @@ namespace GrabAViscan
                 this.requestTxt.Text = post.Requested;
                 this.quantityTxt.Text = post.Quantity;
                 this.pickUpTxt.Text = pick + ": " + post.Pick_up;
-
-                this.pickUpTxt.Text = deliver + ": " + post.Delivery_location;
+                this.categoryTxt.Text = post.Category;
+                this.deliveryTxt.Text = deliver + ": " + post.Delivery_location;
 
                 this.Fee.Text ="" +  post.Fee;
                 this.deadline.Text = post.Deadline.ToString("MMMM dd, yyyy");

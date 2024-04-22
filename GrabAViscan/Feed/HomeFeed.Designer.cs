@@ -34,7 +34,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
             this.category = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.categoryTxt = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.deadline = new Guna.UI.WinForms.GunaButton();
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
@@ -83,7 +83,7 @@
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.MainPanel.BaseColor = System.Drawing.Color.White;
             this.MainPanel.Controls.Add(this.category);
-            this.MainPanel.Controls.Add(this.gunaLabel2);
+            this.MainPanel.Controls.Add(this.categoryTxt);
             this.MainPanel.Controls.Add(this.gunaLabel1);
             this.MainPanel.Controls.Add(this.deadline);
             this.MainPanel.Controls.Add(this.quantityTxt);
@@ -120,17 +120,17 @@
             this.category.TabIndex = 51;
             this.category.TabStop = false;
             // 
-            // gunaLabel2
+            // categoryTxt
             // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.White;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaLabel2.Location = new System.Drawing.Point(921, 1143);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(128, 38);
-            this.gunaLabel2.TabIndex = 50;
-            this.gunaLabel2.Text = "Category";
+            this.categoryTxt.AutoSize = true;
+            this.categoryTxt.BackColor = System.Drawing.Color.White;
+            this.categoryTxt.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryTxt.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.categoryTxt.Location = new System.Drawing.Point(921, 1143);
+            this.categoryTxt.Name = "categoryTxt";
+            this.categoryTxt.Size = new System.Drawing.Size(128, 38);
+            this.categoryTxt.TabIndex = 50;
+            this.categoryTxt.Text = "Category";
             // 
             // gunaLabel1
             // 
@@ -466,6 +466,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaPictureBox category;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel categoryTxt;
     }
 }

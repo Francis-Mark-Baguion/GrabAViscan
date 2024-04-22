@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrabAViscan", "GrabAViscan\GrabAViscan.csproj", "{85BA531C-6261-4A2D-A182-3A563A08895F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Grab A Viscan Installer", "Grab A Viscan Installer\Grab A Viscan Installer.vdproj", "{0DDE539D-4756-46F5-A531-E326A83A5F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{85BA531C-6261-4A2D-A182-3A563A08895F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85BA531C-6261-4A2D-A182-3A563A08895F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85BA531C-6261-4A2D-A182-3A563A08895F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDE539D-4756-46F5-A531-E326A83A5F27}.Debug|Any CPU.ActiveCfg = Debug
+		{0DDE539D-4756-46F5-A531-E326A83A5F27}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,12 +31,13 @@ namespace GrabAViscan
         private int User_id;
         public Home(int uid)
         {
+            List<Posting> posts = db.GetAvailablePosts();
             this.User_id = uid;
             InitializeComponent();
             right = new rightWing();
             
             RightWing.Controls.Add(right);
-            feed();
+            feed(posts);
         }
 
         
@@ -51,12 +52,12 @@ namespace GrabAViscan
 
         }
 
-        public void feed()
+        public void feed(List<Posting> posts)
         {
             flow1.Controls.Clear();
 
             
-            List<Posting> posts = db.GetAvailablePosts();
+            
 
             
             foreach (Posting post in posts)
@@ -88,7 +89,7 @@ namespace GrabAViscan
 
         public void homeclick(object sender, EventArgs e)
         {
-            
+            List<Posting> posts = db.GetAvailablePosts();
             user = db.InitializeUser(email);
             
             
@@ -102,7 +103,7 @@ namespace GrabAViscan
 
             this.RightWing.Controls.Add(right);
             flow1.Controls.Clear();
-            feed();
+            feed(posts);
 
         }
 
@@ -197,12 +198,17 @@ namespace GrabAViscan
 
         private void gunaTextBox1_Click(object sender, EventArgs e)
         {
+            
+            
+            filterBox.Text = "";
             filter = new Filter(this);
         }
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
-            
+            List<Posting> filteredPost = filter.returnFilter();
+            filter.Hide();
+            feed(filteredPost);
 
         }
     }

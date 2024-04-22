@@ -15,7 +15,7 @@ namespace GrabAViscan.Classes
     {
         public int Post_id {  get; set; }
         public int User_id { get; set; }
-
+         
         public string Requested {  get; set; }
         public string Quantity { get; set; }
         public int Fee { get; set; }
