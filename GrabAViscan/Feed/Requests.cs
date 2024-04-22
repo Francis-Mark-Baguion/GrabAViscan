@@ -15,6 +15,8 @@ using Guna.UI.WinForms;
 using System.IO;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
+using GrabAViscan.Popup_Forms;
 
 namespace GrabAViscan.Feed
 {
@@ -48,7 +50,7 @@ namespace GrabAViscan.Feed
             
             deliveryNearTxt.Text = deliver;
             NameLabel.Text = post.Category;
-
+            Fee.Text = post.Fee + "";
             
             
                cat = db.GetCategoryByName(post.Category);
@@ -64,6 +66,22 @@ namespace GrabAViscan.Feed
                 statusTxt.Text = "in Progress";
                 statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
             }
+            else if(post.Available == 6)
+            {
+                statusTxt.Text = "PICK UP ITEM";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 7)
+            {
+                statusTxt.Text = "TRAVELLING";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            else if (post.Available == 8)
+            {
+                statusTxt.Text = "WAITING FOR CUSTOMER";
+                statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
+            }
+            
 
         }
 
@@ -87,27 +105,33 @@ namespace GrabAViscan.Feed
         private void gunaButton4_Click(object sender, EventArgs e)
         {
             Posting temp = db.getPostById(this.post_id);
+           
+            
+                try
+                {
+                    string loc = temp.Near_pickUp;
+                    this.locId = (int)double.Parse(loc);
+                    string loc2 = temp.Near_deliveryLocation;
+                    this.locId2 = (int)double.Parse(loc2);
 
-            try
-            {
-                string loc = temp.Near_pickUp;
-                this.locId = (int)double.Parse(loc);
-                string loc2 = temp.Near_deliveryLocation;
-                this.locId2 = (int)double.Parse(loc2);
-
-                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
-                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-                MessageBox.Show(pick + " " + deliver);
-                temp.Near_pickUp = pick;
-                temp.Near_deliveryLocation = deliver;
-                temp.Available = 5;
-                db.updatePostingInformation(temp);
-                home.My_Request(sender, e);
-            }
-            catch (Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
+                    string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+                    string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+                    
+                    temp.Near_pickUp = pick;
+                    temp.Near_deliveryLocation = deliver;
+                    temp.Available = 5;
+                    CancelReq cancel = new CancelReq(temp,home);
+                    cancel.Show();
+                    
+                    //db.updatePostingInformation(temp);
+                    //home.My_Request(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
+            
+            
             
         }
 
@@ -115,6 +139,17 @@ namespace GrabAViscan.Feed
         {
             EditRequest edit = new EditRequest(home,db.getPostById(post_id));
             edit.Show();
+        }
+
+        private void upload_btn_Click(object sender, EventArgs e)
+        {
+            ViewPost view = new ViewPost(db.getPostById(post_id));
+
+        }
+
+        private void statusTxt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

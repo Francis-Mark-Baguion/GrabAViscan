@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 
 namespace GrabAViscan.Feed
 {
@@ -47,7 +48,7 @@ namespace GrabAViscan.Feed
                 string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
                 SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
                 this.Name_label.Text = db.getUserById(post.User_id).FirstName +""+ db.getUserById(post.User_id).LastName;
-                this.TimeTxt.Text = "" + post.Date_posted;
+                this.TimeTxt.Text = post.Date_posted.ToString("MMMM dd, yyyy");
                 this.Category_label.Text = post.Category;
                 this.descriptionTxt.Text = post.Description;
                 
@@ -56,12 +57,14 @@ namespace GrabAViscan.Feed
                 this.requestTxt.Text = post.Requested;
                 this.quantityTxt.Text = post.Quantity;
                 this.pickUpTxt.Text = pick + ": " +  post.Pick_up;
-                
-                this.pickUpTxt.Text = deliver + ": "+ post.Delivery_location;
+                this.deadline.Text = post.Deadline.ToString("MMMM dd, yyyy");
+                this.deliveryTxt.Text = deliver + ": "+ post.Delivery_location;
                 
 
-                this.pickUpTxt.Text = "" + post.Fee;
-               // this.deadline.Text = "" + post.Deadline;
+                this.Fee.Text = "" + post.Fee;
+                // this.deadline.Text = "" + post.Deadline;
+                Category cat = db.GetCategoryByName(post.Category);
+                SetImageFromByteArray(this.category, cat.categoryImage);
 
                 profile_pic = new Profile(db.getPostById(post_id));
                 profile_pic.Hide();
@@ -97,18 +100,11 @@ namespace GrabAViscan.Feed
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
-                this.Hide();
-            }
-            catch(Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
             
+                
+            
+
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
@@ -130,6 +126,11 @@ namespace GrabAViscan.Feed
 
 
         private void gunaLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deadline_Click(object sender, EventArgs e)
         {
 
         }

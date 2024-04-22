@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -137,26 +138,69 @@ namespace GrabAViscan.Popup
 
             }
 
-            string Description = CommentTxt.Text;
-            DateTime Date_posted = DateTime.Now;
-            DateTime Deadline = TimePicker.Value;
-            string Category = categoryCombo.Text;
-            byte[] image = this.getPhoto();
-            if (this.getPhoto() != null)
+            try
             {
-                image = this.getPhoto();
+                string Description = CommentTxt.Text;
+                DateTime Date_posted = DateTime.Now;
+                
+                DateTime Deadline = TimePicker.Value;
+                string Category = categoryCombo.Text;
+                byte[] image = this.getPhoto();
+                if (this.getPhoto() != null)
+                {
+                    image = this.getPhoto();
+                }
+
+                string Pick_up = pickUpTxt.Text;
+                string Near_pickUp = pickNearCombo.Text;
+                string Delivery_location = deliveryTxt.Text;
+                string Near_deliveryLocation = deliverNearCombo.Text;
+                int Available = 0;
+                
+                Posting post = null;
+
+
+                
+                string ded = Deadline.ToString("M");
+                string start = Date_posted.ToString("M");
+                if(ded==start)
+                {
+                    throw new Exception("The deadline must be a future date");
+                }
+
+
+                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
+                {
+                    post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
+                    db.Post_upload(post);
+                    requestTxt.Text = "";
+                    quantityTxt.Text = "";
+                    categoryCombo.Text = "";
+                    pickUpTxt.Text = "";
+                    pickNearCombo.Text = "";
+                    deliveryTxt.Text = "";
+                    deliverNearCombo.Text = "";
+                    picture.Image  = null;
+                    feeTxt.Text = "";
+                    CommentTxt.Text = "";
+                    TimePicker.Value = DateTime.Today;
+
+
+                }
+                else 
+                {
+                    this.Hide();
+                    ErrorMessage err = new ErrorMessage("Invalid Information");
+                }
+                
+                this.Hide();
+            }
+            catch(Exception ex)
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+                this.Hide();
             }
             
-            string Pick_up = pickUpTxt.Text;
-            string Near_pickUp = pickNearCombo.Text;
-            string Delivery_location = deliveryTxt.Text;
-            string Near_deliveryLocation = deliverNearCombo.Text;
-            int Available = 0;
-
-            Posting post = null;
-            post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
-            db.Post_upload(post);
-            this.Hide();
            
         }
 

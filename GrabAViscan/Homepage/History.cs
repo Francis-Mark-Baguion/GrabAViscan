@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Feed;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan
 {
@@ -30,10 +31,43 @@ namespace GrabAViscan
             flow1.Controls.Clear();
 
 
-            List<Posting> posts = db.getAllPost();
+            List<Deliver> cancelledPost = db.Deliveries;
 
 
-            
+            foreach (Deliver deliver in cancelledPost)
+            {
+                if(db.getPostById(deliver.Post_Id).User_id == User_id && db.getPostById(deliver.Post_Id).Available>1) 
+                {   
+                    Posting post = db.getPostById(deliver.Post_Id);
+                    if (post.Available == 4)
+                    {
+
+                        HistroyLogDel Delivered = new HistroyLogDel(post);
+
+                        flow1.Controls.Add(Delivered);
+
+
+                    }
+                    else if (post.Available == 3)
+                    {
+                        HistroyLogRec Received = new HistroyLogRec(post);
+
+                        flow1.Controls.Add(Received);
+                    }
+                    else if (post.Available == 5 || post.Available==10)
+                    {
+                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id);
+
+                        flow1.Controls.Add(Cancelled);
+                    }
+                    Buffers buff = new Buffers();
+                    flow1.Controls.Add(buff);
+                }
+            }
+
+
+
+
 
             List<Deliver> deliveries = db.GetDeliveriesById(User_id);
 
@@ -46,25 +80,25 @@ namespace GrabAViscan
                                 
                                 HistroyLogDel Delivered = new HistroyLogDel(post);
 
-                                flow1.Controls.Add(Delivered);
+                                flow2.Controls.Add(Delivered);
 
 
                             }
                             else if (post.Available == 3)
                             {
-                                HistroyLogRec Received = new HistroyLogRec(post);
+                                HistroyLogDel Received = new HistroyLogDel(post);
 
-                                flow1.Controls.Add(Received);
+                                flow2.Controls.Add(Received);
                             }
-                            else if (post.Available == 5)
+                            else if (post.Available == 5 || post.Available==10)
                             {
-                                HistroyLogCan Cancelled = new HistroyLogCan(post);
+                                HistroyLogCan Cancelled = new HistroyLogCan(post,this.User_id,"You");
 
-                                flow1.Controls.Add(Cancelled);
+                                flow2.Controls.Add(Cancelled);
                             }
 
                             Buffers buff = new Buffers();
-                            flow1.Controls.Add(buff);
+                            flow2.Controls.Add(buff);
 
 
                         
@@ -81,6 +115,9 @@ namespace GrabAViscan
 
         }
 
-      
+        private void gunaGradiantButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -755,7 +755,7 @@ namespace GrabAViscan.Classes
         public bool updateAvailability(int Post_id, int value)
         {
 
-            SucMessage mess = new SucMessage("Here at updatingPostingInformation");
+
             using (MySqlConnection conConn = this.Connect())
             {
                 try
@@ -1083,6 +1083,8 @@ namespace GrabAViscan.Classes
             }
 
         }
+
+        
 
     }
 

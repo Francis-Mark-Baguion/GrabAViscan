@@ -33,7 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.filterBox = new Guna.UI.WinForms.GunaTextBox();
             this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.Filter_btn = new Guna.UI.WinForms.GunaButton();
@@ -79,7 +79,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.gunaPictureBox1);
-            this.panel1.Controls.Add(this.gunaTextBox1);
+            this.panel1.Controls.Add(this.filterBox);
             this.panel1.Controls.Add(this.Minimize_btn);
             this.panel1.Controls.Add(this.Close_btn);
             this.panel1.Controls.Add(this.Filter_btn);
@@ -100,22 +100,23 @@
             this.gunaPictureBox1.TabIndex = 17;
             this.gunaPictureBox1.TabStop = false;
             // 
-            // gunaTextBox1
+            // filterBox
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(276, 20);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 15;
-            this.gunaTextBox1.Size = new System.Drawing.Size(419, 59);
-            this.gunaTextBox1.TabIndex = 16;
-            this.gunaTextBox1.Text = "Search Filter";
+            this.filterBox.BaseColor = System.Drawing.Color.White;
+            this.filterBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.filterBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.filterBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.filterBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.filterBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.filterBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterBox.Location = new System.Drawing.Point(276, 20);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.PasswordChar = '\0';
+            this.filterBox.Radius = 15;
+            this.filterBox.Size = new System.Drawing.Size(420, 60);
+            this.filterBox.TabIndex = 16;
+            this.filterBox.Text = "Search Filter";
+            this.filterBox.Click += new System.EventHandler(this.gunaTextBox1_Click);
             // 
             // Minimize_btn
             // 
@@ -186,6 +187,7 @@
             this.Filter_btn.Size = new System.Drawing.Size(160, 59);
             this.Filter_btn.TabIndex = 12;
             this.Filter_btn.Text = "Filter";
+            this.Filter_btn.Click += new System.EventHandler(this.Filter_btn_Click);
             // 
             // LeftWing
             // 
@@ -425,8 +427,8 @@
         private Guna.UI.WinForms.GunaButton gunaButton4;
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton gunaButton9;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        public Guna.UI.WinForms.GunaTextBox filterBox;
     }
 }

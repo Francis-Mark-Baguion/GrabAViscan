@@ -51,6 +51,13 @@ namespace GrabAViscan
 
 
                 }
+                else if(post.User_id == this.User_id && post.Available >5)
+                {
+                    Requests req = new Requests(post);
+                    req.setter(home);
+
+                    flow1.Controls.Add(req);
+                }
                 
 
                 //Buffers buff = new Buffers();

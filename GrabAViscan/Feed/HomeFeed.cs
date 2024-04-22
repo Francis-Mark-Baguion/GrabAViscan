@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Classes;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 using Guna.UI.WinForms;
 
 namespace GrabAViscan
@@ -47,8 +48,8 @@ namespace GrabAViscan
                 id = post.Post_id;
                 SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
                 this.Name_label.Text = db.getUserById(post.User_id).FirstName +""+ db.getUserById(post.User_id).LastName;
-                this.TimeTxt.Text = "" + post.Date_posted;
-                this.Category_label.Text = post.Category;
+                this.TimeTxt.Text = post.Date_posted.ToString("MMMM dd, yyyy");
+                this.category.Text = post.Category;
                 this.descriptionTxt.Text = post.Description;
                 SetImageFromByteArray1(Image_cont, post.image);
 
@@ -56,12 +57,13 @@ namespace GrabAViscan
                 this.requestTxt.Text = post.Requested;
                 this.quantityTxt.Text = post.Quantity;
                 this.pickUpTxt.Text = pick + ": " + post.Pick_up;
-
-                this.pickUpTxt.Text = deliver + ": " + post.Delivery_location;
+                this.categoryTxt.Text = post.Category;
+                this.deliveryTxt.Text = deliver + ": " + post.Delivery_location;
 
                 this.Fee.Text ="" +  post.Fee;
-                this.deadline.Text = "" + post.Deadline;
-
+                this.deadline.Text = post.Deadline.ToString("MMMM dd, yyyy");
+                Category cat = db.GetCategoryByName(post.Category);
+                SetImageFromByteArray(this.category, cat.categoryImage);
 
                 profile_pic = new Profile(db.getPostById(post_id));
                 profile_pic.Hide();
@@ -69,6 +71,16 @@ namespace GrabAViscan
             }
             
 
+        }
+
+
+        public void SetImageFromByteArray(GunaPictureBox Image_cont, byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                Image image = Image.FromStream(ms);
+                Image_cont.Image = image;
+            }
         }
         public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
         {
@@ -109,17 +121,8 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-            try
-            {
-                db.updateAvailability(db.getPostById(this.id).Post_id, 1);
-                db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
-                this.Hide();
-            }
-            catch (Exception ex) 
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
             
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
             
 
         }
@@ -134,6 +137,11 @@ namespace GrabAViscan
             {
                 profile_pic.Hide();
             }
+        }
+
+        private void Category_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

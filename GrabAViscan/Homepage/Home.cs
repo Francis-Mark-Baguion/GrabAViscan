@@ -16,6 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using GrabAViscan.Popup;
 using GrabAViscan.Homepage;
+using GrabAViscan.Popup_Forms;
 
 
 namespace GrabAViscan
@@ -23,18 +24,20 @@ namespace GrabAViscan
     public partial class Home : Form
     {
         private DatabaseManagement db = new DatabaseManagement();
+        private Filter filter;
         public User user;
         private rightWing right = new rightWing();
         private string email;
         private int User_id;
         public Home(int uid)
         {
+            List<Posting> posts = db.GetAvailablePosts();
             this.User_id = uid;
             InitializeComponent();
             right = new rightWing();
             
             RightWing.Controls.Add(right);
-            feed();
+            feed(posts);
         }
 
         
@@ -49,17 +52,17 @@ namespace GrabAViscan
 
         }
 
-        public void feed()
+        public void feed(List<Posting> posts)
         {
             flow1.Controls.Clear();
 
             
-            List<Posting> posts = db.GetAvailablePosts();
+            
 
             
             foreach (Posting post in posts)
             {
-                if(post.User_id != User_id)
+                if(post.User_id != User_id && post.Deadline>=DateTime.Now)
                 {
                     if (post.image != null)
                     {
@@ -86,7 +89,7 @@ namespace GrabAViscan
 
         public void homeclick(object sender, EventArgs e)
         {
-            
+            List<Posting> posts = db.GetAvailablePosts();
             user = db.InitializeUser(email);
             
             
@@ -100,7 +103,7 @@ namespace GrabAViscan
 
             this.RightWing.Controls.Add(right);
             flow1.Controls.Clear();
-            feed();
+            feed(posts);
 
         }
 
@@ -173,7 +176,7 @@ namespace GrabAViscan
         private void Close_btn_Click(object sender, EventArgs e)
         {
             right.post.Close();
-            right.notif.Close();
+            //right.notif.Close();
             this.Close();
         }
 
@@ -191,6 +194,22 @@ namespace GrabAViscan
         {
             logNotif logout = new logNotif(this);
             logout.Show();
+        }
+
+        private void gunaTextBox1_Click(object sender, EventArgs e)
+        {
+            
+            
+            filterBox.Text = "";
+            filter = new Filter(this);
+        }
+
+        private void Filter_btn_Click(object sender, EventArgs e)
+        {
+            List<Posting> filteredPost = filter.returnFilter();
+            filter.Hide();
+            feed(filteredPost);
+
         }
     }
 }

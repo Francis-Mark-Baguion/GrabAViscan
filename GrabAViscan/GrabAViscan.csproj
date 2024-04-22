@@ -107,6 +107,24 @@
     <Compile Include="Classes\Deliver.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
+    <Compile Include="Feed\NotifBoxComplete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\NotifBoxComplete.Designer.cs">
+      <DependentUpon>NotifBoxComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="notif\NotifBoxCancel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notif\NotifBoxCancel.Designer.cs">
+      <DependentUpon>NotifBoxCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="notif\Notify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notif\Notify.Designer.cs">
+      <DependentUpon>Notify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Posting.cs" />
     <Compile Include="Classes\Request.cs" />
     <Compile Include="Classes\User.cs" />
@@ -116,6 +134,12 @@
     </Compile>
     <Compile Include="Feed\Buffers.Designer.cs">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\CancelledRepost.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\CancelledRepost.Designer.cs">
+      <DependentUpon>CancelledRepost.cs</DependentUpon>
     </Compile>
     <Compile Include="Feed\Deliveries.cs">
       <SubType>UserControl</SubType>
@@ -201,6 +225,30 @@
     <Compile Include="Homepage\MyRequest.Designer.cs">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup Forms\Filter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Forms\Filter.Designer.cs">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Forms\ViewPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Forms\ViewPost.Designer.cs">
+      <DependentUpon>ViewPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Messages\AcceptRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Messages\AcceptRequest.Designer.cs">
+      <DependentUpon>AcceptRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Messages\CancelReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Messages\CancelReq.Designer.cs">
+      <DependentUpon>CancelReq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup Messages\ChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,18 +266,6 @@
     </Compile>
     <Compile Include="Popup Messages\logNotif.Designer.cs">
       <DependentUpon>logNotif.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Popup Forms\Notification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popup Forms\Notification.Designer.cs">
-      <DependentUpon>Notification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Popup Forms\Notifications.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Popup Forms\Notifications.Designer.cs">
-      <DependentUpon>Notifications.cs</DependentUpon>
     </Compile>
     <Compile Include="Popup Forms\Post.cs">
       <SubType>Form</SubType>
@@ -255,6 +291,12 @@
     <Compile Include="Popup Forms\EditRequest.Designer.cs">
       <DependentUpon>EditRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup Messages\UpdateStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Messages\UpdateStatus.Designer.cs">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogIntro\SignUp.cs">
@@ -275,8 +317,20 @@
     <Compile Include="Homepage\ToDeliver.Designer.cs">
       <DependentUpon>ToDeliver.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Feed\NotifBoxComplete.resx">
+      <DependentUpon>NotifBoxComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notif\NotifBoxCancel.resx">
+      <DependentUpon>NotifBoxCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notif\Notify.resx">
+      <DependentUpon>Notify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Feed\Buffers.resx">
       <DependentUpon>Buffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\CancelledRepost.resx">
+      <DependentUpon>CancelledRepost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
@@ -320,6 +374,18 @@
     <EmbeddedResource Include="Homepage\MyRequest.resx">
       <DependentUpon>MyRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup Forms\Filter.resx">
+      <DependentUpon>Filter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Forms\ViewPost.resx">
+      <DependentUpon>ViewPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Messages\AcceptRequest.resx">
+      <DependentUpon>AcceptRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Messages\CancelReq.resx">
+      <DependentUpon>CancelReq.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup Messages\ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,12 +394,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup Messages\logNotif.resx">
       <DependentUpon>logNotif.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popup Forms\Notification.resx">
-      <DependentUpon>Notification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popup Forms\Notifications.resx">
-      <DependentUpon>Notifications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup Forms\Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
@@ -346,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup Forms\EditRequest.resx">
       <DependentUpon>EditRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Messages\UpdateStatus.resx">
+      <DependentUpon>UpdateStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -25,7 +25,19 @@ namespace GrabAViscan.Feed
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.requestTxt.Text = post.Requested;
             this.Fee.Text = post.Fee.ToString();
+            Category cat = db.GetCategoryByName(post.Category);
+            SetImageFromByteArrayProfile(this.category, cat.categoryImage);
 
+        }
+
+        public void SetImageFromByteArrayProfile(GunaPictureBox profile, byte[] byteArray)
+        {
+            if (byteArray != null)
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    profile.Image = image;
+                }
         }
 
         public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
