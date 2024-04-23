@@ -185,7 +185,7 @@ namespace GrabAViscan.Popup
                     CommentTxt.Text = "";
                     TimePicker.Value = DateTime.Today;
 
-
+                    home.ctrSet();
                 }
                 else 
                 {

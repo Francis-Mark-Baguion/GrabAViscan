@@ -24,8 +24,11 @@ namespace GrabAViscan.Popup_Messages
         private int flag = 0;
         private FeedNoImage noImage;
         private HomeFeed withImage;
-        public AcceptRequest(int id, int uid,HomeFeed YesImage)
+        private Home home;
+        
+        public AcceptRequest(int id, int uid,HomeFeed YesImage, Home home)
         {
+            this.home = home;   
             InitializeComponent();
             this.Show();
             this.id = id;
@@ -34,9 +37,10 @@ namespace GrabAViscan.Popup_Messages
         }
 
 
-        public AcceptRequest(int id, int uid,FeedNoImage NoImage) 
+        public AcceptRequest(int id, int uid,FeedNoImage NoImage, Home home) 
         {
             InitializeComponent();
+            this.home = home;
             this.Show();
             this.id = id;
             this.uid = uid;
@@ -61,12 +65,16 @@ namespace GrabAViscan.Popup_Messages
                 db.AssignDeliver(db.getPostById(this.id).Post_id, uid);
                 if(noImage != null) 
                 {
+                    home.homeclick(sender, e);
                     noImage.Hide();
                 }
                 if (withImage != null)
                 {
+                    home.homeclick(sender, e);
                     withImage.Hide();
+                    
                 }
+
                 this.Close();
 
             }

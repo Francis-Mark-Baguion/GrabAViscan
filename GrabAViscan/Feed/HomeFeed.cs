@@ -26,9 +26,10 @@ namespace GrabAViscan
         private int locId;
         private int locId2;
         private Profile profile_pic;
-        public HomeFeed(Posting post,int uid)
+        public Home home;
+        public HomeFeed(Posting post,int uid,Home home)
         {
-
+            this.home = home;
             this.uid = db.getUserById(uid).User_id;
             InitializeComponent();
             new Posting(post);
@@ -121,7 +122,7 @@ namespace GrabAViscan
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this,home);
             
             
 

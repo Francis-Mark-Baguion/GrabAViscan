@@ -40,6 +40,8 @@
             this.LeftWing = new System.Windows.Forms.Panel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.deliverCtr = new Guna.UI.WinForms.GunaButton();
+            this.reqCtr = new Guna.UI.WinForms.GunaButton();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
@@ -48,8 +50,6 @@
             this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
             this.RightWing = new Guna.UI.WinForms.GunaPanel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deliverCtr = new Guna.UI.WinForms.GunaButton();
-            this.reqCtr = new Guna.UI.WinForms.GunaButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
@@ -243,6 +243,56 @@
             this.gunaPanel1.Size = new System.Drawing.Size(563, 487);
             this.gunaPanel1.TabIndex = 2;
             // 
+            // deliverCtr
+            // 
+            this.deliverCtr.AnimationHoverSpeed = 0.07F;
+            this.deliverCtr.AnimationSpeed = 0.03F;
+            this.deliverCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.deliverCtr.BaseColor = System.Drawing.Color.Transparent;
+            this.deliverCtr.BorderColor = System.Drawing.Color.Black;
+            this.deliverCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliverCtr.ForeColor = System.Drawing.Color.Firebrick;
+            this.deliverCtr.Image = null;
+            this.deliverCtr.ImageSize = new System.Drawing.Size(20, 20);
+            this.deliverCtr.Location = new System.Drawing.Point(436, 264);
+            this.deliverCtr.Name = "deliverCtr";
+            this.deliverCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.deliverCtr.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.deliverCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
+            this.deliverCtr.OnHoverImage = null;
+            this.deliverCtr.OnPressedColor = System.Drawing.Color.Black;
+            this.deliverCtr.Radius = 10;
+            this.deliverCtr.Size = new System.Drawing.Size(67, 30);
+            this.deliverCtr.TabIndex = 9;
+            this.deliverCtr.Text = "0";
+            this.deliverCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.deliverCtr.Click += new System.EventHandler(this.deliverCtr_Click);
+            // 
+            // reqCtr
+            // 
+            this.reqCtr.AnimationHoverSpeed = 0.07F;
+            this.reqCtr.AnimationSpeed = 0.03F;
+            this.reqCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.reqCtr.BaseColor = System.Drawing.Color.Transparent;
+            this.reqCtr.BorderColor = System.Drawing.Color.Black;
+            this.reqCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reqCtr.ForeColor = System.Drawing.Color.Firebrick;
+            this.reqCtr.Image = null;
+            this.reqCtr.ImageSize = new System.Drawing.Size(20, 20);
+            this.reqCtr.Location = new System.Drawing.Point(436, 173);
+            this.reqCtr.Name = "reqCtr";
+            this.reqCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.reqCtr.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.reqCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
+            this.reqCtr.OnHoverImage = null;
+            this.reqCtr.OnPressedColor = System.Drawing.Color.Black;
+            this.reqCtr.Radius = 10;
+            this.reqCtr.Size = new System.Drawing.Size(67, 30);
+            this.reqCtr.TabIndex = 8;
+            this.reqCtr.Text = "0";
+            this.reqCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reqCtr.Click += new System.EventHandler(this.reqCtr_Click);
+            // 
             // gunaButton9
             // 
             this.gunaButton9.AnimationHoverSpeed = 0.07F;
@@ -398,56 +448,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // deliverCtr
-            // 
-            this.deliverCtr.AnimationHoverSpeed = 0.07F;
-            this.deliverCtr.AnimationSpeed = 0.03F;
-            this.deliverCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.deliverCtr.BaseColor = System.Drawing.Color.Transparent;
-            this.deliverCtr.BorderColor = System.Drawing.Color.Black;
-            this.deliverCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliverCtr.ForeColor = System.Drawing.Color.Firebrick;
-            this.deliverCtr.Image = null;
-            this.deliverCtr.ImageSize = new System.Drawing.Size(20, 20);
-            this.deliverCtr.Location = new System.Drawing.Point(457, 256);
-            this.deliverCtr.Name = "deliverCtr";
-            this.deliverCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.deliverCtr.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.deliverCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
-            this.deliverCtr.OnHoverImage = null;
-            this.deliverCtr.OnPressedColor = System.Drawing.Color.Black;
-            this.deliverCtr.Radius = 10;
-            this.deliverCtr.Size = new System.Drawing.Size(30, 30);
-            this.deliverCtr.TabIndex = 9;
-            this.deliverCtr.Text = "0";
-            this.deliverCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.deliverCtr.Click += new System.EventHandler(this.deliverCtr_Click);
-            // 
-            // reqCtr
-            // 
-            this.reqCtr.AnimationHoverSpeed = 0.07F;
-            this.reqCtr.AnimationSpeed = 0.03F;
-            this.reqCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.reqCtr.BaseColor = System.Drawing.Color.Transparent;
-            this.reqCtr.BorderColor = System.Drawing.Color.Black;
-            this.reqCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reqCtr.ForeColor = System.Drawing.Color.Firebrick;
-            this.reqCtr.Image = null;
-            this.reqCtr.ImageSize = new System.Drawing.Size(20, 20);
-            this.reqCtr.Location = new System.Drawing.Point(457, 171);
-            this.reqCtr.Name = "reqCtr";
-            this.reqCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.reqCtr.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.reqCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
-            this.reqCtr.OnHoverImage = null;
-            this.reqCtr.OnPressedColor = System.Drawing.Color.Black;
-            this.reqCtr.Radius = 10;
-            this.reqCtr.Size = new System.Drawing.Size(30, 30);
-            this.reqCtr.TabIndex = 8;
-            this.reqCtr.Text = "0";
-            this.reqCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.reqCtr.Click += new System.EventHandler(this.reqCtr_Click);
             // 
             // Home
             // 

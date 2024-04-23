@@ -1010,7 +1010,7 @@ namespace GrabAViscan.Classes
         }
 
 
-        private void GetDeliveries()
+        public void GetDeliveries()
         {
             Deliveries = new List<Deliver>();
             using (MySqlConnection conConn = this.Connect())

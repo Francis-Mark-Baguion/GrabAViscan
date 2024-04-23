@@ -30,6 +30,7 @@ namespace GrabAViscan
         private rightWing right = new rightWing();
         private string email;
         private int User_id;
+        ToDeliver todeliver;
         public Home(int uid)
         {
             List<Posting> posts = db.GetAvailablePosts();
@@ -69,7 +70,7 @@ namespace GrabAViscan
                 {
                     if (post.image != null)
                     {
-                        HomeFeed home = new HomeFeed(post, User_id);
+                        HomeFeed home = new HomeFeed(post, User_id,this);
 
 
 
@@ -77,7 +78,7 @@ namespace GrabAViscan
                     }
                     else
                     {
-                        FeedNoImage feedNoImage = new FeedNoImage(post, User_id);
+                        FeedNoImage feedNoImage = new FeedNoImage(post, User_id,this);
                         flow1.Controls.Add(feedNoImage);
 
                     }
@@ -132,7 +133,7 @@ namespace GrabAViscan
 
         public void To_deliver(object sender, EventArgs e)
         {
-            ToDeliver todeliver = new ToDeliver(this.User_id);
+            todeliver = new ToDeliver(this.User_id);
             todeliver.feed(this);
             flow1.Controls.Clear();
 
@@ -218,6 +219,7 @@ namespace GrabAViscan
             
             try
             {
+                
                 List<Posting> filteredPost = filter.returnFilter();
 
                 filter.Hide();
@@ -265,6 +267,7 @@ namespace GrabAViscan
             int ctr = 0;
             bool flag = false;
             List<Posting> posts = db.getAllPost();
+            db.GetDeliveries();
             List<Deliver> deliveries = db.Deliveries;
 
             foreach (Posting post in posts)
@@ -273,7 +276,7 @@ namespace GrabAViscan
                 {
                     foreach (Deliver delivery in deliveries)
                     {
-                        if (post.Post_id == delivery.Post_Id && delivery.User_Id == User_id)
+                        if (post.Post_id == delivery.Post_Id &&delivery.User_Id == User_id)
                         {
                             ctr++;
                         }

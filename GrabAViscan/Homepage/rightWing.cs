@@ -30,7 +30,7 @@ namespace GrabAViscan
         private bool flagpost = false;
         private Home form;
 
-        public rightWing( )
+        public rightWing()
         {
             InitializeComponent();
             
