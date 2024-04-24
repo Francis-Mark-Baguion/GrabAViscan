@@ -52,7 +52,7 @@ namespace GrabAViscan
             credentials.password = pass;
             try
             {
-                if (credentials.IsValid() && db.ValidateCredentials(email, pass))
+                if (credentials.IsValid() && db.ValidateCredentials(email, pass) && ValidatePassword(pass)&&ValidateEmail(email))
                 {
                     SignUpInformation signUpInformation = new SignUpInformation();
                     signUpInformation.Show();
@@ -63,7 +63,19 @@ namespace GrabAViscan
                 }
                 else
                 {
-                    ErrorMessage error = new ErrorMessage("Invalid Credentials");
+                    if(credentials.IsValid()!=true && db.ValidateCredentials(email, pass)!=true)
+                    {
+                        ErrorMessage error = new ErrorMessage("Account Already Exist");
+                    }
+                    else if(ValidateEmail(email)==false)
+                    {
+                        ErrorMessage error = new ErrorMessage("Invalid Email Format");
+                    }
+                    else if (ValidatePassword(pass)==false)
+                    {
+                        ErrorMessage error = new ErrorMessage("The password should contain an Uppercase, special character and a number");
+                    }
+                   
                 }
             }
             catch (Exception ex) 
@@ -74,6 +86,52 @@ namespace GrabAViscan
             
         }
 
+
+        public static bool ValidatePassword(String pass)
+        {
+            bool hasUpperCase = false;
+            bool hasNumber = false;
+            bool hasSpecial = false;
+            foreach (char c in pass)
+            {
+                if (char.IsUpper(c))
+                    hasUpperCase = true;
+                if (char.IsNumber(c))
+                    hasNumber = true;
+                if (!char.IsLetterOrDigit(c))
+                    hasSpecial = true;
+            }
+            if (hasUpperCase && hasNumber && hasSpecial && pass.Length > 7)
+                return true;
+            return false;
+        }
+
+        public static bool ValidatePhoneNumber(String phoneNumber)
+        {
+            try
+            {
+                long.Parse(phoneNumber.Substring(1, 12));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            if (phoneNumber.Length != 13 || phoneNumber[0] != '+')
+                return false;
+            return true;
+        }
+
+        public static bool ValidateEmail(String email)
+        {
+            int atIndex = email.IndexOf('@');
+            if (atIndex < 0)
+                return false;
+
+            string domain = email.Substring(atIndex + 1);
+            if (!domain.EndsWith(".com") && !domain.EndsWith(".ph"))
+                return false;
+            return true;
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

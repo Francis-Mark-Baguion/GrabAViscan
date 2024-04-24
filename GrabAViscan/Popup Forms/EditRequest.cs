@@ -61,12 +61,15 @@ namespace GrabAViscan.Popup
 
 
         }
+        public void homeSetter(Home home)
+        {
+            this.home = home;
+        }
 
-
-        public EditRequest(Posting post)
+        public EditRequest(Posting post,Home home)
         {
             InitializeComponent();
-
+            this.home = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";

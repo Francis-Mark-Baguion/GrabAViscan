@@ -1,4 +1,5 @@
 ﻿using GrabAViscan.Classes;
+using Guna.UI.WinForms;
 using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,38 @@ namespace GrabAViscan.Popup
 
         }
 
-        
+        public Post(Posting post,Home home)
+        {
+            InitializeComponent();
+            this.home = home;
+            categoryCombo.DataSource = db.categories;
+            categoryCombo.ValueMember = "ID";
+            categoryCombo.DisplayMember = "Name";
+
+            pickNearCombo.DataSource = db.locations;
+            pickNearCombo.ValueMember = "LocationName";
+            pickNearCombo.DisplayMember = "LocationName";
+
+            deliverNearCombo.DataSource = db.CopyLocationData(db.locations);
+            deliverNearCombo.ValueMember = "LocationName";
+            deliverNearCombo.DisplayMember = "LocationName";
+
+            
+            this.user = db.getUserById(post.User_id);
+            this.requestTxt.Text = post.Requested;
+            this.quantityTxt.Text = post.Quantity;
+            this.TimePicker.Value = post.Deadline;
+            this.categoryCombo.Text = post.Category;
+            this.pickUpTxt.Text = post.Pick_up;
+            this.pickNearCombo.Text = post.Near_pickUp;
+            this.deliveryTxt.Text = post.Delivery_location;
+            this.deliverNearCombo.Text = post.Near_deliveryLocation;
+            this.feeTxt.Text = post.Fee + "";
+            this.CommentTxt.Text = post.Description;
+            
+            upload_btn.Text = "Repost";
+            this.Show();
+        }
 
         public void setter(string email,Home home)
         {
@@ -52,6 +84,18 @@ namespace GrabAViscan.Popup
             this.home = home;
         }
 
+        public void SetImageFromByteArray1(GunaPictureBox Image_cont, byte[] byteArray)
+        {
+            if (byteArray != null)
+            {
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    Image_cont.Image = image;
+                }
+            }
+            else Image_cont.Image = null;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Category cat = categoryCombo.SelectedItem as Category;

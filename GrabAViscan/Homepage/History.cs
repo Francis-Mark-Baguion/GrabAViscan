@@ -21,10 +21,12 @@ namespace GrabAViscan
         private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
         private Image personal;
+        private Home home;
         private Image delivery;
-        public History(int User_id)
+        public History(int User_id,Home home)
         {
             InitializeComponent();
+            this.home = home;
             this.User_id = User_id;
             feed();
         }
@@ -55,13 +57,13 @@ namespace GrabAViscan
                     }
                     else if (post.Available == 3)
                     {
-                        HistroyLogRec Received = new HistroyLogRec(post,User_id);
+                        HistroyLogRec Received = new HistroyLogRec(post,User_id,home);
 
                         flow1.Controls.Add(Received);
                     }
                     else if (post.Available == 5 || post.Available==10)
                     {
-                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id);
+                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id,this.home);
 
                         flow1.Controls.Add(Cancelled);
                     }
@@ -94,7 +96,7 @@ namespace GrabAViscan
             btn_delivery.Image = delivery;
             
             flow1.Controls.Clear();
-            PersonalReq personalReq = new PersonalReq(this.User_id);
+            PersonalReq personalReq = new PersonalReq(this.User_id,home);
             flow1.Controls.Add(personalReq);
         }
 

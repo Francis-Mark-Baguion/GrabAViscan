@@ -150,7 +150,7 @@ namespace GrabAViscan
 
         private void History(object sender, EventArgs e)
         {
-            History history = new History(this.User_id);
+            History history = new History(this.User_id,this);
             flow1.Controls.Clear();
 
             tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
