@@ -1,4 +1,6 @@
 ﻿using GrabAViscan.Classes;
+using GrabAViscan.Popup;
+using GrabAViscan.Popup_Forms;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -20,15 +22,19 @@ namespace GrabAViscan.Feed
         private int Post_id;
         private int locId;
         private int locId2;
+        private Profile profile1;
+        private int User_id;
+        private Posting post;
         public CancelledRepost(Posting post,int UID)
         {
             InitializeComponent();
+            this.post = post;
             this.Post_id = post.Post_id;
-            Label.Text = "CANCELLED BY";
+            this.User_id = UID;
             this.nameHolder.Text = db.getUserById(UID).FirstName + " " + db.getUserById(UID).LastName;
             SetImageFromByteArrayProfile(this.profile, db.getUserById(UID).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            this.requestTxt.Text = post.Requested;
+            this.categeryTxt.Text = post.Category;
             
             Category cat = db.GetCategoryByName(post.Category);
             SetImageFromByteArrayProfile(this.category, cat.categoryImage);
@@ -71,8 +77,24 @@ namespace GrabAViscan.Feed
             post.Available = 0;
             post.Near_pickUp = pick;
             post.Near_deliveryLocation = deliver;
-            repost_btn.Enabled = false;
-            db.Post_upload(post);
+            
+            EditRequest edit = new EditRequest(post);
+            //db.Post_upload(post);
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            profile1 = new Profile(User_id);
+        }
+
+        private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            ViewPost view = new ViewPost(post);
         }
     }
 }

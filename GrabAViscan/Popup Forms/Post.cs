@@ -122,9 +122,10 @@ namespace GrabAViscan.Popup
                 if (!Regex.IsMatch(feeTxt.Text, @"^-?\d+(\.\d*)?$"))
                 {
                     ErrorMessage err = new ErrorMessage("Invalid fee format. Please enter a valid number.");
-                    this.Close();
+                    
                 }
-                Fee = Convert.ToInt32(feeTxt.Text);
+                else { Fee = Convert.ToInt32(feeTxt.Text); }
+                
 
             }
             catch (FormatException ex)
@@ -163,13 +164,12 @@ namespace GrabAViscan.Popup
                 
                 string ded = Deadline.ToString("M");
                 string start = Date_posted.ToString("M");
-                if(ded==start)
-                {
-                    throw new Exception("The deadline must be a future date");
-                }
+                
+                    
+                
 
 
-                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
+                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="" && Near_pickUp !="" && ded != start)
                 {
                     post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
                     db.Post_upload(post);
@@ -186,19 +186,55 @@ namespace GrabAViscan.Popup
                     TimePicker.Value = DateTime.Today;
 
                     home.ctrSet();
+
+                    this.Hide();
                 }
                 else 
                 {
-                    this.Hide();
-                    ErrorMessage err = new ErrorMessage("Invalid Information");
+                    
+                    
+                    if (Requested == "")
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Request cannot be empty!");
+                    }
+                    else if (ded == start)
+                    {
+                        ErrorMessage err8 = new ErrorMessage("The deadline must be a future date");
+                    }
+                    else if (Category == "")
+                    {
+                        ErrorMessage err3 = new ErrorMessage("Please select a category");
+                    }
+                    else if (Pick_up == "")
+                    {
+                        ErrorMessage err4 = new ErrorMessage("Please input exact pick-up location");
+                    }
+                    else if (Delivery_location == "")
+                    {
+                        ErrorMessage err5 = new ErrorMessage("Please input exact delivery location");
+                    }
+                    else if (Near_pickUp == "")
+                    {
+                        ErrorMessage err6 = new ErrorMessage("Please select a Pick-up point");
+                    }
+                    else if (Near_deliveryLocation == "")
+                    {
+                        ErrorMessage err7 = new ErrorMessage("Please select a Delivery point");
+                    }
+                    else if (!Regex.IsMatch(feeTxt.Text, @"^-?\d+(\.\d*)?$"))
+                    {
+                        ErrorMessage err2 = new ErrorMessage("Invalid fee format. Please enter a valid number.");
+
+                    }
+
                 }
                 
-                this.Hide();
+                
             }
             catch(Exception ex)
             {
                 ErrorMessage err = new ErrorMessage(ex.Message);
-                this.Hide();
+                
             }
             
            

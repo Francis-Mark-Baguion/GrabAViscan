@@ -117,7 +117,6 @@
             this.filterBox.Radius = 15;
             this.filterBox.Size = new System.Drawing.Size(420, 60);
             this.filterBox.TabIndex = 16;
-            this.filterBox.Text = "Search Filter";
             this.filterBox.Click += new System.EventHandler(this.gunaTextBox1_Click);
             // 
             // Minimize_btn

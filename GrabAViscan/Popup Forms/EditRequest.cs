@@ -63,6 +63,50 @@ namespace GrabAViscan.Popup
         }
 
 
+        public EditRequest(Posting post)
+        {
+            InitializeComponent();
+
+            categoryCombo.DataSource = db.categories;
+            categoryCombo.ValueMember = "ID";
+            categoryCombo.DisplayMember = "Name";
+
+            pickNearCombo.DataSource = db.locations;
+            pickNearCombo.ValueMember = "LocationName";
+            pickNearCombo.DisplayMember = "LocationName";
+
+            deliverNearCombo.DataSource = db.CopyLocationData(db.locations);
+            deliverNearCombo.ValueMember = "LocationName";
+            deliverNearCombo.DisplayMember = "LocationName";
+            
+            this.Post_id = post.Post_id;
+            this.user = db.getUserById(post.User_id);
+            this.requestTxt.Text = post.Requested;
+            this.quantityTxt.Text = post.Quantity;
+            this.TimePicker.Value = post.Deadline;
+            this.categoryCombo.Text = post.Category;
+            this.pickUpTxt.Text = post.Pick_up;
+            this.pickNearCombo.Text = post.Near_pickUp;
+            this.deliveryTxt.Text = post.Delivery_location;
+            this.deliverNearCombo.Text = post.Near_deliveryLocation;
+            this.feeTxt.Text = post.Fee + "";
+            this.CommentTxt.Text = post.Description;
+            if (post.image != null)
+            {
+                SetImageFromByteArray1(picture, post.image);
+            }
+            else
+            {
+                picture.Image = null;
+                picture.Refresh();
+            }
+            upload_btn.Text = "Repost";
+            this.Show();
+
+        }
+
+
+
         public void SetImageFromByteArray1(GunaPictureBox Image_cont, byte[] byteArray)
         {
             if (byteArray != null)

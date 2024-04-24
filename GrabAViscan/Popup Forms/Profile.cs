@@ -17,14 +17,15 @@ namespace GrabAViscan.Popup
     public partial class Profile : Form
     {
         DatabaseManagement db = new DatabaseManagement();
-        public Profile(Posting post)
+        public Profile(int User_id)
         {
             InitializeComponent();
-            this.nameHolder.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
-            this.emailHolder.Text = db.getUserById(post.User_id).Email;
-            this.addressHoldler.Text = db.getUserById(post.User_id).Address;
-            this.DescriptionTxt.Text = db.getUserById(post.User_id).Bio;
-            SetImageFromByteArrayProfile(profile_pic, post.image);
+            this.nameHolder.Text = db.getUserById(User_id).FirstName + " " + db.getUserById(User_id).LastName;
+            this.emailHolder.Text = db.getUserById(User_id).Email;
+            this.addressHoldler.Text = db.getUserById(User_id).Address;
+            this.DescriptionTxt.Text = db.getUserById(User_id).Bio;
+            
+            SetImageFromByteArrayProfile(profile_pic, db.getUserById(User_id).Profile_pic);
             this.Show();
         }
 
@@ -36,15 +37,16 @@ namespace GrabAViscan.Popup
                 using (MemoryStream ms = new MemoryStream(byteArray))
                 {
                     Image image = Image.FromStream(ms);
-                    profile_pic.Image = image;
+                    profile.Image = image;
                 }
             }
+            
 
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             
             
         }

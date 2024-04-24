@@ -25,7 +25,7 @@ namespace GrabAViscan
     public partial class Home : Form
     {
         private DatabaseManagement db = new DatabaseManagement();
-        private Filter filter;
+        private Filter filter = new Filter();
         public User user;
         private rightWing right = new rightWing();
         private string email;
@@ -216,19 +216,22 @@ namespace GrabAViscan
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
-            
-            try
+            if(filterBox.Text != "")
             {
-                
-                List<Posting> filteredPost = filter.returnFilter();
+                try
+                {
 
-                filter.Hide();
-                feed(filteredPost);
+                    List<Posting> filteredPost = filter.returnFilter();
+
+                    filter.Hide();
+                    feed(filteredPost);
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
             }
-            catch(Exception ex) 
-            {
-                ErrorMessage err = new ErrorMessage(ex.Message);
-            }
+            
             
             
 

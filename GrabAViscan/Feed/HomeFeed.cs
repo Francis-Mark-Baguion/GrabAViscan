@@ -66,9 +66,8 @@ namespace GrabAViscan
                 Category cat = db.GetCategoryByName(post.Category);
                 SetImageFromByteArray(this.category, cat.categoryImage);
 
-                profile_pic = new Profile(db.getPostById(post_id));
-                profile_pic.Hide();
-
+                
+               
             }
             
 
@@ -130,14 +129,7 @@ namespace GrabAViscan
 
         private void viewProfile(object sender, EventArgs e)
         {
-            if (profile_pic.Visible == false)
-            {
-                profile_pic.Show();
-            }
-            else
-            {
-                profile_pic.Hide();
-            }
+            profile_pic = new Profile(db.getPostById(post_id).User_id);
         }
 
         private void Category_label_Click(object sender, EventArgs e)
