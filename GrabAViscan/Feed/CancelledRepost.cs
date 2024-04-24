@@ -25,12 +25,14 @@ namespace GrabAViscan.Feed
         private Profile profile1;
         private int User_id;
         private Posting post;
-        public CancelledRepost(Posting post,int UID)
+        private Home home;
+        public CancelledRepost(Posting post,int UID,Home home)
         {
             InitializeComponent();
             this.post = post;
             this.Post_id = post.Post_id;
             this.User_id = UID;
+            this.home = home;
             this.nameHolder.Text = db.getUserById(UID).FirstName + " " + db.getUserById(UID).LastName;
             SetImageFromByteArrayProfile(this.profile, db.getUserById(UID).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -77,8 +79,8 @@ namespace GrabAViscan.Feed
             post.Available = 0;
             post.Near_pickUp = pick;
             post.Near_deliveryLocation = deliver;
-            
-            EditRequest edit = new EditRequest(post);
+
+            Post pst = new Post(post, this.home);
             //db.Post_upload(post);
         }
 

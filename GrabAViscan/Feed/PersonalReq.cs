@@ -16,12 +16,13 @@ namespace GrabAViscan.Feed
 
         DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        public PersonalReq(int User_id)
+        private Home home;
+        public PersonalReq(int User_id, Home home)
         {
             InitializeComponent();
             this.User_id = User_id; 
             flow1.Controls.Clear();
-
+            this.home = home;
 
             List<Deliver> cancelledPost = db.Deliveries;
 
@@ -42,13 +43,13 @@ namespace GrabAViscan.Feed
                     }
                     else if (post.Available == 3)
                     {
-                        HistroyLogRec Received = new HistroyLogRec(post,User_id);
+                        HistroyLogRec Received = new HistroyLogRec(post,User_id,home);
 
                         flow1.Controls.Add(Received);
                     }
                     else if (post.Available == 5 || post.Available == 10)
                     {
-                        CancelledRepost Cancelled = new CancelledRepost(post, deliver.User_Id);
+                        CancelledRepost Cancelled = new CancelledRepost(post, deliver.User_Id,this.home);
 
                         flow1.Controls.Add(Cancelled);
                     }
