@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -241,7 +242,7 @@ namespace GrabAViscan.Classes
             {
                 try
                 {
-                    conConn.Open();
+                   conConn.Open();
 
 
                     string sql = "INSERT INTO grab.post (User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, Image, Pick_location,Near_pickUp_id,Delivery_location,Near_delivery_id,isAvailable) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -934,6 +935,7 @@ namespace GrabAViscan.Classes
         }
 
 
+
         public Location GetLocationById(int locationId)
         {
             Location foundLocation = null;
@@ -1045,7 +1047,6 @@ namespace GrabAViscan.Classes
 
 
         }
-
 
 
 

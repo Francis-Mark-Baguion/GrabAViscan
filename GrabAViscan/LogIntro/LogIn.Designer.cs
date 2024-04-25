@@ -212,7 +212,7 @@
             // 
             this.panel4.Controls.Add(this.Minimize_btn);
             this.panel4.Controls.Add(this.Close_btn);
-            this.panel4.Location = new System.Drawing.Point(648, 3);
+            this.panel4.Location = new System.Drawing.Point(668, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 99);
             this.panel4.TabIndex = 2;

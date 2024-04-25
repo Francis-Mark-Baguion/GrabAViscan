@@ -79,7 +79,26 @@ namespace GrabAViscan.LogIntro
                 }
                 else
                 {
-                    ErrorMessage arr = new ErrorMessage("Invalid or Incorrect Information format");
+                    if(string.IsNullOrEmpty(school_id.Text))
+                    {
+                        ErrorMessage err1 = new ErrorMessage("School Id should not be empty");
+                    }
+                    else if(Address.Text != "")
+                    {
+                        ErrorMessage err1 = new ErrorMessage("adress should not be empty");
+                    }
+                    else if (firstNameTxt.Text == "" || lastNameTxt.Text == "")
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Name should not be empty");
+                    }
+                    else if (statusCombo.Text == "")
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Status should not be empty");
+                    }
+                    
+                        
+                   
+                    
                 }
             }
             catch (Exception ex) 
@@ -90,6 +109,21 @@ namespace GrabAViscan.LogIntro
             
 
             
+        }
+
+        public static bool ValidatePhoneNumber(String phoneNumber)
+        {
+            try
+            {
+                long.Parse(phoneNumber.Substring(1, 12));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            if (phoneNumber.Length != 13 || phoneNumber[0] != '+')
+                return false;
+            return true;
         }
 
         public void Sign_in_method()
