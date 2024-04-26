@@ -36,16 +36,21 @@ namespace GrabAViscan.Popup_Forms
             
         }
 
+
+        public Filter() { }
+
         public List<Posting> returnFilter()
         {
-            List<Posting> filterPost = new List<Posting>();
+            List<Posting> filterPost;
+
+            filterPost = new List<Posting>();
             string location_id = "";
             List<Location> locations = new List<Location>();
             foreach (Location location in db.locations)
             {
                 if (location.LocationName == place.Text)
                 {
-                    location_id = location.Location_id+"";
+                    location_id = location.Location_id + "";
                 }
             }
 
@@ -56,7 +61,7 @@ namespace GrabAViscan.Popup_Forms
             {
                 foreach (Posting post in allPost)
                 {
-                    MessageBox.Show("here at location only id is: " + place.Text + "   " + post.Near_deliveryLocation);
+                    
                     if (post.Near_deliveryLocation == location_id)
                     {
                         filterPost.Add(post);
@@ -77,18 +82,23 @@ namespace GrabAViscan.Popup_Forms
             {
                 foreach (Posting post in allPost)
                 {
-                    if (post.Near_deliveryLocation == place.Text && post.Category == category.Text)
+                    if (post.Near_deliveryLocation == location_id && post.Category == category.Text)
                     {
                         filterPost.Add(post);
                     }
                 }
             }
-            
-           
-            
-                
+
 
             return filterPost;
+
+
+
+
+
+
+
+
         }
         
         private void gunaComboBox1_SelectedIndexChanged(object sender, EventArgs e)

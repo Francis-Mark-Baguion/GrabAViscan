@@ -16,7 +16,7 @@ namespace GrabAViscan.Popup_Messages
     {
         DatabaseManagement db = new DatabaseManagement();
         private int Post_id;
-        private int flag = 0;
+        private int flag = 1;
 
         private int locId;
         private int locId2;

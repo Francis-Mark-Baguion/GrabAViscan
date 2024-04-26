@@ -109,6 +109,8 @@ namespace GrabAViscan.Feed
             
                 try
                 {
+                    if(temp.Available == 0) 
+                    {
                     string loc = temp.Near_pickUp;
                     this.locId = (int)double.Parse(loc);
                     string loc2 = temp.Near_deliveryLocation;
@@ -116,12 +118,19 @@ namespace GrabAViscan.Feed
 
                     string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
                     string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
-                    
+
                     temp.Near_pickUp = pick;
                     temp.Near_deliveryLocation = deliver;
                     temp.Available = 5;
-                    CancelReq cancel = new CancelReq(temp,home);
+                    CancelReq cancel = new CancelReq(temp, home);
                     cancel.Show();
+                    }
+                    else
+                    {
+                    ErrorMessage err = new ErrorMessage("Request is already being processed");
+                
+                    }
+                    
                     
                     //db.updatePostingInformation(temp);
                     //home.My_Request(sender, e);

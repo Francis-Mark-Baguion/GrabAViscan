@@ -27,10 +27,12 @@ namespace GrabAViscan.Feed
         private int locId;
         private int locId2;
         private Profile profile_pic;
+        
+        public Home home;
 
-        public FeedNoImage(Posting post, int uid)
+        public FeedNoImage(Posting post, int uid,Home home)
         {
-
+            this.home = home;
             this.uid = db.getUserById(uid).User_id;
             this.id = post.Post_id;
             InitializeComponent();
@@ -66,8 +68,8 @@ namespace GrabAViscan.Feed
                 Category cat = db.GetCategoryByName(post.Category);
                 SetImageFromByteArray(this.category, cat.categoryImage);
 
-                profile_pic = new Profile(db.getPostById(post_id));
-                profile_pic.Hide();
+                
+               
 
 
             }
@@ -100,7 +102,7 @@ namespace GrabAViscan.Feed
 
         private void gunaButton9_Click(object sender, EventArgs e)
         {
-            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this);
+            AcceptRequest accept = new AcceptRequest(this.id, this.uid,this,home);
             
                 
             
@@ -114,14 +116,7 @@ namespace GrabAViscan.Feed
 
         private void viewProfile(object sender, EventArgs e)
         {
-            if (profile_pic.Visible == false)
-            {
-                profile_pic.Show();
-            }
-            else
-            {
-                profile_pic.Hide();
-            }
+            profile_pic = new Profile(db.getPostById(post_id).User_id);
         }
 
 

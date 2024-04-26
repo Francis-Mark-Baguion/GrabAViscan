@@ -107,11 +107,23 @@
     <Compile Include="Classes\Deliver.cs" />
     <Compile Include="Classes\Location.cs" />
     <Compile Include="Classes\LogIn.cs" />
+    <Compile Include="Feed\DeliveryHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\DeliveryHistory.Designer.cs">
+      <DependentUpon>DeliveryHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feed\NotifBoxComplete.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Feed\NotifBoxComplete.Designer.cs">
       <DependentUpon>NotifBoxComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\PersonalReq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\PersonalReq.Designer.cs">
+      <DependentUpon>PersonalReq.cs</DependentUpon>
     </Compile>
     <Compile Include="notif\NotifBoxCancel.cs">
       <SubType>UserControl</SubType>
@@ -317,8 +329,14 @@
     <Compile Include="Homepage\ToDeliver.Designer.cs">
       <DependentUpon>ToDeliver.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Feed\DeliveryHistory.resx">
+      <DependentUpon>DeliveryHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Feed\NotifBoxComplete.resx">
       <DependentUpon>NotifBoxComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\PersonalReq.resx">
+      <DependentUpon>PersonalReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="notif\NotifBoxCancel.resx">
       <DependentUpon>NotifBoxCancel.cs</DependentUpon>

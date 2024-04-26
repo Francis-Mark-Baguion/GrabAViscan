@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GrabAViscan.Feed;
 using GrabAViscan.Popup;
+using System.Security.Policy;
+using System.CodeDom;
 
 namespace GrabAViscan
 {
@@ -18,9 +20,13 @@ namespace GrabAViscan
     {
         private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        public History(int User_id)
+        private Image personal;
+        private Home home;
+        private Image delivery;
+        public History(int User_id,Home home)
         {
             InitializeComponent();
+            this.home = home;
             this.User_id = User_id;
             feed();
         }
@@ -30,7 +36,8 @@ namespace GrabAViscan
         {
             flow1.Controls.Clear();
 
-
+            personal = btn_personal.Image;
+            delivery = btn_delivery.Image;
             List<Deliver> cancelledPost = db.Deliveries;
 
 
@@ -50,13 +57,13 @@ namespace GrabAViscan
                     }
                     else if (post.Available == 3)
                     {
-                        HistroyLogRec Received = new HistroyLogRec(post);
+                        HistroyLogRec Received = new HistroyLogRec(post,User_id,home);
 
                         flow1.Controls.Add(Received);
                     }
                     else if (post.Available == 5 || post.Available==10)
                     {
-                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id);
+                        CancelledRepost Cancelled = new CancelledRepost(post,deliver.User_Id,this.home);
 
                         flow1.Controls.Add(Cancelled);
                     }
@@ -64,49 +71,6 @@ namespace GrabAViscan
                     flow1.Controls.Add(buff);
                 }
             }
-
-
-
-
-
-            List<Deliver> deliveries = db.GetDeliveriesById(User_id);
-
-            
-                    foreach (Deliver delivery in deliveries)
-                    {
-                            Posting post = db.getPostById(delivery.Post_Id);
-                            if (post.Available == 4)
-                            {
-                                
-                                HistroyLogDel Delivered = new HistroyLogDel(post);
-
-                                flow2.Controls.Add(Delivered);
-
-
-                            }
-                            else if (post.Available == 3)
-                            {
-                                HistroyLogDel Received = new HistroyLogDel(post);
-
-                                flow2.Controls.Add(Received);
-                            }
-                            else if (post.Available == 5 || post.Available==10)
-                            {
-                                HistroyLogCan Cancelled = new HistroyLogCan(post,this.User_id,"You");
-
-                                flow2.Controls.Add(Cancelled);
-                            }
-
-                            Buffers buff = new Buffers();
-                            flow2.Controls.Add(buff);
-
-
-                        
-                    }
-
-
-
-                
             
         }
             
@@ -118,6 +82,36 @@ namespace GrabAViscan
         private void gunaGradiantButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            
+            btn_personal.BaseColor = Color.FromArgb(76, 104, 62);
+            btn_personal.ForeColor = Color.White;
+            btn_personal.Image = btn_personal.OnHoverImage;
+
+            btn_delivery.BaseColor = Color.FromArgb(240, 242, 245);
+            btn_delivery.ForeColor = Color.Black;
+            btn_delivery.Image = delivery;
+            
+            flow1.Controls.Clear();
+            PersonalReq personalReq = new PersonalReq(this.User_id,home);
+            flow1.Controls.Add(personalReq);
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            btn_delivery.BaseColor = Color.FromArgb(76, 104, 62);
+            btn_delivery.ForeColor = Color.White;
+            btn_delivery.Image = btn_delivery.OnHoverImage;
+
+            btn_personal.BaseColor = Color.FromArgb(240, 242, 245);
+            btn_personal.ForeColor = Color.Black;
+            btn_personal.Image = personal;
+            flow1.Controls.Clear();
+            DeliveryHistory deliveries = new DeliveryHistory(User_id);
+            flow1.Controls.Add(deliveries);
         }
     }
 }

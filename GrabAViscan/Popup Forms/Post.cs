@@ -1,4 +1,5 @@
 ﻿using GrabAViscan.Classes;
+using Guna.UI.WinForms;
 using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,38 @@ namespace GrabAViscan.Popup
 
         }
 
-        
+        public Post(Posting post,Home home)
+        {
+            InitializeComponent();
+            this.home = home;
+            categoryCombo.DataSource = db.categories;
+            categoryCombo.ValueMember = "ID";
+            categoryCombo.DisplayMember = "Name";
+
+            pickNearCombo.DataSource = db.locations;
+            pickNearCombo.ValueMember = "LocationName";
+            pickNearCombo.DisplayMember = "LocationName";
+
+            deliverNearCombo.DataSource = db.CopyLocationData(db.locations);
+            deliverNearCombo.ValueMember = "LocationName";
+            deliverNearCombo.DisplayMember = "LocationName";
+
+            
+            this.user = db.getUserById(post.User_id);
+            this.requestTxt.Text = post.Requested;
+            this.quantityTxt.Text = post.Quantity;
+            this.TimePicker.Value = post.Deadline;
+            this.categoryCombo.Text = post.Category;
+            this.pickUpTxt.Text = post.Pick_up;
+            this.pickNearCombo.Text = post.Near_pickUp;
+            this.deliveryTxt.Text = post.Delivery_location;
+            this.deliverNearCombo.Text = post.Near_deliveryLocation;
+            this.feeTxt.Text = post.Fee + "";
+            this.CommentTxt.Text = post.Description;
+            
+            upload_btn.Text = "Repost";
+            this.Show();
+        }
 
         public void setter(string email,Home home)
         {
@@ -52,6 +84,18 @@ namespace GrabAViscan.Popup
             this.home = home;
         }
 
+        public void SetImageFromByteArray1(GunaPictureBox Image_cont, byte[] byteArray)
+        {
+            if (byteArray != null)
+            {
+                using (MemoryStream ms = new MemoryStream(byteArray))
+                {
+                    Image image = Image.FromStream(ms);
+                    Image_cont.Image = image;
+                }
+            }
+            else Image_cont.Image = null;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Category cat = categoryCombo.SelectedItem as Category;
@@ -122,9 +166,10 @@ namespace GrabAViscan.Popup
                 if (!Regex.IsMatch(feeTxt.Text, @"^-?\d+(\.\d*)?$"))
                 {
                     ErrorMessage err = new ErrorMessage("Invalid fee format. Please enter a valid number.");
-                    this.Close();
+                    
                 }
-                Fee = Convert.ToInt32(feeTxt.Text);
+                else { Fee = Convert.ToInt32(feeTxt.Text); }
+                
 
             }
             catch (FormatException ex)
@@ -163,13 +208,12 @@ namespace GrabAViscan.Popup
                 
                 string ded = Deadline.ToString("M");
                 string start = Date_posted.ToString("M");
-                if(ded==start)
-                {
-                    throw new Exception("The deadline must be a future date");
-                }
+                
+                    
+                
 
 
-                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="")
+                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="" && Near_pickUp !="" && ded != start)
                 {
                     post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
                     db.Post_upload(post);
@@ -185,20 +229,56 @@ namespace GrabAViscan.Popup
                     CommentTxt.Text = "";
                     TimePicker.Value = DateTime.Today;
 
+                    home.ctrSet();
 
+                    this.Hide();
                 }
                 else 
                 {
-                    this.Hide();
-                    ErrorMessage err = new ErrorMessage("Invalid Information");
+                    
+                    
+                    if (Requested == "")
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Request cannot be empty!");
+                    }
+                    else if (ded == start)
+                    {
+                        ErrorMessage err8 = new ErrorMessage("The deadline must be a future date");
+                    }
+                    else if (Category == "")
+                    {
+                        ErrorMessage err3 = new ErrorMessage("Please select a category");
+                    }
+                    else if (Pick_up == "")
+                    {
+                        ErrorMessage err4 = new ErrorMessage("Please input exact pick-up location");
+                    }
+                    else if (Delivery_location == "")
+                    {
+                        ErrorMessage err5 = new ErrorMessage("Please input exact delivery location");
+                    }
+                    else if (Near_pickUp == "")
+                    {
+                        ErrorMessage err6 = new ErrorMessage("Please select a Pick-up point");
+                    }
+                    else if (Near_deliveryLocation == "")
+                    {
+                        ErrorMessage err7 = new ErrorMessage("Please select a Delivery point");
+                    }
+                    else if (!Regex.IsMatch(feeTxt.Text, @"^-?\d+(\.\d*)?$"))
+                    {
+                        ErrorMessage err2 = new ErrorMessage("Invalid fee format. Please enter a valid number.");
+
+                    }
+
                 }
                 
-                this.Hide();
+                
             }
             catch(Exception ex)
             {
                 ErrorMessage err = new ErrorMessage(ex.Message);
-                this.Hide();
+                
             }
             
            
