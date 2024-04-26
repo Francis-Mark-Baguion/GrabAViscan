@@ -54,7 +54,7 @@ namespace GrabAViscan
             {
                 if (credentials.IsValid() && db.ValidateCredentials(email, pass) && ValidatePassword(pass)&&ValidateEmail(email))
                 {
-                    SignUpInformation signUpInformation = new SignUpInformation();
+                    SignUpInformation signUpInformation = new SignUpInformation(this);
                     signUpInformation.Show();
                     signUpInformation.BringToFront();
                     signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
@@ -73,7 +73,7 @@ namespace GrabAViscan
                     }
                     else if (ValidatePassword(pass)==false)
                     {
-                        ErrorMessage error = new ErrorMessage("The password should contain an Uppercase, special character and a number");
+                        ErrorMessage error = new ErrorMessage("The password should be 8 character and contain an Uppercase, special character and a number");
                     }
                    
                 }

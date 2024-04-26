@@ -15,9 +15,11 @@ namespace GrabAViscan.Feed
     {
         DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        public DeliveryHistory(int User_id)
+        private Home home;
+        public DeliveryHistory(int User_id,Home home)
         {
             InitializeComponent();
+            this.home = home;   
             this.User_id = User_id;
             List<Deliver> deliveries = db.GetDeliveriesById(User_id);
 
@@ -28,7 +30,7 @@ namespace GrabAViscan.Feed
                 if (post.Available == 4)
                 {
 
-                    HistroyLogDel Delivered = new HistroyLogDel(post);
+                    HistroyLogDel Delivered = new HistroyLogDel(post,home);
 
                     flow2.Controls.Add(Delivered);
 
@@ -36,13 +38,13 @@ namespace GrabAViscan.Feed
                 }
                 else if (post.Available == 3)
                 {
-                    HistroyLogDel Received = new HistroyLogDel(post);
+                    HistroyLogDel Received = new HistroyLogDel(post, home);
 
                     flow2.Controls.Add(Received);
                 }
                 else if (post.Available == 5 || post.Available == 10)
                 {
-                    HistroyLogCan Cancelled = new HistroyLogCan(post, this.User_id, "You");
+                    HistroyLogCan Cancelled = new HistroyLogCan(post, this.User_id, "You",home);
 
                     flow2.Controls.Add(Cancelled);
                 }

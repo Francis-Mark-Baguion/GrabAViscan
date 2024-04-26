@@ -35,7 +35,7 @@ namespace GrabAViscan.Feed
                     if (post.Available == 4)
                     {
 
-                        HistroyLogDel Delivered = new HistroyLogDel(post);
+                        HistroyLogDel Delivered = new HistroyLogDel(post, home  );
 
                         flow1.Controls.Add(Delivered);
 

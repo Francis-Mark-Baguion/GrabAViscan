@@ -17,9 +17,10 @@ namespace GrabAViscan.Popup
     public partial class Profile : Form
     {
         DatabaseManagement db = new DatabaseManagement();
-        public Profile(int User_id)
+        public Profile(int User_id,Home home)
         {
             InitializeComponent();
+            this.Owner = home;
             this.nameHolder.Text = db.getUserById(User_id).FirstName + " " + db.getUserById(User_id).LastName;
             this.emailHolder.Text = db.getUserById(User_id).Email;
             this.addressHoldler.Text = db.getUserById(User_id).Address;

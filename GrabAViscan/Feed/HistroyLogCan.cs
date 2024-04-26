@@ -21,9 +21,11 @@ namespace GrabAViscan.Feed
         private int User_id;
         private Profile profile1;
         private Posting post;
-        public HistroyLogCan(Posting post,int Youser, string name)
+        private Home home;
+        public HistroyLogCan(Posting post,int Youser, string name,Home home)
         {
             InitializeComponent();
+            this.home = home;
             this.post = post;   
             Label.Text = "CANCELLED";
             this.User_id = post.User_id;
@@ -70,12 +72,12 @@ namespace GrabAViscan.Feed
 
         private void profile_Click(object sender, EventArgs e)
         {
-            profile1 = new Profile(User_id);
+            profile1 = new Profile(User_id, home);
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post);
+            ViewPost view = new ViewPost(post, home);
         }
     }
 }

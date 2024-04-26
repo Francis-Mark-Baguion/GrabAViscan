@@ -22,9 +22,11 @@ namespace GrabAViscan.Homepage
         private bool flag = false;
         private bool flag1 = false;
         private int id;
-        public Settings(String email)
+        private Home home;
+        public Settings(String email,Home home)
         {
             InitializeComponent();
+            this.home = home;
             user = db.InitializeUser(email);
             this.id = user.User_id;
             this.email = email;
@@ -39,7 +41,7 @@ namespace GrabAViscan.Homepage
             this.statusTxt.Text = user.Status;
             this.DescriptionTxt.Text = user.Bio;
             SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
-            changePass = new ChangePass(this.email);
+            changePass = new ChangePass(this.email,home);
             changePass.Hide();
             setctr();
         }

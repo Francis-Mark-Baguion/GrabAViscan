@@ -27,10 +27,11 @@ namespace GrabAViscan.LogIntro
         private SignUp signUp;
 
         DatabaseManagement db;
-        public SignUpInformation()
+        public SignUpInformation(SignUp signup)
         {
             InitializeComponent();
             db = new DatabaseManagement();
+            this.Owner = signup;    
             
         }
 

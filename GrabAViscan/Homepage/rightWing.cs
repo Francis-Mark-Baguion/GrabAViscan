@@ -23,17 +23,17 @@ namespace GrabAViscan
     {
         private DatabaseManagement db = new DatabaseManagement();
         public Notify notif;
-        public Post post = new Post();
+        public Post post;
         private User user;
         private string email;
         private bool flagnotif = false;
         private bool flagpost = false;
         private Home form;
 
-        public rightWing()
+        public rightWing(Home home)
         {
             InitializeComponent();
-            
+            post = new Post(home);
 
 
         }
@@ -55,7 +55,7 @@ namespace GrabAViscan
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
             SetImageFromByteArrayProfile(this.ProfilePic, user.Profile_pic);
            this.form = form;
-            notif = new Notify(this.user.User_id);
+            notif = new Notify(this.user.User_id,form);
 
         }
 
@@ -92,11 +92,12 @@ namespace GrabAViscan
         {
             try
             {
-                if(post.IsDisposed)
+                /*if(post.IsDisposed)
                 {
                     post = post = new Post();
                     post.setter(email, form);
                 }
+                */
                 if (post.Visible)
                 {
                     post.Hide();

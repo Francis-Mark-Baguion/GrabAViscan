@@ -22,11 +22,11 @@ namespace GrabAViscan.Popup_Forms
         private string loc2;
         private int locId;
         private int locId2;
-        public ViewPost(Posting post)
+        public ViewPost(Posting post,Home home)
         {
             InitializeComponent();
 
-            
+            this.Owner = home;
             string loc = post.Near_pickUp;
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;

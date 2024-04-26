@@ -129,7 +129,7 @@ namespace GrabAViscan.Feed
 
         private void upload_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(db.getPostById(post_id));
+            ViewPost view = new ViewPost(db.getPostById(post_id), home);
         }
     }
 }

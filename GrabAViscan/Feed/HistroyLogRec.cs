@@ -67,12 +67,12 @@ namespace GrabAViscan.Feed
 
         private void viewProfile(object sender, EventArgs e)
         {
-           profile1 = new Profile(User_id);    
+           profile1 = new Profile(User_id, home);    
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post);
+            ViewPost view = new ViewPost(post, home);
         }
 
         private void repost_btn_Click(object sender, EventArgs e)

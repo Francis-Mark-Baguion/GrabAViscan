@@ -27,7 +27,7 @@ namespace GrabAViscan
         private DatabaseManagement db = new DatabaseManagement();
         private Filter filter = new Filter();
         public User user;
-        private rightWing right = new rightWing();
+        private rightWing right;
         private string email;
         private int User_id;
         ToDeliver todeliver;
@@ -36,7 +36,7 @@ namespace GrabAViscan
             List<Posting> posts = db.GetAvailablePosts();
             this.User_id = uid;
             InitializeComponent();
-            right = new rightWing();
+            right = new rightWing(this);
 
             RightWing.Controls.Add(right);
             feed(posts);
@@ -166,7 +166,7 @@ namespace GrabAViscan
 
         public void gunaButton9_Click(object sender, EventArgs e)
         {
-            Settings settings = new Settings(user.Email);
+            Settings settings = new Settings(user.Email,this);
 
             flow1.Controls.Clear();
 

@@ -23,6 +23,7 @@ namespace GrabAViscan.Popup_Messages
             InitializeComponent();
             this.post = post;
             this.home = home;
+            this.Owner = home;
         }
         public CancelReq(Posting post, Home home, int flag)
 
@@ -31,6 +32,7 @@ namespace GrabAViscan.Popup_Messages
             this.flag = flag;
             this.post = post;
             this.home = home;
+            this.Owner = home;
         }
         
         private void gunaLabel1_Click(object sender, EventArgs e)

@@ -86,7 +86,7 @@ namespace GrabAViscan.Feed
 
         private void profile_Click(object sender, EventArgs e)
         {
-            profile1 = new Profile(User_id);
+            profile1 = new Profile(User_id, home);
         }
 
         private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
@@ -96,7 +96,7 @@ namespace GrabAViscan.Feed
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post);
+            ViewPost view = new ViewPost(post,home);
         }
     }
 }

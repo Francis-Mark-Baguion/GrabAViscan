@@ -26,9 +26,11 @@ namespace GrabAViscan.Popup
         public User user;
         public string email;
         Home home;
-        public Post()
+        public Post(Home home)
         {
+
             InitializeComponent();
+            this.Owner = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -48,6 +50,7 @@ namespace GrabAViscan.Popup
         {
             InitializeComponent();
             this.home = home;
+            this.Owner= home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
