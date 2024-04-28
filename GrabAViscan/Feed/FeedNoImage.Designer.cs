@@ -301,7 +301,9 @@
             // 
             // descriptionTxt
             // 
+            this.descriptionTxt.BackColor = System.Drawing.Color.White;
             this.descriptionTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.descriptionTxt.Enabled = false;
             this.descriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTxt.Location = new System.Drawing.Point(33, 227);
             this.descriptionTxt.Name = "descriptionTxt";

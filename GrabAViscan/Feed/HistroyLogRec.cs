@@ -27,9 +27,13 @@ namespace GrabAViscan.Feed
         private int locId;
         private int locId2;
         private Home home;
+        private Post pst;
+        ViewPost view;
         public HistroyLogRec(Posting post,int UID,Home home)
         {
             InitializeComponent();
+            pst = new Post(post, this.home);
+            view = new ViewPost(post, home,1);
             this.Post_id = post.Post_id;
             this.post = post;
             this.User_id = UID;
@@ -72,7 +76,16 @@ namespace GrabAViscan.Feed
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post, home);
+            if (view.Visible == false)
+            {
+                view.Show();
+                view.Visible = true;
+            }
+            else
+            {
+                view.Visible = false;
+
+            }
         }
 
         private void repost_btn_Click(object sender, EventArgs e)
@@ -88,8 +101,17 @@ namespace GrabAViscan.Feed
             post.Available = 0;
             post.Near_pickUp = pick;
             post.Near_deliveryLocation = deliver;
+            if (pst.Visible == false)
+            {
+                pst.Show();
+                pst.Visible = true;
+            }
+            else
+            {
+                pst.Visible = false;
 
-            Post pst = new Post(post,this.home);
+            }
+
         }
     }
 }

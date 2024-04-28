@@ -26,9 +26,13 @@ namespace GrabAViscan.Feed
         private int User_id;
         private Posting post;
         private Home home;
+        private Post pst;
+        ViewPost view;
         public CancelledRepost(Posting post,int UID,Home home)
         {
             InitializeComponent();
+            pst = new Post(post, this.home);
+            view = new ViewPost(post, home, 1);
             this.post = post;
             this.Post_id = post.Post_id;
             this.User_id = UID;
@@ -64,7 +68,7 @@ namespace GrabAViscan.Feed
                 }
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)
+        private void upload_btn_Click(object sender, EventArgs e)   
         {
             
             
@@ -80,7 +84,17 @@ namespace GrabAViscan.Feed
             post.Near_pickUp = pick;
             post.Near_deliveryLocation = deliver;
 
-            Post pst = new Post(post, this.home);
+            if (pst.Visible == false)
+            {
+                pst.Show();
+                pst.Visible = true;
+            }
+            else
+            {
+                pst.Visible = false;
+
+            }
+
             //db.Post_upload(post);
         }
 
@@ -96,7 +110,16 @@ namespace GrabAViscan.Feed
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post,home);
+           if (view.Visible == false)
+            {
+                view.Show();
+                view.Visible = true;
+            }
+            else
+            {
+                view.Visible = false;
+
+            }
         }
     }
 }

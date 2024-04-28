@@ -420,7 +420,7 @@ namespace GrabAViscan.Classes
                     conConn.Open();
 
 
-                    string sql = "SELECT * FROM grab.post WHERE isAvailable = 0";
+                    string sql = "SELECT * FROM grab.post WHERE isAvailable = 0 ORDER BY Post_id DESC";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -475,7 +475,7 @@ namespace GrabAViscan.Classes
                     conConn.Open();
 
 
-                    string sql = "SELECT * FROM grab.post";
+                    string sql = "SELECT * FROM grab.post ORDER BY Post_id DESC";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -909,11 +909,11 @@ namespace GrabAViscan.Classes
                 {
 
 
-                    // Build the SQL query with parameter for category
+                    
                     string sql = "SELECT * FROM grab.category WHERE name = @category";
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
-                    // Add parameter for category
+                    
                     cmd.Parameters.AddWithValue("@category", categoryString);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -940,7 +940,7 @@ namespace GrabAViscan.Classes
         {
             Location foundLocation = null;
 
-            using (MySqlConnection conConn = Connect())  // Assuming Connect() establishes the connection
+            using (MySqlConnection conConn = Connect())  
             {
                 try
                 {
@@ -952,7 +952,7 @@ namespace GrabAViscan.Classes
                     {
                         if (reader.Read())
                         {
-                            // Directly return the new Location object
+                            
                             return new Location(reader.GetInt32("idLocation"), reader.GetString("locationName"));
                         }
                     }
@@ -963,7 +963,7 @@ namespace GrabAViscan.Classes
                 }
             }
 
-            return foundLocation; // Still return null if no location is found
+            return foundLocation;
         }
 
 
@@ -977,7 +977,7 @@ namespace GrabAViscan.Classes
                 }
             }
 
-            return null; // If no match is found
+            return null; 
         }
 
 
@@ -1020,11 +1020,11 @@ namespace GrabAViscan.Classes
 
                 try
                 {
-                    // Build the SELECT query to retrieve delivery data
-                    string selectSql = "SELECT * FROM grab.delivery"; // Replace with specific columns if needed
+                    
+                    string selectSql = "SELECT * FROM grab.delivery ORDER BY Post_id DESC"; 
                     MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
 
-                    // Execute the query and read results
+                    
                     using (MySqlDataReader reader = selectCmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -1040,7 +1040,7 @@ namespace GrabAViscan.Classes
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("An error occurred while retrieving deliveries: " + ex.Message); // Or use a logging mechanism
+                    Console.WriteLine("An error occurred while retrieving deliveries: " + ex.Message);
                 }
             }
 
@@ -1058,11 +1058,11 @@ namespace GrabAViscan.Classes
 
                 try
                 {
-                    // Build the SELECT query to retrieve delivery data
-                    string selectSql = "SELECT * FROM grab.delivery where User_id = @User_id"; // Replace with specific columns if needed
+                    
+                    string selectSql = "SELECT * FROM grab.delivery where User_id = @User_id"; 
                     MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
                     selectCmd.Parameters.AddWithValue("@User_id", User_id);
-                    // Execute the query and read results
+                   
                     using (MySqlDataReader reader = selectCmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -1078,7 +1078,7 @@ namespace GrabAViscan.Classes
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("An error occurred while retrieving deliveries: " + ex.Message); // Or use a logging mechanism
+                    Console.WriteLine("An error occurred while retrieving deliveries: " + ex.Message); 
                 }
                 return newDeliveries;
             }

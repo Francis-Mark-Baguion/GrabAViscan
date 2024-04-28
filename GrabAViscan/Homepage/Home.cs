@@ -223,6 +223,20 @@ namespace GrabAViscan
 
                     List<Posting> filteredPost = filter.returnFilter();
 
+                    user = db.InitializeUser(email);
+
+
+                    right.setter(email, this);
+                    tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[2].Width = 25;
+                    tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[1].Width = 53;
+                    tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+                    this.RightWing.Controls.Add(right);
+
+
                     filter.Hide();
                     feed(filteredPost);
                 }

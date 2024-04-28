@@ -77,7 +77,7 @@ namespace GrabAViscan.Popup
             this.CommentTxt.Text = post.Description;
             
             upload_btn.Text = "Repost";
-            this.Show();
+            
         }
 
         public void setter(string email,Home home)
