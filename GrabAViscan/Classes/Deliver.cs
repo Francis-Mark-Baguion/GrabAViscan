@@ -15,6 +15,11 @@ namespace GrabAViscan.Classes
         {
             this.Post_Id = Post_id;
             this.User_Id = User_id;
-        }    
+        }
+
+        public override string ToString()
+        {
+            return "Deliver: Post Id - " + Post_Id + ", User Id - " + User_Id;
+        }
     }
 }

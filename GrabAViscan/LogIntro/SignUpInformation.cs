@@ -64,11 +64,12 @@ namespace GrabAViscan.LogIntro
 
             try
             {
-                if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && statusCombo.Text != "")
+                if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && ValidatePhoneNumber(phoneTxt.Text)  && statusCombo.Text != "" )
                 {
-
-                    User user = new User(db.get_id(email, pass), email, username, int.Parse(school_id.Text), DOB.Value, Address.Text, photo, phoneTxt.Text, bio, firstNameTxt.Text, lastNameTxt.Text, statusCombo.Text);
                     db.SignUp(email, pass);
+                    MessageBox.Show(db.get_id(email, pass)+"");
+                    User user = new User(db.get_id(email, pass), email, username, int.Parse(school_id.Text), DOB.Value, Address.Text, photo, phoneTxt.Text, bio, firstNameTxt.Text, lastNameTxt.Text, statusCombo.Text);
+                    
                     db.Information_upload(user);
                     signUp.Hide();
                     this.Hide();
@@ -84,7 +85,7 @@ namespace GrabAViscan.LogIntro
                     {
                         ErrorMessage err1 = new ErrorMessage("School Id should not be empty");
                     }
-                    else if(Address.Text != "")
+                    else if(Address.Text == "")
                     {
                         ErrorMessage err1 = new ErrorMessage("adress should not be empty");
                     }
@@ -95,6 +96,10 @@ namespace GrabAViscan.LogIntro
                     else if (statusCombo.Text == "")
                     {
                         ErrorMessage err1 = new ErrorMessage("Status should not be empty");
+                    }
+                    else if(ValidatePhoneNumber(phoneTxt.Text)==false) 
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Invalid format of Phone number");
                     }
                     
                         

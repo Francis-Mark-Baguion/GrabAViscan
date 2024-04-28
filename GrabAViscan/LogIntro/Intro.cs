@@ -41,5 +41,19 @@ namespace GrabAViscan
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Log_in_btn_Click(object sender, EventArgs e)
+        {
+            LogIn log = new LogIn();
+            log.Show();
+            this.Hide();
+        }
+
+        private void signUp_btn_Click(object sender, EventArgs e)
+        {
+            SignUp sign = new SignUp();
+            sign.Show();
+            this.Hide();
+        }
     }
 }

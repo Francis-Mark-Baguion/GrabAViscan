@@ -21,6 +21,11 @@ namespace GrabAViscan.Classes
             return true;
         }
 
+
+        public override string ToString()
+        {
+            return "Credentials: Email - " + this.email;
+        }
     }
 
     
