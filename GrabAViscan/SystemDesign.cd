@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GrabAViscan.Classes.Category">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.Credentials">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAgAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Classes\Credentials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.DatabaseManagement">
+    <Position X="5.75" Y="3" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEgIBAICAUgEiAFQGAQAEIASQQQAAAAAIAAAAAAgQQA=</HashCode>
+      <FileName>Classes\DatabaseManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.Deliver">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Deliver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.Location">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.Posting">
+    <Position X="1" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAAQAAgAAAkAAAAAAJAECAAAAgAAAFAgAAACAA=</HashCode>
+      <FileName>Classes\Posting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GrabAViscan.Classes.User">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAEAECCAQAAAECQAAQEAAAAAAAAACAAAAAAACAAg=</HashCode>
+      <FileName>Classes\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

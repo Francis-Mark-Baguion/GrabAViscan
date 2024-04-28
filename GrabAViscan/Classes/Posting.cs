@@ -72,6 +72,26 @@ namespace GrabAViscan.Classes
             this.Available = other.Available;
         }
 
+        public override string ToString()
+        {
+            string result = "Posting: \n";
+            result += "  Post Id - " + Post_id + "\n";
+            result += "  User Id - " + User_id + "\n";
+            result += "  Requested - " + Requested + "\n";
+            result += "  Quantity - " + Quantity + "\n";
+            result += "  Fee - " + Fee + "\n";
+            result += "  Description - " + Description + "\n";
+            result += "  Date Posted - " + Date_posted.ToString("yyyy-MM-dd HH:mm:ss") + "\n"; 
+            result += "  Deadline - " + Deadline.ToString("yyyy-MM-dd HH:mm:ss") + "\n"; 
+            result += "  Category - " + Category + "\n";
+           
+            result += "  Pick Up - " + Pick_up + "\n";
+            result += "  Near Pick Up - " + Near_pickUp + "\n";
+            result += "  Delivery Location - " + Delivery_location + "\n";
+            result += "  Near Delivery Location - " + Near_deliveryLocation + "\n";
+            result += "  Available - " + Available + "\n";
+            return result;
+        }
 
 
     }

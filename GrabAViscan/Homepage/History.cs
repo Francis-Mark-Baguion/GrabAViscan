@@ -49,7 +49,7 @@ namespace GrabAViscan
                     if (post.Available == 4)
                     {
 
-                        HistroyLogDel Delivered = new HistroyLogDel(post);
+                        HistroyLogDel Delivered = new HistroyLogDel(post, home);
 
                         flow1.Controls.Add(Delivered);
 
@@ -110,7 +110,7 @@ namespace GrabAViscan
             btn_personal.ForeColor = Color.Black;
             btn_personal.Image = personal;
             flow1.Controls.Clear();
-            DeliveryHistory deliveries = new DeliveryHistory(User_id);
+            DeliveryHistory deliveries = new DeliveryHistory(User_id, home);
             flow1.Controls.Add(deliveries);
         }
     }

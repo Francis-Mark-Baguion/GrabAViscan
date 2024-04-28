@@ -16,9 +16,10 @@ namespace GrabAViscan.Classes.notif
     {
         private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        public Notify(int User_id)
+        public Notify(int User_id,Home home)
         {
             InitializeComponent();
+            this.Owner = home;
             this.User_id = User_id;
             feed();
         }
@@ -75,6 +76,11 @@ namespace GrabAViscan.Classes.notif
         private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();    
         }
     }
 }

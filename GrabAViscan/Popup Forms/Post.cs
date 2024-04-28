@@ -26,9 +26,12 @@ namespace GrabAViscan.Popup
         public User user;
         public string email;
         Home home;
-        public Post()
+        public Post(Home home)
         {
+
             InitializeComponent();
+
+            this.Owner = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -42,12 +45,16 @@ namespace GrabAViscan.Popup
             deliverNearCombo.DisplayMember = "LocationName";
 
 
+            
+
+
         }
 
         public Post(Posting post,Home home)
         {
             InitializeComponent();
             this.home = home;
+            this.Owner= home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -74,7 +81,7 @@ namespace GrabAViscan.Popup
             this.CommentTxt.Text = post.Description;
             
             upload_btn.Text = "Repost";
-            this.Show();
+            
         }
 
         public void setter(string email,Home home)

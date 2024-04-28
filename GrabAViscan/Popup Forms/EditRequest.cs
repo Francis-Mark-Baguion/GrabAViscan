@@ -23,7 +23,7 @@ namespace GrabAViscan.Popup
         public EditRequest(Home home,Posting post)
         {
             InitializeComponent();
-            
+            this.Owner = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -70,6 +70,7 @@ namespace GrabAViscan.Popup
         {
             InitializeComponent();
             this.home = home;
+            this.Owner = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";

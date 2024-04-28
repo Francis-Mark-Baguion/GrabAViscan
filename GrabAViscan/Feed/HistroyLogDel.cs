@@ -21,9 +21,11 @@ namespace GrabAViscan.Feed
         private Profile profile1;
         private int User_id;
         private Posting post;
-        public HistroyLogDel(Posting post)
+        private Home home;
+        public HistroyLogDel(Posting post,Home home)
         {
             InitializeComponent();
+            this.home = home;
             this.post = post;   
             this.User_id = post.User_id;
             this.nameHolder.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
@@ -63,12 +65,12 @@ namespace GrabAViscan.Feed
 
         private void profile_Click(object sender, EventArgs e)
         {
-            profile1 = new Profile(User_id);
+            profile1 = new Profile(User_id, home);
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            ViewPost view = new ViewPost(post);
+            ViewPost view = new ViewPost(post,home);
         }
     }
 }

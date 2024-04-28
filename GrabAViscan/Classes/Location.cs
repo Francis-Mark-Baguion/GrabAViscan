@@ -17,5 +17,11 @@ namespace GrabAViscan.Classes
             Location_id = location_id;
             LocationName = locationName;
         }
+
+        public override string ToString()
+        {
+            return "Location: Location Id - " + Location_id + ", Location Name - " + LocationName;
+        }
+
     }
 }

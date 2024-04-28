@@ -20,5 +20,10 @@ namespace GrabAViscan.Classes
         this.Name = name;
         this.categoryImage = categoryImage;
         }
+
+        public override string ToString()
+        {
+            return "Category: " + this.Name;
+        }
     }
 }

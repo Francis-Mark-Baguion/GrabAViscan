@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogRec));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
-            this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.Close_btn = new Guna.UI.WinForms.GunaButton();
+            this.repost_btn = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
             this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.category = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.repost_btn = new Guna.UI.WinForms.GunaButton();
-            this.Close_btn = new Guna.UI.WinForms.GunaButton();
+            this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
+            this.categTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipsePanel1.SuspendLayout();
-            this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
+            this.gunaElipsePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
@@ -56,7 +56,7 @@
             this.gunaElipsePanel1.Controls.Add(this.profile);
             this.gunaElipsePanel1.Controls.Add(this.category);
             this.gunaElipsePanel1.Controls.Add(this.dateCompleted);
-            this.gunaElipsePanel1.Controls.Add(this.requestTxt);
+            this.gunaElipsePanel1.Controls.Add(this.categTxt);
             this.gunaElipsePanel1.Controls.Add(this.gunaElipsePanel2);
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
@@ -65,58 +65,64 @@
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1950, 100);
             this.gunaElipsePanel1.TabIndex = 2;
             // 
-            // dateCompleted
+            // Close_btn
             // 
-            this.dateCompleted.AutoSize = true;
-            this.dateCompleted.BackColor = System.Drawing.Color.White;
-            this.dateCompleted.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dateCompleted.Location = new System.Drawing.Point(814, 34);
-            this.dateCompleted.Name = "dateCompleted";
-            this.dateCompleted.Size = new System.Drawing.Size(86, 25);
-            this.dateCompleted.TabIndex = 36;
-            this.dateCompleted.Text = "00/00/00";
+            this.Close_btn.AnimationHoverSpeed = 0.07F;
+            this.Close_btn.AnimationSpeed = 0.03F;
+            this.Close_btn.BackColor = System.Drawing.Color.Transparent;
+            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.Close_btn.BorderColor = System.Drawing.Color.Black;
+            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Close_btn.ForeColor = System.Drawing.Color.White;
+            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
+            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.Close_btn.Location = new System.Drawing.Point(1865, 14);
+            this.Close_btn.Name = "Close_btn";
+            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
+            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Close_btn.Size = new System.Drawing.Size(71, 68);
+            this.Close_btn.TabIndex = 62;
+            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
-            // requestTxt
+            // repost_btn
             // 
-            this.requestTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.requestTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.requestTxt.BorderColor = System.Drawing.Color.Silver;
-            this.requestTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.requestTxt.Enabled = false;
-            this.requestTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.requestTxt.FocusedBorderColor = System.Drawing.Color.Silver;
-            this.requestTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.requestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestTxt.Location = new System.Drawing.Point(1043, 22);
-            this.requestTxt.Margin = new System.Windows.Forms.Padding(0);
-            this.requestTxt.Name = "requestTxt";
-            this.requestTxt.PasswordChar = '\0';
-            this.requestTxt.Radius = 10;
-            this.requestTxt.Size = new System.Drawing.Size(292, 50);
-            this.requestTxt.TabIndex = 34;
+            this.repost_btn.AnimationHoverSpeed = 0.07F;
+            this.repost_btn.AnimationSpeed = 0.03F;
+            this.repost_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.repost_btn.BorderColor = System.Drawing.Color.Black;
+            this.repost_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repost_btn.ForeColor = System.Drawing.Color.White;
+            this.repost_btn.Image = null;
+            this.repost_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.repost_btn.Location = new System.Drawing.Point(1573, 22);
+            this.repost_btn.Name = "repost_btn";
+            this.repost_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.repost_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.repost_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.repost_btn.OnHoverImage = null;
+            this.repost_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.repost_btn.Radius = 10;
+            this.repost_btn.Size = new System.Drawing.Size(217, 52);
+            this.repost_btn.TabIndex = 61;
+            this.repost_btn.Text = "REPOST";
+            this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.repost_btn.Click += new System.EventHandler(this.repost_btn_Click);
             // 
-            // gunaElipsePanel2
+            // gunaLabel1
             // 
-            this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaElipsePanel2.Controls.Add(this.gunaLabel2);
-            this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 0);
-            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(300, 100);
-            this.gunaElipsePanel2.TabIndex = 0;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel2.Location = new System.Drawing.Point(46, 26);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(185, 48);
-            this.gunaLabel2.TabIndex = 7;
-            this.gunaLabel2.Text = "RECEIVED";
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(487, 65);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(236, 25);
+            this.gunaLabel1.TabIndex = 60;
+            this.gunaLabel1.Text = "DELIVERED YOUR REQUEST";
             // 
             // nameHolder
             // 
@@ -166,64 +172,58 @@
             this.category.TabIndex = 57;
             this.category.TabStop = false;
             // 
-            // gunaLabel1
+            // dateCompleted
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(487, 65);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(236, 25);
-            this.gunaLabel1.TabIndex = 60;
-            this.gunaLabel1.Text = "DELIVERED YOUR REQUEST";
+            this.dateCompleted.AutoSize = true;
+            this.dateCompleted.BackColor = System.Drawing.Color.White;
+            this.dateCompleted.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateCompleted.Location = new System.Drawing.Point(814, 34);
+            this.dateCompleted.Name = "dateCompleted";
+            this.dateCompleted.Size = new System.Drawing.Size(86, 25);
+            this.dateCompleted.TabIndex = 36;
+            this.dateCompleted.Text = "00/00/00";
             // 
-            // repost_btn
+            // categTxt
             // 
-            this.repost_btn.AnimationHoverSpeed = 0.07F;
-            this.repost_btn.AnimationSpeed = 0.03F;
-            this.repost_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.repost_btn.BorderColor = System.Drawing.Color.Black;
-            this.repost_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.repost_btn.ForeColor = System.Drawing.Color.White;
-            this.repost_btn.Image = null;
-            this.repost_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.repost_btn.Location = new System.Drawing.Point(1573, 22);
-            this.repost_btn.Name = "repost_btn";
-            this.repost_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.repost_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.repost_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.repost_btn.OnHoverImage = null;
-            this.repost_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.repost_btn.Radius = 10;
-            this.repost_btn.Size = new System.Drawing.Size(217, 52);
-            this.repost_btn.TabIndex = 61;
-            this.repost_btn.Text = "REPOST";
-            this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.repost_btn.Click += new System.EventHandler(this.repost_btn_Click);
+            this.categTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.categTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.categTxt.BorderColor = System.Drawing.Color.Silver;
+            this.categTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.categTxt.Enabled = false;
+            this.categTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.categTxt.FocusedBorderColor = System.Drawing.Color.Silver;
+            this.categTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.categTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categTxt.Location = new System.Drawing.Point(1043, 22);
+            this.categTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.categTxt.Name = "categTxt";
+            this.categTxt.PasswordChar = '\0';
+            this.categTxt.Radius = 10;
+            this.categTxt.Size = new System.Drawing.Size(292, 50);
+            this.categTxt.TabIndex = 34;
             // 
-            // Close_btn
+            // gunaElipsePanel2
             // 
-            this.Close_btn.AnimationHoverSpeed = 0.07F;
-            this.Close_btn.AnimationSpeed = 0.03F;
-            this.Close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BorderColor = System.Drawing.Color.Black;
-            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Close_btn.ForeColor = System.Drawing.Color.White;
-            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
-            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.Close_btn.Location = new System.Drawing.Point(1865, 14);
-            this.Close_btn.Name = "Close_btn";
-            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
-            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(71, 68);
-            this.Close_btn.TabIndex = 62;
-            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaElipsePanel2.Controls.Add(this.gunaLabel2);
+            this.gunaElipsePanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(0, 0);
+            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(300, 100);
+            this.gunaElipsePanel2.TabIndex = 0;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(46, 26);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(185, 48);
+            this.gunaLabel2.TabIndex = 7;
+            this.gunaLabel2.Text = "RECEIVED";
             // 
             // HistroyLogRec
             // 
@@ -234,10 +234,10 @@
             this.Size = new System.Drawing.Size(1950, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
-            this.gunaElipsePanel2.ResumeLayout(false);
-            this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
+            this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,7 +246,7 @@
 
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaLabel dateCompleted;
-        private Guna.UI.WinForms.GunaTextBox requestTxt;
+        private Guna.UI.WinForms.GunaTextBox categTxt;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaPictureBox category;

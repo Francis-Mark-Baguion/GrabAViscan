@@ -12,6 +12,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrabAViscan.Popup_Forms;
+using GrabAViscan.Popup;
 
 namespace GrabAViscan.Popup_Forms
 {
@@ -22,11 +24,14 @@ namespace GrabAViscan.Popup_Forms
         private string loc2;
         private int locId;
         private int locId2;
-        public ViewPost(Posting post)
+        private int User_id;
+        private Home home;
+        public ViewPost(Posting post,Home home)
         {
             InitializeComponent();
-
-            
+            this.User_id = post.User_id;    
+            this.home = home;
+            this.Owner = home;
             string loc = post.Near_pickUp;
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;
@@ -49,6 +54,38 @@ namespace GrabAViscan.Popup_Forms
             this.delivery.Text = deliver + ": " + post.Delivery_location;
             this.descriptionTxt.Text = post.Description;
             this.Show();
+
+        }
+
+
+        public ViewPost(Posting post, Home home,int flag)
+        {
+            InitializeComponent();
+            this.User_id = post.User_id;
+            this.home = home;
+            this.Owner = home;
+            string loc = post.Near_pickUp;
+            this.locId = (int)double.Parse(loc);
+            string loc2 = post.Near_deliveryLocation;
+            this.locId2 = (int)double.Parse(loc2);
+
+            string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+            string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+
+
+            SetImageFromByteArrayProfile(profile, db.getUserById(post.User_id).Profile_pic);
+            SetImageFromByteArray1(picture, post.image);
+            this.Name_label.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
+            this.statusTxt.Text = db.getUserById(post.User_id).Status;
+            this.requestTxt.Text = post.Requested;
+            this.quantityTxt.Text = post.Quantity;
+            this.categoryTxt.Text = post.Category;
+            this.Fee.Text = post.Fee + "";
+            this.pickUp.Text = pick + ": " + post.Pick_up;
+
+            this.delivery.Text = deliver + ": " + post.Delivery_location;
+            this.descriptionTxt.Text = post.Description;
+            
 
         }
 
@@ -100,7 +137,17 @@ namespace GrabAViscan.Popup_Forms
 
         private void upload_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+        }
+
+        private void profile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(User_id,home);
+        }
+
+        private void Name_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

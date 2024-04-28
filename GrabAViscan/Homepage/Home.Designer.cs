@@ -95,9 +95,9 @@
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
-            this.gunaPictureBox1.Location = new System.Drawing.Point(-22, -19);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(238, 145);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(259, 96);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 17;
             this.gunaPictureBox1.TabStop = false;
@@ -111,7 +111,7 @@
             this.filterBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.filterBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.filterBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterBox.Location = new System.Drawing.Point(276, 20);
+            this.filterBox.Location = new System.Drawing.Point(351, 20);
             this.filterBox.Name = "filterBox";
             this.filterBox.PasswordChar = '\0';
             this.filterBox.Radius = 15;
@@ -177,7 +177,7 @@
             this.Filter_btn.ForeColor = System.Drawing.Color.White;
             this.Filter_btn.Image = ((System.Drawing.Image)(resources.GetObject("Filter_btn.Image")));
             this.Filter_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.Filter_btn.Location = new System.Drawing.Point(700, 20);
+            this.Filter_btn.Location = new System.Drawing.Point(775, 20);
             this.Filter_btn.Name = "Filter_btn";
             this.Filter_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.Filter_btn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));

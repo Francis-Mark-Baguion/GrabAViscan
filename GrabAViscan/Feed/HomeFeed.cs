@@ -129,7 +129,7 @@ namespace GrabAViscan
 
         private void viewProfile(object sender, EventArgs e)
         {
-            profile_pic = new Profile(db.getPostById(post_id).User_id);
+            profile_pic = new Profile(db.getPostById(post_id).User_id,home);
         }
 
         private void Category_label_Click(object sender, EventArgs e)

@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using GrabAViscan.Classes;
 using GrabAViscan.LogIntro;
 using GrabAViscan.Popup;
+using GrabAViscan.Popup_Messages;
 using MySql.Data.MySqlClient;
 
 namespace GrabAViscan
@@ -52,9 +53,9 @@ namespace GrabAViscan
             credentials.password = pass;
             try
             {
-                if (credentials.IsValid() && db.ValidateCredentials(email, pass) && ValidatePassword(pass)&&ValidateEmail(email))
+                if (credentials.IsValid() && db.ValidateCredentials(email, pass) && ValidatePassword(pass)&&ValidateEmail(email) && agree.Checked)
                 {
-                    SignUpInformation signUpInformation = new SignUpInformation();
+                    SignUpInformation signUpInformation = new SignUpInformation(this);
                     signUpInformation.Show();
                     signUpInformation.BringToFront();
                     signUpInformation.Signup_info(email, pass, emailTxt, passwordTxt, this);
@@ -73,7 +74,11 @@ namespace GrabAViscan
                     }
                     else if (ValidatePassword(pass)==false)
                     {
-                        ErrorMessage error = new ErrorMessage("The password should contain an Uppercase, special character and a number");
+                        ErrorMessage error = new ErrorMessage("The password should be 8 character and contain an Uppercase, special character and a number");
+                    }
+                    else if(agree.Checked==false)
+                    {
+                        ErrorMessage error = new ErrorMessage("Please agree to the terms and condition");
                     }
                    
                 }
@@ -145,6 +150,12 @@ namespace GrabAViscan
         private void Minimize_btn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TermsAndCondition termsAndCondition = new TermsAndCondition(this);
+            termsAndCondition.Show();
         }
     }
 }

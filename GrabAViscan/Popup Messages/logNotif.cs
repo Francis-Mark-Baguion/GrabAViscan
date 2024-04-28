@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GrabAViscan.Popup
-{
+{ 
     public partial class logNotif : Form
     {
         private Home home;
         public logNotif(Home home)
         {
             InitializeComponent();
-            this.home = home;   
+            this.home = home; 
+            this.Owner = home;
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)

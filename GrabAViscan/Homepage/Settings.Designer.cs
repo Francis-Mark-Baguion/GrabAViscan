@@ -39,6 +39,7 @@
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel8 = new Guna.UI.WinForms.GunaPanel();
+            this.completedCtr = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.statusHolder = new Guna.UI.WinForms.GunaTextBox();
@@ -66,12 +67,11 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
+            this.request = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
-            this.request = new Guna.UI.WinForms.GunaButton();
             this.deliveryCtr = new Guna.UI.WinForms.GunaButton();
-            this.completedCtr = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel8.SuspendLayout();
@@ -212,6 +212,30 @@
             this.gunaPanel8.Size = new System.Drawing.Size(623, 100);
             this.gunaPanel8.TabIndex = 4;
             this.gunaPanel8.Click += new System.EventHandler(this.ClickAll);
+            // 
+            // completedCtr
+            // 
+            this.completedCtr.AnimationHoverSpeed = 0.07F;
+            this.completedCtr.AnimationSpeed = 0.03F;
+            this.completedCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.completedCtr.BaseColor = System.Drawing.Color.Transparent;
+            this.completedCtr.BorderColor = System.Drawing.Color.Black;
+            this.completedCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.completedCtr.ForeColor = System.Drawing.Color.Firebrick;
+            this.completedCtr.Image = null;
+            this.completedCtr.ImageSize = new System.Drawing.Size(20, 20);
+            this.completedCtr.Location = new System.Drawing.Point(488, 32);
+            this.completedCtr.Name = "completedCtr";
+            this.completedCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.completedCtr.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.completedCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
+            this.completedCtr.OnHoverImage = null;
+            this.completedCtr.OnPressedColor = System.Drawing.Color.Black;
+            this.completedCtr.Radius = 10;
+            this.completedCtr.Size = new System.Drawing.Size(100, 30);
+            this.completedCtr.TabIndex = 22;
+            this.completedCtr.Text = "0";
+            this.completedCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaLabel12
             // 
@@ -644,39 +668,6 @@
             this.gunaPanel5.TabIndex = 1;
             this.gunaPanel5.Click += new System.EventHandler(this.ClickAll);
             // 
-            // gunaLabel10
-            // 
-            this.gunaLabel10.AutoSize = true;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.Location = new System.Drawing.Point(31, 29);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(126, 32);
-            this.gunaLabel10.TabIndex = 20;
-            this.gunaLabel10.Text = "Requested";
-            this.gunaLabel10.Click += new System.EventHandler(this.ClickAll);
-            // 
-            // gunaPanel6
-            // 
-            this.gunaPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel6.Controls.Add(this.deliveryCtr);
-            this.gunaPanel6.Controls.Add(this.gunaLabel11);
-            this.gunaPanel6.Location = new System.Drawing.Point(43, 980);
-            this.gunaPanel6.Name = "gunaPanel6";
-            this.gunaPanel6.Size = new System.Drawing.Size(623, 100);
-            this.gunaPanel6.TabIndex = 2;
-            this.gunaPanel6.Click += new System.EventHandler(this.ClickAll);
-            // 
-            // gunaLabel11
-            // 
-            this.gunaLabel11.AutoSize = true;
-            this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.Location = new System.Drawing.Point(31, 24);
-            this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Size = new System.Drawing.Size(116, 32);
-            this.gunaLabel11.TabIndex = 21;
-            this.gunaLabel11.Text = "Delivered";
-            this.gunaLabel11.Click += new System.EventHandler(this.ClickAll);
-            // 
             // request
             // 
             this.request.AnimationHoverSpeed = 0.07F;
@@ -700,6 +691,28 @@
             this.request.TabIndex = 12;
             this.request.Text = "0";
             this.request.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel10.Location = new System.Drawing.Point(31, 29);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(126, 32);
+            this.gunaLabel10.TabIndex = 20;
+            this.gunaLabel10.Text = "Requested";
+            this.gunaLabel10.Click += new System.EventHandler(this.ClickAll);
+            // 
+            // gunaPanel6
+            // 
+            this.gunaPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel6.Controls.Add(this.deliveryCtr);
+            this.gunaPanel6.Controls.Add(this.gunaLabel11);
+            this.gunaPanel6.Location = new System.Drawing.Point(44, 980);
+            this.gunaPanel6.Name = "gunaPanel6";
+            this.gunaPanel6.Size = new System.Drawing.Size(623, 100);
+            this.gunaPanel6.TabIndex = 2;
+            this.gunaPanel6.Click += new System.EventHandler(this.ClickAll);
             // 
             // deliveryCtr
             // 
@@ -725,29 +738,16 @@
             this.deliveryCtr.Text = "0";
             this.deliveryCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // completedCtr
+            // gunaLabel11
             // 
-            this.completedCtr.AnimationHoverSpeed = 0.07F;
-            this.completedCtr.AnimationSpeed = 0.03F;
-            this.completedCtr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
-            this.completedCtr.BaseColor = System.Drawing.Color.Transparent;
-            this.completedCtr.BorderColor = System.Drawing.Color.Black;
-            this.completedCtr.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completedCtr.ForeColor = System.Drawing.Color.Firebrick;
-            this.completedCtr.Image = null;
-            this.completedCtr.ImageSize = new System.Drawing.Size(20, 20);
-            this.completedCtr.Location = new System.Drawing.Point(488, 32);
-            this.completedCtr.Name = "completedCtr";
-            this.completedCtr.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.completedCtr.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.completedCtr.OnHoverForeColor = System.Drawing.Color.Firebrick;
-            this.completedCtr.OnHoverImage = null;
-            this.completedCtr.OnPressedColor = System.Drawing.Color.Black;
-            this.completedCtr.Radius = 10;
-            this.completedCtr.Size = new System.Drawing.Size(100, 30);
-            this.completedCtr.TabIndex = 22;
-            this.completedCtr.Text = "0";
-            this.completedCtr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaLabel11.AutoSize = true;
+            this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel11.Location = new System.Drawing.Point(31, 24);
+            this.gunaLabel11.Name = "gunaLabel11";
+            this.gunaLabel11.Size = new System.Drawing.Size(116, 32);
+            this.gunaLabel11.TabIndex = 21;
+            this.gunaLabel11.Text = "Delivered";
+            this.gunaLabel11.Click += new System.EventHandler(this.ClickAll);
             // 
             // Settings
             // 
