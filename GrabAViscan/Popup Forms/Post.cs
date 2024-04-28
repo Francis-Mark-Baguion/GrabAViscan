@@ -30,6 +30,7 @@ namespace GrabAViscan.Popup
         {
 
             InitializeComponent();
+
             this.Owner = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
@@ -42,6 +43,9 @@ namespace GrabAViscan.Popup
             deliverNearCombo.DataSource = db.CopyLocationData(db.locations);
             deliverNearCombo.ValueMember = "LocationName";
             deliverNearCombo.DisplayMember = "LocationName";
+
+
+            
 
 
         }

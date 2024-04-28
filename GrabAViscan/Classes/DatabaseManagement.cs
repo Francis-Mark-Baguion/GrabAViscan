@@ -1059,7 +1059,7 @@ namespace GrabAViscan.Classes
                 try
                 {
                     
-                    string selectSql = "SELECT * FROM grab.delivery where User_id = @User_id"; 
+                    string selectSql = "SELECT * FROM grab.delivery where User_id = @User_id ORDER BY Post_id DESC"; 
                     MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
                     selectCmd.Parameters.AddWithValue("@User_id", User_id);
                    

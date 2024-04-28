@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateStatus));
             this.panelTwo = new Guna.UI.WinForms.GunaPanel();
             this.panelOne = new Guna.UI.WinForms.GunaPanel();
             this.upload_btn = new Guna.UI.WinForms.GunaButton();
@@ -42,7 +43,15 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaPictureBox3 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTwo
@@ -245,6 +254,10 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.gunaPictureBox3);
+            this.gunaShadowPanel1.Controls.Add(this.gunaPictureBox2);
+            this.gunaShadowPanel1.Controls.Add(this.gunaPictureBox1);
+            this.gunaShadowPanel1.Controls.Add(this.category);
             this.gunaShadowPanel1.Controls.Add(this.two);
             this.gunaShadowPanel1.Controls.Add(this.one);
             this.gunaShadowPanel1.Controls.Add(this.gunaButton4);
@@ -265,6 +278,58 @@
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1017, 545);
             this.gunaShadowPanel1.TabIndex = 67;
             // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Image = ((System.Drawing.Image)(resources.GetObject("category.Image")));
+            this.category.Location = new System.Drawing.Point(118, 62);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(80, 80);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 67;
+            this.category.TabStop = false;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox1.Image")));
+            this.gunaPictureBox1.Location = new System.Drawing.Point(318, 316);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 68;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox2.Image")));
+            this.gunaPictureBox2.Location = new System.Drawing.Point(571, 62);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(80, 80);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox2.TabIndex = 69;
+            this.gunaPictureBox2.TabStop = false;
+            // 
+            // gunaPictureBox3
+            // 
+            this.gunaPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gunaPictureBox3.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox3.Image")));
+            this.gunaPictureBox3.Location = new System.Drawing.Point(788, 316);
+            this.gunaPictureBox3.Name = "gunaPictureBox3";
+            this.gunaPictureBox3.Size = new System.Drawing.Size(80, 80);
+            this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox3.TabIndex = 70;
+            this.gunaPictureBox3.TabStop = false;
+            // 
             // UpdateStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -277,6 +342,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.gunaShadowPanel1.ResumeLayout(false);
             this.gunaShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,5 +366,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox3;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaPictureBox category;
     }
 }
