@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using GrabAViscan.Homepage;
 using System.Linq.Expressions;
 using GrabAViscan.Classes.notif;
+using GrabAViscan.Feed;
 
 
 
@@ -34,6 +35,15 @@ namespace GrabAViscan
         {
             InitializeComponent();
             post = new Post(home);
+
+
+            List<Promotion> promotions = db.GetPromotions();
+
+            foreach (Promotion promotion in promotions) 
+            {
+                Recommended reco = new Recommended(promotion);
+                flow1.Controls.Add(reco);
+            }
 
 
         }
@@ -132,6 +142,11 @@ namespace GrabAViscan
 
             form.gunaButton9_Click(sender, e);
             
+        }
+
+        private void flow1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
