@@ -56,6 +56,7 @@
             this.quantityTxt = new Guna.UI.WinForms.GunaTextBox();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +64,7 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.gunaLabel13);
             this.gunaShadowPanel1.Controls.Add(this.picture);
             this.gunaShadowPanel1.Controls.Add(this.discard_btn);
             this.gunaShadowPanel1.Controls.Add(this.gunaLabel12);
@@ -436,6 +438,17 @@
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Post Request";
             // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel13.ForeColor = System.Drawing.Color.Firebrick;
+            this.gunaLabel13.Location = new System.Drawing.Point(431, 720);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(74, 38);
+            this.gunaLabel13.TabIndex = 32;
+            this.gunaLabel13.Text = "+ 10";
+            // 
             // Post
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -483,5 +496,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaButton discard_btn;
         private Guna.UI.WinForms.GunaPictureBox picture;
+        private Guna.UI.WinForms.GunaLabel gunaLabel13;
     }
 }

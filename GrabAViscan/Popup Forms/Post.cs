@@ -193,6 +193,7 @@ namespace GrabAViscan.Popup
 
             try
             {
+                Fee += 10;
                 string Description = CommentTxt.Text;
                 DateTime Date_posted = DateTime.Now;
                 
