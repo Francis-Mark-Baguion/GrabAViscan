@@ -98,7 +98,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.BackColor = System.Drawing.Color.White;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel1.Location = new System.Drawing.Point(51, 540);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(98, 30);
@@ -177,7 +177,7 @@
             this.Quantity_label.AutoSize = true;
             this.Quantity_label.BackColor = System.Drawing.Color.White;
             this.Quantity_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quantity_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.Quantity_label.ForeColor = System.Drawing.Color.Black;
             this.Quantity_label.Location = new System.Drawing.Point(51, 476);
             this.Quantity_label.Name = "Quantity_label";
             this.Quantity_label.Size = new System.Drawing.Size(124, 30);
@@ -189,7 +189,7 @@
             this.Request_label.AutoSize = true;
             this.Request_label.BackColor = System.Drawing.Color.White;
             this.Request_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Request_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.Request_label.ForeColor = System.Drawing.Color.Black;
             this.Request_label.Location = new System.Drawing.Point(51, 412);
             this.Request_label.Name = "Request_label";
             this.Request_label.Size = new System.Drawing.Size(109, 30);
@@ -292,7 +292,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.BackColor = System.Drawing.Color.White;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel4.Location = new System.Drawing.Point(51, 612);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(157, 30);
