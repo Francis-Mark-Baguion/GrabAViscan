@@ -36,7 +36,13 @@ namespace GrabAViscan.Classes
             GetDeliveries();
         }
 
-
+        public Deliver Deliver
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public MySqlConnection Connect()
         {

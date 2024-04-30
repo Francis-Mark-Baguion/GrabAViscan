@@ -88,7 +88,7 @@
             this.repost_btn.TabIndex = 58;
             this.repost_btn.Text = "REPOST";
             this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.repost_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            this.repost_btn.Click += new System.EventHandler(this.Repost_Click);
             // 
             // dateCompleted
             // 
@@ -221,7 +221,7 @@
             this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
             this.Close_btn.Size = new System.Drawing.Size(71, 68);
             this.Close_btn.TabIndex = 63;
-            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            this.Close_btn.Click += new System.EventHandler(this.Expand_click);
             // 
             // CancelledRepost
             // 

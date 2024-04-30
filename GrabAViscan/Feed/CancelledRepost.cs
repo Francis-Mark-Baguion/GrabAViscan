@@ -70,7 +70,7 @@ namespace GrabAViscan.Feed
                 }
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)   
+        private void Repost_Click(object sender, EventArgs e)   
         {
             
             
@@ -110,7 +110,7 @@ namespace GrabAViscan.Feed
 
         }
 
-        private void Close_btn_Click(object sender, EventArgs e)
+        private void Expand_click(object sender, EventArgs e)
         {
            if (view.Visible == false)
             {
