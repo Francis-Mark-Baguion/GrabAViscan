@@ -35,7 +35,7 @@ namespace GrabAViscan.Feed
                     if (post.Available == 4)
                     {
 
-                        HistroyLogDel Delivered = new HistroyLogDel(post, home  );
+                        HistroyLogDel Delivered = new HistroyLogDel(post, this.home  );
 
                         flow1.Controls.Add(Delivered);
 
@@ -43,7 +43,7 @@ namespace GrabAViscan.Feed
                     }
                     else if (post.Available == 3)
                     {
-                        HistroyLogRec Received = new HistroyLogRec(post,User_id,home);
+                        HistroyLogRec Received = new HistroyLogRec(post,User_id, this.home);
 
                         flow1.Controls.Add(Received);
                     }

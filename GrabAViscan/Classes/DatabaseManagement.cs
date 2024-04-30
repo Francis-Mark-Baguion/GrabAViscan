@@ -1112,7 +1112,7 @@ namespace GrabAViscan.Classes
                             byte[] promotionImage = reader["Promotion_image"] != DBNull.Value ? (byte[])reader["Promotion_image"] : null;
 
                             Promotion promotion = new Promotion(promotionId, promotionName, promotionLocation, promotionImage);
-                            MessageBox.Show(promotionId+ "" + promotionName + "" + promotionLocation);
+                            
                             promotions.Add(promotion);
                         }
                     }

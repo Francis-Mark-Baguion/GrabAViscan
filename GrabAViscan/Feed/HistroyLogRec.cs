@@ -32,12 +32,13 @@ namespace GrabAViscan.Feed
         public HistroyLogRec(Posting post,int UID,Home home)
         {
             InitializeComponent();
+            this.home = home;
             pst = new Post(post, this.home);
             view = new ViewPost(post, home,1);
             this.Post_id = post.Post_id;
             this.post = post;
             this.User_id = UID;
-            this.home = home;
+            
             //this.nameHolder.Text = db.getUserById(post.User_id).FirstName +" "+ db.getUserById(post.User_id).LastName;
             //SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
