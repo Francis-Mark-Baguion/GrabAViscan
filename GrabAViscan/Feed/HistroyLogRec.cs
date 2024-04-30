@@ -75,7 +75,7 @@ namespace GrabAViscan.Feed
            profile1 = new Profile(User_id, home);    
         }
 
-        private void Close_btn_Click(object sender, EventArgs e)
+        private void expand_btn_Click(object sender, EventArgs e)
         {
             if (view.Visible == false)
             {

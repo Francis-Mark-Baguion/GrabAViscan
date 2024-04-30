@@ -36,8 +36,8 @@
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaGradiantButton1 = new Guna.UI.WinForms.GunaGradiantButton();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.changeProfile_btn = new Guna.UI.WinForms.GunaButton();
+            this.changePass_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel8 = new Guna.UI.WinForms.GunaPanel();
             this.completedCtr = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
@@ -57,7 +57,7 @@
             this.lastNameTxt = new Guna.UI.WinForms.GunaTextBox();
             this.firstNameTxt = new Guna.UI.WinForms.GunaTextBox();
             this.discard_btn = new Guna.UI.WinForms.GunaButton();
-            this.upload_btn = new Guna.UI.WinForms.GunaButton();
+            this.update_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.DescriptionTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
@@ -144,8 +144,8 @@
             // gunaPanel2
             // 
             this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel2.Controls.Add(this.gunaButton3);
-            this.gunaPanel2.Controls.Add(this.gunaButton4);
+            this.gunaPanel2.Controls.Add(this.changeProfile_btn);
+            this.gunaPanel2.Controls.Add(this.changePass_btn);
             this.gunaPanel2.Controls.Add(this.gunaPanel8);
             this.gunaPanel2.Controls.Add(this.gunaPanel4);
             this.gunaPanel2.Location = new System.Drawing.Point(44, 362);
@@ -154,53 +154,53 @@
             this.gunaPanel2.TabIndex = 10;
             this.gunaPanel2.Click += new System.EventHandler(this.ClickAll);
             // 
-            // gunaButton3
+            // changeProfile_btn
             // 
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = null;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(52, 846);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Radius = 10;
-            this.gunaButton3.Size = new System.Drawing.Size(220, 70);
-            this.gunaButton3.TabIndex = 34;
-            this.gunaButton3.Text = "CHANGE PROFILE";
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            this.changeProfile_btn.AnimationHoverSpeed = 0.07F;
+            this.changeProfile_btn.AnimationSpeed = 0.03F;
+            this.changeProfile_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.changeProfile_btn.BorderColor = System.Drawing.Color.Black;
+            this.changeProfile_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeProfile_btn.ForeColor = System.Drawing.Color.White;
+            this.changeProfile_btn.Image = null;
+            this.changeProfile_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.changeProfile_btn.Location = new System.Drawing.Point(52, 846);
+            this.changeProfile_btn.Name = "changeProfile_btn";
+            this.changeProfile_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.changeProfile_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.changeProfile_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.changeProfile_btn.OnHoverImage = null;
+            this.changeProfile_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.changeProfile_btn.Radius = 10;
+            this.changeProfile_btn.Size = new System.Drawing.Size(220, 70);
+            this.changeProfile_btn.TabIndex = 34;
+            this.changeProfile_btn.Text = "CHANGE PROFILE";
+            this.changeProfile_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.changeProfile_btn.Click += new System.EventHandler(this.changeProfile_click);
             // 
-            // gunaButton4
+            // changePass_btn
             // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(355, 846);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 10;
-            this.gunaButton4.Size = new System.Drawing.Size(220, 70);
-            this.gunaButton4.TabIndex = 33;
-            this.gunaButton4.Text = "CHANGE PASSWORD";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            this.changePass_btn.AnimationHoverSpeed = 0.07F;
+            this.changePass_btn.AnimationSpeed = 0.03F;
+            this.changePass_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.changePass_btn.BorderColor = System.Drawing.Color.Black;
+            this.changePass_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changePass_btn.ForeColor = System.Drawing.Color.White;
+            this.changePass_btn.Image = null;
+            this.changePass_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.changePass_btn.Location = new System.Drawing.Point(355, 846);
+            this.changePass_btn.Name = "changePass_btn";
+            this.changePass_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.changePass_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.changePass_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.changePass_btn.OnHoverImage = null;
+            this.changePass_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.changePass_btn.Radius = 10;
+            this.changePass_btn.Size = new System.Drawing.Size(220, 70);
+            this.changePass_btn.TabIndex = 33;
+            this.changePass_btn.Text = "CHANGE PASSWORD";
+            this.changePass_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.changePass_btn.Click += new System.EventHandler(this.changePass_click);
             // 
             // gunaPanel8
             // 
@@ -334,7 +334,7 @@
             this.gunaPanel3.Controls.Add(this.lastNameTxt);
             this.gunaPanel3.Controls.Add(this.firstNameTxt);
             this.gunaPanel3.Controls.Add(this.discard_btn);
-            this.gunaPanel3.Controls.Add(this.upload_btn);
+            this.gunaPanel3.Controls.Add(this.update_btn);
             this.gunaPanel3.Controls.Add(this.gunaLabel8);
             this.gunaPanel3.Controls.Add(this.DescriptionTxt);
             this.gunaPanel3.Controls.Add(this.gunaLabel6);
@@ -540,29 +540,29 @@
             this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
             // 
-            // upload_btn
+            // update_btn
             // 
-            this.upload_btn.AnimationHoverSpeed = 0.07F;
-            this.upload_btn.AnimationSpeed = 0.03F;
-            this.upload_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.BorderColor = System.Drawing.Color.Black;
-            this.upload_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upload_btn.ForeColor = System.Drawing.Color.White;
-            this.upload_btn.Image = null;
-            this.upload_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload_btn.Location = new System.Drawing.Point(977, 845);
-            this.upload_btn.Name = "upload_btn";
-            this.upload_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.upload_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.upload_btn.OnHoverImage = null;
-            this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.upload_btn.Radius = 10;
-            this.upload_btn.Size = new System.Drawing.Size(220, 70);
-            this.upload_btn.TabIndex = 31;
-            this.upload_btn.Text = "UPDATE";
-            this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.upload_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            this.update_btn.AnimationHoverSpeed = 0.07F;
+            this.update_btn.AnimationSpeed = 0.03F;
+            this.update_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.update_btn.BorderColor = System.Drawing.Color.Black;
+            this.update_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_btn.ForeColor = System.Drawing.Color.White;
+            this.update_btn.Image = null;
+            this.update_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.update_btn.Location = new System.Drawing.Point(977, 845);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.update_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.update_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.update_btn.OnHoverImage = null;
+            this.update_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.update_btn.Radius = 10;
+            this.update_btn.Size = new System.Drawing.Size(220, 70);
+            this.update_btn.TabIndex = 31;
+            this.update_btn.Text = "UPDATE";
+            this.update_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.update_btn.Click += new System.EventHandler(this.update_click);
             // 
             // gunaLabel8
             // 
@@ -807,10 +807,10 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel12;
         private Guna.UI.WinForms.GunaLabel gunaLabel10;
         private Guna.UI.WinForms.GunaLabel gunaLabel11;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
+        private Guna.UI.WinForms.GunaButton changeProfile_btn;
+        private Guna.UI.WinForms.GunaButton changePass_btn;
         private Guna.UI.WinForms.GunaButton discard_btn;
-        private Guna.UI.WinForms.GunaButton upload_btn;
+        private Guna.UI.WinForms.GunaButton update_btn;
         private Guna.UI.WinForms.GunaTextBox nameHolder;
         private Guna.UI.WinForms.GunaTextBox statusHolder;
         private Guna.UI.WinForms.GunaTextBox schoolTxt;

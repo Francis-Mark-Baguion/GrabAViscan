@@ -30,7 +30,7 @@ namespace GrabAViscan
         private rightWing right;
         private string email;
         private int User_id;
-        ToDeliver todeliver;
+        private ToDeliver todeliver;
         public Home(int uid)
         {
             List<Posting> posts = db.GetAvailablePosts();

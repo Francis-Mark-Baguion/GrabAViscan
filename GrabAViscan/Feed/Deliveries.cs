@@ -101,7 +101,7 @@ namespace GrabAViscan.Feed
             
         }
 
-        private void gunaButton4_Click_1(object sender, EventArgs e)
+        private void cancel_click(object sender, EventArgs e)
         {
             Posting temp = db.getPostById(this.post_id);
 
@@ -122,12 +122,12 @@ namespace GrabAViscan.Feed
             
         }
 
-        private void discard_btn_Click(object sender, EventArgs e)
+        private void update_status_click(object sender, EventArgs e)
         {
             Popup_Messages.UpdateStatus update = new Popup_Messages.UpdateStatus(this.post_id,this.home);
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)
+        private void view_btn_Click(object sender, EventArgs e)
         {
             ViewPost view = new ViewPost(db.getPostById(post_id), home);
         }
