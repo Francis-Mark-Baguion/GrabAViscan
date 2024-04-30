@@ -36,20 +36,25 @@
             this.ProfilePic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.mySqlCommand2 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel3
             // 
+            this.gunaPanel3.Controls.Add(this.gunaLabel1);
             this.gunaPanel3.Controls.Add(this.nameHolder);
             this.gunaPanel3.Controls.Add(this.Notif_btn);
             this.gunaPanel3.Controls.Add(this.EditPost_btn);
             this.gunaPanel3.Controls.Add(this.ProfilePic);
             this.gunaPanel3.Controls.Add(this.label1);
+            this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(652, 235);
+            this.gunaPanel3.Size = new System.Drawing.Size(640, 235);
             this.gunaPanel3.TabIndex = 3;
             // 
             // nameHolder
@@ -156,11 +161,38 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
+            // flow1
+            // 
+            this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow1.Location = new System.Drawing.Point(0, 235);
+            this.flow1.Name = "flow1";
+            this.flow1.Size = new System.Drawing.Size(640, 1263);
+            this.flow1.TabIndex = 4;
+            this.flow1.Paint += new System.Windows.Forms.PaintEventHandler(this.flow1_Paint);
+            // 
+            // mySqlCommand2
+            // 
+            this.mySqlCommand2.CacheAge = 0;
+            this.mySqlCommand2.Connection = null;
+            this.mySqlCommand2.EnableCaching = false;
+            this.mySqlCommand2.Transaction = null;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(16, 180);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(224, 38);
+            this.gunaLabel1.TabIndex = 16;
+            this.gunaLabel1.Text = "RECOMMENDED";
+            // 
             // rightWing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.Controls.Add(this.flow1);
             this.Controls.Add(this.gunaPanel3);
             this.Name = "rightWing";
             this.Size = new System.Drawing.Size(640, 1498);
@@ -180,5 +212,8 @@
         private Guna.UI.WinForms.GunaButton Notif_btn;
         private Guna.UI.WinForms.GunaButton EditPost_btn;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private System.Windows.Forms.FlowLayoutPanel flow1;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand2;
     }
 }

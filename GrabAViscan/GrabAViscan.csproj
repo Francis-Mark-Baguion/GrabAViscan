@@ -106,6 +106,7 @@
     <Compile Include="Classes\DatabaseManagement.cs" />
     <Compile Include="Classes\Deliver.cs" />
     <Compile Include="Classes\Location.cs" />
+    <Compile Include="Classes\Promotion.cs" />
     <Compile Include="Feed\DeliveryHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +124,12 @@
     </Compile>
     <Compile Include="Feed\PersonalReq.Designer.cs">
       <DependentUpon>PersonalReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feed\Recommended.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Feed\Recommended.Designer.cs">
+      <DependentUpon>Recommended.cs</DependentUpon>
     </Compile>
     <Compile Include="notif\NotifBoxCancel.cs">
       <SubType>UserControl</SubType>
@@ -341,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\PersonalReq.resx">
       <DependentUpon>PersonalReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feed\Recommended.resx">
+      <DependentUpon>Recommended.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="notif\NotifBoxCancel.resx">
       <DependentUpon>NotifBoxCancel.cs</DependentUpon>

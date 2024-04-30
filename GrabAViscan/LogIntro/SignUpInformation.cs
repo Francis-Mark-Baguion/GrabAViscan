@@ -54,7 +54,7 @@ namespace GrabAViscan.LogIntro
 
         
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void signUp_click(object sender, EventArgs e)
         {
 
             string bio = "";

@@ -36,7 +36,7 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.signUp_btn = new Guna.UI.WinForms.GunaButton();
             this.phoneTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.firstNameTxt = new Guna.UI.WinForms.GunaTextBox();
@@ -134,28 +134,28 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(140, 42);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
-            // gunaButton1
+            // signUp_btn
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gunaButton1.BackgroundImage")));
-            this.gunaButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(164, 671);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(520, 75);
-            this.gunaButton1.TabIndex = 19;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.signUp_btn.AnimationHoverSpeed = 0.07F;
+            this.signUp_btn.AnimationSpeed = 0.03F;
+            this.signUp_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("signUp_btn.BackgroundImage")));
+            this.signUp_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.signUp_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.signUp_btn.BorderColor = System.Drawing.Color.Black;
+            this.signUp_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.signUp_btn.ForeColor = System.Drawing.Color.White;
+            this.signUp_btn.Image = null;
+            this.signUp_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.signUp_btn.Location = new System.Drawing.Point(208, 675);
+            this.signUp_btn.Name = "signUp_btn";
+            this.signUp_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.signUp_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.signUp_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.signUp_btn.OnHoverImage = null;
+            this.signUp_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.signUp_btn.Size = new System.Drawing.Size(520, 75);
+            this.signUp_btn.TabIndex = 19;
+            this.signUp_btn.Click += new System.EventHandler(this.signUp_click);
             // 
             // phoneTxt
             // 
@@ -314,7 +314,7 @@
             this.Controls.Add(this.firstNameTxt);
             this.Controls.Add(this.gunaLabel5);
             this.Controls.Add(this.phoneTxt);
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.signUp_btn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
@@ -340,7 +340,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton signUp_btn;
         private Guna.UI.WinForms.GunaTextBox phoneTxt;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaTextBox firstNameTxt;

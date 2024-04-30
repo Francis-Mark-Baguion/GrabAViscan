@@ -23,7 +23,7 @@ namespace GrabAViscan
             databaseManagement = new DatabaseManagement();
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void sigh_up_click(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SignUp sign = new SignUp();
             sign.Show();
@@ -95,18 +95,6 @@ namespace GrabAViscan
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        
-
-        private void LogInEnter(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show("Enter");
-                Log_in_Click(sender, e);
-            }
-        }
-
         
     }
 }

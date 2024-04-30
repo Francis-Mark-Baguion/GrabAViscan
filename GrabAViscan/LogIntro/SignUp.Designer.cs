@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.agree = new System.Windows.Forms.CheckBox();
+            this.confirm_btn = new Guna.UI.WinForms.GunaButton();
             this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
             this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.TermsAndConditionLink = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.LogInLink = new System.Windows.Forms.LinkLabel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.agree = new System.Windows.Forms.CheckBox();
-            this.signUp_btn = new Guna.UI.WinForms.GunaButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.tableLayoutPanel1.SuspendLayout();
@@ -71,12 +71,12 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.agree);
-            this.panel2.Controls.Add(this.signUp_btn);
+            this.panel2.Controls.Add(this.confirm_btn);
             this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.emailTxt);
-            this.panel2.Controls.Add(this.linkLabel2);
+            this.panel2.Controls.Add(this.TermsAndConditionLink);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.LogInLink);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,6 +84,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 527);
             this.panel2.TabIndex = 1;
+            // 
+            // agree
+            // 
+            this.agree.AutoSize = true;
+            this.agree.Location = new System.Drawing.Point(674, 310);
+            this.agree.Name = "agree";
+            this.agree.Size = new System.Drawing.Size(22, 21);
+            this.agree.TabIndex = 11;
+            this.agree.UseVisualStyleBackColor = true;
+            this.agree.CheckedChanged += new System.EventHandler(this.agree_CheckedChanged);
+            // 
+            // confirm_btn
+            // 
+            this.confirm_btn.AnimationHoverSpeed = 0.07F;
+            this.confirm_btn.AnimationSpeed = 0.03F;
+            this.confirm_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirm_btn.BackgroundImage")));
+            this.confirm_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.confirm_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.confirm_btn.BorderColor = System.Drawing.Color.Black;
+            this.confirm_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.confirm_btn.ForeColor = System.Drawing.Color.White;
+            this.confirm_btn.Image = null;
+            this.confirm_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.confirm_btn.Location = new System.Drawing.Point(170, 359);
+            this.confirm_btn.Name = "confirm_btn";
+            this.confirm_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
+            this.confirm_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.confirm_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.confirm_btn.OnHoverImage = null;
+            this.confirm_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.confirm_btn.Size = new System.Drawing.Size(520, 75);
+            this.confirm_btn.TabIndex = 10;
+            this.confirm_btn.Click += new System.EventHandler(this.confirm_btn_Click);
             // 
             // passwordTxt
             // 
@@ -124,18 +157,18 @@
             this.emailTxt.Text = "Email";
             this.emailTxt.Click += new System.EventHandler(this.emailTxt_Click);
             // 
-            // linkLabel2
+            // TermsAndConditionLink
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(439, 302);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(218, 28);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = " terms and conditions";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.TermsAndConditionLink.AutoSize = true;
+            this.TermsAndConditionLink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TermsAndConditionLink.LinkColor = System.Drawing.Color.Black;
+            this.TermsAndConditionLink.Location = new System.Drawing.Point(439, 302);
+            this.TermsAndConditionLink.Name = "TermsAndConditionLink";
+            this.TermsAndConditionLink.Size = new System.Drawing.Size(218, 28);
+            this.TermsAndConditionLink.TabIndex = 7;
+            this.TermsAndConditionLink.TabStop = true;
+            this.TermsAndConditionLink.Text = " terms and conditions";
+            this.TermsAndConditionLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Terms_and_Condition_click);
             // 
             // label2
             // 
@@ -147,18 +180,27 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Yes, I agree to the";
             // 
-            // linkLabel1
+            // LogInLink
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(512, 452);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(71, 25);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Log in";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.LogInLink.AutoSize = true;
+            this.LogInLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogInLink.LinkColor = System.Drawing.Color.Black;
+            this.LogInLink.Location = new System.Drawing.Point(512, 452);
+            this.LogInLink.Name = "LogInLink";
+            this.LogInLink.Size = new System.Drawing.Size(71, 25);
+            this.LogInLink.TabIndex = 5;
+            this.LogInLink.TabStop = true;
+            this.LogInLink.Text = "Log in";
+            this.LogInLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Log_In_Redirect);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flowLayoutPanel1.BackgroundImage")));
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(170, 54);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -186,47 +228,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 99);
             this.panel4.TabIndex = 3;
-            // 
-            // agree
-            // 
-            this.agree.AutoSize = true;
-            this.agree.Location = new System.Drawing.Point(674, 310);
-            this.agree.Name = "agree";
-            this.agree.Size = new System.Drawing.Size(22, 21);
-            this.agree.TabIndex = 11;
-            this.agree.UseVisualStyleBackColor = true;
-            // 
-            // signUp_btn
-            // 
-            this.signUp_btn.AnimationHoverSpeed = 0.07F;
-            this.signUp_btn.AnimationSpeed = 0.03F;
-            this.signUp_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("signUp_btn.BackgroundImage")));
-            this.signUp_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.signUp_btn.BaseColor = System.Drawing.Color.Transparent;
-            this.signUp_btn.BorderColor = System.Drawing.Color.Black;
-            this.signUp_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.signUp_btn.ForeColor = System.Drawing.Color.White;
-            this.signUp_btn.Image = null;
-            this.signUp_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.signUp_btn.Location = new System.Drawing.Point(170, 359);
-            this.signUp_btn.Name = "signUp_btn";
-            this.signUp_btn.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.signUp_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.signUp_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.signUp_btn.OnHoverImage = null;
-            this.signUp_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.signUp_btn.Size = new System.Drawing.Size(520, 75);
-            this.signUp_btn.TabIndex = 10;
-            this.signUp_btn.Click += new System.EventHandler(this.signUp_btn_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flowLayoutPanel1.BackgroundImage")));
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(170, 54);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Minimize_btn
             // 
@@ -297,14 +298,14 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel LogInLink;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel TermsAndConditionLink;
         private Guna.UI.WinForms.GunaTextBox emailTxt;
         private Guna.UI.WinForms.GunaTextBox passwordTxt;
-        private Guna.UI.WinForms.GunaButton signUp_btn;
+        private Guna.UI.WinForms.GunaButton confirm_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI.WinForms.GunaButton Minimize_btn;

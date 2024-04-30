@@ -36,7 +36,7 @@
             this.Log_in_btn = new Guna.UI.WinForms.GunaButton();
             this.passwordTxt = new Guna.UI.WinForms.GunaTextBox();
             this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.SignUpLink = new System.Windows.Forms.LinkLabel();
             this.log_in_label = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -98,7 +98,7 @@
             this.panel2.Controls.Add(this.Log_in_btn);
             this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.emailTxt);
-            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.SignUpLink);
             this.panel2.Controls.Add(this.log_in_label);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(856, 536);
@@ -168,18 +168,18 @@
             this.emailTxt.Text = "Email";
             this.emailTxt.Click += new System.EventHandler(this.gunaTextBox1_Click);
             // 
-            // linkLabel1
+            // SignUpLink
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(531, 408);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(83, 28);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Sign up";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            this.SignUpLink.AutoSize = true;
+            this.SignUpLink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUpLink.LinkColor = System.Drawing.Color.Black;
+            this.SignUpLink.Location = new System.Drawing.Point(531, 408);
+            this.SignUpLink.Name = "SignUpLink";
+            this.SignUpLink.Size = new System.Drawing.Size(83, 28);
+            this.SignUpLink.TabIndex = 5;
+            this.SignUpLink.TabStop = true;
+            this.SignUpLink.Text = "Sign up";
+            this.SignUpLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.sigh_up_click);
             // 
             // log_in_label
             // 
@@ -289,7 +289,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel SignUpLink;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel log_in_label;
         private System.Windows.Forms.Panel panel2;

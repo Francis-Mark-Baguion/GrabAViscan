@@ -26,7 +26,7 @@ namespace GrabAViscan
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Log_In_Redirect(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LogIn log = new LogIn();
             log.Show();
@@ -43,7 +43,7 @@ namespace GrabAViscan
             passwordTxt.Text = "";
         }
 
-        private void signUp_btn_Click(object sender, EventArgs e)
+        private void confirm_btn_Click(object sender, EventArgs e)
         {
 
             string email = emailTxt.Text;
@@ -152,10 +152,15 @@ namespace GrabAViscan
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Terms_and_Condition_click(object sender, LinkLabelLinkClickedEventArgs e)
         {
             TermsAndCondition termsAndCondition = new TermsAndCondition(this);
             termsAndCondition.Show();
+        }
+
+        private void agree_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

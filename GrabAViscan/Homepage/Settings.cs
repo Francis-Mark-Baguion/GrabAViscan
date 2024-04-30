@@ -86,7 +86,7 @@ namespace GrabAViscan.Homepage
 
         }
 
-        private void gunaButton4_Click(object sender, EventArgs e)
+        private void changePass_click(object sender, EventArgs e)
         {
             if(flag1)
             {
@@ -110,7 +110,7 @@ namespace GrabAViscan.Homepage
 
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)
+        private void update_click(object sender, EventArgs e)
         {
             try
             {
@@ -164,7 +164,7 @@ namespace GrabAViscan.Homepage
         }
         
         
-        private void gunaButton3_Click(object sender, EventArgs e)
+        private void changeProfile_click(object sender, EventArgs e)
         {
 
             OpenFileDialog openFileDialog = new OpenFileDialog();

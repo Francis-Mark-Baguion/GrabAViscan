@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deliveries));
             this.NameLabel = new Guna.UI.WinForms.GunaTextBox();
             this.stat = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.discard_btn = new Guna.UI.WinForms.GunaButton();
-            this.upload_btn = new Guna.UI.WinForms.GunaButton();
+            this.cancel_del_btn = new Guna.UI.WinForms.GunaButton();
+            this.updaate_status_btn = new Guna.UI.WinForms.GunaButton();
+            this.view_btn = new Guna.UI.WinForms.GunaButton();
             this.quantityTxt = new Guna.UI.WinForms.GunaButton();
             this.Quantity_label = new Guna.UI.WinForms.GunaLabel();
             this.Request_label = new Guna.UI.WinForms.GunaLabel();
@@ -44,10 +44,10 @@
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.RequestTxt = new Guna.UI.WinForms.GunaButton();
             this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.RequestTxt = new Guna.UI.WinForms.GunaButton();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.SuspendLayout();
@@ -85,77 +85,77 @@
             this.stat.TabIndex = 57;
             this.stat.Text = "Status";
             // 
-            // gunaButton4
+            // cancel_del_btn
             // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(3, 611);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 10;
-            this.gunaButton4.Size = new System.Drawing.Size(374, 52);
-            this.gunaButton4.TabIndex = 54;
-            this.gunaButton4.Text = "CANCEL DELIVERY";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click_1);
+            this.cancel_del_btn.AnimationHoverSpeed = 0.07F;
+            this.cancel_del_btn.AnimationSpeed = 0.03F;
+            this.cancel_del_btn.BaseColor = System.Drawing.Color.Firebrick;
+            this.cancel_del_btn.BorderColor = System.Drawing.Color.Black;
+            this.cancel_del_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_del_btn.ForeColor = System.Drawing.Color.White;
+            this.cancel_del_btn.Image = null;
+            this.cancel_del_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancel_del_btn.Location = new System.Drawing.Point(3, 611);
+            this.cancel_del_btn.Name = "cancel_del_btn";
+            this.cancel_del_btn.OnHoverBaseColor = System.Drawing.Color.Firebrick;
+            this.cancel_del_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.cancel_del_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancel_del_btn.OnHoverImage = null;
+            this.cancel_del_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.cancel_del_btn.Radius = 10;
+            this.cancel_del_btn.Size = new System.Drawing.Size(374, 52);
+            this.cancel_del_btn.TabIndex = 54;
+            this.cancel_del_btn.Text = "CANCEL DELIVERY";
+            this.cancel_del_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancel_del_btn.Click += new System.EventHandler(this.cancel_click);
             // 
-            // discard_btn
+            // updaate_status_btn
             // 
-            this.discard_btn.AnimationHoverSpeed = 0.07F;
-            this.discard_btn.AnimationSpeed = 0.03F;
-            this.discard_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.BorderColor = System.Drawing.Color.Black;
-            this.discard_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discard_btn.ForeColor = System.Drawing.Color.White;
-            this.discard_btn.Image = null;
-            this.discard_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.discard_btn.Location = new System.Drawing.Point(3, 674);
-            this.discard_btn.Name = "discard_btn";
-            this.discard_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.discard_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.discard_btn.OnHoverImage = null;
-            this.discard_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.discard_btn.Radius = 10;
-            this.discard_btn.Size = new System.Drawing.Size(374, 52);
-            this.discard_btn.TabIndex = 53;
-            this.discard_btn.Text = "UPDATE STATUS";
-            this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
+            this.updaate_status_btn.AnimationHoverSpeed = 0.07F;
+            this.updaate_status_btn.AnimationSpeed = 0.03F;
+            this.updaate_status_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.updaate_status_btn.BorderColor = System.Drawing.Color.Black;
+            this.updaate_status_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updaate_status_btn.ForeColor = System.Drawing.Color.White;
+            this.updaate_status_btn.Image = null;
+            this.updaate_status_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.updaate_status_btn.Location = new System.Drawing.Point(3, 674);
+            this.updaate_status_btn.Name = "updaate_status_btn";
+            this.updaate_status_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.updaate_status_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.updaate_status_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.updaate_status_btn.OnHoverImage = null;
+            this.updaate_status_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.updaate_status_btn.Radius = 10;
+            this.updaate_status_btn.Size = new System.Drawing.Size(374, 52);
+            this.updaate_status_btn.TabIndex = 53;
+            this.updaate_status_btn.Text = "UPDATE STATUS";
+            this.updaate_status_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.updaate_status_btn.Click += new System.EventHandler(this.update_status_click);
             // 
-            // upload_btn
+            // view_btn
             // 
-            this.upload_btn.AnimationHoverSpeed = 0.07F;
-            this.upload_btn.AnimationSpeed = 0.03F;
-            this.upload_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.BorderColor = System.Drawing.Color.Black;
-            this.upload_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upload_btn.ForeColor = System.Drawing.Color.White;
-            this.upload_btn.Image = null;
-            this.upload_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload_btn.Location = new System.Drawing.Point(3, 739);
-            this.upload_btn.Name = "upload_btn";
-            this.upload_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.upload_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.upload_btn.OnHoverImage = null;
-            this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.upload_btn.Radius = 10;
-            this.upload_btn.Size = new System.Drawing.Size(374, 52);
-            this.upload_btn.TabIndex = 52;
-            this.upload_btn.Text = "VIEW";
-            this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.upload_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            this.view_btn.AnimationHoverSpeed = 0.07F;
+            this.view_btn.AnimationSpeed = 0.03F;
+            this.view_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.view_btn.BorderColor = System.Drawing.Color.Black;
+            this.view_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_btn.ForeColor = System.Drawing.Color.White;
+            this.view_btn.Image = null;
+            this.view_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.view_btn.Location = new System.Drawing.Point(3, 739);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.view_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.view_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.view_btn.OnHoverImage = null;
+            this.view_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.view_btn.Radius = 10;
+            this.view_btn.Size = new System.Drawing.Size(374, 52);
+            this.view_btn.TabIndex = 52;
+            this.view_btn.Text = "VIEW";
+            this.view_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.view_btn.Click += new System.EventHandler(this.view_btn_Click);
             // 
             // quantityTxt
             // 
@@ -310,9 +310,9 @@
             this.MainPanel.Controls.Add(this.NameLabel);
             this.MainPanel.Controls.Add(this.statusTxt);
             this.MainPanel.Controls.Add(this.stat);
-            this.MainPanel.Controls.Add(this.gunaButton4);
-            this.MainPanel.Controls.Add(this.discard_btn);
-            this.MainPanel.Controls.Add(this.upload_btn);
+            this.MainPanel.Controls.Add(this.cancel_del_btn);
+            this.MainPanel.Controls.Add(this.updaate_status_btn);
+            this.MainPanel.Controls.Add(this.view_btn);
             this.MainPanel.Controls.Add(this.quantityTxt);
             this.MainPanel.Controls.Add(this.Quantity_label);
             this.MainPanel.Controls.Add(this.Request_label);
@@ -329,6 +329,40 @@
             this.MainPanel.Radius = 30;
             this.MainPanel.Size = new System.Drawing.Size(380, 800);
             this.MainPanel.TabIndex = 7;
+            // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.Transparent;
+            this.profile.BaseColor = System.Drawing.Color.White;
+            this.profile.Location = new System.Drawing.Point(123, 3);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(120, 120);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 62;
+            this.profile.TabStop = false;
+            this.profile.UseTransfarantBackground = false;
+            // 
+            // RequestTxt
+            // 
+            this.RequestTxt.AnimationHoverSpeed = 0.07F;
+            this.RequestTxt.AnimationSpeed = 0.03F;
+            this.RequestTxt.BaseColor = System.Drawing.Color.White;
+            this.RequestTxt.BorderColor = System.Drawing.Color.Black;
+            this.RequestTxt.Enabled = false;
+            this.RequestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequestTxt.ForeColor = System.Drawing.Color.Black;
+            this.RequestTxt.Image = null;
+            this.RequestTxt.ImageSize = new System.Drawing.Size(20, 20);
+            this.RequestTxt.Location = new System.Drawing.Point(134, 186);
+            this.RequestTxt.Name = "RequestTxt";
+            this.RequestTxt.OnHoverBaseColor = System.Drawing.Color.White;
+            this.RequestTxt.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.RequestTxt.OnHoverForeColor = System.Drawing.Color.White;
+            this.RequestTxt.OnHoverImage = null;
+            this.RequestTxt.OnPressedColor = System.Drawing.Color.Black;
+            this.RequestTxt.Size = new System.Drawing.Size(243, 47);
+            this.RequestTxt.TabIndex = 61;
+            this.RequestTxt.Text = "Request";
             // 
             // statusTxt
             // 
@@ -361,40 +395,6 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "_________________";
             // 
-            // RequestTxt
-            // 
-            this.RequestTxt.AnimationHoverSpeed = 0.07F;
-            this.RequestTxt.AnimationSpeed = 0.03F;
-            this.RequestTxt.BaseColor = System.Drawing.Color.White;
-            this.RequestTxt.BorderColor = System.Drawing.Color.Black;
-            this.RequestTxt.Enabled = false;
-            this.RequestTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RequestTxt.ForeColor = System.Drawing.Color.Black;
-            this.RequestTxt.Image = null;
-            this.RequestTxt.ImageSize = new System.Drawing.Size(20, 20);
-            this.RequestTxt.Location = new System.Drawing.Point(134, 186);
-            this.RequestTxt.Name = "RequestTxt";
-            this.RequestTxt.OnHoverBaseColor = System.Drawing.Color.White;
-            this.RequestTxt.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.RequestTxt.OnHoverForeColor = System.Drawing.Color.White;
-            this.RequestTxt.OnHoverImage = null;
-            this.RequestTxt.OnPressedColor = System.Drawing.Color.Black;
-            this.RequestTxt.Size = new System.Drawing.Size(243, 47);
-            this.RequestTxt.TabIndex = 61;
-            this.RequestTxt.Text = "Request";
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.Transparent;
-            this.profile.BaseColor = System.Drawing.Color.White;
-            this.profile.Location = new System.Drawing.Point(123, 3);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(120, 120);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 62;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
-            // 
             // Deliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -413,9 +413,9 @@
 
         private Guna.UI.WinForms.GunaTextBox NameLabel;
         private Guna.UI.WinForms.GunaLabel stat;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton discard_btn;
-        private Guna.UI.WinForms.GunaButton upload_btn;
+        private Guna.UI.WinForms.GunaButton cancel_del_btn;
+        private Guna.UI.WinForms.GunaButton updaate_status_btn;
+        private Guna.UI.WinForms.GunaButton view_btn;
         private Guna.UI.WinForms.GunaButton quantityTxt;
         private Guna.UI.WinForms.GunaLabel Quantity_label;
         private Guna.UI.WinForms.GunaLabel Request_label;

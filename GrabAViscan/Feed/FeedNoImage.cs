@@ -100,7 +100,7 @@ namespace GrabAViscan.Feed
             }
         }
 
-        private void gunaButton9_Click(object sender, EventArgs e)
+        private void pickUp_btn_click(object sender, EventArgs e)
         {
             AcceptRequest accept = new AcceptRequest(this.id, this.uid,this,home);
             

@@ -102,7 +102,7 @@ namespace GrabAViscan.Feed
                 }
         }
 
-        private void gunaButton4_Click(object sender, EventArgs e)
+        private void cancel_click(object sender, EventArgs e)
         {
             Posting temp = db.getPostById(this.post_id);
            
@@ -144,13 +144,13 @@ namespace GrabAViscan.Feed
             
         }
 
-        private void discard_btn_Click(object sender, EventArgs e)
+        private void edit_click(object sender, EventArgs e)
         {
             EditRequest edit = new EditRequest(home,db.getPostById(post_id));
             edit.Show();
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)
+        private void view_click(object sender, EventArgs e)
         {
             ViewPost view = new ViewPost(db.getPostById(post_id),home);
 

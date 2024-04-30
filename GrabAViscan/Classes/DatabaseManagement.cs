@@ -36,7 +36,13 @@ namespace GrabAViscan.Classes
             GetDeliveries();
         }
 
-
+        public Deliver Deliver
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public MySqlConnection Connect()
         {
@@ -1087,7 +1093,47 @@ namespace GrabAViscan.Classes
 
         }
 
-        
+
+
+        public List<Promotion> GetPromotions()
+        {
+             List<Promotion> promotions = new List<Promotion>();
+            using (MySqlConnection conConn = this.Connect())
+            {
+
+                try
+                {
+
+                    string selectSql = "SELECT * FROM grab.promotion";
+                    MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
+                    
+
+                    using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int promotionId = Convert.ToInt32(reader["Promotion_id"]);
+                            string promotionName = reader["Promotion_name"].ToString();
+                            string promotionLocation = reader["Promotion_location"].ToString();
+                            byte[] promotionImage = reader["Promotion_image"] != DBNull.Value ? (byte[])reader["Promotion_image"] : null;
+
+                            Promotion promotion = new Promotion(promotionId, promotionName, promotionLocation, promotionImage);
+                            
+                            promotions.Add(promotion);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while retrieving promotions: " + ex.Message);
+                }
+            }
+
+            return promotions;
+        }
+
+
+
 
     }
 

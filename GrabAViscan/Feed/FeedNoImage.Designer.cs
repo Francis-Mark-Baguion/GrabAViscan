@@ -37,7 +37,7 @@
             this.requestTxt = new Guna.UI.WinForms.GunaButton();
             this.Quantity_label = new Guna.UI.WinForms.GunaLabel();
             this.Request_label = new Guna.UI.WinForms.GunaLabel();
-            this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
+            this.pick_up_btn = new Guna.UI.WinForms.GunaButton();
             this.Fee = new Guna.UI.WinForms.GunaButton();
             this.deliveryTxt = new Guna.UI.WinForms.GunaButton();
             this.pickUpTxt = new Guna.UI.WinForms.GunaButton();
@@ -64,7 +64,7 @@
             this.MainPanel.Controls.Add(this.requestTxt);
             this.MainPanel.Controls.Add(this.Quantity_label);
             this.MainPanel.Controls.Add(this.Request_label);
-            this.MainPanel.Controls.Add(this.gunaButton9);
+            this.MainPanel.Controls.Add(this.pick_up_btn);
             this.MainPanel.Controls.Add(this.Fee);
             this.MainPanel.Controls.Add(this.deliveryTxt);
             this.MainPanel.Controls.Add(this.pickUpTxt);
@@ -98,7 +98,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.BackColor = System.Drawing.Color.White;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel1.Location = new System.Drawing.Point(51, 540);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(98, 30);
@@ -177,7 +177,7 @@
             this.Quantity_label.AutoSize = true;
             this.Quantity_label.BackColor = System.Drawing.Color.White;
             this.Quantity_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quantity_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.Quantity_label.ForeColor = System.Drawing.Color.Black;
             this.Quantity_label.Location = new System.Drawing.Point(51, 476);
             this.Quantity_label.Name = "Quantity_label";
             this.Quantity_label.Size = new System.Drawing.Size(124, 30);
@@ -189,37 +189,37 @@
             this.Request_label.AutoSize = true;
             this.Request_label.BackColor = System.Drawing.Color.White;
             this.Request_label.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Request_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.Request_label.ForeColor = System.Drawing.Color.Black;
             this.Request_label.Location = new System.Drawing.Point(51, 412);
             this.Request_label.Name = "Request_label";
             this.Request_label.Size = new System.Drawing.Size(109, 30);
             this.Request_label.TabIndex = 42;
             this.Request_label.Text = "REQUEST";
             // 
-            // gunaButton9
+            // pick_up_btn
             // 
-            this.gunaButton9.AnimationHoverSpeed = 0.07F;
-            this.gunaButton9.AnimationSpeed = 0.03F;
-            this.gunaButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gunaButton9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton9.BorderSize = 3;
-            this.gunaButton9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton9.ForeColor = System.Drawing.Color.White;
-            this.gunaButton9.Image = null;
-            this.gunaButton9.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton9.Location = new System.Drawing.Point(887, 661);
-            this.gunaButton9.Name = "gunaButton9";
-            this.gunaButton9.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton9.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.gunaButton9.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton9.OnHoverImage = null;
-            this.gunaButton9.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaButton9.Radius = 10;
-            this.gunaButton9.Size = new System.Drawing.Size(366, 78);
-            this.gunaButton9.TabIndex = 41;
-            this.gunaButton9.Text = "PICK UP ORDER";
-            this.gunaButton9.Click += new System.EventHandler(this.gunaButton9_Click);
+            this.pick_up_btn.AnimationHoverSpeed = 0.07F;
+            this.pick_up_btn.AnimationSpeed = 0.03F;
+            this.pick_up_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pick_up_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.pick_up_btn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.pick_up_btn.BorderSize = 3;
+            this.pick_up_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pick_up_btn.ForeColor = System.Drawing.Color.White;
+            this.pick_up_btn.Image = null;
+            this.pick_up_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.pick_up_btn.Location = new System.Drawing.Point(887, 661);
+            this.pick_up_btn.Name = "pick_up_btn";
+            this.pick_up_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.pick_up_btn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.pick_up_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.pick_up_btn.OnHoverImage = null;
+            this.pick_up_btn.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.pick_up_btn.Radius = 10;
+            this.pick_up_btn.Size = new System.Drawing.Size(366, 78);
+            this.pick_up_btn.TabIndex = 41;
+            this.pick_up_btn.Text = "PICK UP ORDER";
+            this.pick_up_btn.Click += new System.EventHandler(this.pickUp_btn_click);
             // 
             // Fee
             // 
@@ -292,7 +292,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.BackColor = System.Drawing.Color.White;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel4.Location = new System.Drawing.Point(51, 612);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(157, 30);
@@ -408,7 +408,7 @@
         private Guna.UI.WinForms.GunaLabel Category_label;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaButton gunaButton9;
+        private Guna.UI.WinForms.GunaButton pick_up_btn;
         private System.Windows.Forms.RichTextBox descriptionTxt;
         private Guna.UI.WinForms.GunaCirclePictureBox profile;
         private Guna.UI.WinForms.GunaButton Name_label;

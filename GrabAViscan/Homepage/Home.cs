@@ -30,7 +30,7 @@ namespace GrabAViscan
         private rightWing right;
         private string email;
         private int User_id;
-        ToDeliver todeliver;
+        private ToDeliver todeliver;
         public Home(int uid)
         {
             List<Posting> posts = db.GetAvailablePosts();
@@ -112,7 +112,7 @@ namespace GrabAViscan
 
         }
 
-        public void My_Request(object sender, EventArgs e)
+        public void My_Request_click(object sender, EventArgs e)
         {
             MyRequest myRequest = new MyRequest(this.User_id);
             myRequest.feed(this);
@@ -131,7 +131,7 @@ namespace GrabAViscan
         }
 
 
-        public void To_deliver(object sender, EventArgs e)
+        public void To_deliver_click(object sender, EventArgs e)
         {
             todeliver = new ToDeliver(this.User_id);
             todeliver.feed(this);
@@ -148,7 +148,7 @@ namespace GrabAViscan
             ctrSet();
         }
 
-        private void History(object sender, EventArgs e)
+        private void History_click(object sender, EventArgs e)
         {
             History history = new History(this.User_id,this);
             flow1.Controls.Clear();
@@ -164,7 +164,7 @@ namespace GrabAViscan
             ctrSet();
         }
 
-        public void gunaButton9_Click(object sender, EventArgs e)
+        public void settings_click(object sender, EventArgs e)
         {
             Settings settings = new Settings(user.Email,this);
 
@@ -200,7 +200,7 @@ namespace GrabAViscan
 
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void logOut_click(object sender, EventArgs e)
         {
             logNotif logout = new logNotif(this);
             logout.Show();

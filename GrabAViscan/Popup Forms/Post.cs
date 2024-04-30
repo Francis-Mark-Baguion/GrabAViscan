@@ -25,13 +25,14 @@ namespace GrabAViscan.Popup
         DatabaseManagement db = new DatabaseManagement();
         public User user;
         public string email;
-        Home home;
+        private Home home;
         public Post(Home home)
         {
 
             InitializeComponent();
 
             this.Owner = home;
+            this.home = home;
             categoryCombo.DataSource = db.categories;
             categoryCombo.ValueMember = "ID";
             categoryCombo.DisplayMember = "Name";
@@ -192,6 +193,7 @@ namespace GrabAViscan.Popup
 
             try
             {
+                Fee += 10;
                 string Description = CommentTxt.Text;
                 DateTime Date_posted = DateTime.Now;
                 
@@ -236,7 +238,7 @@ namespace GrabAViscan.Popup
                     CommentTxt.Text = "";
                     TimePicker.Value = DateTime.Today;
 
-                    home.ctrSet();
+                    this.home.ctrSet();
 
                     this.Hide();
                 }

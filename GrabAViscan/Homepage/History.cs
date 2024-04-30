@@ -49,7 +49,7 @@ namespace GrabAViscan
                     if (post.Available == 4)
                     {
 
-                        HistroyLogDel Delivered = new HistroyLogDel(post, home);
+                        HistroyLogDel Delivered = new HistroyLogDel(post, this.home);
 
                         flow1.Controls.Add(Delivered);
 
@@ -57,7 +57,7 @@ namespace GrabAViscan
                     }
                     else if (post.Available == 3)
                     {
-                        HistroyLogRec Received = new HistroyLogRec(post,User_id,home);
+                        HistroyLogRec Received = new HistroyLogRec(post,User_id,this.home);
 
                         flow1.Controls.Add(Received);
                     }
@@ -96,7 +96,7 @@ namespace GrabAViscan
             btn_delivery.Image = delivery;
             
             flow1.Controls.Clear();
-            PersonalReq personalReq = new PersonalReq(this.User_id,home);
+            PersonalReq personalReq = new PersonalReq(this.User_id,this.home);
             flow1.Controls.Add(personalReq);
         }
 
@@ -110,7 +110,7 @@ namespace GrabAViscan
             btn_personal.ForeColor = Color.Black;
             btn_personal.Image = personal;
             flow1.Controls.Clear();
-            DeliveryHistory deliveries = new DeliveryHistory(User_id, home);
+            DeliveryHistory deliveries = new DeliveryHistory(User_id, this.home);
             flow1.Controls.Add(deliveries);
         }
     }

@@ -27,16 +27,18 @@ namespace GrabAViscan.Feed
         private Posting post;
         private Home home;
         private Post pst;
-        ViewPost view;
+        private ViewPost view;
         public CancelledRepost(Posting post,int UID,Home home)
         {
             InitializeComponent();
-            pst = new Post(post, this.home);
-            view = new ViewPost(post, home, 1);
+            this.home = home;
+            pst = new Post(post, home);
+            
+            view = new ViewPost(post, this.home, 1);
             this.post = post;
             this.Post_id = post.Post_id;
             this.User_id = UID;
-            this.home = home;
+            
             this.nameHolder.Text = db.getUserById(UID).FirstName + " " + db.getUserById(UID).LastName;
             SetImageFromByteArrayProfile(this.profile, db.getUserById(UID).Profile_pic);
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -68,7 +70,7 @@ namespace GrabAViscan.Feed
                 }
         }
 
-        private void upload_btn_Click(object sender, EventArgs e)   
+        private void Repost_Click(object sender, EventArgs e)   
         {
             
             
@@ -108,7 +110,7 @@ namespace GrabAViscan.Feed
 
         }
 
-        private void Close_btn_Click(object sender, EventArgs e)
+        private void Expand_click(object sender, EventArgs e)
         {
            if (view.Visible == false)
             {

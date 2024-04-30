@@ -42,9 +42,9 @@
             this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
             this.stat = new Guna.UI.WinForms.GunaLabel();
             this.profile = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
-            this.discard_btn = new Guna.UI.WinForms.GunaButton();
-            this.upload_btn = new Guna.UI.WinForms.GunaButton();
+            this.cancel_btn = new Guna.UI.WinForms.GunaButton();
+            this.edit_btn = new Guna.UI.WinForms.GunaButton();
+            this.view_btn = new Guna.UI.WinForms.GunaButton();
             this.Fee = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.label2 = new System.Windows.Forms.Label();
@@ -172,9 +172,9 @@
             this.MainPanel.Controls.Add(this.statusTxt);
             this.MainPanel.Controls.Add(this.stat);
             this.MainPanel.Controls.Add(this.profile);
-            this.MainPanel.Controls.Add(this.gunaButton4);
-            this.MainPanel.Controls.Add(this.discard_btn);
-            this.MainPanel.Controls.Add(this.upload_btn);
+            this.MainPanel.Controls.Add(this.cancel_btn);
+            this.MainPanel.Controls.Add(this.edit_btn);
+            this.MainPanel.Controls.Add(this.view_btn);
             this.MainPanel.Controls.Add(this.quantityTxt);
             this.MainPanel.Controls.Add(this.Quantity_label);
             this.MainPanel.Controls.Add(this.Request_label);
@@ -278,77 +278,77 @@
             this.profile.TabIndex = 56;
             this.profile.TabStop = false;
             // 
-            // gunaButton4
+            // cancel_btn
             // 
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(3, 611);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.Firebrick;
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Radius = 10;
-            this.gunaButton4.Size = new System.Drawing.Size(374, 52);
-            this.gunaButton4.TabIndex = 54;
-            this.gunaButton4.Text = "CANCEL";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            this.cancel_btn.AnimationHoverSpeed = 0.07F;
+            this.cancel_btn.AnimationSpeed = 0.03F;
+            this.cancel_btn.BaseColor = System.Drawing.Color.Firebrick;
+            this.cancel_btn.BorderColor = System.Drawing.Color.Black;
+            this.cancel_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_btn.ForeColor = System.Drawing.Color.White;
+            this.cancel_btn.Image = null;
+            this.cancel_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancel_btn.Location = new System.Drawing.Point(3, 611);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.OnHoverBaseColor = System.Drawing.Color.Firebrick;
+            this.cancel_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.cancel_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancel_btn.OnHoverImage = null;
+            this.cancel_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.cancel_btn.Radius = 10;
+            this.cancel_btn.Size = new System.Drawing.Size(374, 52);
+            this.cancel_btn.TabIndex = 54;
+            this.cancel_btn.Text = "CANCEL";
+            this.cancel_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_click);
             // 
-            // discard_btn
+            // edit_btn
             // 
-            this.discard_btn.AnimationHoverSpeed = 0.07F;
-            this.discard_btn.AnimationSpeed = 0.03F;
-            this.discard_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.BorderColor = System.Drawing.Color.Black;
-            this.discard_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discard_btn.ForeColor = System.Drawing.Color.White;
-            this.discard_btn.Image = null;
-            this.discard_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.discard_btn.Location = new System.Drawing.Point(3, 674);
-            this.discard_btn.Name = "discard_btn";
-            this.discard_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
-            this.discard_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.discard_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.discard_btn.OnHoverImage = null;
-            this.discard_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.discard_btn.Radius = 10;
-            this.discard_btn.Size = new System.Drawing.Size(374, 52);
-            this.discard_btn.TabIndex = 53;
-            this.discard_btn.Text = "EDIT";
-            this.discard_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.discard_btn.Click += new System.EventHandler(this.discard_btn_Click);
+            this.edit_btn.AnimationHoverSpeed = 0.07F;
+            this.edit_btn.AnimationSpeed = 0.03F;
+            this.edit_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.edit_btn.BorderColor = System.Drawing.Color.Black;
+            this.edit_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_btn.ForeColor = System.Drawing.Color.White;
+            this.edit_btn.Image = null;
+            this.edit_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.edit_btn.Location = new System.Drawing.Point(3, 674);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.edit_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.edit_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.edit_btn.OnHoverImage = null;
+            this.edit_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.edit_btn.Radius = 10;
+            this.edit_btn.Size = new System.Drawing.Size(374, 52);
+            this.edit_btn.TabIndex = 53;
+            this.edit_btn.Text = "EDIT";
+            this.edit_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.edit_btn.Click += new System.EventHandler(this.edit_click);
             // 
-            // upload_btn
+            // view_btn
             // 
-            this.upload_btn.AnimationHoverSpeed = 0.07F;
-            this.upload_btn.AnimationSpeed = 0.03F;
-            this.upload_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.BorderColor = System.Drawing.Color.Black;
-            this.upload_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upload_btn.ForeColor = System.Drawing.Color.White;
-            this.upload_btn.Image = null;
-            this.upload_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload_btn.Location = new System.Drawing.Point(3, 739);
-            this.upload_btn.Name = "upload_btn";
-            this.upload_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.upload_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.upload_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.upload_btn.OnHoverImage = null;
-            this.upload_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.upload_btn.Radius = 10;
-            this.upload_btn.Size = new System.Drawing.Size(374, 52);
-            this.upload_btn.TabIndex = 52;
-            this.upload_btn.Text = "VIEW";
-            this.upload_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.upload_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            this.view_btn.AnimationHoverSpeed = 0.07F;
+            this.view_btn.AnimationSpeed = 0.03F;
+            this.view_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.view_btn.BorderColor = System.Drawing.Color.Black;
+            this.view_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_btn.ForeColor = System.Drawing.Color.White;
+            this.view_btn.Image = null;
+            this.view_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.view_btn.Location = new System.Drawing.Point(3, 739);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.view_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.view_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.view_btn.OnHoverImage = null;
+            this.view_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.view_btn.Radius = 10;
+            this.view_btn.Size = new System.Drawing.Size(374, 52);
+            this.view_btn.TabIndex = 52;
+            this.view_btn.Text = "VIEW";
+            this.view_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.view_btn.Click += new System.EventHandler(this.view_click);
             // 
             // Fee
             // 
@@ -419,9 +419,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaElipsePanel MainPanel;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
-        private Guna.UI.WinForms.GunaButton discard_btn;
-        private Guna.UI.WinForms.GunaButton upload_btn;
+        private Guna.UI.WinForms.GunaButton cancel_btn;
+        private Guna.UI.WinForms.GunaButton edit_btn;
+        private Guna.UI.WinForms.GunaButton view_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaPictureBox profile;

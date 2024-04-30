@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistroyLogRec));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.Close_btn = new Guna.UI.WinForms.GunaButton();
+            this.exapand_btn = new Guna.UI.WinForms.GunaButton();
             this.repost_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
@@ -49,7 +49,7 @@
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel1.Controls.Add(this.Close_btn);
+            this.gunaElipsePanel1.Controls.Add(this.exapand_btn);
             this.gunaElipsePanel1.Controls.Add(this.repost_btn);
             this.gunaElipsePanel1.Controls.Add(this.gunaLabel1);
             this.gunaElipsePanel1.Controls.Add(this.nameHolder);
@@ -65,29 +65,29 @@
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1950, 100);
             this.gunaElipsePanel1.TabIndex = 2;
             // 
-            // Close_btn
+            // exapand_btn
             // 
-            this.Close_btn.AnimationHoverSpeed = 0.07F;
-            this.Close_btn.AnimationSpeed = 0.03F;
-            this.Close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BorderColor = System.Drawing.Color.Black;
-            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Close_btn.ForeColor = System.Drawing.Color.White;
-            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
-            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.Close_btn.Location = new System.Drawing.Point(1865, 14);
-            this.Close_btn.Name = "Close_btn";
-            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
-            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(71, 68);
-            this.Close_btn.TabIndex = 62;
-            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
+            this.exapand_btn.AnimationHoverSpeed = 0.07F;
+            this.exapand_btn.AnimationSpeed = 0.03F;
+            this.exapand_btn.BackColor = System.Drawing.Color.Transparent;
+            this.exapand_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.exapand_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.exapand_btn.BorderColor = System.Drawing.Color.Black;
+            this.exapand_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exapand_btn.ForeColor = System.Drawing.Color.White;
+            this.exapand_btn.Image = ((System.Drawing.Image)(resources.GetObject("exapand_btn.Image")));
+            this.exapand_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.exapand_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.exapand_btn.Location = new System.Drawing.Point(1865, 14);
+            this.exapand_btn.Name = "exapand_btn";
+            this.exapand_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.exapand_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.exapand_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.exapand_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("exapand_btn.OnHoverImage")));
+            this.exapand_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.exapand_btn.Size = new System.Drawing.Size(71, 68);
+            this.exapand_btn.TabIndex = 62;
+            this.exapand_btn.Click += new System.EventHandler(this.expand_btn_Click);
             // 
             // repost_btn
             // 
@@ -254,6 +254,6 @@
         private Guna.UI.WinForms.GunaCirclePictureBox profile;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaButton repost_btn;
-        private Guna.UI.WinForms.GunaButton Close_btn;
+        private Guna.UI.WinForms.GunaButton exapand_btn;
     }
 }

@@ -28,6 +28,7 @@ namespace GrabAViscan.Popup_Messages
         
         public AcceptRequest(int id, int uid,HomeFeed YesImage, Home home)
         {
+            this.Owner = home;
             this.home = home;   
             InitializeComponent();
             this.Show();
@@ -41,6 +42,7 @@ namespace GrabAViscan.Popup_Messages
         {
             InitializeComponent();
             this.home = home;
+            this.Owner = home;
             this.Show();
             this.id = id;
             this.uid = uid;

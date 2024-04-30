@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CancelledRepost));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.expand_btn = new Guna.UI.WinForms.GunaButton();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.repost_btn = new Guna.UI.WinForms.GunaButton();
+            this.category = new Guna.UI.WinForms.GunaPictureBox();
             this.dateCompleted = new Guna.UI.WinForms.GunaLabel();
             this.categeryTxt = new Guna.UI.WinForms.GunaTextBox();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
+            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.Label = new Guna.UI.WinForms.GunaLabel();
-            this.category = new Guna.UI.WinForms.GunaPictureBox();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaElipsePanel1.SuspendLayout();
-            this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.category)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
+            this.gunaElipsePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel1.Controls.Add(this.Close_btn);
+            this.gunaElipsePanel1.Controls.Add(this.expand_btn);
             this.gunaElipsePanel1.Controls.Add(this.gunaLabel1);
             this.gunaElipsePanel1.Controls.Add(this.repost_btn);
             this.gunaElipsePanel1.Controls.Add(this.category);
@@ -65,6 +65,40 @@
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1950, 100);
             this.gunaElipsePanel1.TabIndex = 4;
             this.gunaElipsePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel1_Paint);
+            // 
+            // expand_btn
+            // 
+            this.expand_btn.AnimationHoverSpeed = 0.07F;
+            this.expand_btn.AnimationSpeed = 0.03F;
+            this.expand_btn.BackColor = System.Drawing.Color.Transparent;
+            this.expand_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.expand_btn.BaseColor = System.Drawing.Color.Transparent;
+            this.expand_btn.BorderColor = System.Drawing.Color.Black;
+            this.expand_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.expand_btn.ForeColor = System.Drawing.Color.White;
+            this.expand_btn.Image = ((System.Drawing.Image)(resources.GetObject("expand_btn.Image")));
+            this.expand_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.expand_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.expand_btn.Location = new System.Drawing.Point(1865, 14);
+            this.expand_btn.Name = "expand_btn";
+            this.expand_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.expand_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.expand_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.expand_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("expand_btn.OnHoverImage")));
+            this.expand_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.expand_btn.Size = new System.Drawing.Size(71, 68);
+            this.expand_btn.TabIndex = 63;
+            this.expand_btn.Click += new System.EventHandler(this.Expand_click);
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(487, 65);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(252, 35);
+            this.gunaLabel1.TabIndex = 0;
+            this.gunaLabel1.Text = "CANCELLED YOUR REQUEST";
             // 
             // repost_btn
             // 
@@ -88,7 +122,18 @@
             this.repost_btn.TabIndex = 58;
             this.repost_btn.Text = "REPOST";
             this.repost_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.repost_btn.Click += new System.EventHandler(this.upload_btn_Click);
+            this.repost_btn.Click += new System.EventHandler(this.Repost_Click);
+            // 
+            // category
+            // 
+            this.category.BackColor = System.Drawing.Color.Transparent;
+            this.category.BaseColor = System.Drawing.Color.Transparent;
+            this.category.Location = new System.Drawing.Point(940, 10);
+            this.category.Name = "category";
+            this.category.Size = new System.Drawing.Size(80, 80);
+            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.category.TabIndex = 57;
+            this.category.TabStop = false;
             // 
             // dateCompleted
             // 
@@ -141,6 +186,20 @@
             this.nameHolder.Text = "First Name Last Name";
             this.nameHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.White;
+            this.profile.BaseColor = System.Drawing.Color.White;
+            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
+            this.profile.Location = new System.Drawing.Point(319, 10);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(80, 80);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 1;
+            this.profile.TabStop = false;
+            this.profile.UseTransfarantBackground = false;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
+            // 
             // gunaElipsePanel2
             // 
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.White;
@@ -164,65 +223,6 @@
             this.Label.TabIndex = 7;
             this.Label.Text = "CANCELLED";
             // 
-            // category
-            // 
-            this.category.BackColor = System.Drawing.Color.Transparent;
-            this.category.BaseColor = System.Drawing.Color.Transparent;
-            this.category.Location = new System.Drawing.Point(940, 10);
-            this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(80, 80);
-            this.category.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.category.TabIndex = 57;
-            this.category.TabStop = false;
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.White;
-            this.profile.BaseColor = System.Drawing.Color.White;
-            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
-            this.profile.Location = new System.Drawing.Point(319, 10);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(80, 80);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 1;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
-            this.profile.Click += new System.EventHandler(this.profile_Click);
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(487, 65);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(252, 35);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "CANCELLED YOUR REQUEST";
-            // 
-            // Close_btn
-            // 
-            this.Close_btn.AnimationHoverSpeed = 0.07F;
-            this.Close_btn.AnimationSpeed = 0.03F;
-            this.Close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close_btn.BaseColor = System.Drawing.Color.Transparent;
-            this.Close_btn.BorderColor = System.Drawing.Color.Black;
-            this.Close_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Close_btn.ForeColor = System.Drawing.Color.White;
-            this.Close_btn.Image = ((System.Drawing.Image)(resources.GetObject("Close_btn.Image")));
-            this.Close_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Close_btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.Close_btn.Location = new System.Drawing.Point(1865, 14);
-            this.Close_btn.Name = "Close_btn";
-            this.Close_btn.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.Close_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Close_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Close_btn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("Close_btn.OnHoverImage")));
-            this.Close_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Close_btn.Size = new System.Drawing.Size(71, 68);
-            this.Close_btn.TabIndex = 63;
-            this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
-            // 
             // CancelledRepost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -232,10 +232,10 @@
             this.Size = new System.Drawing.Size(1950, 100);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
-            this.gunaElipsePanel2.ResumeLayout(false);
-            this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.category)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).EndInit();
+            this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -252,6 +252,6 @@
         private Guna.UI.WinForms.GunaLabel Label;
         private Guna.UI.WinForms.GunaButton repost_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaButton Close_btn;
+        private Guna.UI.WinForms.GunaButton expand_btn;
     }
 }
