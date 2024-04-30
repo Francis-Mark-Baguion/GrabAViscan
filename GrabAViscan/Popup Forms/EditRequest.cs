@@ -178,7 +178,7 @@ namespace GrabAViscan.Popup
             Posting post = null;
             post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
             db.updatePostingInformation(post);
-            home.My_Request(sender, e);
+            home.My_Request_click(sender, e);
             this.Hide();
         }
 

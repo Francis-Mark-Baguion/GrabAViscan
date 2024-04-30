@@ -139,9 +139,7 @@ namespace GrabAViscan
 
         private void ProfilePic_Click(object sender, EventArgs e)
         {
-
-            form.gunaButton9_Click(sender, e);
-            
+            form.settings_click(sender, e);
         }
 
         private void flow1_Paint(object sender, PaintEventArgs e)

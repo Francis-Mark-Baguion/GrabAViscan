@@ -111,7 +111,7 @@ namespace GrabAViscan.Popup_Messages
             
             db.updatePostingInformation(post);
             this.Close();
-            home.To_deliver(sender, e);
+            home.To_deliver_click(sender, e);
         }
 
         private void two_Click(object sender, EventArgs e)

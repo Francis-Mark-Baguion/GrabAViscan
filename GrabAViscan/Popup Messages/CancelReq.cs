@@ -54,8 +54,8 @@ namespace GrabAViscan.Popup_Messages
 
             db.updatePostingInformation(post);
             if(flag == 0) 
-            { home.My_Request(sender, e); }
-            else home.To_deliver(sender, e);
+            { home.My_Request_click(sender, e); }
+            else home.To_deliver_click(sender, e);
             this.Close();
         }
     }
