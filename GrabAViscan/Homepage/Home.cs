@@ -412,7 +412,7 @@ namespace GrabAViscan
                     {
                         filterPost.Add(post);
                     }
-                    else if(post.Category == filterBox.Text)
+                    else if(post.Category.ToUpper() == filterBox.Text.ToUpper())
                     {
                         filterPost.Add(post);
                     }
