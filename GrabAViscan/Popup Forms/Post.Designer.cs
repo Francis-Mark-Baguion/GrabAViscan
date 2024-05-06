@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Post));
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.picture = new Guna.UI.WinForms.GunaPictureBox();
             this.discard_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
@@ -51,12 +52,11 @@
             this.uploadImage_btn = new Guna.UI.WinForms.GunaButton();
             this.categoryCombo = new System.Windows.Forms.ComboBox();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CommentTxt = new Guna.UI.WinForms.GunaLineTextBox();
             this.feeTxt = new Guna.UI.WinForms.GunaTextBox();
             this.quantityTxt = new Guna.UI.WinForms.GunaTextBox();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
+            this.CommentTxt = new System.Windows.Forms.RichTextBox();
             this.gunaShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,7 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.CommentTxt);
             this.gunaShadowPanel1.Controls.Add(this.gunaLabel13);
             this.gunaShadowPanel1.Controls.Add(this.picture);
             this.gunaShadowPanel1.Controls.Add(this.discard_btn);
@@ -86,7 +87,6 @@
             this.gunaShadowPanel1.Controls.Add(this.uploadImage_btn);
             this.gunaShadowPanel1.Controls.Add(this.categoryCombo);
             this.gunaShadowPanel1.Controls.Add(this.TimePicker);
-            this.gunaShadowPanel1.Controls.Add(this.CommentTxt);
             this.gunaShadowPanel1.Controls.Add(this.feeTxt);
             this.gunaShadowPanel1.Controls.Add(this.quantityTxt);
             this.gunaShadowPanel1.Controls.Add(this.requestTxt);
@@ -97,6 +97,17 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1350, 1000);
             this.gunaShadowPanel1.TabIndex = 1;
+            // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel13.ForeColor = System.Drawing.Color.Firebrick;
+            this.gunaLabel13.Location = new System.Drawing.Point(431, 720);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(74, 38);
+            this.gunaLabel13.TabIndex = 32;
+            this.gunaLabel13.Text = "+ 10";
             // 
             // picture
             // 
@@ -360,19 +371,6 @@
             this.TimePicker.Size = new System.Drawing.Size(520, 39);
             this.TimePicker.TabIndex = 11;
             // 
-            // CommentTxt
-            // 
-            this.CommentTxt.BackColor = System.Drawing.Color.White;
-            this.CommentTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CommentTxt.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.CommentTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CommentTxt.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.CommentTxt.Location = new System.Drawing.Point(134, 861);
-            this.CommentTxt.Name = "CommentTxt";
-            this.CommentTxt.PasswordChar = '\0';
-            this.CommentTxt.Size = new System.Drawing.Size(673, 127);
-            this.CommentTxt.TabIndex = 10;
-            // 
             // feeTxt
             // 
             this.feeTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -438,16 +436,13 @@
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Post Request";
             // 
-            // gunaLabel13
+            // CommentTxt
             // 
-            this.gunaLabel13.AutoSize = true;
-            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel13.ForeColor = System.Drawing.Color.Firebrick;
-            this.gunaLabel13.Location = new System.Drawing.Point(431, 720);
-            this.gunaLabel13.Name = "gunaLabel13";
-            this.gunaLabel13.Size = new System.Drawing.Size(74, 38);
-            this.gunaLabel13.TabIndex = 32;
-            this.gunaLabel13.Text = "+ 10";
+            this.CommentTxt.Location = new System.Drawing.Point(134, 843);
+            this.CommentTxt.Name = "CommentTxt";
+            this.CommentTxt.Size = new System.Drawing.Size(711, 132);
+            this.CommentTxt.TabIndex = 33;
+            this.CommentTxt.Text = "";
             // 
             // Post
             // 
@@ -475,7 +470,6 @@
         private Guna.UI.WinForms.GunaTextBox quantityTxt;
         private Guna.UI.WinForms.GunaTextBox requestTxt;
         private System.Windows.Forms.DateTimePicker TimePicker;
-        private Guna.UI.WinForms.GunaLineTextBox CommentTxt;
         private System.Windows.Forms.ComboBox categoryCombo;
         private System.Windows.Forms.ComboBox deliverNearCombo;
         private Guna.UI.WinForms.GunaTextBox deliveryTxt;
@@ -497,5 +491,6 @@
         private Guna.UI.WinForms.GunaButton discard_btn;
         private Guna.UI.WinForms.GunaPictureBox picture;
         private Guna.UI.WinForms.GunaLabel gunaLabel13;
+        private System.Windows.Forms.RichTextBox CommentTxt;
     }
 }

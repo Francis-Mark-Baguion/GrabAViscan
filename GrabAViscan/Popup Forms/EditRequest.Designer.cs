@@ -50,18 +50,19 @@
             this.uploadImage_btn = new Guna.UI.WinForms.GunaButton();
             this.categoryCombo = new System.Windows.Forms.ComboBox();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CommentTxt = new Guna.UI.WinForms.GunaLineTextBox();
             this.feeTxt = new Guna.UI.WinForms.GunaTextBox();
             this.quantityTxt = new Guna.UI.WinForms.GunaTextBox();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.CommentTxt = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // picture
             // 
+            this.picture.BackColor = System.Drawing.Color.White;
             this.picture.BaseColor = System.Drawing.Color.White;
             this.picture.Location = new System.Drawing.Point(903, 397);
             this.picture.Name = "picture";
@@ -97,6 +98,7 @@
             // gunaLabel12
             // 
             this.gunaLabel12.AutoSize = true;
+            this.gunaLabel12.BackColor = System.Drawing.Color.White;
             this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel12.Location = new System.Drawing.Point(128, 808);
             this.gunaLabel12.Name = "gunaLabel12";
@@ -107,6 +109,7 @@
             // gunaLabel11
             // 
             this.gunaLabel11.AutoSize = true;
+            this.gunaLabel11.BackColor = System.Drawing.Color.White;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel11.Location = new System.Drawing.Point(567, 719);
             this.gunaLabel11.Name = "gunaLabel11";
@@ -117,6 +120,7 @@
             // gunaLabel10
             // 
             this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.BackColor = System.Drawing.Color.White;
             this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel10.Location = new System.Drawing.Point(128, 725);
             this.gunaLabel10.Name = "gunaLabel10";
@@ -127,6 +131,7 @@
             // gunaLabel9
             // 
             this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.BackColor = System.Drawing.Color.White;
             this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.gunaLabel9.Location = new System.Drawing.Point(296, 599);
             this.gunaLabel9.Name = "gunaLabel9";
@@ -137,6 +142,7 @@
             // gunaLabel8
             // 
             this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.BackColor = System.Drawing.Color.White;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel8.Location = new System.Drawing.Point(33, 533);
             this.gunaLabel8.Name = "gunaLabel8";
@@ -147,6 +153,7 @@
             // gunaLabel7
             // 
             this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.BackColor = System.Drawing.Color.White;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.gunaLabel7.Location = new System.Drawing.Point(296, 433);
             this.gunaLabel7.Name = "gunaLabel7";
@@ -157,6 +164,7 @@
             // gunaLabel6
             // 
             this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.BackColor = System.Drawing.Color.White;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel6.Location = new System.Drawing.Point(33, 385);
             this.gunaLabel6.Name = "gunaLabel6";
@@ -167,6 +175,7 @@
             // gunaLabel5
             // 
             this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.BackColor = System.Drawing.Color.White;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel5.Location = new System.Drawing.Point(756, 259);
             this.gunaLabel5.Name = "gunaLabel5";
@@ -177,6 +186,7 @@
             // gunaLabel4
             // 
             this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.BackColor = System.Drawing.Color.White;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel4.Location = new System.Drawing.Point(33, 255);
             this.gunaLabel4.Name = "gunaLabel4";
@@ -187,6 +197,7 @@
             // gunaLabel3
             // 
             this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.BackColor = System.Drawing.Color.White;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel3.Location = new System.Drawing.Point(759, 169);
             this.gunaLabel3.Name = "gunaLabel3";
@@ -197,6 +208,7 @@
             // gunaLabel2
             // 
             this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.BackColor = System.Drawing.Color.White;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.Location = new System.Drawing.Point(33, 169);
             this.gunaLabel2.Name = "gunaLabel2";
@@ -318,19 +330,6 @@
             this.TimePicker.Size = new System.Drawing.Size(520, 39);
             this.TimePicker.TabIndex = 11;
             // 
-            // CommentTxt
-            // 
-            this.CommentTxt.BackColor = System.Drawing.Color.White;
-            this.CommentTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CommentTxt.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.CommentTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CommentTxt.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.CommentTxt.Location = new System.Drawing.Point(134, 861);
-            this.CommentTxt.Name = "CommentTxt";
-            this.CommentTxt.PasswordChar = '\0';
-            this.CommentTxt.Size = new System.Drawing.Size(673, 127);
-            this.CommentTxt.TabIndex = 10;
-            // 
             // feeTxt
             // 
             this.feeTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -388,6 +387,7 @@
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.BackColor = System.Drawing.Color.White;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.Location = new System.Drawing.Point(12, 21);
             this.gunaLabel1.Name = "gunaLabel1";
@@ -398,6 +398,7 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.CommentTxt);
             this.gunaShadowPanel1.Controls.Add(this.picture);
             this.gunaShadowPanel1.Controls.Add(this.discard_btn);
             this.gunaShadowPanel1.Controls.Add(this.gunaLabel12);
@@ -419,7 +420,6 @@
             this.gunaShadowPanel1.Controls.Add(this.uploadImage_btn);
             this.gunaShadowPanel1.Controls.Add(this.categoryCombo);
             this.gunaShadowPanel1.Controls.Add(this.TimePicker);
-            this.gunaShadowPanel1.Controls.Add(this.CommentTxt);
             this.gunaShadowPanel1.Controls.Add(this.feeTxt);
             this.gunaShadowPanel1.Controls.Add(this.quantityTxt);
             this.gunaShadowPanel1.Controls.Add(this.requestTxt);
@@ -430,6 +430,14 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1350, 1000);
             this.gunaShadowPanel1.TabIndex = 2;
+            // 
+            // CommentTxt
+            // 
+            this.CommentTxt.Location = new System.Drawing.Point(134, 856);
+            this.CommentTxt.Name = "CommentTxt";
+            this.CommentTxt.Size = new System.Drawing.Size(711, 132);
+            this.CommentTxt.TabIndex = 34;
+            this.CommentTxt.Text = "";
             // 
             // EditRequest
             // 
@@ -471,11 +479,11 @@
         private Guna.UI.WinForms.GunaButton uploadImage_btn;
         private System.Windows.Forms.ComboBox categoryCombo;
         private System.Windows.Forms.DateTimePicker TimePicker;
-        private Guna.UI.WinForms.GunaLineTextBox CommentTxt;
         private Guna.UI.WinForms.GunaTextBox feeTxt;
         private Guna.UI.WinForms.GunaTextBox quantityTxt;
         private Guna.UI.WinForms.GunaTextBox requestTxt;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
+        private System.Windows.Forms.RichTextBox CommentTxt;
     }
 }

@@ -15,16 +15,22 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GrabAViscan.Classes.DatabaseManagement">
-    <Position X="5.75" Y="3.25" Width="2.5" />
+    <Position X="5.75" Y="3" Width="2.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AEgIBQICAcgEiAFQGAQAEIASQQQAAAAAIAAAAAAgQQA=</HashCode>
+      <HashCode>AEgJBQICAdgEiAFQGAYAEIAaQQQEAAAAIAAAAAAgSQQ=</HashCode>
       <FileName>Classes\DatabaseManagement.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Deliver" />
+      <Property Name="Credentials" />
+      <Property Name="Posting" />
+      <Property Name="Location" />
+      <Property Name="Promotion" />
+      <Property Name="Category" />
+      <Property Name="User" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GrabAViscan.Classes.Deliver">

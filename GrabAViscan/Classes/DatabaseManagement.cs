@@ -36,7 +36,56 @@ namespace GrabAViscan.Classes
             GetDeliveries();
         }
 
+        /// <summary></summary>
         public Deliver Deliver
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Credentials Credentials
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Posting Posting
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Location Location
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Promotion Promotion
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Category Category
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public User User
         {
             get => default;
             set
