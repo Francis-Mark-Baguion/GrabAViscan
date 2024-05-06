@@ -1,92 +1,53 @@
-﻿using MySql.Data.MySqlClient;
+﻿using GrabAViscan.Classes;
+using GrabAViscan.Popup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GrabAViscan.Classes;
-using System.Xml.Linq;
-using GrabAViscan.Popup;
-using System.Net.Mail;
-using System.Net;
-using GrabAViscan.LogIntro;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace GrabAViscan
+namespace GrabAViscan.LogIntro
 {
-    public partial class LogIn : Form
+    public partial class ForgotPass : Form
     {
-        private DatabaseManagement databaseManagement;
-        public LogIn()
+        private DatabaseManagement db = new DatabaseManagement();
+        private LogIn log;
+        public ForgotPass(LogIn log)
         {
             InitializeComponent();
-            databaseManagement = new DatabaseManagement();
+            this.Owner = log;
+            this.log = log; 
+            this.Show();
         }
 
-        private void sigh_up_click(object sender, LinkLabelLinkClickedEventArgs e)
+        private void changePass_btn_Click(object sender, EventArgs e)
         {
-            SignUp sign = new SignUp();
-            sign.Show();
-            this.Hide();
-        }
-
-
-        private void gunaTextBox1_Click(object sender, EventArgs e)
-        {
-            emailTxt.Text = "";
-        }
-
-        private void passwordTxt_Click(object sender, EventArgs e)
-        {
-            passwordTxt.Text = "";
-        }
-
-        private void Log_in_Click(object sender, EventArgs e)
-        {
-            string email = emailTxt.Text;
-            string password = passwordTxt.Text;
             try
             {
-                MySqlConnection conConn = databaseManagement.Connect();
-
-
-                string sql = "SELECT email, password FROM grab.accounts WHERE email=@email AND password=@password";
-                MySqlCommand cmd = new MySqlCommand(sql, conConn);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                if(db.emailExist(emailTxt.Text))
                 {
-                    conConn.Close();
-                    Home hom = new Home(databaseManagement.get_id(email, password));
-                    User user = databaseManagement.InitializeUser(email);
-                    hom.setter(email);
-                    hom.Show();
-                    this.Hide();
-                    SucMessage error = new SucMessage("Log In Successful");
-
-
+                    SendOTPCode(emailTxt.Text);
+                    
                 }
                 else
                 {
-                    ErrorMessage error1 = new ErrorMessage("Invalid Email or Password");
+                    ErrorMessage error = new ErrorMessage("Email does not exist");
                 }
-                reader.Close();
-                conConn.Close();
-
+               
             }
-            catch (Exception ex) 
+            catch (Exception ex)
+            
             {
-                ErrorMessage error1 = new ErrorMessage(ex.Message);
+                ErrorMessage err = new ErrorMessage(ex.Message);
             }
             
-
-           
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
@@ -94,19 +55,6 @@ namespace GrabAViscan
             this.Close();
         }
 
-        private void Minimize_btn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void forgotPassLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ForgotPass forgot = new ForgotPass(this);
-        }
-
-
-       
-        /*
         private void SendOTPCode(String email)
         {
 
@@ -151,10 +99,8 @@ namespace GrabAViscan
             try
             {
                 smtp.Send(mail);
-                OTPForm oTPForm = new OTPForm(OTPCode, email, this);
-                SetFormLocation(oTPForm);
-                oTPForm.Owner = this;
-                oTPForm.Show();
+                ChangePass changePass = new ChangePass(emailTxt.Text, log, OTPCode);
+                this.Close();
                 MessageBox.Show("OTP code sent successfully to " + email, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -175,7 +121,5 @@ namespace GrabAViscan
             }
             return otp.ToString();
         }
-
-        */
     }
 }

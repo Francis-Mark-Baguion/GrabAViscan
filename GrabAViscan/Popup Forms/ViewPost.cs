@@ -37,23 +37,31 @@ namespace GrabAViscan.Popup_Forms
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
 
-            string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
-            string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
+            try
+            {
+                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+                string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
 
 
-            SetImageFromByteArrayProfile(profile, db.getUserById(post.User_id).Profile_pic);
-            SetImageFromByteArray1(picture, post.image);
-            this.Name_label.Text = db.getUserById(post.User_id).FirstName + " "+ db.getUserById(post.User_id).LastName;
-            this.statusTxt.Text = db.getUserById(post.User_id).Status;
-            this.requestTxt.Text = post.Requested;
-            this.quantityTxt.Text = post.Quantity;
-            this.categoryTxt.Text = post.Category; 
-            this.Fee.Text = post.Fee + "";
-            this.pickUp.Text = pick + ": " + post.Pick_up;
+                SetImageFromByteArrayProfile(profile, db.getUserById(post.User_id).Profile_pic);
+                SetImageFromByteArray1(picture, post.image);
+                this.Name_label.Text = db.getUserById(post.User_id).FirstName + " " + db.getUserById(post.User_id).LastName;
+                this.statusTxt.Text = db.getUserById(post.User_id).Status;
+                this.requestTxt.Text = post.Requested;
+                this.quantityTxt.Text = post.Quantity;
+                this.categoryTxt.Text = post.Category;
+                this.Fee.Text = post.Fee + "";
+                this.pickUp.Text = pick + ": " + post.Pick_up;
 
-            this.delivery.Text = deliver + ": " + post.Delivery_location;
-            this.descriptionTxt.Text = post.Description;
-            this.Show();
+                this.delivery.Text = deliver + ": " + post.Delivery_location;
+                this.descriptionTxt.Text = post.Description;
+                this.Show();
+            }
+            catch (Exception ex) 
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+            
 
         }
 
@@ -69,7 +77,9 @@ namespace GrabAViscan.Popup_Forms
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
 
-            string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
+            try
+            {
+                string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
             string deliver = db.GetLocationByMatchingId(db.locations, locId2).LocationName;
 
 
@@ -85,7 +95,12 @@ namespace GrabAViscan.Popup_Forms
 
             this.delivery.Text = deliver + ": " + post.Delivery_location;
             this.descriptionTxt.Text = post.Description;
-            
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage err = new ErrorMessage(ex.Message);
+            }
+
 
         }
 

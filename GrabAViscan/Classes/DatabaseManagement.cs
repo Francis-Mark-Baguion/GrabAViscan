@@ -135,6 +135,34 @@ namespace GrabAViscan.Classes
 
         }
 
+        public bool emailExist(string email)
+        {
+            MySqlConnection conConn = this.Connect();
+
+
+
+            string sql = "SELECT email, password FROM grab.accounts WHERE email=@email";
+            MySqlCommand cmd = new MySqlCommand(sql, conConn);
+            cmd.Parameters.AddWithValue("@email", email);
+            
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                conConn.Close();
+                return false;
+            }
+
+
+        }
+
 
 
         public bool SignUp(string email, string pass)

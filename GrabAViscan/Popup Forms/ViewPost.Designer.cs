@@ -34,9 +34,6 @@
             this.descriptionTxt = new System.Windows.Forms.RichTextBox();
             this.Fee = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
-            this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.Name_label = new Guna.UI.WinForms.GunaButton();
             this.categoryTxt = new Guna.UI.WinForms.GunaTextBox();
             this.delivery = new Guna.UI.WinForms.GunaTextBox();
             this.pickUp = new Guna.UI.WinForms.GunaTextBox();
@@ -49,9 +46,12 @@
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.Name_label = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.picture = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.picture = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -133,68 +133,6 @@
             this.gunaPanel10.Name = "gunaPanel10";
             this.gunaPanel10.Size = new System.Drawing.Size(1100, 97);
             this.gunaPanel10.TabIndex = 0;
-            // 
-            // statusTxt
-            // 
-            this.statusTxt.BackColor = System.Drawing.Color.Transparent;
-            this.statusTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusTxt.BaseColor = System.Drawing.Color.Transparent;
-            this.statusTxt.BorderColor = System.Drawing.Color.Silver;
-            this.statusTxt.BorderSize = 0;
-            this.statusTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.statusTxt.Enabled = false;
-            this.statusTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.statusTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.statusTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.statusTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusTxt.Location = new System.Drawing.Point(131, 222);
-            this.statusTxt.Margin = new System.Windows.Forms.Padding(0);
-            this.statusTxt.Name = "statusTxt";
-            this.statusTxt.PasswordChar = '\0';
-            this.statusTxt.Radius = 10;
-            this.statusTxt.Size = new System.Drawing.Size(240, 53);
-            this.statusTxt.TabIndex = 40;
-            this.statusTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // profile
-            // 
-            this.profile.BackColor = System.Drawing.Color.Transparent;
-            this.profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.profile.BaseColor = System.Drawing.Color.Transparent;
-            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
-            this.profile.InitialImage = ((System.Drawing.Image)(resources.GetObject("profile.InitialImage")));
-            this.profile.Location = new System.Drawing.Point(210, 64);
-            this.profile.Name = "profile";
-            this.profile.Size = new System.Drawing.Size(82, 77);
-            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profile.TabIndex = 2;
-            this.profile.TabStop = false;
-            this.profile.UseTransfarantBackground = false;
-            this.profile.Click += new System.EventHandler(this.profile_Click);
-            // 
-            // Name_label
-            // 
-            this.Name_label.AnimationHoverSpeed = 0.07F;
-            this.Name_label.AnimationSpeed = 0.03F;
-            this.Name_label.BackColor = System.Drawing.Color.Transparent;
-            this.Name_label.BaseColor = System.Drawing.Color.Transparent;
-            this.Name_label.BorderColor = System.Drawing.Color.Black;
-            this.Name_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_label.ForeColor = System.Drawing.Color.Black;
-            this.Name_label.Image = null;
-            this.Name_label.ImageSize = new System.Drawing.Size(20, 20);
-            this.Name_label.Location = new System.Drawing.Point(91, 157);
-            this.Name_label.Name = "Name_label";
-            this.Name_label.OnHoverBaseColor = System.Drawing.Color.White;
-            this.Name_label.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.Name_label.OnHoverForeColor = System.Drawing.Color.Black;
-            this.Name_label.OnHoverImage = null;
-            this.Name_label.OnPressedColor = System.Drawing.Color.Black;
-            this.Name_label.Size = new System.Drawing.Size(322, 42);
-            this.Name_label.TabIndex = 3;
-            this.Name_label.Text = "First Name Last Name";
-            this.Name_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Name_label.Click += new System.EventHandler(this.Name_label_Click);
             // 
             // categoryTxt
             // 
@@ -379,6 +317,68 @@
             this.gunaLabel1.TabIndex = 4;
             this.gunaLabel1.Text = "Request";
             // 
+            // statusTxt
+            // 
+            this.statusTxt.BackColor = System.Drawing.Color.Transparent;
+            this.statusTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.statusTxt.BaseColor = System.Drawing.Color.Transparent;
+            this.statusTxt.BorderColor = System.Drawing.Color.Silver;
+            this.statusTxt.BorderSize = 0;
+            this.statusTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.statusTxt.Enabled = false;
+            this.statusTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.statusTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.statusTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.statusTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusTxt.Location = new System.Drawing.Point(131, 222);
+            this.statusTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.statusTxt.Name = "statusTxt";
+            this.statusTxt.PasswordChar = '\0';
+            this.statusTxt.Radius = 10;
+            this.statusTxt.Size = new System.Drawing.Size(240, 53);
+            this.statusTxt.TabIndex = 40;
+            this.statusTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // profile
+            // 
+            this.profile.BackColor = System.Drawing.Color.Transparent;
+            this.profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.profile.BaseColor = System.Drawing.Color.Transparent;
+            this.profile.Image = ((System.Drawing.Image)(resources.GetObject("profile.Image")));
+            this.profile.InitialImage = ((System.Drawing.Image)(resources.GetObject("profile.InitialImage")));
+            this.profile.Location = new System.Drawing.Point(210, 64);
+            this.profile.Name = "profile";
+            this.profile.Size = new System.Drawing.Size(82, 77);
+            this.profile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profile.TabIndex = 2;
+            this.profile.TabStop = false;
+            this.profile.UseTransfarantBackground = false;
+            this.profile.Click += new System.EventHandler(this.profile_Click);
+            // 
+            // Name_label
+            // 
+            this.Name_label.AnimationHoverSpeed = 0.07F;
+            this.Name_label.AnimationSpeed = 0.03F;
+            this.Name_label.BackColor = System.Drawing.Color.Transparent;
+            this.Name_label.BaseColor = System.Drawing.Color.Transparent;
+            this.Name_label.BorderColor = System.Drawing.Color.Black;
+            this.Name_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_label.ForeColor = System.Drawing.Color.Black;
+            this.Name_label.Image = null;
+            this.Name_label.ImageSize = new System.Drawing.Size(20, 20);
+            this.Name_label.Location = new System.Drawing.Point(91, 157);
+            this.Name_label.Name = "Name_label";
+            this.Name_label.OnHoverBaseColor = System.Drawing.Color.White;
+            this.Name_label.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.Name_label.OnHoverForeColor = System.Drawing.Color.Black;
+            this.Name_label.OnHoverImage = null;
+            this.Name_label.OnPressedColor = System.Drawing.Color.Black;
+            this.Name_label.Size = new System.Drawing.Size(322, 42);
+            this.Name_label.TabIndex = 3;
+            this.Name_label.Text = "First Name Last Name";
+            this.Name_label.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Name_label.Click += new System.EventHandler(this.Name_label_Click);
+            // 
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.White;
@@ -394,21 +394,6 @@
             this.gunaPanel1.Size = new System.Drawing.Size(498, 800);
             this.gunaPanel1.TabIndex = 13;
             // 
-            // picture
-            // 
-            this.picture.BackColor = System.Drawing.Color.Transparent;
-            this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picture.BaseColor = System.Drawing.Color.White;
-            this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picture.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(0, 282);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(496, 516);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picture.TabIndex = 19;
-            this.picture.TabStop = false;
-            // 
             // gunaLabel8
             // 
             this.gunaLabel8.AutoSize = true;
@@ -418,6 +403,20 @@
             this.gunaLabel8.Size = new System.Drawing.Size(216, 30);
             this.gunaLabel8.TabIndex = 41;
             this.gunaLabel8.Text = "USER INFORMATION";
+            // 
+            // picture
+            // 
+            this.picture.BackColor = System.Drawing.Color.Transparent;
+            this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picture.BaseColor = System.Drawing.Color.White;
+            this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picture.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.picture.Location = new System.Drawing.Point(0, 282);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(496, 516);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture.TabIndex = 19;
+            this.picture.TabStop = false;
             // 
             // ViewPost
             // 

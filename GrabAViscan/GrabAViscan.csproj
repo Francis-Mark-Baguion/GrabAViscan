@@ -131,6 +131,18 @@
     <Compile Include="Feed\Recommended.Designer.cs">
       <DependentUpon>Recommended.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogIntro\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIntro\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogIntro\ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIntro\ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="notif\NotifBoxCancel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -351,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feed\Recommended.resx">
       <DependentUpon>Recommended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIntro\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIntro\ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="notif\NotifBoxCancel.resx">
       <DependentUpon>NotifBoxCancel.cs</DependentUpon>

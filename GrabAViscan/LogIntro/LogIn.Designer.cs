@@ -43,6 +43,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Minimize_btn = new Guna.UI.WinForms.GunaButton();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
+            this.forgotPassLink = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,6 +96,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.forgotPassLink);
             this.panel2.Controls.Add(this.Log_in_btn);
             this.panel2.Controls.Add(this.passwordTxt);
             this.panel2.Controls.Add(this.emailTxt);
@@ -263,6 +265,19 @@
             this.Close_btn.TabIndex = 15;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
+            // forgotPassLink
+            // 
+            this.forgotPassLink.AutoSize = true;
+            this.forgotPassLink.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPassLink.LinkColor = System.Drawing.Color.Black;
+            this.forgotPassLink.Location = new System.Drawing.Point(346, 286);
+            this.forgotPassLink.Name = "forgotPassLink";
+            this.forgotPassLink.Size = new System.Drawing.Size(169, 28);
+            this.forgotPassLink.TabIndex = 9;
+            this.forgotPassLink.TabStop = true;
+            this.forgotPassLink.Text = "Forgot Password";
+            this.forgotPassLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgotPassLink_LinkClicked);
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -300,5 +315,6 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI.WinForms.GunaButton Minimize_btn;
         private Guna.UI.WinForms.GunaButton Close_btn;
+        private System.Windows.Forms.LinkLabel forgotPassLink;
     }
 }
