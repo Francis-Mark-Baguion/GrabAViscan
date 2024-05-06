@@ -223,7 +223,7 @@ namespace GrabAViscan.Classes
 
         public void Information_upload(User user)
         {
-            //MessageBox.Show(user.ToString());
+            
             using (MySqlConnection conConn = Connect())
             {
                 try
@@ -255,7 +255,7 @@ namespace GrabAViscan.Classes
                     insertCmd.Parameters.AddWithValue("@Status", user.Status);
 
 
-                    SucMessage error = new SucMessage("Account Created!");
+                    
                     insertCmd.ExecuteNonQuery();
 
                 }
@@ -263,7 +263,7 @@ namespace GrabAViscan.Classes
                 {
 
                     ErrorMessage error = new ErrorMessage(ex.Message);
-                    MessageBox.Show(ex.Message);
+                    
 
 
                 }

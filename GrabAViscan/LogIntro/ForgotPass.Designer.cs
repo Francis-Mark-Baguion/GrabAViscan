@@ -100,7 +100,7 @@
             this.emailTxt.BorderColor = System.Drawing.Color.Silver;
             this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.emailTxt.Location = new System.Drawing.Point(153, 336);

@@ -128,9 +128,15 @@ namespace GrabAViscan.Popup_Forms
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
+
+            List<Posting> filter = returnFilter();
+            home.feed(filter);
+
+            /*
             home.filterBox.Text = "";
             category.Text = "";
             place.Text = "";
+            */
         }
 
         private void Close_btn_Click(object sender, EventArgs e)

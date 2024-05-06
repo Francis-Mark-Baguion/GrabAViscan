@@ -67,7 +67,7 @@ namespace GrabAViscan.LogIntro
                 if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && ValidatePhoneNumber(phoneTxt.Text)  && statusCombo.Text != "" )
                 {
                     db.SignUp(email, pass);
-                    MessageBox.Show(db.get_id(email, pass)+"");
+                    
                     User user = new User(db.get_id(email, pass), email, username, int.Parse(school_id.Text), DOB.Value, Address.Text, photo, phoneTxt.Text, bio, firstNameTxt.Text, lastNameTxt.Text, statusCombo.Text);
                     
                     db.Information_upload(user);

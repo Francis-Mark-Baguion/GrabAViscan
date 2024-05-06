@@ -216,12 +216,42 @@ namespace GrabAViscan
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
-            if(filterBox.Text != "")
+            /*if(filterBox.Text != "")
             {
                 try
                 {
 
                     List<Posting> filteredPost = filter.returnFilter();
+
+                    user = db.InitializeUser(email);
+
+
+                    right.setter(email, this);
+                    tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[2].Width = 25;
+                    tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[1].Width = 53;
+                    tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+                    this.RightWing.Controls.Add(right);
+
+
+                    filter.Hide();
+                    feed(filteredPost);
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
+            }
+            &*/
+            if(filterBox.Text !="")
+            {
+                try
+                {
+
+                    List<Posting> filteredPost = this.returnFilter();
 
                     user = db.InitializeUser(email);
 
@@ -352,6 +382,54 @@ namespace GrabAViscan
         {
             deliverCtr.BackColor = Color.FromArgb(240, 242, 245);
             deliverCtr.ForeColor = Color.Firebrick;
+        }
+
+
+        public List<Posting> returnFilter()
+        {
+            List<Posting> filterPost;
+
+            filterPost = new List<Posting>();
+            string location_id = "";
+            List<Location> locations = new List<Location>();
+            foreach (Location location in db.locations)
+            {
+                if (location.LocationName.ToUpper() == filterBox.Text.ToUpper())
+                {
+                    location_id = location.Location_id + "";
+                }
+            }
+
+            List<Posting> allPost = db.GetAvailablePosts();
+
+
+            if (filterBox.Text !="")
+            {
+                foreach (Posting post in allPost)
+                {
+
+                    if (post.Near_deliveryLocation == location_id)
+                    {
+                        filterPost.Add(post);
+                    }
+                    else if(post.Category == filterBox.Text)
+                    {
+                        filterPost.Add(post);
+                    }
+                }
+            }
+            
+
+
+            return filterPost;
+
+
+
+
+
+
+
+
         }
     }
 }

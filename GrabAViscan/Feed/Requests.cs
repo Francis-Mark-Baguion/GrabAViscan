@@ -109,7 +109,7 @@ namespace GrabAViscan.Feed
             
                 try
                 {
-                    if(temp.Available == 0) 
+                    if(temp.Available == 0 || temp.Available==6) 
                     {
                     string loc = temp.Near_pickUp;
                     this.locId = (int)double.Parse(loc);
@@ -146,8 +146,16 @@ namespace GrabAViscan.Feed
 
         private void edit_click(object sender, EventArgs e)
         {
-            EditRequest edit = new EditRequest(home,db.getPostById(post_id));
-            edit.Show();
+            if (db.getPostById(this.post_id).Available == 0 || db.getPostById(this.post_id).Available == 6)
+            {
+                EditRequest edit = new EditRequest(home, db.getPostById(post_id));
+                edit.Show();
+            }
+            else
+            {
+                ErrorMessage err = new ErrorMessage("Request is already being processed");
+            }
+            
         }
 
         private void view_click(object sender, EventArgs e)
