@@ -143,5 +143,10 @@ namespace GrabAViscan.Popup_Forms
         {
             this.Hide();
         }
+
+        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,6 +31,7 @@ namespace GrabAViscan
         private string email;
         private int User_id;
         private ToDeliver todeliver;
+        private bool flag = false;
         public Home(int uid)
         {
             List<Posting> posts = db.GetAvailablePosts();
@@ -212,6 +213,7 @@ namespace GrabAViscan
 
             filterBox.Text = "";
             filter = new Filter(this);
+            flag = true;
         }
 
         private void Filter_btn_Click(object sender, EventArgs e)
@@ -246,7 +248,7 @@ namespace GrabAViscan
                 }
             }
             &*/
-            if(filterBox.Text !="")
+            if(filterBox.Text !="" && flag==false)
             {
                 try
                 {
@@ -270,14 +272,45 @@ namespace GrabAViscan
                     filter.Hide();
                     feed(filteredPost);
                 }
+                
                 catch (Exception ex)
                 {
                     ErrorMessage err = new ErrorMessage(ex.Message);
                 }
             }
-            
-            
-            
+            else if (flag == true)
+            {
+                try
+                {
+
+                    List<Posting> filteredPost = filter.returnFilter();
+
+                    user = db.InitializeUser(email);
+
+
+                    right.setter(email, this);
+                    tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[2].Width = 25;
+                    tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[1].Width = 53;
+                    tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+                    this.RightWing.Controls.Add(right);
+
+
+                    filter.Hide();
+                    feed(filteredPost);
+                    flag = false;
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
+            }
+
+
+
 
         }
 
