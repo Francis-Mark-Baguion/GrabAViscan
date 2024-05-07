@@ -25,6 +25,7 @@ namespace GrabAViscan.Popup_Forms
         private int locId;
         private int locId2;
         private int User_id;
+        private int runnerId;
         private Home home;
         public ViewPost(Posting post,Home home)
         {
@@ -36,7 +37,10 @@ namespace GrabAViscan.Popup_Forms
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
-
+            runnerLabel.Hide();
+            runnerName.Hide();
+            runnerPic.Hide();
+            Shadow1.Hide(); 
             try
             {
                 string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;
@@ -55,6 +59,20 @@ namespace GrabAViscan.Popup_Forms
 
                 this.delivery.Text = deliver + ": " + post.Delivery_location;
                 this.descriptionTxt.Text = post.Description;
+
+                
+                if (post.Available>=1)
+                {
+                    Shadow1.Show();
+                    runnerId = db.getUserById(db.GetDeliveryByPostId(post.Post_id).User_Id).User_id;
+                    runnerLabel.Show();
+                    runnerName.Text = db.getUserById(db.GetDeliveryByPostId(post.Post_id).User_Id).FirstName + " " + db.getUserById(db.GetDeliveryByPostId(post.Post_id).User_Id).LastName;
+                    SetImageFromByteArrayProfile(runnerPic, db.getUserById(db.GetDeliveryByPostId(post.Post_id).User_Id).Profile_pic);
+                    runnerName.Show();
+                    runnerPic.Show();
+                }
+                
+
                 this.Show();
             }
             catch (Exception ex) 
@@ -103,6 +121,9 @@ namespace GrabAViscan.Popup_Forms
 
 
         }
+
+
+
 
         public void SetImageFromByteArrayProfile(GunaCirclePictureBox profile, byte[] byteArray)
         {
@@ -161,6 +182,21 @@ namespace GrabAViscan.Popup_Forms
         }
 
         private void Name_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void runnerName_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(runnerId, this.home);
+        }
+
+        private void runnerPic_Click(object sender, EventArgs e)
         {
 
         }

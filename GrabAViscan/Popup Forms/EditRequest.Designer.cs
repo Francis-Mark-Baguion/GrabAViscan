@@ -56,6 +56,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.CommentTxt = new System.Windows.Forms.RichTextBox();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.gunaShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -398,6 +399,7 @@
             // gunaShadowPanel1
             // 
             this.gunaShadowPanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel1.Controls.Add(this.gunaLabel13);
             this.gunaShadowPanel1.Controls.Add(this.CommentTxt);
             this.gunaShadowPanel1.Controls.Add(this.picture);
             this.gunaShadowPanel1.Controls.Add(this.discard_btn);
@@ -430,6 +432,7 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1350, 1000);
             this.gunaShadowPanel1.TabIndex = 2;
+            this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
             // 
             // CommentTxt
             // 
@@ -438,6 +441,18 @@
             this.CommentTxt.Size = new System.Drawing.Size(711, 132);
             this.CommentTxt.TabIndex = 34;
             this.CommentTxt.Text = "";
+            // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.BackColor = System.Drawing.Color.White;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel13.ForeColor = System.Drawing.Color.Firebrick;
+            this.gunaLabel13.Location = new System.Drawing.Point(431, 725);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(74, 38);
+            this.gunaLabel13.TabIndex = 35;
+            this.gunaLabel13.Text = "+ 10";
             // 
             // EditRequest
             // 
@@ -485,5 +500,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaShadowPanel gunaShadowPanel1;
         private System.Windows.Forms.RichTextBox CommentTxt;
+        private Guna.UI.WinForms.GunaLabel gunaLabel13;
     }
 }

@@ -156,7 +156,7 @@ namespace GrabAViscan.Popup
                 ErrorMessage mess = new ErrorMessage("The entered fee value is too large or too small for an integer. Please enter a value within the valid range.");
 
             }
-
+            Fee += 10;
             string Description = CommentTxt.Text;
             DateTime Date_posted = DateTime.Now;
             DateTime Deadline = TimePicker.Value;
@@ -222,6 +222,11 @@ namespace GrabAViscan.Popup
         private void discard_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

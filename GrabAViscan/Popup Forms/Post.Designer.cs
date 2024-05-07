@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Post));
             this.gunaShadowPanel1 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.CommentTxt = new System.Windows.Forms.RichTextBox();
             this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
             this.picture = new Guna.UI.WinForms.GunaPictureBox();
             this.discard_btn = new Guna.UI.WinForms.GunaButton();
@@ -56,7 +57,6 @@
             this.quantityTxt = new Guna.UI.WinForms.GunaTextBox();
             this.requestTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.CommentTxt = new System.Windows.Forms.RichTextBox();
             this.gunaShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,15 @@
             this.gunaShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.gunaShadowPanel1.Size = new System.Drawing.Size(1350, 1000);
             this.gunaShadowPanel1.TabIndex = 1;
+            this.gunaShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaShadowPanel1_Paint);
+            // 
+            // CommentTxt
+            // 
+            this.CommentTxt.Location = new System.Drawing.Point(134, 843);
+            this.CommentTxt.Name = "CommentTxt";
+            this.CommentTxt.Size = new System.Drawing.Size(711, 132);
+            this.CommentTxt.TabIndex = 33;
+            this.CommentTxt.Text = "";
             // 
             // gunaLabel13
             // 
@@ -150,9 +159,9 @@
             this.gunaLabel12.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gunaLabel12.Location = new System.Drawing.Point(128, 808);
             this.gunaLabel12.Name = "gunaLabel12";
-            this.gunaLabel12.Size = new System.Drawing.Size(146, 32);
+            this.gunaLabel12.Size = new System.Drawing.Size(135, 32);
             this.gunaLabel12.TabIndex = 29;
-            this.gunaLabel12.Text = "COMMENTS";
+            this.gunaLabel12.Text = "Description";
             // 
             // gunaLabel11
             // 
@@ -435,14 +444,6 @@
             this.gunaLabel1.Size = new System.Drawing.Size(213, 45);
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Post Request";
-            // 
-            // CommentTxt
-            // 
-            this.CommentTxt.Location = new System.Drawing.Point(134, 843);
-            this.CommentTxt.Name = "CommentTxt";
-            this.CommentTxt.Size = new System.Drawing.Size(711, 132);
-            this.CommentTxt.TabIndex = 33;
-            this.CommentTxt.Text = "";
             // 
             // Post
             // 

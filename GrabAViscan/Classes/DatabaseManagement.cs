@@ -1210,6 +1210,38 @@ namespace GrabAViscan.Classes
         }
 
 
+        public Deliver GetDeliveryByPostId(int postId)
+        {
+            Deliver delivery = null;
+            using (MySqlConnection conConn = this.Connect())
+            {
+                try
+                {
+                    string selectSql = "SELECT * FROM grab.delivery WHERE Post_id = @postId";
+                    MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
+
+                    // Add parameter to prevent SQL injection vulnerabilities
+                    selectCmd.Parameters.AddWithValue("@postId", postId);
+
+                    using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                    {
+                        if (reader.Read()) // Check if a record is found
+                        {
+                            int retrievedPostId = reader.GetInt32("Post_id");
+                            int userId = reader.GetInt32("User_id");
+
+                            delivery = new Deliver(retrievedPostId, userId);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while retrieving delivery: " + ex.Message);
+                }
+            }
+
+            return delivery;
+        }
 
 
     }

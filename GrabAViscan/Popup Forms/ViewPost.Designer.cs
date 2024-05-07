@@ -34,6 +34,7 @@
             this.descriptionTxt = new System.Windows.Forms.RichTextBox();
             this.Fee = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.categoryTxt = new Guna.UI.WinForms.GunaTextBox();
             this.delivery = new Guna.UI.WinForms.GunaTextBox();
             this.pickUp = new Guna.UI.WinForms.GunaTextBox();
@@ -50,21 +51,27 @@
             this.profile = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.Name_label = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.picture = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
+            this.runnerLabel = new Guna.UI.WinForms.GunaLabel();
+            this.runnerPic = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.runnerName = new Guna.UI.WinForms.GunaButton();
+            this.Shadow1 = new Guna.UI.WinForms.GunaShadowPanel();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profile)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerPic)).BeginInit();
+            this.Shadow1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaPanel3
             // 
             this.gunaPanel3.BackColor = System.Drawing.Color.White;
             this.gunaPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel3.Controls.Add(this.Shadow1);
             this.gunaPanel3.Controls.Add(this.gunaLabel2);
             this.gunaPanel3.Controls.Add(this.descriptionTxt);
             this.gunaPanel3.Controls.Add(this.Fee);
@@ -86,6 +93,7 @@
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(1102, 800);
             this.gunaPanel3.TabIndex = 12;
+            this.gunaPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel3_Paint);
             // 
             // gunaLabel2
             // 
@@ -137,6 +145,16 @@
             this.gunaPanel10.Name = "gunaPanel10";
             this.gunaPanel10.Size = new System.Drawing.Size(1100, 14);
             this.gunaPanel10.TabIndex = 0;
+            // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(1098, 14);
+            this.gunaPanel2.TabIndex = 1;
             // 
             // categoryTxt
             // 
@@ -399,6 +417,16 @@
             this.gunaPanel1.Size = new System.Drawing.Size(498, 800);
             this.gunaPanel1.TabIndex = 13;
             // 
+            // gunaPanel4
+            // 
+            this.gunaPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.gunaPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel4.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel4.Name = "gunaPanel4";
+            this.gunaPanel4.Size = new System.Drawing.Size(496, 14);
+            this.gunaPanel4.TabIndex = 42;
+            // 
             // gunaLabel8
             // 
             this.gunaLabel8.AutoSize = true;
@@ -422,25 +450,67 @@
             this.picture.TabIndex = 19;
             this.picture.TabStop = false;
             // 
-            // gunaPanel2
+            // runnerLabel
             // 
-            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel2.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(1098, 14);
-            this.gunaPanel2.TabIndex = 1;
+            this.runnerLabel.AutoSize = true;
+            this.runnerLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runnerLabel.Location = new System.Drawing.Point(26, 17);
+            this.runnerLabel.Name = "runnerLabel";
+            this.runnerLabel.Size = new System.Drawing.Size(249, 30);
+            this.runnerLabel.TabIndex = 42;
+            this.runnerLabel.Text = "RUNNER INFORMATION";
             // 
-            // gunaPanel4
+            // runnerPic
             // 
-            this.gunaPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.gunaPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel4.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel4.Name = "gunaPanel4";
-            this.gunaPanel4.Size = new System.Drawing.Size(496, 14);
-            this.gunaPanel4.TabIndex = 42;
+            this.runnerPic.BackColor = System.Drawing.Color.Transparent;
+            this.runnerPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.runnerPic.BaseColor = System.Drawing.Color.Transparent;
+            this.runnerPic.Image = ((System.Drawing.Image)(resources.GetObject("runnerPic.Image")));
+            this.runnerPic.InitialImage = ((System.Drawing.Image)(resources.GetObject("runnerPic.InitialImage")));
+            this.runnerPic.Location = new System.Drawing.Point(31, 67);
+            this.runnerPic.Name = "runnerPic";
+            this.runnerPic.Size = new System.Drawing.Size(82, 77);
+            this.runnerPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.runnerPic.TabIndex = 43;
+            this.runnerPic.TabStop = false;
+            this.runnerPic.UseTransfarantBackground = false;
+            this.runnerPic.Click += new System.EventHandler(this.runnerPic_Click);
+            // 
+            // runnerName
+            // 
+            this.runnerName.AnimationHoverSpeed = 0.07F;
+            this.runnerName.AnimationSpeed = 0.03F;
+            this.runnerName.BackColor = System.Drawing.Color.Transparent;
+            this.runnerName.BaseColor = System.Drawing.Color.Transparent;
+            this.runnerName.BorderColor = System.Drawing.Color.Black;
+            this.runnerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runnerName.ForeColor = System.Drawing.Color.Black;
+            this.runnerName.Image = null;
+            this.runnerName.ImageSize = new System.Drawing.Size(20, 20);
+            this.runnerName.Location = new System.Drawing.Point(119, 84);
+            this.runnerName.Name = "runnerName";
+            this.runnerName.OnHoverBaseColor = System.Drawing.Color.White;
+            this.runnerName.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.runnerName.OnHoverForeColor = System.Drawing.Color.Black;
+            this.runnerName.OnHoverImage = null;
+            this.runnerName.OnPressedColor = System.Drawing.Color.Black;
+            this.runnerName.Size = new System.Drawing.Size(322, 42);
+            this.runnerName.TabIndex = 44;
+            this.runnerName.Text = "First Name Last Name";
+            this.runnerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.runnerName.Click += new System.EventHandler(this.runnerName_Click);
+            // 
+            // Shadow1
+            // 
+            this.Shadow1.BaseColor = System.Drawing.Color.White;
+            this.Shadow1.Controls.Add(this.runnerName);
+            this.Shadow1.Controls.Add(this.runnerPic);
+            this.Shadow1.Controls.Add(this.runnerLabel);
+            this.Shadow1.Location = new System.Drawing.Point(21, 609);
+            this.Shadow1.Name = "Shadow1";
+            this.Shadow1.ShadowColor = System.Drawing.Color.Black;
+            this.Shadow1.Size = new System.Drawing.Size(459, 169);
+            this.Shadow1.TabIndex = 45;
             // 
             // ViewPost
             // 
@@ -460,6 +530,9 @@
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runnerPic)).EndInit();
+            this.Shadow1.ResumeLayout(false);
+            this.Shadow1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +564,9 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
+        private Guna.UI.WinForms.GunaCirclePictureBox runnerPic;
+        private Guna.UI.WinForms.GunaLabel runnerLabel;
+        private Guna.UI.WinForms.GunaButton runnerName;
+        private Guna.UI.WinForms.GunaShadowPanel Shadow1;
     }
 }
