@@ -64,7 +64,7 @@ namespace GrabAViscan.LogIntro
 
             try
             {
-                if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && ValidatePhoneNumber(phoneTxt.Text)  && statusCombo.Text != "" )
+                if (!string.IsNullOrEmpty(school_id.Text) && int.Parse(school_id.Text) != 0 && school_id.Text.Count() == 8 && Address.Text != "" && firstNameTxt.Text != "" && lastNameTxt.Text != "" && ValidatePhoneNumber(phoneTxt.Text)&& DOB.Value<DateTime.Today && statusCombo.Text != "" )
                 {
                     db.SignUp(email, pass);
                     
@@ -85,6 +85,10 @@ namespace GrabAViscan.LogIntro
                     {
                         ErrorMessage err1 = new ErrorMessage("School Id should not be empty");
                     }
+                    else if(school_id.Text.Count() > 8 || school_id.Text.Count() < 8)
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Invalid id length");
+                    }
                     else if(Address.Text == "")
                     {
                         ErrorMessage err1 = new ErrorMessage("adress should not be empty");
@@ -96,6 +100,10 @@ namespace GrabAViscan.LogIntro
                     else if (statusCombo.Text == "")
                     {
                         ErrorMessage err1 = new ErrorMessage("Status should not be empty");
+                    }
+                    else if(DOB.Value > DateTime.Today)
+                    {
+                        ErrorMessage err1 = new ErrorMessage("Date of birth should not be set to future");
                     }
                     else if(ValidatePhoneNumber(phoneTxt.Text)==false) 
                     {

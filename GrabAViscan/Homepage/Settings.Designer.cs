@@ -271,15 +271,15 @@
             this.emailDisplay.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.emailDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailDisplay.ForeColor = System.Drawing.Color.Black;
-            this.emailDisplay.Location = new System.Drawing.Point(200, 446);
+            this.emailDisplay.Location = new System.Drawing.Point(51, 446);
             this.emailDisplay.Margin = new System.Windows.Forms.Padding(0);
             this.emailDisplay.Name = "emailDisplay";
             this.emailDisplay.PasswordChar = '\0';
             this.emailDisplay.Radius = 10;
             this.emailDisplay.ReadOnly = true;
-            this.emailDisplay.Size = new System.Drawing.Size(209, 49);
+            this.emailDisplay.Size = new System.Drawing.Size(500, 49);
             this.emailDisplay.TabIndex = 8;
-            this.emailDisplay.Text = "STATUS";
+            this.emailDisplay.Text = "email";
             this.emailDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.emailDisplay.Click += new System.EventHandler(this.ClickAll);
             // 

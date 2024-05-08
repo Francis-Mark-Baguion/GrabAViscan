@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rightWing));
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.nameHolder = new Guna.UI.WinForms.GunaButton();
             this.Notif_btn = new Guna.UI.WinForms.GunaButton();
             this.EditPost_btn = new Guna.UI.WinForms.GunaButton();
@@ -38,7 +39,6 @@
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.flow1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mySqlCommand2 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePic)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,16 @@
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(640, 235);
             this.gunaPanel3.TabIndex = 3;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(16, 180);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(224, 38);
+            this.gunaLabel1.TabIndex = 16;
+            this.gunaLabel1.Text = "RECOMMENDED";
             // 
             // nameHolder
             // 
@@ -163,6 +173,7 @@
             // 
             // flow1
             // 
+            this.flow1.AutoScroll = true;
             this.flow1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flow1.Location = new System.Drawing.Point(0, 235);
             this.flow1.Name = "flow1";
@@ -176,16 +187,6 @@
             this.mySqlCommand2.Connection = null;
             this.mySqlCommand2.EnableCaching = false;
             this.mySqlCommand2.Transaction = null;
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(16, 180);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(224, 38);
-            this.gunaLabel1.TabIndex = 16;
-            this.gunaLabel1.Text = "RECOMMENDED";
             // 
             // rightWing
             // 

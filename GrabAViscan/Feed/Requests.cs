@@ -78,7 +78,7 @@ namespace GrabAViscan.Feed
             }
             else if (post.Available == 8)
             {
-                statusTxt.Text = "WAITING FOR CUSTOMER";
+                statusTxt.Text = "ARRIVED";
                 statusTxt.BorderColor = Color.FromArgb(76, 104, 62);
             }
             

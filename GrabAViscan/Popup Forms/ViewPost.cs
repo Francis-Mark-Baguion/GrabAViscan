@@ -94,7 +94,10 @@ namespace GrabAViscan.Popup_Forms
             this.locId = (int)double.Parse(loc);
             string loc2 = post.Near_deliveryLocation;
             this.locId2 = (int)double.Parse(loc2);
-
+            runnerLabel.Hide();
+            runnerName.Hide();
+            runnerPic.Hide();
+            Shadow1.Hide();
             try
             {
                 string pick = db.GetLocationByMatchingId(db.locations, locId).LocationName;

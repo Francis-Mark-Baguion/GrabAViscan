@@ -134,7 +134,10 @@ namespace GrabAViscan.Popup
             string Requested = requestTxt.Text;
             string Quantity = quantityTxt.Text;
             int Fee = 0;
-
+            if (feeTxt.Text == "")
+            {
+                feeTxt.Text = "0";
+            }
             try
             {
 
