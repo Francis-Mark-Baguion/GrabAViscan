@@ -39,8 +39,7 @@ namespace GrabAViscan.Feed
             this.post = post;
             this.User_id = UID;
             
-            //this.nameHolder.Text = db.getUserById(post.User_id).FirstName +" "+ db.getUserById(post.User_id).LastName;
-            //SetImageFromByteArrayProfile(this.profile, db.getUserById(post.User_id).Profile_pic);
+            
             this.dateCompleted.Text = DateTime.Now.ToString("dd/MM/yyyy");
             this.categTxt.Text = post.Category;
             

@@ -132,8 +132,7 @@ namespace GrabAViscan.Feed
                     }
                     
                     
-                    //db.updatePostingInformation(temp);
-                    //home.My_Request(sender, e);
+                    
                 }
                 catch (Exception ex)
                 {

@@ -97,7 +97,7 @@ namespace GrabAViscan.Feed
 
             }
 
-            //db.Post_upload(post);
+            
         }
 
         private void profile_Click(object sender, EventArgs e)

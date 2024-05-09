@@ -64,7 +64,7 @@ namespace GrabAViscan.Feed
                 
 
                 this.Fee.Text = "" + post.Fee;
-                // this.deadline.Text = "" + post.Deadline;
+                
                 Category cat = db.GetCategoryByName(post.Category);
                 SetImageFromByteArray(this.category, cat.categoryImage);
 

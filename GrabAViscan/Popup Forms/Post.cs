@@ -22,7 +22,7 @@ namespace GrabAViscan.Popup
     public partial class Post : Form
     {
 
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public User user;
         public string email;
         private Home home;
@@ -306,7 +306,7 @@ namespace GrabAViscan.Popup
         private byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            if (picture.Image != null) // Check if picture.Image exists
+            if (picture.Image != null) 
             {
                 picture.Image.Save(stream, picture.Image.RawFormat);
             }

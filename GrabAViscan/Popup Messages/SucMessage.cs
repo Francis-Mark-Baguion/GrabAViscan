@@ -23,19 +23,19 @@ namespace GrabAViscan.Popup
             this.Show();
 
             closeTimer = new System.Windows.Forms.Timer();
-            closeTimer.Interval = 5000; // Set the interval to 5 seconds (5000 milliseconds)
-            closeTimer.Tick += CloseTimer_Tick; // Add event handler for the Tick event
+            closeTimer.Interval = 5000; 
+            closeTimer.Tick += CloseTimer_Tick; 
 
-            // Start the timer when the form loads
+           
             closeTimer.Start();
         }
 
         private void CloseTimer_Tick(object sender, EventArgs e)
         {
-            // Stop the timer to prevent continuous closing
+            
             closeTimer.Stop();
 
-            // Close the form
+           
             this.Close();
         }
 

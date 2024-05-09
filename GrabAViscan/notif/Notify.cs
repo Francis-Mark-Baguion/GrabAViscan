@@ -33,17 +33,17 @@ namespace GrabAViscan.Classes.notif
             List<Deliver> reversedDelivers = cancelledPost.ToList();
             reversedDelivers.Reverse();
 
-            for (int i = 0; i < reversedDelivers.Count; i++) // Use reversedDelivers for Option 1
+            for (int i = 0; i < reversedDelivers.Count; i++) 
             {
-                Deliver deliver = reversedDelivers[i]; // Use reversedDelivers[i] for Option 1
+                Deliver deliver = reversedDelivers[i]; 
 
-                // ... your existing logic using deliver ...
+               
                 Posting post = db.getPostById(deliver.Post_Id);
                 if (db.getPostById(deliver.Post_Id).User_id == User_id && db.getPostById(deliver.Post_Id).Available > 1 && ctr<10)
                 {
                     if (post.Available == 4)
                     {
-                        // Logic for Available == 4
+                        
                     }
                     else if (post.Available == 3)
                     {

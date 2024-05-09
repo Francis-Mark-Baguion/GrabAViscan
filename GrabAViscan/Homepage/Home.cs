@@ -218,36 +218,7 @@ namespace GrabAViscan
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
-            /*if(filterBox.Text != "")
-            {
-                try
-                {
-
-                    List<Posting> filteredPost = filter.returnFilter();
-
-                    user = db.InitializeUser(email);
-
-
-                    right.setter(email, this);
-                    tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
-                    tableLayoutPanel1.ColumnStyles[2].Width = 25;
-                    tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
-                    tableLayoutPanel1.ColumnStyles[1].Width = 53;
-                    tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
-                    tableLayoutPanel1.ColumnStyles[0].Width = 22;
-
-                    this.RightWing.Controls.Add(right);
-
-
-                    filter.Hide();
-                    feed(filteredPost);
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessage err = new ErrorMessage(ex.Message);
-                }
-            }
-            &*/
+           
             if(filterBox.Text !="" && flag==false)
             {
                 try

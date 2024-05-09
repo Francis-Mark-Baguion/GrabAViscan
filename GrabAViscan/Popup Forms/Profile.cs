@@ -25,7 +25,7 @@ namespace GrabAViscan.Popup
             this.emailHolder.Text = db.getUserById(User_id).Email;
             this.addressHoldler.Text = db.getUserById(User_id).Address;
             this.phoneTxt.Text = db.getUserById(User_id).PhoneNumber;
-            //this.DescriptionTxt.Text = db.getUserById(User_id).Bio;
+            
             
             SetImageFromByteArrayProfile(profile_pic, db.getUserById(User_id).Profile_pic);
             this.Show();
@@ -39,7 +39,7 @@ namespace GrabAViscan.Popup
             this.emailHolder.Text = db.getUserById(User_id).Email;
             this.addressHoldler.Text = db.getUserById(User_id).Address;
             this.phoneTxt.Text = db.getUserById(User_id).PhoneNumber;
-            //this.DescriptionTxt.Text = db.getUserById(User_id).Bio;
+            
 
             SetImageFromByteArrayProfile(profile_pic, db.getUserById(User_id).Profile_pic);
             

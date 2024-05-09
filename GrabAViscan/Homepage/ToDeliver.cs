@@ -16,7 +16,7 @@ namespace GrabAViscan
     {
         private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
-        Home home;
+        private Home home;
         public ToDeliver(int User_id)
         {
             InitializeComponent();
@@ -58,8 +58,7 @@ namespace GrabAViscan
                 }
 
 
-                //Buffers buff = new Buffers();
-                //flow1.Controls.Add(buff);
+                
             }
         }
     }

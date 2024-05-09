@@ -36,8 +36,7 @@ namespace GrabAViscan.Homepage
             this.lastNameTxt.Text = user.LastName;
             this.addressTxt.Text = user.Address;
             this.phoneTxt.Text = user.PhoneNumber;
-            //this.schoolTxt.Text = user.School_id + "";
-            //this.emailTxt.Text = user.Email;
+            
             this.statusTxt.Text = user.Status;
             this.DescriptionTxt.Text = user.Bio;
             this.emailDisplay.Text = user.Email;
@@ -123,13 +122,12 @@ namespace GrabAViscan.Homepage
                     user = db.InitializeUser(email);
 
                     this.nameHolder.Text = user.FirstName + " " + user.LastName;
-                    //this.statusHolder.Text = user.Status;
+                    
                     this.firstNameTxt.Text = user.FirstName;
                     this.lastNameTxt.Text = user.LastName;
                     this.addressTxt.Text = user.Address;
                     this.phoneTxt.Text = user.PhoneNumber;
-                    //this.schoolTxt.Text = user.School_id + "";
-                    //this.emailTxt.Text = user.Email;
+                    
                     this.statusTxt.Text = user.Status;
                     this.DescriptionTxt.Text = user.Bio;
                     SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
@@ -169,13 +167,12 @@ namespace GrabAViscan.Homepage
                 user = db.InitializeUser(email);
 
                 this.nameHolder.Text = user.FirstName + " " + user.LastName;
-                //this.statusHolder.Text = user.Status;
+                
                 this.firstNameTxt.Text = user.FirstName;
                 this.lastNameTxt.Text = user.LastName;
                 this.addressTxt.Text = user.Address;
                 this.phoneTxt.Text = user.PhoneNumber;
-                //this.schoolTxt.Text = user.School_id + "";
-               // this.emailTxt.Text = user.Email;
+                
                 this.statusTxt.Text = user.Status;
                 this.DescriptionTxt.Text = user.Bio;
                 SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);

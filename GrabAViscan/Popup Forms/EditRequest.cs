@@ -16,10 +16,10 @@ namespace GrabAViscan.Popup
 {
     public partial class EditRequest : Form
     {
-        DatabaseManagement db = new DatabaseManagement();
-        User user;
-        int Post_id;
-        Home home;
+        private DatabaseManagement db = new DatabaseManagement();
+        private User user;
+        private int Post_id;
+        private Home home;
         public EditRequest(Home home,Posting post)
         {
             InitializeComponent();
@@ -192,7 +192,7 @@ namespace GrabAViscan.Popup
         private byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            if (picture.Image != null) // Check if picture.Image exists
+            if (picture.Image != null) 
             {
                 picture.Image.Save(stream, picture.Image.RawFormat);
                 return stream.GetBuffer();

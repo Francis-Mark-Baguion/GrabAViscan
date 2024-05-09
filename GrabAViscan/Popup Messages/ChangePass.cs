@@ -13,7 +13,7 @@ namespace GrabAViscan.Popup
 {
     public partial class ChangePass : Form
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         private string email;
         public ChangePass(string email,Home home)
         {
