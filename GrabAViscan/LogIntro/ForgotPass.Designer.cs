@@ -33,6 +33,9 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.Close_btn = new Guna.UI.WinForms.GunaButton();
             this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // changePass_btn
@@ -100,7 +103,7 @@
             this.emailTxt.BorderColor = System.Drawing.Color.Silver;
             this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.emailTxt.Location = new System.Drawing.Point(153, 336);
@@ -112,11 +115,47 @@
             this.emailTxt.TabIndex = 52;
             this.emailTxt.Text = "Enter Email";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(169, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(483, 25);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "This feature has been temporarily removed by the user\r\n";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(68, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(704, 25);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "because this feature needs actualy email credential such as email and password";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Firebrick;
+            this.label3.Location = new System.Drawing.Point(91, 627);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(646, 25);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Please input your own email credentials for full function in the source code";
+            // 
             // ForgotPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 805);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.emailTxt);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.changePass_btn);
@@ -136,5 +175,8 @@
         private Guna.UI.WinForms.GunaButton changePass_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaTextBox emailTxt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

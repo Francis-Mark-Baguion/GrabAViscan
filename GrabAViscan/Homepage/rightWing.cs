@@ -102,12 +102,7 @@ namespace GrabAViscan
         {
             try
             {
-                /*if(post.IsDisposed)
-                {
-                    post = post = new Post();
-                    post.setter(email, form);
-                }
-                */
+                
                 if (post.Visible)
                 {
                     post.Hide();

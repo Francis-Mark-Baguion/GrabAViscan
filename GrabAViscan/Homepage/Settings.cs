@@ -31,15 +31,15 @@ namespace GrabAViscan.Homepage
             this.id = user.User_id;
             this.email = email;
             this.nameHolder.Text = user.FirstName + " " + user.LastName;
-            this.statusHolder.Text = user.Status;
+            
             this.firstNameTxt.Text = user.FirstName;
             this.lastNameTxt.Text = user.LastName;
             this.addressTxt.Text = user.Address;
             this.phoneTxt.Text = user.PhoneNumber;
-            this.schoolTxt.Text = user.School_id + "";
-            this.emailTxt.Text = user.Email;
+            
             this.statusTxt.Text = user.Status;
             this.DescriptionTxt.Text = user.Bio;
+            this.emailDisplay.Text = user.Email;
             SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
             changePass = new ChangePass(this.email,home);
             changePass.Hide();
@@ -114,22 +114,44 @@ namespace GrabAViscan.Homepage
         {
             try
             {
-                string username = "";
-                User use = new User(user.User_id, email, username, int.Parse(schoolTxt.Text), user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
-                db.updateUserInformation(use);
-                user = db.InitializeUser(email);
+                if(ValidatePhoneNumber(phoneTxt.Text) && firstNameTxt.Text != "" && lastNameTxt.Text != "" && addressTxt.Text != "" && statusTxt.Text != "")
+                {
+                    string username = "";
+                    User use = new User(user.User_id, email, username, user.School_id, user.DOB, addressTxt.Text, user.Profile_pic, phoneTxt.Text, DescriptionTxt.Text, firstNameTxt.Text, lastNameTxt.Text, statusTxt.Text);
+                    db.updateUserInformation(use);
+                    user = db.InitializeUser(email);
 
-                this.nameHolder.Text = user.FirstName + " " + user.LastName;
-                this.statusHolder.Text = user.Status;
-                this.firstNameTxt.Text = user.FirstName;
-                this.lastNameTxt.Text = user.LastName;
-                this.addressTxt.Text = user.Address;
-                this.phoneTxt.Text = user.PhoneNumber;
-                this.schoolTxt.Text = user.School_id + "";
-                this.emailTxt.Text = user.Email;
-                this.statusTxt.Text = user.Status;
-                this.DescriptionTxt.Text = user.Bio;
-                SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+                    this.nameHolder.Text = user.FirstName + " " + user.LastName;
+                    
+                    this.firstNameTxt.Text = user.FirstName;
+                    this.lastNameTxt.Text = user.LastName;
+                    this.addressTxt.Text = user.Address;
+                    this.phoneTxt.Text = user.PhoneNumber;
+                    
+                    this.statusTxt.Text = user.Status;
+                    this.DescriptionTxt.Text = user.Bio;
+                    SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
+                }
+                else
+                {
+                    if(firstNameTxt.Text == "" || lastNameTxt.Text == "")
+                    {
+                        ErrorMessage err = new ErrorMessage("Name should not be blank");
+                    }
+                    else if(addressTxt.Text == "")
+                    {
+                        ErrorMessage err = new ErrorMessage("Address should not be blank");
+                    }
+                    else if(ValidatePhoneNumber(phoneTxt.Text)==false) 
+                    {
+                        ErrorMessage err = new ErrorMessage("Invalid Phone number format");
+                    }
+                    else if(statusTxt.Text =="")
+                    {
+                        ErrorMessage err = new ErrorMessage("Invalid Status");
+                    }
+                }
+                
             }
             catch (Exception ex)
             {
@@ -145,13 +167,12 @@ namespace GrabAViscan.Homepage
                 user = db.InitializeUser(email);
 
                 this.nameHolder.Text = user.FirstName + " " + user.LastName;
-                this.statusHolder.Text = user.Status;
+                
                 this.firstNameTxt.Text = user.FirstName;
                 this.lastNameTxt.Text = user.LastName;
                 this.addressTxt.Text = user.Address;
                 this.phoneTxt.Text = user.PhoneNumber;
-                this.schoolTxt.Text = user.School_id + "";
-                this.emailTxt.Text = user.Email;
+                
                 this.statusTxt.Text = user.Status;
                 this.DescriptionTxt.Text = user.Bio;
                 SetImageFromByteArrayProfile(this.profile_pic, user.Profile_pic);
@@ -310,5 +331,24 @@ namespace GrabAViscan.Homepage
             this.completedCtr.Text = total +"";
         }
 
+        private void EmailDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static bool ValidatePhoneNumber(String phoneNumber)
+        {
+            try
+            {
+                long.Parse(phoneNumber.Substring(1, 12));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            if (phoneNumber.Length != 13 || phoneNumber[0] != '+')
+                return false;
+            return true;
+        }
     }
 }

@@ -42,16 +42,16 @@
             this.completedCtr = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel12 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
-            this.statusHolder = new Guna.UI.WinForms.GunaTextBox();
+            this.emailDisplay = new Guna.UI.WinForms.GunaTextBox();
             this.nameHolder = new Guna.UI.WinForms.GunaTextBox();
             this.profile_pic = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.statusTxt = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.statusTxt = new System.Windows.Forms.ComboBox();
             this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
-            this.emailTxt = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
-            this.schoolTxt = new Guna.UI.WinForms.GunaTextBox();
             this.phoneTxt = new Guna.UI.WinForms.GunaTextBox();
             this.addressTxt = new Guna.UI.WinForms.GunaTextBox();
             this.lastNameTxt = new Guna.UI.WinForms.GunaTextBox();
@@ -60,8 +60,6 @@
             this.update_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.DescriptionTxt = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -251,7 +249,7 @@
             // gunaPanel4
             // 
             this.gunaPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel4.Controls.Add(this.statusHolder);
+            this.gunaPanel4.Controls.Add(this.emailDisplay);
             this.gunaPanel4.Controls.Add(this.nameHolder);
             this.gunaPanel4.Controls.Add(this.profile_pic);
             this.gunaPanel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -261,29 +259,29 @@
             this.gunaPanel4.TabIndex = 0;
             this.gunaPanel4.Click += new System.EventHandler(this.ClickAll);
             // 
-            // statusHolder
+            // emailDisplay
             // 
-            this.statusHolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusHolder.BaseColor = System.Drawing.SystemColors.Control;
-            this.statusHolder.BorderColor = System.Drawing.Color.Transparent;
-            this.statusHolder.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.statusHolder.Enabled = false;
-            this.statusHolder.FocusedBaseColor = System.Drawing.Color.White;
-            this.statusHolder.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.statusHolder.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.statusHolder.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusHolder.ForeColor = System.Drawing.Color.Black;
-            this.statusHolder.Location = new System.Drawing.Point(201, 442);
-            this.statusHolder.Margin = new System.Windows.Forms.Padding(0);
-            this.statusHolder.Name = "statusHolder";
-            this.statusHolder.PasswordChar = '\0';
-            this.statusHolder.Radius = 10;
-            this.statusHolder.ReadOnly = true;
-            this.statusHolder.Size = new System.Drawing.Size(209, 49);
-            this.statusHolder.TabIndex = 8;
-            this.statusHolder.Text = "STATUS";
-            this.statusHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.statusHolder.Click += new System.EventHandler(this.ClickAll);
+            this.emailDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.emailDisplay.BaseColor = System.Drawing.SystemColors.Control;
+            this.emailDisplay.BorderColor = System.Drawing.Color.Transparent;
+            this.emailDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailDisplay.Enabled = false;
+            this.emailDisplay.FocusedBaseColor = System.Drawing.Color.White;
+            this.emailDisplay.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
+            this.emailDisplay.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.emailDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailDisplay.ForeColor = System.Drawing.Color.Black;
+            this.emailDisplay.Location = new System.Drawing.Point(51, 446);
+            this.emailDisplay.Margin = new System.Windows.Forms.Padding(0);
+            this.emailDisplay.Name = "emailDisplay";
+            this.emailDisplay.PasswordChar = '\0';
+            this.emailDisplay.Radius = 10;
+            this.emailDisplay.ReadOnly = true;
+            this.emailDisplay.Size = new System.Drawing.Size(500, 49);
+            this.emailDisplay.TabIndex = 8;
+            this.emailDisplay.Text = "email";
+            this.emailDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.emailDisplay.Click += new System.EventHandler(this.ClickAll);
             // 
             // nameHolder
             // 
@@ -297,7 +295,7 @@
             this.nameHolder.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.nameHolder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameHolder.ForeColor = System.Drawing.Color.Black;
-            this.nameHolder.Location = new System.Drawing.Point(132, 371);
+            this.nameHolder.Location = new System.Drawing.Point(129, 359);
             this.nameHolder.Margin = new System.Windows.Forms.Padding(0);
             this.nameHolder.Name = "nameHolder";
             this.nameHolder.PasswordChar = '\0';
@@ -324,11 +322,11 @@
             // gunaPanel3
             // 
             this.gunaPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel3.Controls.Add(this.gunaLabel7);
+            this.gunaPanel3.Controls.Add(this.gunaLabel6);
             this.gunaPanel3.Controls.Add(this.statusTxt);
             this.gunaPanel3.Controls.Add(this.gunaLabel15);
-            this.gunaPanel3.Controls.Add(this.emailTxt);
             this.gunaPanel3.Controls.Add(this.gunaPanel10);
-            this.gunaPanel3.Controls.Add(this.schoolTxt);
             this.gunaPanel3.Controls.Add(this.phoneTxt);
             this.gunaPanel3.Controls.Add(this.addressTxt);
             this.gunaPanel3.Controls.Add(this.lastNameTxt);
@@ -337,8 +335,6 @@
             this.gunaPanel3.Controls.Add(this.update_btn);
             this.gunaPanel3.Controls.Add(this.gunaLabel8);
             this.gunaPanel3.Controls.Add(this.DescriptionTxt);
-            this.gunaPanel3.Controls.Add(this.gunaLabel6);
-            this.gunaPanel3.Controls.Add(this.gunaLabel7);
             this.gunaPanel3.Controls.Add(this.gunaLabel4);
             this.gunaPanel3.Controls.Add(this.gunaLabel5);
             this.gunaPanel3.Controls.Add(this.gunaLabel3);
@@ -349,54 +345,50 @@
             this.gunaPanel3.TabIndex = 11;
             this.gunaPanel3.Click += new System.EventHandler(this.ClickAll);
             // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.Location = new System.Drawing.Point(635, 408);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(129, 21);
+            this.gunaLabel7.TabIndex = 41;
+            this.gunaLabel7.Text = "+63##########";
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.Location = new System.Drawing.Point(69, 408);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(264, 21);
+            this.gunaLabel6.TabIndex = 21;
+            this.gunaLabel6.Text = "Zone/Street, Barangay, City, Province";
+            // 
             // statusTxt
             // 
-            this.statusTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.statusTxt.BorderColor = System.Drawing.Color.Silver;
-            this.statusTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.statusTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.statusTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.statusTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.statusTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusTxt.Location = new System.Drawing.Point(67, 563);
-            this.statusTxt.Margin = new System.Windows.Forms.Padding(0);
+            this.statusTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
+            this.statusTxt.FormattingEnabled = true;
+            this.statusTxt.Items.AddRange(new object[] {
+            "STUDENT",
+            "FACULTY",
+            "WORKER",
+            "GUEST"});
+            this.statusTxt.Location = new System.Drawing.Point(639, 548);
             this.statusTxt.Name = "statusTxt";
-            this.statusTxt.PasswordChar = '\0';
-            this.statusTxt.Radius = 10;
-            this.statusTxt.Size = new System.Drawing.Size(240, 53);
+            this.statusTxt.Size = new System.Drawing.Size(139, 28);
             this.statusTxt.TabIndex = 40;
-            this.statusTxt.Click += new System.EventHandler(this.ClickAll);
             // 
             // gunaLabel15
             // 
             this.gunaLabel15.AutoSize = true;
             this.gunaLabel15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel15.Location = new System.Drawing.Point(62, 520);
+            this.gunaLabel15.Location = new System.Drawing.Point(634, 511);
             this.gunaLabel15.Name = "gunaLabel15";
             this.gunaLabel15.Size = new System.Drawing.Size(86, 30);
             this.gunaLabel15.TabIndex = 39;
             this.gunaLabel15.Text = "STATUS";
             this.gunaLabel15.Click += new System.EventHandler(this.ClickAll);
-            // 
-            // emailTxt
-            // 
-            this.emailTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.emailTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.BorderColor = System.Drawing.Color.Silver;
-            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.emailTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.emailTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.emailTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.emailTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(627, 442);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(0);
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.PasswordChar = '\0';
-            this.emailTxt.Radius = 10;
-            this.emailTxt.Size = new System.Drawing.Size(520, 53);
-            this.emailTxt.TabIndex = 38;
-            this.emailTxt.Click += new System.EventHandler(this.ClickAll);
             // 
             // gunaPanel10
             // 
@@ -421,25 +413,6 @@
             this.gunaLabel9.Text = "User Information";
             this.gunaLabel9.Click += new System.EventHandler(this.ClickAll);
             // 
-            // schoolTxt
-            // 
-            this.schoolTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.schoolTxt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.schoolTxt.BorderColor = System.Drawing.Color.Silver;
-            this.schoolTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.schoolTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.schoolTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
-            this.schoolTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.schoolTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schoolTxt.Location = new System.Drawing.Point(67, 442);
-            this.schoolTxt.Margin = new System.Windows.Forms.Padding(0);
-            this.schoolTxt.Name = "schoolTxt";
-            this.schoolTxt.PasswordChar = '\0';
-            this.schoolTxt.Radius = 10;
-            this.schoolTxt.Size = new System.Drawing.Size(520, 53);
-            this.schoolTxt.TabIndex = 37;
-            this.schoolTxt.Click += new System.EventHandler(this.ClickAll);
-            // 
             // phoneTxt
             // 
             this.phoneTxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -450,7 +423,7 @@
             this.phoneTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.phoneTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.phoneTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTxt.Location = new System.Drawing.Point(627, 314);
+            this.phoneTxt.Location = new System.Drawing.Point(627, 355);
             this.phoneTxt.Margin = new System.Windows.Forms.Padding(0);
             this.phoneTxt.Name = "phoneTxt";
             this.phoneTxt.PasswordChar = '\0';
@@ -469,7 +442,7 @@
             this.addressTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.addressTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.addressTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTxt.Location = new System.Drawing.Point(67, 314);
+            this.addressTxt.Location = new System.Drawing.Point(67, 355);
             this.addressTxt.Margin = new System.Windows.Forms.Padding(0);
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.PasswordChar = '\0';
@@ -568,7 +541,7 @@
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.Location = new System.Drawing.Point(70, 625);
+            this.gunaLabel8.Location = new System.Drawing.Point(76, 488);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(147, 30);
             this.gunaLabel8.TabIndex = 19;
@@ -584,40 +557,18 @@
             this.DescriptionTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.DescriptionTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.DescriptionTxt.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionTxt.Location = new System.Drawing.Point(67, 662);
+            this.DescriptionTxt.Location = new System.Drawing.Point(73, 525);
             this.DescriptionTxt.Name = "DescriptionTxt";
             this.DescriptionTxt.PasswordChar = '\0';
-            this.DescriptionTxt.Size = new System.Drawing.Size(422, 117);
+            this.DescriptionTxt.Size = new System.Drawing.Size(520, 117);
             this.DescriptionTxt.TabIndex = 18;
             this.DescriptionTxt.Click += new System.EventHandler(this.ClickAll);
-            // 
-            // gunaLabel6
-            // 
-            this.gunaLabel6.AutoSize = true;
-            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel6.Location = new System.Drawing.Point(622, 392);
-            this.gunaLabel6.Name = "gunaLabel6";
-            this.gunaLabel6.Size = new System.Drawing.Size(74, 30);
-            this.gunaLabel6.TabIndex = 16;
-            this.gunaLabel6.Text = "EMAIL";
-            this.gunaLabel6.Click += new System.EventHandler(this.ClickAll);
-            // 
-            // gunaLabel7
-            // 
-            this.gunaLabel7.AutoSize = true;
-            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel7.Location = new System.Drawing.Point(62, 392);
-            this.gunaLabel7.Name = "gunaLabel7";
-            this.gunaLabel7.Size = new System.Drawing.Size(126, 30);
-            this.gunaLabel7.TabIndex = 14;
-            this.gunaLabel7.Text = "SCHOOL ID";
-            this.gunaLabel7.Click += new System.EventHandler(this.ClickAll);
             // 
             // gunaLabel4
             // 
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.Location = new System.Drawing.Point(622, 269);
+            this.gunaLabel4.Location = new System.Drawing.Point(622, 310);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(124, 30);
             this.gunaLabel4.TabIndex = 12;
@@ -628,7 +579,7 @@
             // 
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(62, 269);
+            this.gunaLabel5.Location = new System.Drawing.Point(62, 310);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(105, 30);
             this.gunaLabel5.TabIndex = 10;
@@ -795,8 +746,6 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel6;
         private Guna.UI.WinForms.GunaPanel gunaPanel8;
         private Guna.UI.WinForms.GunaPanel gunaPanel10;
-        private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaLabel gunaLabel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
@@ -812,18 +761,18 @@
         private Guna.UI.WinForms.GunaButton discard_btn;
         private Guna.UI.WinForms.GunaButton update_btn;
         private Guna.UI.WinForms.GunaTextBox nameHolder;
-        private Guna.UI.WinForms.GunaTextBox statusHolder;
-        private Guna.UI.WinForms.GunaTextBox schoolTxt;
         private Guna.UI.WinForms.GunaTextBox phoneTxt;
         private Guna.UI.WinForms.GunaTextBox addressTxt;
         private Guna.UI.WinForms.GunaTextBox lastNameTxt;
         private Guna.UI.WinForms.GunaTextBox firstNameTxt;
-        private Guna.UI.WinForms.GunaTextBox statusTxt;
         private Guna.UI.WinForms.GunaLabel gunaLabel15;
-        private Guna.UI.WinForms.GunaTextBox emailTxt;
         private Guna.UI.WinForms.GunaCirclePictureBox profile_pic;
         private Guna.UI.WinForms.GunaButton completedCtr;
         private Guna.UI.WinForms.GunaButton request;
         private Guna.UI.WinForms.GunaButton deliveryCtr;
+        private Guna.UI.WinForms.GunaTextBox emailDisplay;
+        private System.Windows.Forms.ComboBox statusTxt;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
     }
 }

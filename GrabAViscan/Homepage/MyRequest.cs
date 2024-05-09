@@ -60,8 +60,7 @@ namespace GrabAViscan
                 }
                 
 
-                //Buffers buff = new Buffers();
-                //flow1.Controls.Add(buff);
+                
             }
         }
     }

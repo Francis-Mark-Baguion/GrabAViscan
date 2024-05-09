@@ -41,9 +41,9 @@
             this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
             this.gunaLabel2.Location = new System.Drawing.Point(51, 6);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(234, 48);
+            this.gunaLabel2.Size = new System.Drawing.Size(189, 48);
             this.gunaLabel2.TabIndex = 5;
-            this.gunaLabel2.Text = "My Requests";
+            this.gunaLabel2.Text = "To Deliver";
             // 
             // gunaPanel1
             // 

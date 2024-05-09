@@ -22,7 +22,7 @@ namespace GrabAViscan.Popup
     public partial class Post : Form
     {
 
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         public User user;
         public string email;
         private Home home;
@@ -167,7 +167,10 @@ namespace GrabAViscan.Popup
             string Requested = requestTxt.Text;
             string Quantity = quantityTxt.Text;
             int Fee = 0;
-
+            if(feeTxt.Text=="")
+            {
+                feeTxt.Text = "0";
+            }
             try
             {
 
@@ -222,7 +225,7 @@ namespace GrabAViscan.Popup
                 
 
 
-                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="" && Near_pickUp !="" && ded != start)
+                if ( Requested != "" && Fee != 0 && Category != "" && Pick_up != "" && Delivery_location != "" && Near_deliveryLocation!="" && Near_pickUp !="" && ded != start && TimePicker.Value>DateTime.Today)
                 {
                     post = new Posting(Post_id, User_id, Requested, Quantity, Fee, Description, Date_posted, Deadline, Category, image, Pick_up, Near_pickUp, Delivery_location, Near_deliveryLocation, Available);
                     db.Post_upload(post);
@@ -254,6 +257,10 @@ namespace GrabAViscan.Popup
                     {
                         ErrorMessage err8 = new ErrorMessage("The deadline must be a future date");
                     }
+                    else if (TimePicker.Value < DateTime.Today)
+                    {
+                        ErrorMessage err8 = new ErrorMessage("The deadline must be a future date");
+                    }
                     else if (Category == "")
                     {
                         ErrorMessage err3 = new ErrorMessage("Please select a category");
@@ -279,6 +286,7 @@ namespace GrabAViscan.Popup
                         ErrorMessage err2 = new ErrorMessage("Invalid fee format. Please enter a valid number.");
 
                     }
+                    
 
                 }
                 
@@ -298,7 +306,7 @@ namespace GrabAViscan.Popup
         private byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            if (picture.Image != null) // Check if picture.Image exists
+            if (picture.Image != null) 
             {
                 picture.Image.Save(stream, picture.Image.RawFormat);
             }
@@ -314,6 +322,11 @@ namespace GrabAViscan.Popup
         private void discard_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

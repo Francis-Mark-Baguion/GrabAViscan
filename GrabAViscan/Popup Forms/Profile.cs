@@ -24,7 +24,8 @@ namespace GrabAViscan.Popup
             this.nameHolder.Text = db.getUserById(User_id).FirstName + " " + db.getUserById(User_id).LastName;
             this.emailHolder.Text = db.getUserById(User_id).Email;
             this.addressHoldler.Text = db.getUserById(User_id).Address;
-            this.DescriptionTxt.Text = db.getUserById(User_id).Bio;
+            this.phoneTxt.Text = db.getUserById(User_id).PhoneNumber;
+            
             
             SetImageFromByteArrayProfile(profile_pic, db.getUserById(User_id).Profile_pic);
             this.Show();
@@ -37,7 +38,8 @@ namespace GrabAViscan.Popup
             this.nameHolder.Text = db.getUserById(User_id).FirstName + " " + db.getUserById(User_id).LastName;
             this.emailHolder.Text = db.getUserById(User_id).Email;
             this.addressHoldler.Text = db.getUserById(User_id).Address;
-            this.DescriptionTxt.Text = db.getUserById(User_id).Bio;
+            this.phoneTxt.Text = db.getUserById(User_id).PhoneNumber;
+            
 
             SetImageFromByteArrayProfile(profile_pic, db.getUserById(User_id).Profile_pic);
             
@@ -66,6 +68,11 @@ namespace GrabAViscan.Popup
         }
 
         private void gunaPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaLabel2_Click(object sender, EventArgs e)
         {
 
         }

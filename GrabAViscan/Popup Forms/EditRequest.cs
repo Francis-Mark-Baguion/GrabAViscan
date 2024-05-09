@@ -16,10 +16,10 @@ namespace GrabAViscan.Popup
 {
     public partial class EditRequest : Form
     {
-        DatabaseManagement db = new DatabaseManagement();
-        User user;
-        int Post_id;
-        Home home;
+        private DatabaseManagement db = new DatabaseManagement();
+        private User user;
+        private int Post_id;
+        private Home home;
         public EditRequest(Home home,Posting post)
         {
             InitializeComponent();
@@ -134,7 +134,10 @@ namespace GrabAViscan.Popup
             string Requested = requestTxt.Text;
             string Quantity = quantityTxt.Text;
             int Fee = 0;
-
+            if (feeTxt.Text == "")
+            {
+                feeTxt.Text = "0";
+            }
             try
             {
 
@@ -156,7 +159,7 @@ namespace GrabAViscan.Popup
                 ErrorMessage mess = new ErrorMessage("The entered fee value is too large or too small for an integer. Please enter a value within the valid range.");
 
             }
-
+            Fee += 10;
             string Description = CommentTxt.Text;
             DateTime Date_posted = DateTime.Now;
             DateTime Deadline = TimePicker.Value;
@@ -189,7 +192,7 @@ namespace GrabAViscan.Popup
         private byte[] getPhoto()
         {
             MemoryStream stream = new MemoryStream();
-            if (picture.Image != null) // Check if picture.Image exists
+            if (picture.Image != null) 
             {
                 picture.Image.Save(stream, picture.Image.RawFormat);
                 return stream.GetBuffer();
@@ -222,6 +225,11 @@ namespace GrabAViscan.Popup
         private void discard_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void gunaShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

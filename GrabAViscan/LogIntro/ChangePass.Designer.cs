@@ -80,7 +80,7 @@
             this.codeTxt.BorderColor = System.Drawing.Color.Silver;
             this.codeTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.codeTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.codeTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.codeTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.codeTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.codeTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.codeTxt.Location = new System.Drawing.Point(157, 302);
@@ -133,7 +133,7 @@
             this.newPassTxt.BorderColor = System.Drawing.Color.Silver;
             this.newPassTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.newPassTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.newPassTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.newPassTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.newPassTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.newPassTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.newPassTxt.Location = new System.Drawing.Point(157, 391);
@@ -152,7 +152,7 @@
             this.confirmTxt.BorderColor = System.Drawing.Color.Silver;
             this.confirmTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.confirmTxt.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(238)))));
-            this.confirmTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(207)))), ((int)(((byte)(115)))));
+            this.confirmTxt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(104)))), ((int)(((byte)(62)))));
             this.confirmTxt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.confirmTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.confirmTxt.Location = new System.Drawing.Point(157, 479);

@@ -36,7 +36,56 @@ namespace GrabAViscan.Classes
             GetDeliveries();
         }
 
+        /// <summary></summary>
         public Deliver Deliver
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Credentials Credentials
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Posting Posting
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Location Location
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Promotion Promotion
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Category Category
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public User User
         {
             get => default;
             set
@@ -223,7 +272,7 @@ namespace GrabAViscan.Classes
 
         public void Information_upload(User user)
         {
-            //MessageBox.Show(user.ToString());
+            
             using (MySqlConnection conConn = Connect())
             {
                 try
@@ -255,7 +304,7 @@ namespace GrabAViscan.Classes
                     insertCmd.Parameters.AddWithValue("@Status", user.Status);
 
 
-                    SucMessage error = new SucMessage("Account Created!");
+                    
                     insertCmd.ExecuteNonQuery();
 
                 }
@@ -263,7 +312,7 @@ namespace GrabAViscan.Classes
                 {
 
                     ErrorMessage error = new ErrorMessage(ex.Message);
-                    MessageBox.Show(ex.Message);
+                    
 
 
                 }
@@ -675,7 +724,7 @@ namespace GrabAViscan.Classes
 
                     MySqlCommand cmd = new MySqlCommand(sql, conConn);
 
-
+                        
                     cmd.Parameters.AddWithValue("@user_id", user_id);
 
 
@@ -1161,6 +1210,38 @@ namespace GrabAViscan.Classes
         }
 
 
+        public Deliver GetDeliveryByPostId(int postId)
+        {
+            Deliver delivery = null;
+            using (MySqlConnection conConn = this.Connect())
+            {
+                try
+                {
+                    string selectSql = "SELECT * FROM grab.delivery WHERE Post_id = @postId";
+                    MySqlCommand selectCmd = new MySqlCommand(selectSql, conConn);
+
+                    // Add parameter to prevent SQL injection vulnerabilities
+                    selectCmd.Parameters.AddWithValue("@postId", postId);
+
+                    using (MySqlDataReader reader = selectCmd.ExecuteReader())
+                    {
+                        if (reader.Read()) // Check if a record is found
+                        {
+                            int retrievedPostId = reader.GetInt32("Post_id");
+                            int userId = reader.GetInt32("User_id");
+
+                            delivery = new Deliver(retrievedPostId, userId);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred while retrieving delivery: " + ex.Message);
+                }
+            }
+
+            return delivery;
+        }
 
 
     }

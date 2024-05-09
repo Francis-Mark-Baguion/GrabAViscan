@@ -13,7 +13,7 @@ namespace GrabAViscan.Feed
 {
     public partial class DeliveryHistory : UserControl
     {
-        DatabaseManagement db = new DatabaseManagement();
+        private DatabaseManagement db = new DatabaseManagement();
         private int User_id;
         private Home home;
         public DeliveryHistory(int User_id,Home home)

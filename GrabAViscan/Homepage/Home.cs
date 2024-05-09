@@ -31,6 +31,7 @@ namespace GrabAViscan
         private string email;
         private int User_id;
         private ToDeliver todeliver;
+        private bool flag = false;
         public Home(int uid)
         {
             List<Posting> posts = db.GetAvailablePosts();
@@ -212,11 +213,43 @@ namespace GrabAViscan
 
             filterBox.Text = "";
             filter = new Filter(this);
+            flag = true;
         }
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
-            if(filterBox.Text != "")
+           
+            if(filterBox.Text !="" && flag==false)
+            {
+                try
+                {
+
+                    List<Posting> filteredPost = this.returnFilter();
+
+                    user = db.InitializeUser(email);
+
+
+                    right.setter(email, this);
+                    tableLayoutPanel1.ColumnStyles[2].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[2].Width = 25;
+                    tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[1].Width = 53;
+                    tableLayoutPanel1.ColumnStyles[0].SizeType = SizeType.Percent;
+                    tableLayoutPanel1.ColumnStyles[0].Width = 22;
+
+                    this.RightWing.Controls.Add(right);
+
+
+                    filter.Hide();
+                    feed(filteredPost);
+                }
+                
+                catch (Exception ex)
+                {
+                    ErrorMessage err = new ErrorMessage(ex.Message);
+                }
+            }
+            else if (flag == true)
             {
                 try
                 {
@@ -239,15 +272,16 @@ namespace GrabAViscan
 
                     filter.Hide();
                     feed(filteredPost);
+                    flag = false;
                 }
                 catch (Exception ex)
                 {
                     ErrorMessage err = new ErrorMessage(ex.Message);
                 }
             }
-            
-            
-            
+
+
+
 
         }
 
@@ -352,6 +386,54 @@ namespace GrabAViscan
         {
             deliverCtr.BackColor = Color.FromArgb(240, 242, 245);
             deliverCtr.ForeColor = Color.Firebrick;
+        }
+
+
+        public List<Posting> returnFilter()
+        {
+            List<Posting> filterPost;
+
+            filterPost = new List<Posting>();
+            string location_id = "";
+            List<Location> locations = new List<Location>();
+            foreach (Location location in db.locations)
+            {
+                if (location.LocationName.ToUpper() == filterBox.Text.ToUpper())
+                {
+                    location_id = location.Location_id + "";
+                }
+            }
+
+            List<Posting> allPost = db.GetAvailablePosts();
+
+
+            if (filterBox.Text !="")
+            {
+                foreach (Posting post in allPost)
+                {
+
+                    if (post.Near_deliveryLocation == location_id)
+                    {
+                        filterPost.Add(post);
+                    }
+                    else if(post.Category.ToUpper() == filterBox.Text.ToUpper())
+                    {
+                        filterPost.Add(post);
+                    }
+                }
+            }
+            
+
+
+            return filterPost;
+
+
+
+
+
+
+
+
         }
     }
 }

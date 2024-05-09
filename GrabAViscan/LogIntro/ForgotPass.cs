@@ -60,9 +60,9 @@ namespace GrabAViscan.LogIntro
 
             String OTPCode = GenerateOTP(6);
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("22-1-00109@vsu.edu.ph");
+            mail.From = new MailAddress("22-1-00745@vsu.edu.ph");
             mail.To.Add(email);
-            mail.Subject = "OTP Code Verification [Mabolo Dormitory System]";
+            mail.Subject = "OTP Code Verification [Grab A Viscan]";
             mail.IsBodyHtml = true;
             string htmlBody = $@"
             <html>
@@ -82,7 +82,7 @@ namespace GrabAViscan.LogIntro
               <p>Your OTP code for verification is: <b>{OTPCode}</b></p>
               <p>Please enter this code to reset your password.</p>
               <p>This code is valid as long as this is the most recent code. Please do not share it with anyone.</p>
-              <p>Thank you, and God bless!</p>
+              <p>Thank you!</p>
             </body>
             </html>";
             mail.Body = htmlBody;
@@ -90,8 +90,8 @@ namespace GrabAViscan.LogIntro
             smtp.Host = "smtp.gmail.com";
             smtp.EnableSsl = true;
             NetworkCredential NetworkCred = new NetworkCredential();
-            NetworkCred.UserName = "22-1-00109@vsu.edu.ph";
-            NetworkCred.Password = "laurente1234";
+            NetworkCred.UserName = "22-1-00745@vsu.edu.ph";
+            NetworkCred.Password = "";//Left empty for data privacy
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;

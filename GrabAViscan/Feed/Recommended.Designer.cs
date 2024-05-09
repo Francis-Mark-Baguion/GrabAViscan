@@ -87,7 +87,7 @@
             this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.gunaPictureBox2);
             this.Name = "Recommended";
-            this.Size = new System.Drawing.Size(640, 176);
+            this.Size = new System.Drawing.Size(600, 176);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.ResumeLayout(false);
