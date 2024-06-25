@@ -20,6 +20,9 @@
 
   - [Features of the System](#features-of-the-system)
 
+  ### Sign In Page
+  ![Log In]()
+  - This page manages the *login feature* of the system. It serves as the initial interface upon opening the application.
 
 
 
