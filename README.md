@@ -27,7 +27,7 @@
       - [To Deliver](#to-deliver)
       - [History](#history)
       - [Settings](#settings)
-
+  - [Use Case Diagram](#use-case-diagram)
   
 
 
@@ -80,4 +80,8 @@
   - Feature includes **Change Password**,**Change Profile** and **Update Information**.
 
 
+
+  ### Use Case Diagram
+  ![Use Case Diagram](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/fcf3c280-d290-4d1b-ac7c-186c2affe4ed)
+  - This use case diagram represents the **Grab A Viscan Application**
 
