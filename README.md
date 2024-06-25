@@ -26,6 +26,7 @@
       - [My Request](#my-request)
       - [To Deliver](#to-deliver)
       - [History](#history)
+      - [Settings](#settings)
 
   
 
@@ -72,7 +73,11 @@
   - The history section manages the completed/Cancelled request of the user and the other section manages the deliveries made.
   - Feature includes **Expand** and **Repost**.
 
-
+  
+  ### Settings
+  ![Settings](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/d47a084e-c8fd-4e11-9504-e1c3f8cb30a4)
+  - This manages all the information of the user and user account.
+  - Feature includes **Change Password**,**Change Profile** and **Update Information**.
 
 
 
