@@ -25,6 +25,7 @@
       - [Post Request](#post-request)
       - [My Request](#my-request)
       - [To Deliver](#to-deliver)
+      - [History](#history)
 
   
 
@@ -58,11 +59,20 @@
   ### My Request
   ![Post Request](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/7b62e1a2-3890-46ad-b32d-d88042fcfc44)
   - This shows the current request the user has posted on the platform.
-  - Feature includes **Cancel**, **Edit** , and **View**
+  - Feature includes **Cancel**, **Edit** , and **View**.
 
   ### To Deliver
   ![To Deliver](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/07b517c7-0298-46ad-93af-7219dd680934)
   - This shows the current ongoing request that the user needs to deliver.
-  - Feature includes **Cancel Delivery**, **Update Status** , and **View**
+  - Feature includes **Cancel Delivery**, **Update Status** , and **View**.
+
+  
+  ### History
+  ![History](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/fdf488e4-c9e8-499e-8664-fdbba11202c2)
+  - The history section manages the completed/Cancelled request of the user and the other section manages the deliveries made.
+  - Feature includes **Expand** and **Repost**.
+
+
+
 
 
