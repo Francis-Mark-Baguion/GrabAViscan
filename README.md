@@ -23,6 +23,8 @@
       - [Sign Up Page](#sign-up-page)
       - [Home Page](#home-page)
       - [Post Request](#post-request)
+      - [My Request](#my-request)
+      - [To Deliver](#to-deliver)
 
   
 
@@ -54,8 +56,13 @@
 
 
   ### My Request
-  ![Post Request](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/7d419d2c-c238-4c35-9d24-2a48cee30e93)
-  - This shows the current request the user has posted in the platform.
+  ![Post Request](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/7b62e1a2-3890-46ad-b32d-d88042fcfc44)
+  - This shows the current request the user has posted on the platform.
   - Feature includes **Cancel**, **Edit** , and **View**
+
+  ### To Deliver
+  ![To Deliver](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/07b517c7-0298-46ad-93af-7219dd680934)
+  - This shows the current ongoing request that the user needs to deliver.
+  - Feature includes **Cancel Delivery**, **Update Status** , and **View**
 
 
