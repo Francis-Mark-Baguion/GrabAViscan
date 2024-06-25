@@ -102,9 +102,28 @@
 
   ## System Design
   ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/8440486d-a3ab-45ad-8172-697da621fdf8)
+  - Displayed are the classes used in developing this application and their connections.
 
   ## Presentation
   ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/2e9c7ab2-e223-49e5-b35e-c3a904fccb00)
   - The PPT copy can be accessed in this [link](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/Grab%20A%20Viscan%20Presentation.pptx)
 
+  ## License Information
 
+This project is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the code as long as you include the original copyright notice and disclaimer. See the [LICENSE](LICENSE) file for more details.
+
+## Contributing
+
+Thank you for considering contributing to this project! Your contributions are greatly appreciated. Here are some ways you can contribute:
+
+1. **Report Bugs**: If you encounter any bugs or issues, please [open an issue](https://github.com/yourusername/yourproject/issues) on GitHub.
+
+2. **Suggest Features**: Have an idea for a new feature? [Open an issue](https://github.com/yourusername/yourproject/issues) and share your thoughts.
+
+3. **Submit Pull Requests**: Fork the repository, make your changes, and submit a pull request for review.
+
+4. **Provide Feedback**: Share your thoughts and suggestions in the project's [issues section](https://github.com/yourusername/yourproject/issues).
+
+5. **Spread the Word**: Help others discover this project by sharing it on social media or with your peers.
+
+Thank you for your interest and support! 🚀
