@@ -21,7 +21,7 @@
   - [Features of the System](#features-of-the-system)
 
   ### Sign In Page
-  ![Log In]()
+  ![Log In](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/3d28ae14-cbcb-4607-aaff-02fa0e738d50)
   - This page manages the *login feature* of the system. It serves as the initial interface upon opening the application.
 
 
