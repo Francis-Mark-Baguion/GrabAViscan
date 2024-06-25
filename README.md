@@ -20,14 +20,7 @@
 
   - [Features of the System](#features-of-the-system)
 
-  ### Sign In Page
-  ![Log In](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/3d28ae14-cbcb-4607-aaff-02fa0e738d50)
-  - This page manages the *login feature* of the system. It serves as the initial interface upon opening the application.
-
-  ### Sign Up Page
-  ![Sign Up]([https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/3d28ae14-cbcb-4607-aaff-02fa0e738d50](https://github.com/Francis-Mark-Baguion/GrabAViscan/issues/13#issuecomment-2187904817))
-  - Sign Up page for first-time users without an account.
-
+  
 
 
 
@@ -35,3 +28,18 @@
 
 
 ## Features of the System
+
+
+  ### Sign In Page
+  ![Log In](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/3d28ae14-cbcb-4607-aaff-02fa0e738d50)
+  - This page manages the *login feature* of the system. It serves as the initial interface upon opening the application.
+
+  ### Sign Up Page
+  ![Sign Up](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/2840e1fd-5b18-4805-8eb4-82a2b69609ba)
+  - Sign Up page for first-time users without an account.
+
+  ### Home Page
+  ![Home Page](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/df2f3290-321c-46af-a997-0766edda4da8)
+  - The application's home page overviews the available requests and recommended stores.
+  - This is also the page for accepting requests and posting requests.
+
