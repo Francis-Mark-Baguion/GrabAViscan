@@ -19,6 +19,10 @@
 # Table Of Contents
 
   - [Features of the System](#features-of-the-system)
+      - [Log In Page](#Log-in-page)
+      - [Sign Up Page](#sign-up-page)
+      - [Home Page](#home-page)
+      - [Post Request](#post-request)
 
   
 
@@ -30,9 +34,9 @@
 ## Features of the System
 
 
-  ### Sign In Page
+  ### Log In Page
   ![Log In](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/3d28ae14-cbcb-4607-aaff-02fa0e738d50)
-  - This page manages the *login feature* of the system. It serves as the initial interface upon opening the application.
+  - This is a generic login page for the application which requests the user for existing credentials for an account.
 
   ### Sign Up Page
   ![Sign Up](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/2840e1fd-5b18-4805-8eb4-82a2b69609ba)
@@ -42,4 +46,11 @@
   ![Home Page](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/df2f3290-321c-46af-a997-0766edda4da8)
   - The application's home page overviews the available requests and recommended stores.
   - This is also the page for accepting requests and posting requests.
+
+
+  ### Post Request
+  ![Post Request](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/7d419d2c-c238-4c35-9d24-2a48cee30e93)
+  - This section of the application lets the user post customized requests.
+
+
 
