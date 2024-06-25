@@ -29,6 +29,9 @@
       - [Settings](#settings)
   - [Use Case Diagram](#use-case-diagram)
   - [ERD Model](#erd-model)
+  - [Events Documentation](#events-documentation)
+  - [System Design](#system-design)
+  - [Presentation](#presentation)
   
 
 
@@ -93,5 +96,15 @@
 
 
   ## Events Documentation
-![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/bc6f3c92-7006-4eee-a11e-c17cc0ddf852)
-- To view the complete copy of the documentation, the PDF copy can be accessed in this [link](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/EDP%20DOCUMENTATION.docx)
+  ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/bc6f3c92-7006-4eee-a11e-c17cc0ddf852)
+  - To view the complete copy of the documentation, the PDF copy can be accessed in this [link](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/EDP%20DOCUMENTATION.docx)
+
+
+  ## System Design
+  ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/8440486d-a3ab-45ad-8172-697da621fdf8)
+
+  ## Presentation
+  ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/2e9c7ab2-e223-49e5-b35e-c3a904fccb00)
+  - The PPT copy can be accessed in this [link](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/Grab%20A%20Viscan%20Presentation.pptx)
+
+
