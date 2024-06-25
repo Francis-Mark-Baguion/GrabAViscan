@@ -28,6 +28,7 @@
       - [History](#history)
       - [Settings](#settings)
   - [Use Case Diagram](#use-case-diagram)
+  - [ERD Model](#erd-model)
   
 
 
@@ -81,7 +82,17 @@
 
 
 
-  ### Use Case Diagram
+  ## Use Case Diagram
   ![Use Case Diagram](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/fcf3c280-d290-4d1b-ac7c-186c2affe4ed)
   - This use case diagram represents the **Grab A Viscan Application**
 
+
+  ## ERD Model
+  ![ERD](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/85f5b75d-9895-4897-91d8-245a9a717eb8)
+  - ERD model containing all entities and relationships.
+
+
+  ## Events Documentation
+![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/bc6f3c92-7006-4eee-a11e-c17cc0ddf852)
+- To view the complete copy of the documentation, the PDF copy can be accessed in this [link]([GrabAViscan/Resources/EDP DOCUMENTATION.docx](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/EDP%20DOCUMENTATION.docx)).
+  
