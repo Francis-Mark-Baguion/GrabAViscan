@@ -32,6 +32,10 @@
   - [Events Documentation](#events-documentation)
   - [System Design](#system-design)
   - [Presentation](#presentation)
+  - [License Information](#license-information)
+  - [Contributing](#contributing)
+  - [Contact Information](#contact-information)
+  - [Developer Credits](#developer-credits)
   
 
 
@@ -127,3 +131,20 @@ Thank you for considering contributing to this project! Your contributions are g
 5. **Spread the Word**: Help others discover this project by sharing it on social media or with your peers.
 
 Thank you for your interest and support! 🚀
+
+
+## Contact Information
+
+For any questions, feedback, or support inquiries, feel free to contact me at:
+
+- [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat-square&logo=facebook&logoColor=white)](https://web.facebook.com/francismark.baguion)
+- [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/francismarkbaguion/)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/francis-mark-baguion-b21457216/)
+
+## Developer Credits
+
+This project is developed and maintained by:
+
+**Francis Mark Baguion**  
+*BS in Computer Science, 3rd Year*  
+Visayas State University
