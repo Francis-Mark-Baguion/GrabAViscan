@@ -94,5 +94,4 @@
 
   ## Events Documentation
 ![image](https://github.com/Francis-Mark-Baguion/GrabAViscan/assets/86809994/bc6f3c92-7006-4eee-a11e-c17cc0ddf852)
-- To view the complete copy of the documentation, the PDF copy can be accessed in this [link]([GrabAViscan/Resources/EDP DOCUMENTATION.docx](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/EDP%20DOCUMENTATION.docx)).
-  
+- To view the complete copy of the documentation, the PDF copy can be accessed in this [link](https://github.com/Francis-Mark-Baguion/GrabAViscan/blob/master/GrabAViscan/Resources/EDP%20DOCUMENTATION.docx)
